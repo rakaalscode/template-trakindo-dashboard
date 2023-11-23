@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
   <style>
     .font-small-caps {
       font-variant: all-small-caps;
+    }
+    .custom-label input:checked + svg {
+      display: block !important;
     }
   </style>
   <link href="/dist/css/main.css" rel="stylesheet">
@@ -45,7 +49,7 @@
 
       <!-- User  -->
       <div class="flex justify-end relative w-64 md:w-auto">
-        <button class="bg-white flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg" onclick="openDropdown(event,'dropdownUser-id')">
+        <button class="bg-white z-40 flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg" onclick="openDropdown(event,'dropdownUser-id')">
           <img src="/dist/images/avatar-2.jpeg" alt="avatar" class="w-8 h-8 object-cover object-top rounded-full">
           <div class="hidden flex-col items-start md:flex">
             <span class="block text-sm font-semibold text-black">SIGAP</span>
@@ -241,42 +245,212 @@
         <!-- Filter data  -->
         <div class="flex flex-col flex-wrap items-start justify-between pb-4 md:items-center md:flex-row">
           <div class="flex gap-2 mb-4 md:mb-0">
-            <button type="button" class="flex item-center text-white bg-green-btn hover:bg-green-700 rounded-lg text-sm font-bold px-5 py-2.5">
+            <button type="button" class="flex item-center text-white bg-green-btn hover:bg-green-700 rounded-lg text-sm font-bold px-5 py-2.5 focus:outline-none focus-visible:ring">
               New Document
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="ms-2">
                 <path d="M10 1.66663C8.35185 1.66663 6.74068 2.15537 5.37027 3.07105C3.99986 3.98672 2.93176 5.28821 2.30103 6.81093C1.6703 8.33365 1.50527 10.0092 1.82681 11.6257C2.14836 13.2422 2.94203 14.7271 4.10747 15.8925C5.27291 17.058 6.75776 17.8516 8.37427 18.1732C9.99078 18.4947 11.6663 18.3297 13.1891 17.699C14.7118 17.0682 16.0133 16.0001 16.9289 14.6297C17.8446 13.2593 18.3334 11.6481 18.3334 9.99996C18.3334 8.90561 18.1178 7.82198 17.699 6.81093C17.2802 5.79988 16.6664 4.88122 15.8926 4.1074C15.1188 3.33358 14.2001 2.71975 13.1891 2.30096C12.178 1.88217 11.0944 1.66663 10 1.66663ZM10 16.6666C8.68148 16.6666 7.39255 16.2756 6.29622 15.5431C5.19989 14.8105 4.34541 13.7694 3.84083 12.5512C3.33624 11.333 3.20422 9.99256 3.46146 8.69936C3.71869 7.40615 4.35363 6.21826 5.28598 5.28591C6.21833 4.35356 7.40622 3.71863 8.69942 3.46139C9.99263 3.20416 11.3331 3.33618 12.5512 3.84076C13.7694 4.34535 14.8106 5.19983 15.5432 6.29616C16.2757 7.39249 16.6667 8.68142 16.6667 9.99996C16.6667 11.7681 15.9643 13.4638 14.7141 14.714C13.4638 15.9642 11.7681 16.6666 10 16.6666ZM13.3334 9.16663H10.8334V6.66663C10.8334 6.44561 10.7456 6.23365 10.5893 6.07737C10.433 5.92109 10.221 5.83329 10 5.83329C9.77901 5.83329 9.56705 5.92109 9.41077 6.07737C9.25449 6.23365 9.16669 6.44561 9.16669 6.66663V9.16663H6.66669C6.44568 9.16663 6.23372 9.25442 6.07744 9.4107C5.92115 9.56698 5.83336 9.77895 5.83336 9.99996C5.83336 10.221 5.92115 10.4329 6.07744 10.5892C6.23372 10.7455 6.44568 10.8333 6.66669 10.8333H9.16669V13.3333C9.16669 13.5543 9.25449 13.7663 9.41077 13.9225C9.56705 14.0788 9.77901 14.1666 10 14.1666C10.221 14.1666 10.433 14.0788 10.5893 13.9225C10.7456 13.7663 10.8334 13.5543 10.8334 13.3333V10.8333H13.3334C13.5544 10.8333 13.7663 10.7455 13.9226 10.5892C14.0789 10.4329 14.1667 10.221 14.1667 9.99996C14.1667 9.77895 14.0789 9.56698 13.9226 9.4107C13.7663 9.25442 13.5544 9.16663 13.3334 9.16663Z" fill="white"/>
               </svg>
             </button>
-            <button type="button" class="text-green-btn bg-white border border-green-btn hover:bg-green-700 hover:text-white rounded-lg text-sm font-bold px-5 py-2.5">
+            <button type="button" class="text-green-btn bg-white border border-green-btn hover:bg-green-700 hover:text-white rounded-lg text-sm font-bold px-5 py-2.5 focus:outline-none focus-visible:ring">
               Download to Excel
             </button>
           </div>
           <div class="flex justify-between items-center space-x-4">
-            <div class="cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
-                <path d="M11 18.821V14C11.0008 13.8684 10.9755 13.7379 10.9258 13.6161C10.876 13.4943 10.8027 13.3834 10.71 13.29L10.3568 13.6439L10.3558 13.6429M11 18.821L10.3558 13.6429M11 18.821L10.7764 18.9328L11 19.38H11.5V19.13L13 18.38L11 18.821ZM10.3558 13.6429C10.3555 13.6426 10.3553 13.6424 10.355 13.6421L5.05678 8.35389L4.20128 7.5H5.41H18.59H19.7987L18.9432 8.35389L13.645 13.6421C13.6447 13.6424 13.6445 13.6426 13.6442 13.6429C13.5983 13.6894 13.5619 13.7446 13.5371 13.8052C13.5122 13.8661 13.4996 13.9313 13.5 13.9971L13.5 14L13.5 18.38V18.689L13.2236 18.8272L11.2236 19.8272L10.5 20.189V19.38V14V13.9971H10.5C10.5004 13.9313 10.4878 13.8661 10.4629 13.8052C10.4381 13.7446 10.4017 13.6894 10.3558 13.6429ZM2.5 6.17017V6.17V5C2.5 4.33696 2.76339 3.70107 3.23223 3.23223C3.70107 2.76339 4.33696 2.5 5 2.5H19C19.663 2.5 20.2989 2.76339 20.7678 3.23223C21.2366 3.70107 21.5 4.33696 21.5 5V6.16219C21.4887 6.50621 21.4065 6.84423 21.2586 7.15506L21.21 7.25705V7.31943C21.0975 7.54759 20.948 7.75581 20.7674 7.93554L20.7664 7.93645L14.6464 14.0564L14.5 14.2029V14.41V18.999C14.4996 19.0912 14.4738 19.1814 14.4253 19.2598C14.3769 19.3381 14.3078 19.4016 14.2257 19.4431C14.2255 19.4433 14.2252 19.4434 14.225 19.4435L10.2264 21.4428L10.2264 21.4428L10.222 21.445C10.1526 21.4806 10.0759 21.4994 9.99792 21.5C9.9048 21.5002 9.81349 21.4744 9.73425 21.4255C9.66253 21.3805 9.60341 21.3181 9.56243 21.2439C9.52132 21.1696 9.49983 21.086 9.5 21.001V21V14.41V14.2019L9.3524 14.0553L3.19265 7.93554C3.19263 7.93553 3.19262 7.93551 3.1926 7.9355C3.01197 7.75578 2.86248 7.54757 2.75 7.31943V7.26574L2.70833 7.17017C2.57081 6.85473 2.49988 6.51429 2.5 6.17017ZM9 14.41V21V14.41ZM20 6.5H20.5V6V5C20.5 4.60218 20.342 4.22065 20.0607 3.93934C19.7794 3.65804 19.3978 3.5 19 3.5H5C4.60217 3.5 4.22064 3.65804 3.93934 3.93934C3.65804 4.22064 3.5 4.60217 3.5 5V6V6.5H4H20Z" fill="black" stroke="#10181F"/>
-              </svg>
-            </div>
-            <div class="cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
-                <path d="M6.35968 14.9375L6.64623 14.6411C6.69252 14.5954 6.7472 14.5592 6.80728 14.5343C6.86844 14.5089 6.93399 14.4959 7.00019 14.4959C7.06638 14.4959 7.13194 14.5089 7.19309 14.5343C7.25425 14.5596 7.30982 14.5967 7.35663 14.6436C7.40344 14.6904 7.44057 14.7459 7.46591 14.8071C7.49124 14.8683 7.50428 14.9338 7.50428 15C7.50428 15.0662 7.49124 15.1317 7.46591 15.1929C7.44057 15.2541 7.40344 15.3096 7.35663 15.3564L5.36115 17.3519C5.31431 17.396 5.2594 17.4306 5.19943 17.4538L5.18864 17.458L5.17806 17.4627C5.12203 17.4874 5.06144 17.5002 5.00019 17.5002C4.93893 17.5002 4.87834 17.4874 4.82231 17.4627L4.81173 17.458L4.80094 17.4538C4.74097 17.4306 4.68606 17.396 4.63922 17.3519L2.64374 15.3564C2.5492 15.2619 2.49609 15.1337 2.49609 15C2.49609 14.8663 2.5492 14.7381 2.64374 14.6436C2.73827 14.549 2.86649 14.4959 3.00019 14.4959C3.1327 14.4959 3.25984 14.5481 3.35413 14.6411L3.64069 14.9375L4.50019 15.8266V14.59V7C4.50019 6.86739 4.55286 6.74022 4.64663 6.64645C4.7404 6.55268 4.86758 6.5 5.00019 6.5C5.13279 6.5 5.25997 6.55268 5.35374 6.64645C5.44751 6.74022 5.50019 6.86739 5.50019 7V14.59V15.8266L6.35968 14.9375ZM21.0002 7.5H11.0002C10.8676 7.5 10.7404 7.44732 10.6466 7.35355C10.5529 7.25978 10.5002 7.13261 10.5002 7C10.5002 6.86739 10.5529 6.74022 10.6466 6.64645C10.7404 6.55268 10.8676 6.5 11.0002 6.5H21.0002C21.1328 6.5 21.26 6.55268 21.3537 6.64645C21.4475 6.74021 21.5002 6.86739 21.5002 7C21.5002 7.13261 21.4475 7.25979 21.3537 7.35355C21.26 7.44732 21.1328 7.5 21.0002 7.5ZM11.0002 11.5H21.0002C21.1328 11.5 21.26 11.5527 21.3537 11.6464C21.4475 11.7402 21.5002 11.8674 21.5002 12C21.5002 12.1326 21.4475 12.2598 21.3537 12.3536C21.26 12.4473 21.1328 12.5 21.0002 12.5H11.0002C10.8676 12.5 10.7404 12.4473 10.6466 12.3536C10.5529 12.2598 10.5002 12.1326 10.5002 12C10.5002 11.8674 10.5529 11.7402 10.6466 11.6464C10.7404 11.5527 10.8676 11.5 11.0002 11.5ZM11.0002 16.5H21.0002C21.1328 16.5 21.26 16.5527 21.3537 16.6464C21.4475 16.7402 21.5002 16.8674 21.5002 17C21.5002 17.1326 21.4475 17.2598 21.3537 17.3536C21.26 17.4473 21.1328 17.5 21.0002 17.5H11.0002C10.8676 17.5 10.7404 17.4473 10.6466 17.3536C10.5529 17.2598 10.5002 17.1326 10.5002 17C10.5002 16.8674 10.5529 16.7402 10.6466 16.6464C10.7404 16.5527 10.8676 16.5 11.0002 16.5Z" fill="black" stroke="#10181F"/>
-              </svg>
-            </div>
-            <div class="cursor-pointer">
-              <div class="relative">
-                <input type="search" id="default-search" class="block w-full p-4 pe-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
-                <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
-                  <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                  </svg>
+            <!--  Date rate filter  -->
+            <div class="relative flex items-center">
+              <button class="z-40 focus:outline-none focus-visible:ring" onclick="openDropdown(event,'filterDateRate-id')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                  <path d="M11 18.821V14C11.0008 13.8684 10.9755 13.7379 10.9258 13.6161C10.876 13.4943 10.8027 13.3834 10.71 13.29L10.3568 13.6439L10.3558 13.6429M11 18.821L10.3558 13.6429M11 18.821L10.7764 18.9328L11 19.38H11.5V19.13L13 18.38L11 18.821ZM10.3558 13.6429C10.3555 13.6426 10.3553 13.6424 10.355 13.6421L5.05678 8.35389L4.20128 7.5H5.41H18.59H19.7987L18.9432 8.35389L13.645 13.6421C13.6447 13.6424 13.6445 13.6426 13.6442 13.6429C13.5983 13.6894 13.5619 13.7446 13.5371 13.8052C13.5122 13.8661 13.4996 13.9313 13.5 13.9971L13.5 14L13.5 18.38V18.689L13.2236 18.8272L11.2236 19.8272L10.5 20.189V19.38V14V13.9971H10.5C10.5004 13.9313 10.4878 13.8661 10.4629 13.8052C10.4381 13.7446 10.4017 13.6894 10.3558 13.6429ZM2.5 6.17017V6.17V5C2.5 4.33696 2.76339 3.70107 3.23223 3.23223C3.70107 2.76339 4.33696 2.5 5 2.5H19C19.663 2.5 20.2989 2.76339 20.7678 3.23223C21.2366 3.70107 21.5 4.33696 21.5 5V6.16219C21.4887 6.50621 21.4065 6.84423 21.2586 7.15506L21.21 7.25705V7.31943C21.0975 7.54759 20.948 7.75581 20.7674 7.3554L20.7664 7.93645L14.6464 14.0564L14.5 14.2029V14.41V18.999C14.4996 19.0912 14.4738 19.1814 14.4253 19.2598C14.3769 19.3381 14.3078 19.4016 14.2257 19.4431C14.2255 19.4433 14.2252 19.4434 14.225 19.4435L10.2264 21.4428L10.2264 21.4428L10.222 21.445C10.1526 21.4806 10.0759 21.4994 9.99792 21.5C9.9048 21.5002 9.81349 21.4744 9.73425 21.4255C9.66253 21.3805 9.60341 21.3181 9.56243 21.2439C9.52132 21.1696 9.49983 21.086 9.5 21.001V21V14.41V14.2019L9.3524 14.0553L3.19265 7.93554C3.19263 7.93553 3.19262 7.93551 3.1926 7.9355C3.01197 7.75578 2.86248 7.54757 2.75 7.31943V7.26574L2.70833 7.17017C2.57081 6.85473 2.49988 6.51429 2.5 6.17017ZM9 14.41V21V14.41ZM20 6.5H20.5V6V5C20.5 4.60218 20.342 4.22065 20.0607 3.93934C19.7794 3.65804 19.3978 3.5 19 3.5H5C4.60217 3.5 4.22064 3.65804 3.93934 3.93934C3.65804 4.22064 3.5 4.60217 3.5 5V6V6.5H4H20Z" fill="black" stroke="#10181F"/>
+                </svg>
+              </button>
+
+              <!-- Open date rate  -->
+              <div class="relative hidden z-40 w-96 border" id="filterDateRate-id">
+                <div class="flex justify-end mb-2 -mt-6">
+                  <button class="h-6 w-6 bg-white" onclick="openDropdown(event,'filterDateRate-id')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                      <path d="M18 6L6 18M6 6L18 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
                 </div>
-                <!-- <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button> -->
+                <div class="w-full bg-white rounded-lg p-4">
+                  <h3 class="text-lg font-medium text-gray_2-900">Filter by</h3>
+                  
+                  <!-- badges -->
+                  <div class="flex flex-wrap flex-row gap-3 pt-3">
+                    <span class="bg-gray-100 text-gray-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                        <circle cx="4" cy="4" r="3" fill="#667085"/>
+                      </svg>
+                      Draft
+                    </span>
+                    <span class="bg-warning-50 text-warning-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                        <circle cx="4" cy="4" r="3" fill="#F79009"/>
+                      </svg>
+                      Waiting for Approval
+                    </span>
+                    <span class="bg-blue_2-50 text-blue_2-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                        <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
+                      </svg>
+                      Submitted to Finance
+                    </span>
+                    <span class="bg-error-50 text-error-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                        <circle cx="4" cy="4" r="3" fill="#F04438"/>
+                      </svg>
+                      Rejected
+                    </span>
+                  </div>
+                  <!-- badges -->
+
+                  <!-- invoice date -->
+                  <div class="pt-3">
+                    <h3 class="text-lg font-medium text-gray_2-900">Invoice Date</h3>
+                    <div class="flex flex-row flex-nowrap pt-3 gap-3">
+                      <div class="w-full mb-5">
+                        <!-- <div class="absolute inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none">
+                          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                          </svg>
+                        </div>
+                        <input datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pe-10 p-2.5" placeholder="Select date"> -->
+                        <label for="from" class="block mb-2 text-lg text-gray_2-900">From</label>
+                        <input type="date" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Select date">
+                      </div>
+                      <div class="w-full mb-5">
+                        <label for="to" class="block mb-2 text-lg text-gray_2-900">To</label>
+                        <input type="date" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Select date">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- invoice date -->
+
+                   <!-- rate -->
+                   <div class="pt-3">
+                    <div class="mb-5">
+                      <label for="from" class="block mb-2 text-lg text-gray_2-900">Rate</label>
+                      <input type="text" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  placeholder="Rp. 1.000.000 - Rp. 5.000.000">
+                    </div>
+                  </div>
+                  <!-- rate -->
+
+                </div>
               </div>
-              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
-                <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M20.9984 21.0004L16.6484 16.6504" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg> -->
+              <div class="hidden opacity-25 fixed inset-0 z-30 bg-black" id="filterDateRate-id-backdrop"></div>
+              <!-- Open date rate  -->
             </div>
+            <!--  Date rate filter  -->
+
+            <!--  Sortby filter  -->
+            <div class="relative flex items-center">
+              <button class="z-40 focus:outline-none focus-visible:ring" onclick="openDropdown(event,'filterSortby-id')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                  <path d="M6.35968 14.9375L6.64623 14.6411C6.69252 14.5954 6.7472 14.5592 6.80728 14.5343C6.86844 14.5089 6.93399 14.4959 7.00019 14.4959C7.06638 14.4959 7.13194 14.5089 7.19309 14.5343C7.25425 14.5596 7.30982 14.5967 7.35663 14.6436C7.40344 14.6904 7.44057 14.7459 7.46591 14.8071C7.49124 14.8683 7.50428 14.9338 7.50428 15C7.50428 15.0662 7.49124 15.1317 7.46591 15.1929C7.44057 15.2541 7.40344 15.3096 7.35663 15.3564L5.36115 17.3519C5.31431 17.396 5.2594 17.4306 5.19943 17.4538L5.18864 17.458L5.17806 17.4627C5.12203 17.4874 5.06144 17.5002 5.00019 17.5002C4.93893 17.5002 4.87834 17.4874 4.82231 17.4627L4.81173 17.458L4.80094 17.4538C4.74097 17.4306 4.68606 17.396 4.63922 17.3519L2.64374 15.3564C2.5492 15.2619 2.49609 15.1337 2.49609 15C2.49609 14.8663 2.5492 14.7381 2.64374 14.6436C2.73827 14.549 2.86649 14.4959 3.00019 14.4959C3.1327 14.4959 3.25984 14.5481 3.35413 14.6411L3.64069 14.9375L4.50019 15.8266V14.59V7C4.50019 6.86739 4.55286 6.74022 4.64663 6.64645C4.7404 6.55268 4.86758 6.5 5.00019 6.5C5.13279 6.5 5.25997 6.55268 5.35374 6.64645C5.44751 6.74022 5.50019 6.86739 5.50019 7V14.59V15.8266L6.35968 14.9375ZM21.0002 7.5H11.0002C10.8676 7.5 10.7404 7.44732 10.6466 7.35355C10.5529 7.25978 10.5002 7.13261 10.5002 7C10.5002 6.86739 10.5529 6.74022 10.6466 6.64645C10.7404 6.55268 10.8676 6.5 11.0002 6.5H21.0002C21.1328 6.5 21.26 6.55268 21.3537 6.64645C21.4475 6.74021 21.5002 6.86739 21.5002 7C21.5002 7.13261 21.4475 7.25979 21.3537 7.35355C21.26 7.44732 21.1328 7.5 21.0002 7.5ZM11.0002 11.5H21.0002C21.1328 11.5 21.26 11.5527 21.3537 11.6464C21.4475 11.7402 21.5002 11.8674 21.5002 12C21.5002 12.1326 21.4475 12.2598 21.3537 12.3536C21.26 12.4473 21.1328 12.5 21.0002 12.5H11.0002C10.8676 12.5 10.7404 12.4473 10.6466 12.3536C10.5529 12.2598 10.5002 12.1326 10.5002 12C10.5002 11.8674 10.5529 11.7402 10.6466 11.6464C10.7404 11.5527 10.8676 11.5 11.0002 11.5ZM11.0002 16.5H21.0002C21.1328 16.5 21.26 16.5527 21.3537 16.6464C21.4475 16.7402 21.5002 16.8674 21.5002 17C21.5002 17.1326 21.4475 17.2598 21.3537 17.3536C21.26 17.4473 21.1328 17.5 21.0002 17.5H11.0002C10.8676 17.5 10.7404 17.4473 10.6466 17.3536C10.5529 17.2598 10.5002 17.1326 10.5002 17C10.5002 16.8674 10.5529 16.7402 10.6466 16.6464C10.7404 16.5527 10.8676 16.5 11.0002 16.5Z" fill="black" stroke="#10181F"/>
+                </svg>
+              </button>
+
+              <!-- Open sortby  -->
+              <div class="relative hidden z-40 w-64" id="filterSortby-id">
+                <div class="flex justify-end mb-2 -mt-6">
+                  <button class="h-6 w-6 bg-white" onclick="openDropdown(event,'filterSortby-id')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                      <path d="M18 6L6 18M6 6L18 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="w-full bg-white rounded-lg p-4">
+                  <h3 class="text-lg font-medium text-gray_2-900">Sorty by</h3>
+                  <ul class="flex flex-col space-y-1 pt-3">
+                    <li>
+                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                        <label class="custom-label flex items-center gap-4 cursor-pointer">
+                          <div class="flex justify-center items-center flex-shrink-0 rounded-lg border border-gray-300 w-5 h-5">
+                            <input type="checkbox" class="hidden">
+                            <svg class="hidden w-4 h-4 pointer-events-none text-primary-500" viewbox="0 0 172 172">
+                              <g fill="none" stroke-width="none" stroke-miterlimit="10" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode:normal">
+                                <path d="M0 172V0h172v172z"/><path d="M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z" fill="currentColor" stroke-width="1"/>
+                              </g>
+                            </svg>
+                          </div>
+                          <span class="w-full text-sm font-medium text-secondary-900">Newest Document</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                        <label class="custom-label flex items-center gap-4 cursor-pointer">
+                          <div class="flex justify-center items-center flex-shrink-0 rounded-lg border border-gray-300 w-5 h-5">
+                            <input type="checkbox" class="hidden">
+                            <svg class="hidden w-4 h-4 pointer-events-none text-primary-500" viewbox="0 0 172 172">
+                              <g fill="none" stroke-width="none" stroke-miterlimit="10" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode:normal">
+                                <path d="M0 172V0h172v172z"/><path d="M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z" fill="currentColor" stroke-width="1"/>
+                              </g>
+                            </svg>
+                          </div>
+                          <span class="w-full text-sm font-medium text-secondary-900">Status Document</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                        <label class="custom-label flex items-center gap-4 cursor-pointer">
+                          <div class="flex justify-center items-center flex-shrink-0 rounded-lg border border-gray-300 w-5 h-5">
+                            <input type="checkbox" class="hidden">
+                            <svg class="hidden w-4 h-4 pointer-events-none text-primary-500" viewbox="0 0 172 172">
+                              <g fill="none" stroke-width="none" stroke-miterlimit="10" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode:normal">
+                                <path d="M0 172V0h172v172z"/><path d="M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z" fill="currentColor" stroke-width="1"/>
+                              </g>
+                            </svg>
+                          </div>
+                          <span class="w-full text-sm font-medium text-secondary-900">Lowest Document</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                        <label class="custom-label flex items-center gap-4 cursor-pointer">
+                          <div class="flex justify-center items-center flex-shrink-0 rounded-lg border border-gray-300 w-5 h-5">
+                            <input type="checkbox" class="hidden">
+                            <svg class="hidden w-4 h-4 pointer-events-none text-primary-500" viewbox="0 0 172 172">
+                              <g fill="none" stroke-width="none" stroke-miterlimit="10" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode:normal">
+                                <path d="M0 172V0h172v172z"/><path d="M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z" fill="currentColor" stroke-width="1"/>
+                              </g>
+                            </svg>
+                          </div>
+                          <span class="w-full text-sm font-medium text-secondary-900">Highest Document</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="hidden opacity-25 fixed inset-0 z-30 bg-black" id="filterSortby-id-backdrop"></div>
+              <!-- Open sortby  -->
+            </div>
+            <!--  Sortby filter  -->
+
+            <!-- Search filter  -->
+            <div class="flex items-center">
+              <div class="relative hidden" id="searchCon-id">
+                <input type="search" class="block w-full px-2 py-1 pe-10 text-sm border border-primary-500 rounded w-[150px]; bg-white focus:outline-none focus-visible:ring" placeholder="Search">
+                <button class="absolute inset-y-0 end-0 flex items-center pe-2 cursor-pointer" id="searchClose-id" onclick="toggleSearch()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.9984 21.0004L16.6484 16.6504" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <button id="searchIcon-id" onclick="toggleSearch()" class="focus:outline-none focus-visible:ring">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                  <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20.9984 21.0004L16.6484 16.6504" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <!-- Search filter  -->
+
           </div>
         </div>
         <!-- Filter data  -->
@@ -526,16 +700,32 @@
       </div>
     </section>
     <!-- Filter table -->
+    <!-- <div class="relative max-w-sm">
+      <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+        </svg>
+      </div>
+      <input datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+    </div> -->
   </main>
 
-  <!-- <main class="w-full">
-  </main> -->
 </body>
 <!-- Start script -->
 <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/datepicker.min.js"></script>
 <script src="/dist/js/script.js"></script>
 
 <script>
+
+  // Toggle search 
+  function toggleSearch() {
+    let searchIcon = document.getElementById('searchIcon-id');
+    let searchContainer= document.getElementById('searchCon-id');
+
+    searchIcon.classList.toggle('hidden');
+    searchContainer.classList.toggle('hidden');
+  }
 
   // Dropdown function 
   function openDropdown(event,dropdownID){
@@ -546,7 +736,7 @@
     var popper = Popper.createPopper(element, document.getElementById(dropdownID), {
       placement: 'bottom-start'
     });
-    element.classList.toggle("z-50");
+    // element.classList.toggle("z-50");
     if(document.getElementById(dropdownID + "-backdrop")) {
       document.getElementById(dropdownID + "-backdrop").classList.toggle("hidden");
       document.getElementById(dropdownID + "-backdrop").classList.toggle("flex");
@@ -559,6 +749,7 @@
       arrowIcon.classList.toggle('rotate-180'); // Assuming you have a tailwind class for rotating the icon
     }
   }
+
 </script>
 <!-- End script -->
 </html>
