@@ -69,6 +69,7 @@ module.exports = {
         700: '#175CD3'
       },
       red: {
+        8: '#E12121',
         50: '#FFB6BB',
         90: '#CD1924',
         100: '#F48F94',
@@ -136,6 +137,9 @@ module.exports = {
         120: '#1A202C',
         130: '#1A1D22',
       },
+      grey_natural: {
+        1300: '#0A090B'
+      }
     }
   },
   plugins: [],

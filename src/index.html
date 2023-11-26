@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
-<body class="font-roboto">
+<body class="font-roboto overflow-hidden">
 
   <!-- NAVBAR  -->
   <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-secondary-100">
@@ -28,29 +28,52 @@
           <a href="#" class="pr-2 md:pr-8">
             <img src="/dist/images/trakindoLogo.png" alt="Trakindo Logo">
           </a>
-          <button data-collapse-toggle="navbar-default" type="button" class="flex flex-col items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-300" aria-controls="navbar-default" aria-expanded="false" onclick="openDropdown(event,'dropdownMenu-id')">
+          <button data-collapse-toggle="navbar-default" type="button" class="flex flex-col items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100" aria-controls="navbar-default" aria-expanded="false" onclick="openDropdown(event, 'dropdownMenu-id', 'bottom-end')">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
             </svg>
           </button>
-          <div class="relative hidden w-full md:block md:w-auto" id="dropdownMenu-id">
-            <ul class="flex flex-col md:flex-row p-4 md:p-0 mt-2 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+
+          <!-- Dekstop menu  -->
+          <div class="relative hidden w-full md:block md:w-auto">
+            <ul class="flex flex-col text-base font-medium md:flex-row p-4 md:p-0 mt-2 border border-gray-100 rounded-lg bg-gray-50 md:flex md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
               <li>
-                <a href="#" class="block py-2 px-3 text-white border-b bg-blue-700 md:bg-transparent md:text-secondary-900 md:px-0 md:py-2" aria-current="page">Dashboard</a>
+                <a href="#" class="block py-2 px-3 border-b text-secondary-900" aria-current="page">Dashboard</a>
               </li>
               <li>
                 <a href="#" class="block py-2 px-3 text-secondary-500 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-900 md:hover:border-b md:px-0 md:py-2">Invoice List</a>
               </li>
             </ul>
           </div>
+          <!-- Dekstop menu  -->
+
+          <!-- Mobile menu  -->
+          <div class="relative hidden w-full px-3 md:hidden " id="dropdownMenu-id">
+            <ul class="flex flex-col text-base font-medium p-4 md:p-0 mt-2 border border-secondary-100 rounded-lg bg-gray-50 rtl:space-x-reverse">
+              <li>
+                <a href="#" class="block bg-transparent text-secondary-900 p-2" aria-current="page">Dashboard</a>
+              </li>
+              <li>
+                <a href="#" class="block bg-transparent text-secondary-500 p-2">Invoice List</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Mobile menu  -->
         </div>
       </div>
 
       <!-- User  -->
       <div class="flex justify-end relative w-64 md:w-auto">
         <button class="bg-white z-40 flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg" onclick="openDropdown(event,'dropdownUser-id')">
-          <img src="/dist/images/avatar-2.jpeg" alt="avatar" class="w-8 h-8 object-cover object-top rounded-full">
+          <div class="relative">
+            <img src="/dist/images/avatar-2.jpeg" alt="avatar" class="w-8 h-8 object-cover object-top rounded-full">
+            <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-white p-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewbox="0 0 8 9" fill="none">
+                <path d="M3.46897 1.00801C3.50796 0.868947 3.46897 0.719663 3.36694 0.61744C3.26491 0.515216 3.11571 0.475931 2.97657 0.514658C2.29199 0.7052 1.66928 1.07178 1.17047 1.57788C0.671652 2.08398 0.314141 2.71193 0.133543 3.3992C-0.0470544 4.08647 -0.0444353 4.80906 0.141139 5.495C0.326714 6.18094 0.688768 6.80629 1.19124 7.30876C1.69371 7.81123 2.31906 8.17329 3.005 8.35886C3.69094 8.54443 4.41353 8.54705 5.1008 8.36646C5.78807 8.18586 6.41602 7.82835 6.92212 7.32953C7.42822 6.83072 7.7948 6.20801 7.98534 5.52343C8.02407 5.38429 7.98478 5.23509 7.88256 5.13306C7.78034 5.03103 7.63105 4.99204 7.49199 5.03103C6.93428 5.18742 6.345 5.19255 5.78465 5.04588C5.22431 4.89921 4.7131 4.60604 4.30353 4.19647C3.89396 3.7869 3.60079 3.27569 3.45412 2.71535C3.30745 2.155 3.31258 1.56572 3.46897 1.00801Z" fill="#F26D0F"/>
+              </svg>
+            </div>
+          </div>
           <div class="hidden flex-col items-start md:flex">
             <span class="block text-sm font-semibold text-black">SIGAP</span>
             <span class="block text-xs text-cloudy-70">Vendor Warehouse</span>
@@ -76,11 +99,11 @@
             <li>
               <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black">
                 <div class="flex justify-center items-center w-8 h-8 bg-cloudy-20 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
-                    <path d="M13.8067 4.69305C14.0667 4.43305 14.0667 3.99971 13.8067 3.75305L12.2467 2.19305C12 1.93305 11.5667 1.93305 11.3067 2.19305L10.08 3.41305L12.58 5.91305M2 11.4997V13.9997H4.5L11.8733 6.61971L9.37333 4.11971L2 11.4997Z" fill="#1A1D22"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+                    <path d="M16.6667 10.0001C16.6667 10.2211 16.579 10.4331 16.4227 10.5893C16.2664 10.7456 16.0544 10.8334 15.8334 10.8334H9.50841L11.4251 12.7417C11.5032 12.8192 11.5652 12.9114 11.6075 13.0129C11.6498 13.1145 11.6716 13.2234 11.6716 13.3334C11.6716 13.4434 11.6498 13.5523 11.6075 13.6539C11.5652 13.7554 11.5032 13.8476 11.4251 13.9251C11.3476 14.0032 11.2554 14.0652 11.1539 14.1075C11.0523 14.1498 10.9434 14.1716 10.8334 14.1716C10.7234 14.1716 10.6145 14.1498 10.5129 14.1075C10.4114 14.0652 10.3192 14.0032 10.2417 13.9251L6.90841 10.5917C6.83255 10.5125 6.77308 10.419 6.73341 10.3167C6.65007 10.1139 6.65007 9.8863 6.73341 9.68341C6.77308 9.58112 6.83255 9.48767 6.90841 9.40841L10.2417 6.07508C10.3194 5.99738 10.4117 5.93575 10.5132 5.8937C10.6147 5.85165 10.7235 5.83 10.8334 5.83C10.9433 5.83 11.0521 5.85165 11.1536 5.8937C11.2551 5.93575 11.3474 5.99738 11.4251 6.07508C11.5028 6.15278 11.5644 6.24502 11.6065 6.34654C11.6485 6.44806 11.6702 6.55687 11.6702 6.66675C11.6702 6.77663 11.6485 6.88544 11.6065 6.98696C11.5644 7.08847 11.5028 7.18072 11.4251 7.25841L9.50841 9.16675H15.8334C16.0544 9.16675 16.2664 9.25455 16.4227 9.41083C16.579 9.56711 16.6667 9.77907 16.6667 10.0001ZM5.83342 1.66675H14.1667C14.8298 1.66675 15.4657 1.93014 15.9345 2.39898C16.4034 2.86782 16.6667 3.50371 16.6667 4.16675V6.66675C16.6667 6.88776 16.579 7.09972 16.4227 7.256C16.2664 7.41228 16.0544 7.50008 15.8334 7.50008C15.6124 7.50008 15.4004 7.41228 15.2442 7.256C15.0879 7.09972 15.0001 6.88776 15.0001 6.66675V4.16675C15.0001 3.94573 14.9123 3.73377 14.756 3.57749C14.5997 3.42121 14.3878 3.33341 14.1667 3.33341H5.83342C5.6124 3.33341 5.40044 3.42121 5.24416 3.57749C5.08788 3.73377 5.00008 3.94573 5.00008 4.16675V15.8334C5.00008 16.0544 5.08788 16.2664 5.24416 16.4227C5.40044 16.579 5.6124 16.6667 5.83342 16.6667H14.1667C14.3878 16.6667 14.5997 16.579 14.756 16.4227C14.9123 16.2664 15.0001 16.0544 15.0001 15.8334V13.3334C15.0001 13.1124 15.0879 12.9004 15.2442 12.7442C15.4004 12.5879 15.6124 12.5001 15.8334 12.5001C16.0544 12.5001 16.2664 12.5879 16.4227 12.7442C16.579 12.9004 16.6667 13.1124 16.6667 13.3334V15.8334C16.6667 16.4965 16.4034 17.1323 15.9345 17.6012C15.4657 18.07 14.8298 18.3334 14.1667 18.3334H5.83342C5.17037 18.3334 4.53449 18.07 4.06565 17.6012C3.59681 17.1323 3.33342 16.4965 3.33342 15.8334V4.16675C3.33342 3.50371 3.59681 2.86782 4.06565 2.39898C4.53449 1.93014 5.17037 1.66675 5.83342 1.66675Z" fill="#2C313A"/>
                   </svg>
                 </div>
-                <span>Edit profile</span>
+                <span>Log off</span>
               </a>
             </li>
           </ul>
@@ -94,7 +117,7 @@
   </nav>
   <!-- NAVBAR  -->
 
-  <main class="pt-[5.25rem]">
+  <main class="py-[5.25rem]">
     <!-- Card status -->
     <section class="bg-white w-full border-b border-secondary-100 py-[19px]">
       <div class="max-w-screen-2xl mx-auto px-3 py-0 md:px-7">
@@ -255,19 +278,19 @@
               Download to Excel
             </button>
           </div>
-          <div class="flex justify-between items-center space-x-4">
+          <div class="flex justify-end items-center w-full space-x-4 md:justify-center md:w-auto">
             <!--  Date rate filter  -->
             <div class="relative flex items-center">
-              <button class="z-40 focus:outline-none focus-visible:ring" onclick="openDropdown(event,'filterDateRate-id')">
+              <button class="focus:outline-none focus-visible:ring" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
                   <path d="M11 18.821V14C11.0008 13.8684 10.9755 13.7379 10.9258 13.6161C10.876 13.4943 10.8027 13.3834 10.71 13.29L10.3568 13.6439L10.3558 13.6429M11 18.821L10.3558 13.6429M11 18.821L10.7764 18.9328L11 19.38H11.5V19.13L13 18.38L11 18.821ZM10.3558 13.6429C10.3555 13.6426 10.3553 13.6424 10.355 13.6421L5.05678 8.35389L4.20128 7.5H5.41H18.59H19.7987L18.9432 8.35389L13.645 13.6421C13.6447 13.6424 13.6445 13.6426 13.6442 13.6429C13.5983 13.6894 13.5619 13.7446 13.5371 13.8052C13.5122 13.8661 13.4996 13.9313 13.5 13.9971L13.5 14L13.5 18.38V18.689L13.2236 18.8272L11.2236 19.8272L10.5 20.189V19.38V14V13.9971H10.5C10.5004 13.9313 10.4878 13.8661 10.4629 13.8052C10.4381 13.7446 10.4017 13.6894 10.3558 13.6429ZM2.5 6.17017V6.17V5C2.5 4.33696 2.76339 3.70107 3.23223 3.23223C3.70107 2.76339 4.33696 2.5 5 2.5H19C19.663 2.5 20.2989 2.76339 20.7678 3.23223C21.2366 3.70107 21.5 4.33696 21.5 5V6.16219C21.4887 6.50621 21.4065 6.84423 21.2586 7.15506L21.21 7.25705V7.31943C21.0975 7.54759 20.948 7.75581 20.7674 7.3554L20.7664 7.93645L14.6464 14.0564L14.5 14.2029V14.41V18.999C14.4996 19.0912 14.4738 19.1814 14.4253 19.2598C14.3769 19.3381 14.3078 19.4016 14.2257 19.4431C14.2255 19.4433 14.2252 19.4434 14.225 19.4435L10.2264 21.4428L10.2264 21.4428L10.222 21.445C10.1526 21.4806 10.0759 21.4994 9.99792 21.5C9.9048 21.5002 9.81349 21.4744 9.73425 21.4255C9.66253 21.3805 9.60341 21.3181 9.56243 21.2439C9.52132 21.1696 9.49983 21.086 9.5 21.001V21V14.41V14.2019L9.3524 14.0553L3.19265 7.93554C3.19263 7.93553 3.19262 7.93551 3.1926 7.9355C3.01197 7.75578 2.86248 7.54757 2.75 7.31943V7.26574L2.70833 7.17017C2.57081 6.85473 2.49988 6.51429 2.5 6.17017ZM9 14.41V21V14.41ZM20 6.5H20.5V6V5C20.5 4.60218 20.342 4.22065 20.0607 3.93934C19.7794 3.65804 19.3978 3.5 19 3.5H5C4.60217 3.5 4.22064 3.65804 3.93934 3.93934C3.65804 4.22064 3.5 4.60217 3.5 5V6V6.5H4H20Z" fill="black" stroke="#10181F"/>
                 </svg>
               </button>
 
               <!-- Open date rate  -->
-              <div class="relative hidden z-40 w-96 border" id="filterDateRate-id">
+              <div class="relative hidden z-40 w-[23rem] md:w-[21rem]" id="filterDateRate-id">
                 <div class="flex justify-end mb-2 -mt-6">
-                  <button class="h-6 w-6 bg-white" onclick="openDropdown(event,'filterDateRate-id')">
+                  <button class="h-6 w-6 bg-white" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
                       <path d="M18 6L6 18M6 6L18 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -309,32 +332,38 @@
                   <div class="pt-3">
                     <h3 class="text-lg font-medium text-gray_2-900">Invoice Date</h3>
                     <div class="flex flex-row flex-nowrap pt-3 gap-3">
-                      <div class="w-full mb-5">
+                      <div class="w-full">
                         <!-- <div class="absolute inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none">
-                          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 20 20">
+                          <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 20 20">
                             <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                           </svg>
                         </div>
                         <input datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pe-10 p-2.5" placeholder="Select date"> -->
                         <label for="from" class="block mb-2 text-lg text-gray_2-900">From</label>
-                        <input type="date" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Select date">
+                        <input type="date" name="from" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Select date">
                       </div>
-                      <div class="w-full mb-5">
+                      <div class="w-full">
                         <label for="to" class="block mb-2 text-lg text-gray_2-900">To</label>
-                        <input type="date" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Select date">
+                        <input type="date" name="to" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Select date">
                       </div>
                     </div>
                   </div>
                   <!-- invoice date -->
 
-                   <!-- rate -->
-                   <div class="pt-3">
-                    <div class="mb-5">
-                      <label for="from" class="block mb-2 text-lg text-gray_2-900">Rate</label>
-                      <input type="text" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  placeholder="Rp. 1.000.000 - Rp. 5.000.000">
+                  <!-- rate -->
+                   <div class="pt-3 pb-3">
+                    <div>
+                      <label for="rate" class="block mb-2 text-lg text-gray_2-900">Rate</label>
+                      <input type="text" name="rate" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  placeholder="Rp. 1.000.000 - Rp. 5.000.000">
                     </div>
                   </div>
                   <!-- rate -->
+
+                  <button type="button" class="flex item-center justify-center w-full text-cloudy-120 bg-primary-500 hover:bg-primary-700 rounded-lg text-sm font-bold px-5 py-2.5 focus:outline-none focus-visible:ring"
+                    onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')"
+                  >
+                    Search
+                  </button>
 
                 </div>
               </div>
@@ -345,7 +374,7 @@
 
             <!--  Sortby filter  -->
             <div class="relative flex items-center">
-              <button class="z-40 focus:outline-none focus-visible:ring" onclick="openDropdown(event,'filterSortby-id')">
+              <button class="focus:outline-none focus-visible:ring" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
                   <path d="M6.35968 14.9375L6.64623 14.6411C6.69252 14.5954 6.7472 14.5592 6.80728 14.5343C6.86844 14.5089 6.93399 14.4959 7.00019 14.4959C7.06638 14.4959 7.13194 14.5089 7.19309 14.5343C7.25425 14.5596 7.30982 14.5967 7.35663 14.6436C7.40344 14.6904 7.44057 14.7459 7.46591 14.8071C7.49124 14.8683 7.50428 14.9338 7.50428 15C7.50428 15.0662 7.49124 15.1317 7.46591 15.1929C7.44057 15.2541 7.40344 15.3096 7.35663 15.3564L5.36115 17.3519C5.31431 17.396 5.2594 17.4306 5.19943 17.4538L5.18864 17.458L5.17806 17.4627C5.12203 17.4874 5.06144 17.5002 5.00019 17.5002C4.93893 17.5002 4.87834 17.4874 4.82231 17.4627L4.81173 17.458L4.80094 17.4538C4.74097 17.4306 4.68606 17.396 4.63922 17.3519L2.64374 15.3564C2.5492 15.2619 2.49609 15.1337 2.49609 15C2.49609 14.8663 2.5492 14.7381 2.64374 14.6436C2.73827 14.549 2.86649 14.4959 3.00019 14.4959C3.1327 14.4959 3.25984 14.5481 3.35413 14.6411L3.64069 14.9375L4.50019 15.8266V14.59V7C4.50019 6.86739 4.55286 6.74022 4.64663 6.64645C4.7404 6.55268 4.86758 6.5 5.00019 6.5C5.13279 6.5 5.25997 6.55268 5.35374 6.64645C5.44751 6.74022 5.50019 6.86739 5.50019 7V14.59V15.8266L6.35968 14.9375ZM21.0002 7.5H11.0002C10.8676 7.5 10.7404 7.44732 10.6466 7.35355C10.5529 7.25978 10.5002 7.13261 10.5002 7C10.5002 6.86739 10.5529 6.74022 10.6466 6.64645C10.7404 6.55268 10.8676 6.5 11.0002 6.5H21.0002C21.1328 6.5 21.26 6.55268 21.3537 6.64645C21.4475 6.74021 21.5002 6.86739 21.5002 7C21.5002 7.13261 21.4475 7.25979 21.3537 7.35355C21.26 7.44732 21.1328 7.5 21.0002 7.5ZM11.0002 11.5H21.0002C21.1328 11.5 21.26 11.5527 21.3537 11.6464C21.4475 11.7402 21.5002 11.8674 21.5002 12C21.5002 12.1326 21.4475 12.2598 21.3537 12.3536C21.26 12.4473 21.1328 12.5 21.0002 12.5H11.0002C10.8676 12.5 10.7404 12.4473 10.6466 12.3536C10.5529 12.2598 10.5002 12.1326 10.5002 12C10.5002 11.8674 10.5529 11.7402 10.6466 11.6464C10.7404 11.5527 10.8676 11.5 11.0002 11.5ZM11.0002 16.5H21.0002C21.1328 16.5 21.26 16.5527 21.3537 16.6464C21.4475 16.7402 21.5002 16.8674 21.5002 17C21.5002 17.1326 21.4475 17.2598 21.3537 17.3536C21.26 17.4473 21.1328 17.5 21.0002 17.5H11.0002C10.8676 17.5 10.7404 17.4473 10.6466 17.3536C10.5529 17.2598 10.5002 17.1326 10.5002 17C10.5002 16.8674 10.5529 16.7402 10.6466 16.6464C10.7404 16.5527 10.8676 16.5 11.0002 16.5Z" fill="black" stroke="#10181F"/>
                 </svg>
@@ -354,7 +383,7 @@
               <!-- Open sortby  -->
               <div class="relative hidden z-40 w-64" id="filterSortby-id">
                 <div class="flex justify-end mb-2 -mt-6">
-                  <button class="h-6 w-6 bg-white" onclick="openDropdown(event,'filterSortby-id')">
+                  <button class="h-6 w-6 bg-white" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
                       <path d="M18 6L6 18M6 6L18 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -362,7 +391,7 @@
                 </div>
                 <div class="w-full bg-white rounded-lg p-4">
                   <h3 class="text-lg font-medium text-gray_2-900">Sorty by</h3>
-                  <ul class="flex flex-col space-y-1 pt-3">
+                  <ul class="flex flex-col space-y-1 pt-3 pb-3">
                     <li>
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
                         <label class="custom-label flex items-center gap-4 cursor-pointer">
@@ -424,6 +453,11 @@
                       </div>
                     </li>
                   </ul>
+                  <button type="button" class="flex item-center justify-center w-full text-cloudy-120 bg-primary-500 hover:bg-primary-700 rounded-lg text-sm font-bold px-5 py-2.5 focus:outline-none focus-visible:ring"
+                    onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')"
+                  >
+                    Search
+                  </button>
                 </div>
               </div>
               <div class="hidden opacity-25 fixed inset-0 z-30 bg-black" id="filterSortby-id-backdrop"></div>
@@ -434,7 +468,7 @@
             <!-- Search filter  -->
             <div class="flex items-center">
               <div class="relative hidden" id="searchCon-id">
-                <input type="search" class="block w-full px-2 py-1 pe-10 text-sm border border-primary-500 rounded w-[150px]; bg-white focus:outline-none focus-visible:ring" placeholder="Search">
+                <input type="search" class="block w-full px-2 py-1 pe-10 text-sm border border-primary-500 rounded w-[150px]; bg-white focus:outline-none focus-visible:ring-blue" placeholder="Search">
                 <button class="absolute inset-y-0 end-0 flex items-center pe-2 cursor-pointer" id="searchClose-id" onclick="toggleSearch()">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
                     <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -669,25 +703,25 @@
               <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 text-blue-600 border text-white border-gray-300 bg-primary-500 hover:bg-primary-700 hover:text-white">1</a>
             </li>
             <li>
-              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:bg-secondary-100">2</a>
+              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100">2</a>
             </li>
             <li>
-              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:bg-secondary-100">3</a>
+              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100">3</a>
             </li>
             <li>
               <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 cursor-default">...</a>
             </li>
             <li>
-              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:bg-secondary-100">8</a>
+              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100">8</a>
             </li>
             <li>
-              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:bg-secondary-100">9</a>
+              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100">9</a>
             </li>
             <li>
-              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:bg-secondary-100">10</a>
+              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100">10</a>
             </li>
             <li>
-              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:bg-secondary-100">
+              <a href="#" class="flex items-center justify-center px-3 h-8 md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="rotate-180">
                   <path d="M12.4695 4.16669L6.66684 9.96933L12.4695 15.772" stroke="#14142B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -700,23 +734,376 @@
       </div>
     </section>
     <!-- Filter table -->
-    <!-- <div class="relative max-w-sm">
-      <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+
+    <!-- Document Form -->
+    <div id="drawer-document" class="fixed top-0 right-0 z-40 h-screen  overflow-y-auto transition-transform transform-none bg-white w-3/5 border" tabindex="-1" aria-labelledby="drawer-right-label">
+      <div class="p-6 pb-0">
+
+      <!-- close  -->
+      <div class="flex justify-start">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+          <path d="M2 18L18 2M2 2L18 18" stroke="#444950" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <input datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
-    </div> -->
+      <!-- close  -->
+
+      <!-- header form  -->
+      <div class="flex items-center justify-between py-4">
+        <h3 class="text-2xl font-medium text-secondary-900">
+          New Invoice Submission Form
+        </h3>
+        <div class="flex gap-3">
+          <button type="button" class="flex items-center text-cloudy-120 bg-white border border-[#1A202C] hover:bg-gray-100 rounded-lg text-sm font-medium px-5 py-2.5 focus:outline-none focus-visible:ring">
+            Save as Draft
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="ms-2">
+              <path d="M17 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V7L17 3ZM12 19C10.34 19 9 17.66 9 16C9 14.34 10.34 13 12 13C13.66 13 15 14.34 15 16C15 17.66 13.66 19 12 19ZM15 9H5V5H15V9Z" fill="#1A202C"/>
+            </svg>
+          </button>
+          <button type="button" class="inline-block text-cloudy-120 bg-primary-500 hover:bg-primary-700 rounded-lg text-sm font-bold px-5 py-2.5 focus:outline-none focus-visible:ring">
+            Search
+          </button>
+        </div>
+      </div>
+      <!-- header form  -->
+
+      <!-- table form -->
+      <div class="relative overflow-x-auto rounded-lg mb-5">
+        <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0 mb-7">
+          <tr>
+            <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12 rounded-tl-lg">
+              Document Number
+            </th>
+            <td class="px-6 py-4 text-sm font-medium text-cloudy-90 border border-[#E4E7EC] bg-cloudy-20 w-8/12 rounded-tr-lg">
+              <div class="flex items-center justify-between">
+                DOC-004/010456
+                <span class="block cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                    <g clip-path="url(#clip0_4991_122013)">
+                      <path d="M13.3333 6H7.33333C6.59695 6 6 6.59695 6 7.33333V13.3333C6 14.0697 6.59695 14.6667 7.33333 14.6667H13.3333C14.0697 14.6667 14.6667 14.0697 14.6667 13.3333V7.33333C14.6667 6.59695 14.0697 6 13.3333 6Z" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M3.3335 10H2.66683C2.31321 10 1.97407 9.85956 1.72402 9.60952C1.47397 9.35947 1.3335 9.02033 1.3335 8.66671V2.66671C1.3335 2.31309 1.47397 1.97395 1.72402 1.7239C1.97407 1.47385 2.31321 1.33337 2.66683 1.33337H8.66683C9.02045 1.33337 9.35959 1.47385 9.60964 1.7239C9.85969 1.97395 10.0002 2.31309 10.0002 2.66671V3.33337" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                      <clippath>
+                        <rect width="16" height="16" fill="white"/>
+                      </clippath>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="px-6 py-4 text-sm font-medium text-gray_2-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+              Company Name 
+            </th>
+            <td class="px-6 py-4 text-sm font-medium text-cloudy-90 border border-[#E4E7EC] bg-cloudy-20 w-8/12">
+              PT. Maju Jaya Abadi
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="px-6 py-4 text-sm font-medium  text-gray_2-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+              Transaction Type
+            </th>
+            <td class="px-6 py-4 text-sm font-medium text-cloudy-90 border border-[#E4E7EC] bg-cloudy-20 w-8/12">
+              Service
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="px-6 py-4 text-sm font-medium  text-gray_2-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+              Invoice Number
+            </th>
+            <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12">
+              <div class="flex items-center justify-between">
+                VI 231011 - 01/R01
+                <span class="block cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                    <g clip-path="url(#clip0_4991_122013)">
+                      <path d="M13.3333 6H7.33333C6.59695 6 6 6.59695 6 7.33333V13.3333C6 14.0697 6.59695 14.6667 7.33333 14.6667H13.3333C14.0697 14.6667 14.6667 14.0697 14.6667 13.3333V7.33333C14.6667 6.59695 14.0697 6 13.3333 6Z" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M3.3335 10H2.66683C2.31321 10 1.97407 9.85956 1.72402 9.60952C1.47397 9.35947 1.3335 9.02033 1.3335 8.66671V2.66671C1.3335 2.31309 1.47397 1.97395 1.72402 1.7239C1.97407 1.47385 2.31321 1.33337 2.66683 1.33337H8.66683C9.02045 1.33337 9.35959 1.47385 9.60964 1.7239C9.85969 1.97395 10.0002 2.31309 10.0002 2.66671V3.33337" stroke="#10181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                      <clippath>
+                        <rect width="16" height="16" fill="white"/>
+                      </clippath>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="px-6 py-4 text-sm font-medium  text-gray_2-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+              Invoice Date
+            </th>
+            <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12">
+              <div class="flex items-center justify-between">
+                24/04/2023
+                <span class="block cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                    <path d="M9 11H7V13H9V11ZM13 11H11V13H13V11ZM17 11H15V13H17V11ZM19 4H18V2H16V4H8V2H6V4H5C3.89 4 3.01 4.9 3.01 6L3 20C3 21.1 3.89 22 5 22H19C20.1 22 21 21.1 21 20V6C21 4.9 20.1 4 19 4ZM19 20H5V9H19V20Z" fill="#10181F"/>
+                  </svg>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="px-6 py-4 text-sm font-medium  text-gray_2-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12 rounded-bl-lg">
+              Contract No
+            </th>
+            <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12 rounded-br-lg">
+              SN-004
+            </td>
+          </tr>
+        </table>
+
+        <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
+          <thead>
+            <tr>
+              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12 rounded-tl-lg">
+                Description
+              </th>
+              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+                QTY
+              </th>
+              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+                Rate
+              </th>
+              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12 rounded-tr-lg">
+                Amount
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12">
+                TEST ABC
+              </td>
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12 whitespace-nowrap">
+                20
+              </td>
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-[#E4E7EC] bg-white w-8/12">
+                Rp1.500.000
+              </td>
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-[#E4E7EC] bg-white w-8/12 whitespace-nowrap">
+                Rp. 30.000.000
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12">
+                &nbsp;
+              </td>
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12">
+                &nbsp;
+              </td>
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12">
+                &nbsp;
+              </td>
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12">
+                &nbsp;
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-[#E4E7EC] bg-cloudy-30 w-4/12 rounded-bl-lg" colspan="3">
+              Total
+            </th>
+            <td class="px-6 py-2 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12 rounded-br-lg whitespace-nowrap">
+              Rp. 30.000.000
+            </td>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="flex justify-center">
+        <button type="button" class="flex items-center text-cloudy-120 bg-white border border-[#1A202C] hover:bg-gray-100 rounded-lg text-base font-bold px-5 py-2.5 focus:outline-none focus-visible:ring">
+          Add new row
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewbox="0 0 25 24" fill="none" class="ms-2">
+            <path d="M12.5 2C6.98 2 2.5 6.48 2.5 12C2.5 17.52 6.98 22 12.5 22C18.02 22 22.5 17.52 22.5 12C22.5 6.48 18.02 2 12.5 2ZM17.5 13H13.5V17H11.5V13H7.5V11H11.5V7H13.5V11H17.5V13Z" fill="#1A202C"/>
+          </svg>
+        </button>
+      </div>
+      <!-- table form -->
+      
+    </div>
+
+    <hr class="border-[2px] my-8 border-secondary-100">
+
+    <div class="p-6 pt-0">
+      <div class="relative">
+        <!-- heading  -->
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-medium text-secondary-900">Supporting Files</h3>
+          <span class="block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <mask id="mask0_4991_122071" style="mask-type:luminance" maskunits="userSpaceOnUse" x="4" y="7" width="16" height="11">
+                <path d="M18 9.5L12 15.5L6 9.5L18 9.5Z" fill="white" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+              </mask>
+              <g mask="url(#mask0_4991_122071)">
+                <path d="M0 0L24 0L24 24L0 24L0 0Z" fill="#383838"/>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <!-- heading  -->
+
+        <div class="py-5">
+          <div class="mb-8">
+            <label class="block text-base font-medium text-grey_natural-1300 mb-2">Invoice & Faktur Pajak<span class="text-red-8">*</span></label>
+            <div class="relative overflow-x-auto rounded-lg mb-2">
+              <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
+                <thead>
+                  <tr>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12 rounded-tl-lg">
+                      No
+                    </th>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+                      Filename
+                    </th>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+                      Upload Time
+                    </th>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12 rounded-tr-lg">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12 rounded-bl-lg">
+                      1
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12 whitespace-nowrap">
+                      Invoice For Transaction ABXY 2023 Update
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-[#E4E7EC] bg-white w-8/12 whitespace-nowrap">
+                      24/04/2023 - 15:00:00
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-[#E4E7EC] bg-white w-8/12 rounded-br-lg whitespace-nowrap">
+                      <div class="flex items-center justify-center gap-2">
+                        <div class="flex items-center justify-center w-6 h-6 rounded bg-blue-90 cursor-pointer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                            <path d="M8.0013 3C4.66797 3 1.8213 5.07333 0.667969 8C1.8213 10.9267 4.66797 13 8.0013 13C11.3346 13 14.1813 10.9267 15.3346 8C14.1813 5.07333 11.3346 3 8.0013 3ZM8.0013 11.3333C6.1613 11.3333 4.66797 9.84 4.66797 8C4.66797 6.16 6.1613 4.66667 8.0013 4.66667C9.8413 4.66667 11.3346 6.16 11.3346 8C11.3346 9.84 9.8413 11.3333 8.0013 11.3333ZM8.0013 6C6.89464 6 6.0013 6.89333 6.0013 8C6.0013 9.10667 6.89464 10 8.0013 10C9.10797 10 10.0013 9.10667 10.0013 8C10.0013 6.89333 9.10797 6 8.0013 6Z" fill="#F6F8FA"/>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-center w-6 h-6 rounded bg-red-90 cursor-pointer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                            <path d="M4.66675 14C4.30008 14 3.98608 13.8693 3.72475 13.608C3.46341 13.3467 3.33297 13.0329 3.33341 12.6667V4H2.66675V2.66667H6.00008V2H10.0001V2.66667H13.3334V4H12.6667V12.6667C12.6667 13.0333 12.5361 13.3473 12.2747 13.6087C12.0134 13.87 11.6996 14.0004 11.3334 14H4.66675ZM6.00008 11.3333H7.33342V5.33333H6.00008V11.3333ZM8.66675 11.3333H10.0001V5.33333H8.66675V11.3333Z" fill="white"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="flex items-center justify-center w-full">
+              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 20 16">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                      </svg>
+                      <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                      <p class="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                  </div>
+                  <input id="dropzone-file" type="file" class="hidden" />
+              </label>
+            </div> 
+          </div>
+
+          <div class="mb-8">
+            <label class="block text-base font-medium text-grey_natural-1300 mb-2">BAST</label>
+            <div class="relative overflow-x-auto rounded-lg mb-2">
+              <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
+                <thead>
+                  <tr>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12 rounded-tl-lg">
+                      No
+                    </th>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+                      Filename
+                    </th>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12">
+                      Upload Time
+                    </th>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-cloudy-30 w-4/12 rounded-tr-lg">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12 rounded-bl-lg">
+                      1
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-[#E4E7EC] bg-white w-8/12 whitespace-nowrap">
+                      Invoice For Transaction ABXY 2023 Update
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-[#E4E7EC] bg-white w-8/12 whitespace-nowrap">
+                      24/04/2023 - 15:00:00
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-[#E4E7EC] bg-white w-8/12 rounded-br-lg whitespace-nowrap">
+                      <div class="flex items-center justify-center gap-2">
+                        <div class="flex items-center justify-center w-6 h-6 rounded bg-blue-90 cursor-pointer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                            <path d="M8.0013 3C4.66797 3 1.8213 5.07333 0.667969 8C1.8213 10.9267 4.66797 13 8.0013 13C11.3346 13 14.1813 10.9267 15.3346 8C14.1813 5.07333 11.3346 3 8.0013 3ZM8.0013 11.3333C6.1613 11.3333 4.66797 9.84 4.66797 8C4.66797 6.16 6.1613 4.66667 8.0013 4.66667C9.8413 4.66667 11.3346 6.16 11.3346 8C11.3346 9.84 9.8413 11.3333 8.0013 11.3333ZM8.0013 6C6.89464 6 6.0013 6.89333 6.0013 8C6.0013 9.10667 6.89464 10 8.0013 10C9.10797 10 10.0013 9.10667 10.0013 8C10.0013 6.89333 9.10797 6 8.0013 6Z" fill="#F6F8FA"/>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-center w-6 h-6 rounded bg-red-90 cursor-pointer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                            <path d="M4.66675 14C4.30008 14 3.98608 13.8693 3.72475 13.608C3.46341 13.3467 3.33297 13.0329 3.33341 12.6667V4H2.66675V2.66667H6.00008V2H10.0001V2.66667H13.3334V4H12.6667V12.6667C12.6667 13.0333 12.5361 13.3473 12.2747 13.6087C12.0134 13.87 11.6996 14.0004 11.3334 14H4.66675ZM6.00008 11.3333H7.33342V5.33333H6.00008V11.3333ZM8.66675 11.3333H10.0001V5.33333H8.66675V11.3333Z" fill="white"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="flex items-center justify-center w-full">
+              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 20 16">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                      </svg>
+                      <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                      <p class="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                  </div>
+                  <input id="dropzone-file" type="file" class="hidden" />
+              </label>
+            </div> 
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+
+
+    </div>
+    <!-- Document Form -->
   </main>
 
 </body>
 <!-- Start script -->
 <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/datepicker.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script> -->
 <script src="/dist/js/script.js"></script>
 
+<script type="application/javascript">
+  import { initFlowbite } from 'flowbite'
+  
+  // initialize components based on data attribute selectors
+  initFlowbite();
+  </script>
+
 <script>
+
+  // Function to toggle the drawer
+  function toggleDrawer(drawerId) {
+    var drawer = new mdb.Drawer(document.getElementById(drawerId));
+    drawer.toggle();
+  }
 
   // Toggle search 
   function toggleSearch() {
@@ -728,13 +1115,14 @@
   }
 
   // Dropdown function 
-  function openDropdown(event,dropdownID){
+  function openDropdown(event, dropdownID, position = 'bottom-end', strategy = "absolute"){
     let element = event.target;
     while(element.nodeName !== "BUTTON"){
       element = element.parentNode;
     }
     var popper = Popper.createPopper(element, document.getElementById(dropdownID), {
-      placement: 'bottom-start'
+      placement: position,
+      strategy: strategy
     });
     // element.classList.toggle("z-50");
     if(document.getElementById(dropdownID + "-backdrop")) {
