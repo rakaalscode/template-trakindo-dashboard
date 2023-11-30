@@ -1,3 +1,207 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* width */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4B5262;
+}
+
+/* Handle on hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+/* tabs underline button  */
+.tab-list {
+  @apply text-secondary-300 mr-5 cursor-pointer hover:text-secondary-900 hover:underline;
+}
+
+.active-tab {
+  @apply text-secondary-900 mr-5 underline cursor-default;
+}
+
+.tab-list-2 {
+  @apply w-full text-cloudy-50 border-b-2 border-cloudy-50 px-3 py-2 md:px-5 md:py-[15px] hover:text-cloudy-120 hover:border-cloudy-110;
+}
+
+.active-tab-2 {
+  @apply  text-cloudy-120 border-cloudy-110;
+}
+/* tabs underline button  */
+
+/* button  */
+.btn {
+  @apply text-sm font-medium rounded-lg px-5 py-2.5 whitespace-nowrap;
+}
+
+.btn-sm {
+  @apply text-sm rounded-md px-4 py-2 whitespace-nowrap;
+}
+
+.btn-lg {
+  @apply text-sm font-bold rounded-lg px-5 py-2.5 whitespace-nowrap;
+}
+
+.btn-p-lg {
+  @apply px-4 py-3;
+}
+
+.btn-success {
+  @apply text-white bg-green-btn border border-green-btn hover:bg-green-700 hover:border-green-700;
+}
+
+.btn-primary {
+  @apply text-cloudy-120 bg-primary-500 border border-primary-500 hover:bg-primary-700 hover:border-primary-700;
+}
+
+.btn-default {
+  @apply text-cloudy-120 bg-white border border-[#1A202C] hover:bg-gray-100;
+}
+
+/* button  */
+
+/* button outline  */
+.btn-outline-success {
+  @apply text-green-btn bg-white border border-green-btn hover:bg-green-700 hover:text-white;
+}
+/* button outline */
+
+
+/* badge  */
+.badge {
+  @apply text-sm font-medium px-3 py-1 rounded-2xl;
+}
+
+.badge-gray {
+  @apply bg-gray-100 text-gray-700;
+}
+
+.badge-warning {
+  @apply bg-warning-50 text-warning-700;
+}
+
+.badge-blue {
+  @apply bg-blue_2-50 text-blue_2-700;
+}
+
+.badge-error {
+  @apply bg-error-50 text-error-700;
+}
+/* badge  */
+
+/* input  */
+.form-control {
+  @apply text-sm border rounded-lg block w-full p-2.5 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+}
+
+.form-control-none {
+  @apply text-sm rounded-lg block w-full outline-none focus:outline-none;
+}
+
+.form-rounded {
+  @apply rounded;
+}
+
+.form-control-search {
+  @apply text-sm border border-primary-500 block px-2 py-1 pe-10 bg-white rounded w-[150px] focus:ring-primary-500 focus-visible:ring focus:border-primary-500;
+}
+
+.label-control-lg {
+  @apply block mb-2 text-lg text-gray_2-900;
+}
+
+.label-control {
+  @apply block text-sm font-medium text-black;
+}
+/* input  */
+
+
+/* checkbox  */
+.custom-checkbox {
+  @apply w-5 h-5 text-squash-3 border border-gray-300 rounded-md focus:ring-white disabled:text-secondary-100
+}
+
+.label-checkbpx {
+  @apply w-full text-sm font-medium text-secondary-900;
+}
+/* checkbox  */
+
+/* table  */
+.table-responsive {
+  @apply min-w-full text-sm text-left rtl:text-right border-separate border-spacing-0;
+}
+
+.thead-bold {
+  @apply text-base font-medium text-secondary-900 bg-cloudy-30 border border-cloudy-140;
+}
+
+.thead-col {
+  @apply px-6 py-2 border border-cloudy-140;
+}
+
+.thead-col-sm {
+  @apply px-2 py-1 border border-cloudy-140;
+}
+
+.tbody-sm {
+  @apply bg-white text-sm text-secondary-900 border border-cloudy-140;
+}
+
+.tbody-col {
+  @apply px-3 py-4 border border-cloudy-140;
+}
+
+.tbody-col-sm {
+  @apply px-3 py-1 border border-cloudy-140;
+}
+
+/* table  */
+
+/* pagination  */
+.pagination {
+  @apply text-sm text-gray-700 font-medium inline-flex -space-x-px rtl:space-x-reverse h-8 md:h-10;
+}
+
+.page-item {
+  @apply px-3 h-8 md:px-4 md:h-10 leading-tight bg-white border border-gray-300 hover:bg-gray-100;
+}
+
+.page-item-previous {
+  @apply px-3 h-8 md:px-4 md:h-10 ms-0 leading-tight bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700;
+}
+
+.page-item-next {
+  @apply px-3 h-8 md:px-4 md:h-10 leading-tight bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100;
+}
+
+.page-item-active {
+  @apply text-white border-gray-300 bg-primary-500 hover:bg-primary-700 hover:text-white;
+}
+
+.page-rows {
+  @apply text-sm text-white bg-cloudy-80 rounded w-12 -my-1;
+}
+
+.page-rows-item {
+  @apply w-12 p-2 cursor-pointer hover:bg-cloudy-90;
+}
+/* pagination  */
+
+/* global  */
+.ring-default {
+  @apply focus:outline-none focus-visible:ring;
+}
+/* global  */
+
