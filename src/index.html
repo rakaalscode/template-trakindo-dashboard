@@ -38,10 +38,10 @@
           <div class="relative hidden w-full md:block md:w-auto">
             <ul class="flex flex-col text-base font-medium md:flex-row p-4 md:p-0 mt-2 border border-gray-100 rounded-lg bg-gray-50 md:flex md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
               <li>
-                <a href="#" class="block py-2 px-3 border-b text-secondary-900" aria-current="page">Dashboard</a>
+                <a href="/src/index.html" class="block py-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
               </li>
               <li>
-                <a href="#" class="block py-2 px-3 text-secondary-500 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-900 md:hover:border-b md:px-0 md:py-2">Invoice List</a>
+                <a href="/src/invoice_request.html" class="block py-2 nav-menu">Invoice List</a>
               </li>
             </ul>
           </div>
@@ -51,10 +51,10 @@
           <div class="relative hidden w-full px-3 md:hidden " id="dropdownMenu-id">
             <ul class="flex flex-col text-base font-medium p-4 md:p-0 mt-2 border border-secondary-100 rounded-lg bg-gray-100 rtl:space-x-reverse">
               <li>
-                <a href="#" class="block bg-transparent text-secondary-900 p-2" aria-current="page">Dashboard</a>
+                <a href="/src/index.html" class="block p-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
               </li>
               <li>
-                <a href="#" class="block bg-transparent text-secondary-500 p-2">Invoice List</a>
+                <a href="/src/invoice_request.html" class="block p-2 nav-menu">Invoice List</a>
               </li>
             </ul>
           </div>
@@ -1812,7 +1812,7 @@
                   <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModal('modal_q_send_doc-id');">How to Send? Read more.</span>
                 </div>
                 <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
-                onclick="handleSubmitHardcopy(this, 'form_expedition-id')"
+                  onclick="handleSubmitHardcopy(this, 'form_expedition-id')"
                 >
                   Submit
                 </button>
@@ -1888,7 +1888,7 @@
                   </tbody>
                 </table>
               </div>
-              <div class="flex items-center gap-4 mb-5">
+              <div class="flex items-start flex-col-reverse md:items-center md:flex-row gap-4 mb-5">
                 <button type="button" class="flex items-center justify-start btn-sm btn-default font-semibold"
                   onclick="toggleModal('modal_choose_invoice-id');"
                 >

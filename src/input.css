@@ -22,6 +22,16 @@
   background: #555;
 }
 
+/* nav  */
+.nav-menu {
+  @apply text-secondary-500 bg-transparent md:bg-white md:border-b md:border-white  md:hover:text-secondary-900 md:hover:border-black;
+}
+
+.nav-menu-active {
+  @apply bg-transparent text-secondary-900 md:border-b md:border-black;
+}
+/* nav  */
+
 
 /* tabs underline button  */
 .tab-list {

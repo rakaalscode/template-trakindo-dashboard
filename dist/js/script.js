@@ -458,6 +458,9 @@ $(document).ready(function() {
 
   // Modal snackbar 
   function modalSnackbar(modalID) {
+
+    document.body.style.overflow = (document.getElementById(modalID).classList.contains("hidden")) ? "hidden" : "auto";
+
     document.getElementById(modalID).classList.toggle("hidden");
     document.getElementById(modalID).classList.toggle("flex");
   }

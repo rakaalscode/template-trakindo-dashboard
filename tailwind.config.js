@@ -6,7 +6,18 @@ module.exports = {
     {
       pattern: /bg-(cloudy|success|blue|blue_2|red|error|warning)-(20|50|60|100|700|general)/,
     },
-    'contents', 'italic', 'cursor-pointer', 'bg-white', 'rounded-br-lg', 'bg-red_general', 'bg-blue_general',  'focus:outline-none', 'focus:border-primary-500', 'focus:ring-0', 'focus:ring-primary-500'
+    'contents', 
+    'italic', 
+    'cursor-pointer', 
+    'bg-white', 
+    'rounded-br-lg', 
+    'bg-red_general', 
+    'bg-blue_general',
+    'text-warning-700',
+    'focus:outline-none', 
+    'focus:border-primary-500', 
+    'focus:ring-0', 
+    'focus:ring-primary-500'
   ],
   theme: {
     extend: {
