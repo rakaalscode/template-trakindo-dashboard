@@ -1038,7 +1038,7 @@ $(document).ready(function() {
           <circle cx="4" cy="4" r="3" fill="#F04438"></circle>
         </svg>Rejected
       `;
-    } else if(type == 'submit') {
+    } else if(type == 'submit' || type == 'revision') {
       detailStatus.classList.remove('cursor-pointer');
       // detailStatus.setAttribute("onclick", "toggleModal('modal_status-id', '" + type + "')")
       textStatus.textContent = "Submitted to Finance";
@@ -1176,7 +1176,6 @@ $(document).ready(function() {
     statusIcon.innerHTML = "";
     statusText.innerHTML = "";
 
-    console.log(type)
     if(type == 'complete') {
       statusIcon.innerHTML += `<img src="/dist/images/icons/round-check-filled.svg" alt="check">`;
       statusText.innerHTML = "Payment Complete";
