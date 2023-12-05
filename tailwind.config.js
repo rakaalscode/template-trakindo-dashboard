@@ -10,10 +10,19 @@ module.exports = {
     'italic', 
     'cursor-pointer', 
     'bg-white', 
+    'bg-cloudy-110',
+    'bg-squash-1',
+    'bg-squash-3',
     'rounded-br-lg', 
     'bg-red_general', 
     'bg-blue_general',
+    'bg-green_general',
     'text-warning-700',
+    'border-gray-300',
+    'hover:bg-yellow-0',
+    'hover:bg-squash-1',
+    'group-hover:hidden',
+    'group-hover:block',
     'focus:outline-none', 
     'focus:border-primary-500', 
     'focus:ring-0', 
@@ -27,6 +36,7 @@ module.exports = {
       boxShadow: {
         'one': '0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10)',
         'xs': '0px 1px 2px 0px rgba(16, 24, 40, 0.05);',
+        'ds': '0px 12px 16px 0px rgba(129, 134, 142, 0.12);',
         'light_raised': '0px 16px 20px 4px rgba(129, 134, 142, 0.16);'
       }
     },
@@ -67,6 +77,7 @@ module.exports = {
         900: '#006B3A',
         'btn': '#49A462'
       },
+      "green_general": '#4CAF50',
       lime: {
         50: '#FDFF9F',
         100: '#EBF27B',
@@ -150,11 +161,15 @@ module.exports = {
         500: '#667085',
         900: '#101828',
       },
+      grey: {
+        500: '#E6E6E6',
+      },
       warning: {
         50: "#FFFAEB",
         100: "#FEF0C7",
         700: '#B54708',
         800: '#AE4408',
+        1000: '#FFEBB1'
       },
       "warning_b_general": '#F26D0F',
       "warning_bg_general": '#FAF4E0',
@@ -171,7 +186,6 @@ module.exports = {
         30: '#E8ECF4',
         40: '#DADFEA',
         50: '#CFD3DB',
-        60: '#2C313A',
         70: '#959DAC',
         80: '#79808F',
         90: '#5E677B',
@@ -181,15 +195,23 @@ module.exports = {
         130: '#1A1D22',
         140: '#E4E7EC',
       },
-      "cloudy_t_general": '#2C313A',
-      grey_natural: {
+      gray_natural: {
+        100: '#4B5262',
         1300: '#0A090B'
       },
       yellow: {
+        0: '#FEF9ED',
         20: '#FFECBD'
       },
       squash: {
+        1: '#F3F3F3',
         3: '#FFE9BA'
+      },
+      semi_white: {
+        1: 'rgba(255, 255, 255, 0.00)',
+      },
+      semi_black: {
+        100: '#181818',
       }
     }
   },

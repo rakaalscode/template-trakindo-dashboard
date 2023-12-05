@@ -10,6 +10,7 @@
   <!-- select2 -->
   <link href="/dist/css/select2/select2.min.css" rel="stylesheet" />
   <link href="/dist/css/styles.css" rel="stylesheet">
+  <link href="/dist/css/select2/select2-styles.css" rel="stylesheet">
   <link href="/dist/css/main.css" rel="stylesheet">
   <!-- End css -->
 
@@ -19,15 +20,16 @@
   <title>Dashboard</title>
 </head>
 <body class="font-roboto min-h-screen">
+  
   <!-- NAVBAR -->
   <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-secondary-100">
     <div class="max-w-screen-2xl flex justify-between items-center flex-shrink-0 mx-auto px-3 py-0 md:py-3 md:px-7 ">
       <div class="items-center justify-between w-full md:flex md:w-auto" id="navbar-sticky">
         <div class="flex items-center">
           <a href="#" class="pr-2 md:pr-8">
-            <img src="/dist/images/trakindoLogo.png" alt="Trakindo Logo">
+            <img src="/dist/images/trakindoLogo.png" class="w-[112px] md:w-full" alt="Trakindo Logo">
           </a>
-          <button data-collapse-toggle="navbar-default" type="button" class="flex flex-col items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100" aria-controls="navbar-default" aria-expanded="false" onclick="openDropdown(event, 'dropdownMenu-id', 'bottom-end')">
+          <button data-collapse-toggle="navbar-default" type="button" class="flex flex-col items-center nav-menu-mobile" aria-controls="navbar-default" aria-expanded="false" onclick="openDropdown(event, 'dropdownMenu-id', 'bottom-end', 'absolute', true)">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -38,10 +40,10 @@
           <div class="relative hidden w-full md:block md:w-auto">
             <ul class="flex flex-col text-base font-medium md:flex-row p-4 md:p-0 mt-2 border border-gray-100 rounded-lg bg-gray-50 md:flex md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
               <li>
-                <a href="/src/index.html" class="block py-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
+                <a href="/src/pages/finance_ap/detail.html" class="block py-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
               </li>
               <li>
-                <a href="/src/invoice_request.html" class="block py-2 nav-menu">Invoice List</a>
+                <a href="/src/pages/finance_ap/invoice_request.html" class="block py-2 nav-menu ">Invoice Request List</a>
               </li>
             </ul>
           </div>
@@ -51,10 +53,10 @@
           <div class="relative hidden w-full px-3 md:hidden " id="dropdownMenu-id">
             <ul class="flex flex-col text-base font-medium p-4 md:p-0 mt-2 border border-secondary-100 rounded-lg bg-gray-100 rtl:space-x-reverse">
               <li>
-                <a href="/src/index.html" class="block p-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
+                <a href="/src/pages/finance_ap/detail.html" class="block p-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
               </li>
               <li>
-                <a href="/src/invoice_request.html" class="block p-2 nav-menu">Invoice List</a>
+                <a href="/src/pages/finance_ap/invoice_request.html" class="block p-2 nav-menu">Invoice Request List</a>
               </li>
             </ul>
           </div>
@@ -64,7 +66,7 @@
 
       <!-- User -->
       <div class="flex justify-end relative w-64 md:w-auto">
-        <button class="bg-white z-40 flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg" onclick="openDropdown(event,'dropdownUser-id')">
+        <button class="md:bg-white z-40 flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg" onclick="openDropdown(event,'dropdownUser-id', 'bottom-end', 'absolute', false)">
           <div class="relative">
             <img src="/dist/images/avatar-2.jpeg" alt="avatar" class="w-8 h-8 object-cover object-top rounded-full">
             <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-white p-0.5">
@@ -73,117 +75,102 @@
           </div>
           <div class="hidden flex-col items-start md:flex">
             <span class="block text-sm font-semibold text-black">SIGAP</span>
-            <span class="block text-xs text-cloudy-70">Vendor Warehouse</span>
+            <span class="block text-xs text-cloudy-70">Finance AP</span>
           </div>
           <img src="/dist/images/icons/fi_chevron-down.svg" class="hidden dropdownUser-id md:block" alt="chevron down">
         </button>
 
         <!-- Dropdown -->
-        <div class="hidden bg-white z-40 p-3 pt-0 rounded-bl-lg rounded-br-lg w-full" id="dropdownUser-id">
-          <ul class="flex flex-col gap-3 border-t border-cloudy-10 pt-3">
-            <li>
-              <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                <img src="/dist/images/icons/round-edit.svg" alt="round edit">
-                <span>Edit profile</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                <img src="/dist/images/icons/round-setting.svg" alt="round setting">
-                <span>Setting</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                <img src="/dist/images/icons/round-notif.svg" alt="round notif">
-                <span>Notification</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                <img src="/dist/images/icons/round-exit.svg" alt="round exit">
-                <span>Log off</span>
-              </a>
-            </li>
-          </ul>
+        <div class="hidden z-40 w-full" id="dropdownUser-id">
+          <button class="bg-white z-40 flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg w-[180px] -ms-[32px] -mt-[44px] md:-ms-0 md:-mt-[60px] md:w-auto" onclick="openDropdown(event,'dropdownUser-id', 'bottom-end', 'absolute', false)">
+            <div class="relative whitespace-nowrap">
+              <img src="/dist/images/avatar-2.jpeg" alt="avatar" class="w-8 h-8 object-cover object-top rounded-full">
+              <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-white p-0.5">
+                <img src="/dist/images/icons/badge.svg" alt="badge">
+              </div>
+            </div>
+            <div class="flex flex-col text-left items-start justify-start">
+              <span class="block text-sm font-semibold text-black">SIGAP</span>
+              <span class="block text-xs text-cloudy-70">Finance AP</span>
+            </div>
+            <img src="/dist/images/icons/fi_chevron-down.svg" class="hidden md:block dropdownUser-id" alt="chevron down">
+          </button>
+          <div class="bg-white p-3 w-[180px] -ms-[32px] -mt-[10px] md:-ms-0 md:w-auto rounded-bl-lg rounded-br-lg">
+            <ul class="flex flex-col gap-3 border-t border-cloudy-10 pt-3">
+              <li>
+                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                  <img src="/dist/images/icons/round-edit.svg" alt="round edit">
+                  <span>Edit profile</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                  <img src="/dist/images/icons/round-setting.svg" alt="round setting">
+                  <span>Setting</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                  <img src="/dist/images/icons/round-notif.svg" alt="round notif">
+                  <span>Notification</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                  <img src="/dist/images/icons/round-exit.svg" alt="round exit">
+                  <span>Log off</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <!-- Dropdown -->
       </div>
-      <div class="hidden opacity-25 fixed inset-0 z-30 bg-black" id="dropdownUser-id-backdrop"></div>
       <!-- User -->
       
     </div>
   </nav>
   <!-- NAVBAR -->
 
-  <main class="py-[5.25rem]">
-    
+  <main class="pt-[4rem] md:pt-[5.25rem]">
     <!-- Card status -->
     <section class="bg-white w-full border-b border-secondary-100 py-[19px]">
       <div class="max-w-screen-2xl mx-auto px-3 py-0 md:px-7">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-none xl:grid-flow-col gap-6">
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <span class="block text-xs text-secondary-500 uppercase md:text-sm">EST. Values</span>
-            <h1 class="text-4xl text-[2rem] font-bold text-secondary-900">38.4M</h1>
+            <div class="flex flex-col gap-3">
+              <span class="block text-xs text-secondary-500 uppercase md:text-sm">EST. Values</span>
+              <h1 class="text-xl md:text-[2rem] font-bold t-secondary-900">Rp395mil</h1>
+            </div>
           </div>
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
             <div class="flex items-start gap-3">
-              <img src="/dist/images/icons/edit.svg" alt="edit">
+              <img src="/dist/images/icons/IconMoney.svg" alt="IconMoney">
               <div class="flex flex-col gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Draft</span>
-                <h1 class="text-4xl text-[2rem] font-bold text-secondary-900">1</h1>
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Total Paid</span>
+                <h1 class="text-xl md:text-[2rem] font-bold t-secondary-900">Rp25,6mil</h1>
               </div>
             </div>
           </div>
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
             <div class="flex items-start gap-3">
-              <img src="/dist/images/icons/trend-up.svg" alt="trend up">
+              <img src="/dist/images/icons/AccessTimeFilled.svg" alt="AccessTimeFilled">
               <div class="flex flex-col gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Action Needed</span>
-                <h1 class="text-4xl text-[2rem] font-bold text-secondary-900">0</h1>
-              </div>
-            </div>
-          </div>
-          <!-- Card -->
-          <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
-              <img src="/dist/images/icons/time-filled.svg" alt="time filled">
-              <div class="flex flex-col gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Waiting for verification</span>
-                <h1 class="text-4xl text-[2rem] font-bold text-secondary-900">1</h1>
-              </div>
-            </div>
-          </div>
-          <!-- Card -->
-          <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
-              <img src="/dist/images/icons/repeat-filled.svg" alt="repeat filled">
-              <div class="flex flex-col gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Resubmitted</span>
-                <h1 class="text-4xl text-[2rem] font-bold text-secondary-900">1</h1>
-              </div>
-            </div>
-          </div>
-          <!-- Card -->
-          <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
-              <img src="/dist/images/icons/round-check.svg" alt="round check">
-              <div class="flex flex-col gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Completed</span>
-                <h1 class="text-4xl text-[2rem] font-bold text-secondary-900">1</h1>
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">total on progress</span>
+                <h1 class="text-xl md:text-[2rem] font-bold t-secondary-900">Rp370,4mil</h1>
               </div>
             </div>
           </div>
           <!-- Card -->
           <div class="bg-white">
             <div class="flex items-start gap-3">
-              <img src="/dist/images/icons/round-close.svg" alt="round close">
+              <img src="/dist/images/icons/InsertDriveFileFilled.svg" alt="InsertDriveFileFilled">
               <div class="flex flex-col gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Rejected</span>
-                <h1 class="text-4xl text-[2rem] font-bold text-secondary-900">1</h1>
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">total invoice</span>
+                <h1 class="text-xl md:text-[2rem] font-bold t-secondary-900">27</h1>
               </div>
             </div>
           </div>
@@ -198,58 +185,48 @@
 
         <!-- Filter table -->
 
+        <!-- Filter data -->
+        <div class="flex flex-col items-start justify-between pb-1 md:items-center md:flex-row">
+          
         <!-- Filter status -->
-        <div class="flex pb-4 md:pb-0">
-          <ul class="flex flex-wrap text-base font-medium tabs">
+        <div class="flex w-full pb-4 md:pb-0 md:w-auto">
+          <ul class="flex-wrap text-base font-medium tabs hidden md:flex">
             <li class="py-1 md:py-4">
-              <span class="inline-block tab-list active-tab" onclick="openTab(this)">All Documents</span>
+              <span class="inline-flex items-center tab-list active-tab group" onclick="openTab(this)">All Batch 
+                <span class="inline-flex items-center justify-center tab-list-badge group-hover:bg-black">2</span>
+              </span>
             </li>
             <li class="py-1 md:py-4">
-              <span class="inline-block tab-list" onclick="openTab(this)">Waiting Verification</span>
+              <span class="inline-flex items-center tab-list" onclick="openTab(this)">Is Collecting 
+              </span>
             </li>
             <li class="py-1 md:py-4">
-              <span class="inline-block tab-list" onclick="openTab(this)">Action Needed</span>
-            </li>
-            <li class="py-1 md:py-4">
-              <span class="inline-block tab-list" onclick="openTab(this)">Submitted to Finance</span>
-            </li>
-            <li class="py-1 md:py-4">
-              <span class="inline-block tab-list" onclick="openTab(this)">Payment Complete</span>
-            </li>
-            <li class="py-1 md:py-4">
-              <span class="inline-block tab-list" onclick="openTab(this)">Draft</span>
-            </li>
-            <li class="py-1 md:py-4">
-              <span class="inline-block tab-list" onclick="openTab(this)">Rejected</span>
+              <span class="inline-flex items-center tab-list group" onclick="openTab(this)">Submitted to Finance
+                <span class="inline-flex items-center justify-center tab-list-badge group-hover:bg-black">2</span>
+              </span>
             </li>
           </ul>
+
+          <div class="flex w-full md:hidden">
+            <select id="status_filter-id" style="width: 100%;" name="short_by" required>
+              <option value="all">All Batch</option>
+              <option value="action_needed">Is Collecting</option>
+              <option value="verification">Waiting Verification</option>
+            </select>
+          </div>
         </div>
         <!-- Filter status -->
-
-        <!-- Filter data -->
-        <div class="flex flex-col flex-wrap items-start justify-between pb-4 md:items-center md:flex-row">
-          <div class="flex gap-2 mb-4 md:mb-0">
-            <button type="button" class="flex items-center btn-lg btn-success" onclick="toggleNewDocument('drawer_document-id')">
-              New Document
-              <img src="/dist/images/icons/plus-circle.svg" alt="plus circle" class="ms-2">
-            </button>
-            <button type="button" class="btn-lg btn-outline-success" 
-              onclick="ActionDocument('', 'drawer_document-id', 'snackbar-id', 'excel')"
-            >
-              Download to Excel
-            </button>
-          </div>
-          <div class="flex justify-end items-center w-full gap-4 md:justify-center md:w-auto">
+          <div class="flex justify-between items-center w-full gap-4 pb-5 md:pb-0 md:justify-center md:w-auto md:mb-0">
             <!--  Date rate filter -->
-            <div class="relative flex items-center">
-              <button class="ring-default" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
+            <div class="relative flex items-center order-2 md:order-1">
+              <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:p-0 md:shadow-none" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed', false)">
                 <img src="/dist/images/icons/filter.svg" class="w-6 h-6" alt="filter">
               </button>
 
               <!-- Open date rate -->
-              <div class="relative hidden z-40 px-2 w-[23rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
-                <div class="flex justify-end mb-2 -mt-6">
-                  <button class="h-6 w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
+              <div class="relative hidden z-40 px-2 w-full sm::w-[21rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
+                <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
+                  <button class="h-[43px] w-[43px] me-[67px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                   </button>
                 </div>
@@ -262,25 +239,19 @@
                       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
                         <circle cx="4" cy="4" r="3" fill="#667085"/>
                       </svg>
-                      Draft
-                    </span>
-                    <span class="inline-flex items-center badge badge-warning">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#F79009"/>
-                      </svg>
-                      Waiting for Approval
+                      Is Collecting
                     </span>
                     <span class="inline-flex items-center badge badge-blue">
                       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
                         <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
                       </svg>
-                      Submitted to Finance
+                      Payment on Progress
                     </span>
-                    <span class="inline-flex items-center badge badge-error">
+                    <span class="inline-flex items-center badge badge-green">
                       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#F04438"/>
+                        <circle cx="4" cy="4" r="3" fill="#12B76A"/>
                       </svg>
-                      Rejected
+                      Payment Completed
                     </span>
                   </div>
                   <!-- badges -->
@@ -315,7 +286,14 @@
                   <div class="pt-3 pb-3">
                     <h3 class="text-lg font-medium text-gray_2-900 mb-3">Rate</h3>
                     <div>
-                      <input type="text" name="rate" class="form-control"  placeholder="Rp. 1.000.000 - Rp. 5.000.000">
+                      <select class="" id="rate_field-id" style="width: 100%;" name="rate" required>
+                        <option value=""></option>
+                        <option value="1000000-5000000">Rp 1.000.000 - Rp 5.000.000</option>
+                        <option value="5000000-20000000">Rp 5.000.000 - Rp 20.000.000</option>
+                        <option value="20000000-100000000">Rp 20.000.000 - Rp 100.000.000</option>
+                        <option value="100000000-500000000">Rp 100.000.000 - Rp 500.000.000</option>
+                        <option value="500000000-1000000000">Rp 100.000.000 - Rp 10.00.000.000</option>
+                      </select>
                     </div>
                   </div>
                   <!-- rate -->
@@ -323,7 +301,7 @@
                   <button type="button" class="flex items-center justify-center w-full btn-lg btn-primary"
                     onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')"
                   >
-                    Search
+                    Apply
                   </button>
 
                 </div>
@@ -334,15 +312,15 @@
             <!--  Date rate filter -->
 
             <!--  Sortby filter -->
-            <div class="relative flex items-center">
-              <button class="ring-default" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
-                <img src="/dist/images/icons/sort-amount.svg" class="w-full" alt="search">
+            <div class="relative flex items-center order-3 md:order-2">
+              <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:p-0 md:shadow-none" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed', false)">
+                <img src="/dist/images/icons/sort-amount.svg" class="h-6 w-6" alt="search">
               </button>
 
               <!-- Open sortby -->
               <div class="relative hidden z-40 w-64" id="filterSortby-id">
-                <div class="flex justify-end mb-2 -mt-[1.6rem]">
-                  <button class="h-6 w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
+                <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
+                  <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                   </button>
                 </div>
@@ -353,7 +331,7 @@
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
                         <label class="flex items-center gap-4">
                           <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-chebox">Newest Document</span>
+                          <span class="label-checkbox">Newest Document</span>
                         </label>
                       </div>
                     </li>
@@ -361,7 +339,7 @@
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
                         <label class="flex items-center gap-4">
                           <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-chebox">Status Document</span>
+                          <span class="label-checkbox">Status Document</span>
                         </label>
                       </div>
                     </li>
@@ -369,7 +347,7 @@
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
                         <label class="flex items-center gap-4">
                           <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-chebox">Lowest Document</span>
+                          <span class="label-checkbox">Lowest Total Amount</span>
                         </label>
                       </div>
                     </li>
@@ -377,7 +355,7 @@
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
                         <label class="flex items-center gap-4">
                           <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-chebox">Highest Document</span>
+                          <span class="label-checkbox">Highest Total Amount</span>
                         </label>
                       </div>
                     </li>
@@ -385,7 +363,7 @@
                   <button type="button" class="flex items-center justify-center w-full btn-lg btn-primary"
                     onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')"
                   >
-                    Search
+                    Apply
                   </button>
                 </div>
               </div>
@@ -395,7 +373,7 @@
             <!--  Sortby filter -->
 
             <!-- Search filter -->
-            <div class="flex items-center">
+            <div class="hidden items-center order-3 md:flex">
               <div class="relative hidden" id="searchCon-id">
                 <input type="search" class="form-control-search" placeholder="Search">
                 <button class="absolute inset-y-0 end-0 flex items-center pe-2 cursor-pointer" id="searchClose-id" onclick="toggleSearch()">
@@ -405,6 +383,15 @@
               <button id="searchIcon-id" onclick="toggleSearch()" class="ring-default">
                 <img src="/dist/images/icons/search.svg" class="w-full" alt="search">
               </button>
+            </div>
+
+            <div class="flex flex-1 items-start md:hidden">
+              <div class="relative w-full">
+                <input type="search" class="block form-control-search-mobile" placeholder="Search">
+                <button class="absolute inset-y-0 start-0 flex items-center ps-2 cursor-pointer">
+                  <img src="/dist/images/icons/search.svg" class="w-full" alt="search">
+                </button>
+              </div>
             </div>
             <!-- Search filter -->
 
@@ -418,140 +405,95 @@
           <table class="table-responsive">
             <thead class="thead-bold font-small-caps">
               <tr>
-                <th scope="col" class="thead-col-sm text-center w-1 rounded-tl-lg">
-                  No
-                </th>
+                <th scope="col" class="thead-col-sm  text-center min-w-[10px] rounded-tl-lg"></th>
                 <th scope="col" class="thead-col text-center">
                   Action
                 </th>
-                <th scope="col" class="thead-col min-w-[208px]">
+                <th scope="col" class="thead-col text-center">
+                  Title
+                </th>
+                <th scope="col" class="thead-col">
+                  Total Invoices
+                </th>
+                <th scope="col" class="thead-col">
+                  Submitted Date
+                </th>
+                <th scope="col" class="thead-col">
                   Status
                 </th>
                 <th scope="col" class="thead-col">
                   Last Update
                 </th>
-                <th scope="col" class="thead-col">
-                  Document No.
-                </th>
-                <th scope="col" class="thead-col">
-                  Contract No.
-                </th>
-                <th scope="col" class="thead-col">
-                  Invoice No.
-                </th>
-                <th scope="col" class="thead-col text-center">
-                  Issued Date
-                </th>
-                <th scope="col" class="thead-col">
-                  Transaction Type
-                </th>
-                <th scope="col" class="thead-col text-center rounded-tr-lg">
-                  Amount
-                </th>
               </tr>
             </thead>
             <tbody class="tbody-sm">
               <tr>
-                <td class="tbody-col-sm text-center">
-                  1.
+                <td class="tbody-col">
+                  <label class="flex items-center justify-center">
+                    <input type="checkbox" class="custom-checkbox"/>
+                  </label>
                 </td>
-                <td class="tbody-col-sm text-center">
+                <td class="tbody-col-sm text-center whitespace-nowrap">
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleNewDocument('drawer_document-id')">
-                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                    </div>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-green-90 cursor-pointer">
-                      <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
-                    </div>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer">
-                      <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
-                    </div>
+                    <a href="/src/pages/finance_ap/detail.html">
+                      <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                        <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                      </div>
+                    </a>
                   </div>
                 </td>
                 <td class="tbody-col">
-                  <span class="inline-flex items-center badge badge-gray cursor-pointer" onclick="toggleNewDocument('drawer_document-id')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                      <circle cx="4" cy="4" r="3" fill="#667085"/>
-                    </svg>
-                    Draft
-                  </span>
+                  <a href="/src/pages/finance_ap/detail.html">
+                    Batch 12092023
+                  </a>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
+                  1
                 </td>
                 <td class="tbody-col">
-                  DOC-004/010457
+                  12-09-2023 - 8:00AM
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  Is Collecting
                 </td>
                 <td class="tbody-col">
-                  ASD/AE/23-2023
-                </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
-                </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
+                  12-09-2023 9:00AM
                 </td>
               </tr>
               <tr>
-                <td class="tbody-col-sm text-center">
-                  2.
+                <td class="tbody-col">
+                  <label class="flex items-center justify-center">
+                    <input type="checkbox" class="custom-checkbox"/>
+                  </label>
                 </td>
-                <td class="tbody-col-sm text-center">
+                <td class="tbody-col-sm text-center whitespace-nowrap">
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'reject', false)">
-                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer" onclick="toggleSnackbar('snackbar-id', 'gl-download')">
+                      <img src="/dist/images/icons/Vector.svg" alt="vector">
+                    </div>
+                    <a href="/src/pages/finance_ap/detail.html">
+                      <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                        <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                      </div>
+                    </a>
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-primary-500 cursor-pointer">
+                      <img src="/dist/images/icons/mingcute_send-fill.svg" alt="send">
                     </div>
                   </div>
                 </td>
                 <td class="tbody-col">
-                  <span class="bg-error-50 text-error-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'reject', false)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                      <circle cx="4" cy="4" r="3" fill="#F04438"/>
-                    </svg>
-                    Rejected
-                  </span>
+                  <a href="/src/pages/finance_ap/detail.html">
+                    Batch 12092023
+                  </a>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
+                  1
                 </td>
                 <td class="tbody-col">
-                  DOC-004/010457
+                  12-09-2023 - 8:00AM
                 </td>
-                <td class="tbody-col">
-                  ASD/AE/23-2023
-                </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
-                </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
-                </td>
-              </tr>
-              <tr>
-                <td class="tbody-col-sm text-center">
-                  3.
-                </td>
-                <td class="tbody-col-sm text-center">
-                  <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'submit', false)">
-                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                    </div>
-                  </div>
-                </td>
-                <td class="tbody-col">
-                  <span class="bg-blue_2-50 text-blue_2-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'submit', false)">
+                <td class="tbody-col whitespace-nowrap">
+                  <span class="inline-flex items-center badge badge-blue cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'revision')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
                       <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
                     </svg>
@@ -559,191 +501,98 @@
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
-                </td>
-                <td class="tbody-col">
-                  DOC-004/010457
-                </td>
-                <td class="tbody-col">
-                  ASD/AE/23-2023
-                </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
-                </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
+                  12-09-2023 9:00AM
                 </td>
               </tr>
               <tr>
-                <td class="tbody-col-sm text-center">
-                  4.
+                <td class="tbody-col">
+                  <label class="flex items-center justify-center">
+                    <input type="checkbox" class="custom-checkbox"/>
+                  </label>
                 </td>
-                <td class="tbody-col-sm text-center">
+                <td class="tbody-col-sm text-center whitespace-nowrap">
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id')">
-                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer" onclick="toggleSnackbar('snackbar-id', 'gl-download')">
+                      <img src="/dist/images/icons/Vector.svg" alt="vector">
+                    </div>
+                    <a href="/src/pages/finance_ap/detail.html">
+                      <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                        <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                      </div>
+                    </a>
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-primary-500 cursor-pointer">
+                      <img src="/dist/images/icons/mingcute_send-fill.svg" alt="send">
                     </div>
                   </div>
                 </td>
                 <td class="tbody-col">
-                  <span class="bg-warning-50 text-warning-800 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl">
+                  <a href="/src/pages/finance_ap/detail.html">
+                    Batch 12092023
+                  </a>
+                </td>
+                <td class="tbody-col">
+                  1
+                </td>
+                <td class="tbody-col">
+                  12-09-2023 - 8:00AM
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  <span class="inline-flex items-center badge badge-blue cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'revision')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                      <circle cx="4" cy="4" r="3" fill="#F79009"/>
+                      <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
                     </svg>
-                    Waiting for Verification
+                    Submitted to Finance
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
-                </td>
-                <td class="tbody-col">
-                  DOC-004/010457
-                </td>
-                <td class="tbody-col">
-                  ASD/AE/23-2023
-                </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
-                </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
+                  12-09-2023 9:00AM
                 </td>
               </tr>
               <tr>
-                <td class="tbody-col-sm text-center">
-                  5.
+                <td class="tbody-col">
+                  <label class="flex items-center justify-center">
+                    <input type="checkbox" class="custom-checkbox"/>
+                  </label>
                 </td>
-                <td class="tbody-col-sm text-center">
+                <td class="tbody-col-sm text-center whitespace-nowrap">
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'approve', false)">
-                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer" onclick="toggleSnackbar('snackbar-id', 'gl-download')">
+                      <img src="/dist/images/icons/Vector.svg" alt="vector">
+                    </div>
+                    <a href="/src/pages/finance_ap/detail.html">
+                      <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                        <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                      </div>
+                    </a>
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-primary-500 cursor-pointer">
+                      <img src="/dist/images/icons/mingcute_send-fill.svg" alt="send">
                     </div>
                   </div>
                 </td>
                 <td class="tbody-col">
-                  <span class="bg-success-50 text-success-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'approve', false)">
+                  <a href="/src/pages/finance_ap/detail.html">
+                    Batch 12092023
+                  </a>
+                </td>
+                <td class="tbody-col">
+                  1
+                </td>
+                <td class="tbody-col">
+                  12-09-2023 - 8:00AM
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  <span class="inline-flex items-center badge badge-blue cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'revision')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                      <circle cx="4" cy="4" r="3" fill="#12B76A"/>
+                      <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
                     </svg>
-                    Payment Completed
+                    Submitted to Finance
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
-                </td>
-                <td class="tbody-col">
-                  DOC-004/010457
-                </td>
-                <td class="tbody-col">
-                  ASD/AE/23-2023
-                </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
-                </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
+                  12-09-2023 9:00AM
                 </td>
               </tr>
-              <tr>
-                <td class="tbody-col-sm text-center">
-                  6.
-                </td>
-                <td class="tbody-col-sm text-center">
-                  <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'action_needed-revise', false)">
-                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                    </div>
-                  </div>
-                </td>
-                <td class="tbody-col">
-                  <span class="bg-orange_2-50 text-orange_2-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'action_needed-revise', false)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                      <circle cx="4" cy="4" r="3" fill="#FB6514"/>
-                    </svg>
-                    Action Needed
-                  </span>
-                </td>
-                <td class="tbody-col">
-                  22/02/2023 1:45PM
-                </td>
-                <td class="tbody-col">
-                  DOC-004/010457
-                </td>
-                <td class="tbody-col">
-                  ASD/AE/23-2023
-                </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
-                </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
-                </td>
-              </tr>
-              <tr>
-                <td class="tbody-col-sm text-center">
-                  7.
-                </td>
-                <td class="tbody-col-sm text-center">
-                  <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'action_needed-hardcopy', false)">
-                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                    </div>
-                  </div>
-                </td>
-                <td class="tbody-col">
-                  <span class="bg-orange_2-50 text-orange_2-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl cursor-pointer" onclick="toggleDetailDocument('drawer_document_detail-id', '', 'action_needed-hardcopy', false)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                      <circle cx="4" cy="4" r="3" fill="#FB6514"/>
-                    </svg>
-                    Action Needed
-                  </span>
-                </td>
-                <td class="tbody-col">
-                  22/02/2023 1:45PM
-                </td>
-                <td class="tbody-col">
-                  DOC-004/010457
-                </td>
-                <td class="tbody-col">
-                  ASD/AE/23-2023
-                </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
-                </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
-                </td>
-              </tr>
+            
             </tbody>
           </table>
           <!-- Table -->
@@ -753,7 +602,7 @@
         <nav class="flex items-center flex-column flex-wrap p-0 pt-3 md:px-6 md:py-3 md:flex-row justify-between md:border border-cloudy-140 rounded-bl-lg rounded-br-lg" aria-label="Table navigation">
           <span class="text-sm text-gray-700 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing 1 to <span id="rows_value-id">4</span> of 10 rows 
             <button id="rows_paginate-id" class="inline-block relative text-sm text-white bg-cloudy-80 rounded w-12 py-1.5 mx-2" 
-              onclick="openDropdown(event, 'rows_paginate_list-id', 'top', 'absolute')"
+              onclick="openDropdown(event, 'rows_paginate_list-id', 'top', 'absolute', true)"
             >
               <div class="flex items-center justify-center gap-2">
                 <span value-data="4" id="rows_data-id">4</span>
@@ -825,17 +674,17 @@
 
     <!-- Document Form -->
     <div id="drawer_document-id" class="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
-      <div class="p-6 pb-0">
+      <div class="p-3 md:p-6 pb-0">
 
       <!-- close -->
       <div class="flex justify-start">
-        <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer" onclick="modalConfirmDocument('modal_confirm_document')">
+        <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer" onclick="modalConfirm('modal_confirm_document', 'z-40', 'static', 'outside')">
       </div>
       <!-- close -->
 
       <!-- modal confirm -->
       <div id="modal_confirm_document" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden absolute pl-2 z-50 justify-start items-start w-auto left-0 md:w-[400px] md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-w-md max-h-full">
+        <div class="relative p-4 w-full max-h-full">
           <div class="relative bg-white rounded-lg shadow">
             <div class="p-4 text-center">
               <h3 class="text-lg font-semibold text-black">
@@ -843,12 +692,12 @@
               </h3>
               <p class="text-sm text-gray_2-500 mb-5">All data might be lost when you exit the form area, Are you sure about that?</p>
               <button type="button" class="flex items-center justify-center w-full btn btn-primary mb-3"
-                onclick="toggleNewDocument('drawer_document-id', 'modal_confirm_document')"
+                onclick="modalConfirm('modal_confirm_document', 'z-40', 'static', 'outside', 'clear')"
               >
                 Exit Form
               </button>
               <button type="button" class="flex items-center justify-center w-full btn btn-default"
-                onclick="ActionDocument('modal_confirm_document', 'drawer_document-id', 'snackbar-id', 'draft')"
+                onclick="saveDocument('drawer_document-id', 'draft', 'modal_confirm_document')"
               >
                 Save as Draft
                 <img src="/dist/images/icons/save.svg" alt="save" class="ms-2">
@@ -858,7 +707,7 @@
         </div>
       </div>
 
-      <div id="modal_confirm_document-backdrop" class="hidden bg-black/20 fixed inset-0 z-40"></div>
+      <!-- <div id="modal_confirm_document-backdrop" class="hidden bg-black/20 fixed inset-0 z-40"></div> -->
       <!-- modal confirm -->
 
       <!-- header form -->
@@ -868,13 +717,13 @@
         </h3>
         <div class="flex gap-3 w-full md:w-auto">
           <button type="button" class="flex items-center justify-center w-full md:w-auto btn btn-default" 
-            onclick="ActionDocument('', 'drawer_document-id', 'snackbar-id', 'draft')"
+            onclick="saveDocument('drawer_document-id', 'draft')"
           >
             Save as Draft
             <img src="/dist/images/icons/save.svg" alt="save" class="ms-2">
           </button>
           <button type="button" class="flex items-center justify-center w-full md:w-auto btn btn-primary" 
-            onclick="ActionDocument('', 'drawer_document-id', 'snackbar-id', 'submit')"
+            onclick="saveDocument('drawer_document-id', 'submit')"
           > 
             Submit Invoice
           </button>
@@ -951,14 +800,23 @@
         </table>
       </div>
 
-      <div class="relative overflow-x-auto rounded-lg mb-5">
-        <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
+      <div class="flex items-center justify-between gap-4 mb-4">
+        <h3 class="text-2xl font-medium text-secondary-900">
+          Goods or Services
+        </h3>
+        <button type="button" class="flex items-center text-cloudy-120 bg-white border border-cloudy-120 hover:bg-gray-100 rounded-lg text-base font-bold px-5 py-2.5 ring-default">
+          Add new row
+          <img src="/dist/images/icons/plus-circle-black.svg" alt="plus black" class="ms-2">
+        </button>
+      </div>
+      <div class="relative overflow-x-auto rounded-lg mb-2">
+        <table class="table-responsive">
           <thead>
             <tr>
               <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tl-lg">
                 Description
               </th>
-              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-1/12">
                 QTY
               </th>
               <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
@@ -974,7 +832,7 @@
               <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
                 TEST ABC
               </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 whitespace-nowrap">
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white whitespace-nowrap w-1/12">
                 20
               </td>
               <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-white w-8/12">
@@ -988,7 +846,7 @@
               <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
                 &nbsp;
               </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-1/12">
                 &nbsp;
               </td>
               <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
@@ -1009,20 +867,11 @@
           </tfoot>
         </table>
       </div>
-
-      <div class="flex justify-center">
-        <button type="button" class="flex items-center text-cloudy-120 bg-white border border-cloudy-120 hover:bg-gray-100 rounded-lg text-base font-bold px-5 py-2.5 ring-default">
-          Add new row
-          <img src="/dist/images/icons/plus-circle-black.svg" alt="plus black" class="ms-2">
-        </button>
-      </div>
-      <!-- table form -->
-      
     </div>
 
-    <hr class="border-[2px] my-8 border-secondary-100">
+    <hr class="border-[2px] mb-5 border-secondary-100">
 
-    <div class="p-6 pt-0">
+    <div class="p-3 md:p-6 pt-0">
       <div class="relative">
         <!-- heading -->
         <div class="flex items-center justify-between">
@@ -1035,50 +884,7 @@
         
         <div class="block py-5" id="supporting_files-id">
           <div class="mb-8">
-            <label class="block text-base font-medium text-grey_natural-1300 mb-2 shadow-">Invoice & Faktur Pajak<span class="text-red-8">*</span></label>
-            <div class="relative overflow-x-auto rounded-lg mb-2">
-              <table class="table-responsive">
-                <thead>
-                  <tr class="bg-cloudy-30">
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
-                      No
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-6/12">
-                      Filename
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left w-[200px]">
-                      Upload Time
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tr-lg whitespace-nowrap">
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
-                      1
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
-                      Invoice For Transaction ABXY 2023 Update
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
-                      24/04/2023 - 15:00:00
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 rounded-br-lg whitespace-nowrap">
-                      <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
-                            <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                        </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer">
-                          <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <label class="block text-base font-medium text-gray_natural-1300 mb-2 shadow-">Invoice & Faktur Pajak<span class="text-red-8">*</span></label>
             <div class="flex items-center justify-center w-full">
               <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]">
                   <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
@@ -1092,7 +898,7 @@
           </div>
 
           <div class="mb-8">
-            <label class="block text-base font-medium text-grey_natural-1300 mb-2">BAST</label>
+            <label class="block text-base font-medium text-gray_natural-1300 mb-2">BAST</label>
             <div class="relative overflow-x-auto rounded-lg mb-2">
               <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
                 <thead>
@@ -1149,7 +955,7 @@
           </div>
 
           <div class="mb-8">
-            <label class="block text-base font-medium text-grey_natural-1300 mb-2">Other Documents (Optional)</label>
+            <label class="block text-base font-medium text-gray_natural-1300 mb-2">Other Documents (Optional)</label>
             <div class="relative overflow-x-auto rounded-lg mb-2">
               <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
                 <thead>
@@ -1216,11 +1022,11 @@
 
     <!-- Document Detail -->
     <div id="drawer_document_detail-id" class="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
-      <div class="p-6 pb-0">
+      <div class="p-3 md:p-6 pb-0">
 
         <!-- close -->
         <div class="flex justify-start">
-          <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer" id="document_detail_close-id" onclick="toggleDetailDocument('drawer_document_detail-id', 'snackbar-id')">
+          <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer" id="document_detail_close-id" onclick="toggleDrawer('drawer_document_detail-id', 'reject')">
         </div>
         <!-- close -->
 
@@ -1344,13 +1150,13 @@
         </div>
 
         <div class="relative overflow-x-auto rounded-lg mb-5">
-          <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
+          <table class="table-responsive">
             <thead>
               <tr>
                 <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tl-lg">
                   Description
                 </th>
-                <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-1/12">
                   QTY
                 </th>
                 <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
@@ -1366,7 +1172,7 @@
                 <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 w-8/12">
                   TEST ABC
                 </td>
-                <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 w-8/12 whitespace-nowrap">
+                <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 whitespace-nowrap w-1/12">
                   20
                 </td>
                 <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-10 w-8/12">
@@ -1390,7 +1196,7 @@
         <!-- table form -->
       </div>
 
-      <div class="p-6 pt-6">
+      <div class="p-3 md:p-6 pt-6">
         <div class="relative">
           <!-- heading -->
           <div class="flex items-center justify-between">
@@ -1503,7 +1309,7 @@
 <div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-40 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
   <div class="flex items-center justify-between w-[540px] gap-3 p-4 mb-4 text-sm text-white rounded-xl shadow-light_raised" role="alert" id="bg_snackbar_alert">
     <p class="flex items-center gap-3">
-      <img src="/dist/images/icons/info.svg" alt="info" class="hidden" id="icon_snackbar_alert">
+      <img src="#" alt="info" class="hidden" id="icon_snackbar_alert">
       <span id="text_snackbar_alert"></span>
     </p>
     <div class="flex-shrink-0">
@@ -1514,54 +1320,49 @@
 <!-- snackbar -->
 
 <!-- modal status -->
-<div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto md:inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full max-w-md md:max-w-3xl max-h-full">
+<div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
         <div class="flex items-start justify-between mb-5">
           <div class="flex items-center">
-            <div class="flex items-center justify-center rounded-full h-10 w-10 bg-error-100 me-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
-                <path d="M6.875 7.5C6.875 7.33424 6.94085 7.17527 7.05806 7.05806C7.17527 6.94085 7.33424 6.875 7.5 6.875H12.5C12.6658 6.875 12.8247 6.94085 12.9419 7.05806C13.0592 7.17527 13.125 7.33424 13.125 7.5C13.125 7.66576 13.0592 7.82473 12.9419 7.94194C12.8247 8.05915 12.6658 8.125 12.5 8.125H7.5C7.33424 8.125 7.17527 8.05915 7.05806 7.94194C6.94085 7.82473 6.875 7.66576 6.875 7.5ZM7.5 10.625H12.5C12.6658 10.625 12.8247 10.5592 12.9419 10.4419C13.0592 10.3247 13.125 10.1658 13.125 10C13.125 9.83424 13.0592 9.67527 12.9419 9.55806C12.8247 9.44085 12.6658 9.375 12.5 9.375H7.5C7.33424 9.375 7.17527 9.44085 7.05806 9.55806C6.94085 9.67527 6.875 9.83424 6.875 10C6.875 10.1658 6.94085 10.3247 7.05806 10.4419C7.17527 10.5592 7.33424 10.625 7.5 10.625ZM10 11.875H7.5C7.33424 11.875 7.17527 11.9408 7.05806 12.0581C6.94085 12.1753 6.875 12.3342 6.875 12.5C6.875 12.6658 6.94085 12.8247 7.05806 12.9419C7.17527 13.0592 7.33424 13.125 7.5 13.125H10C10.1658 13.125 10.3247 13.0592 10.4419 12.9419C10.5592 12.8247 10.625 12.6658 10.625 12.5C10.625 12.3342 10.5592 12.1753 10.4419 12.0581C10.3247 11.9408 10.1658 11.875 10 11.875ZM17.5 3.75V12.2414C17.5005 12.4056 17.4684 12.5683 17.4055 12.72C17.3426 12.8717 17.2502 13.0093 17.1336 13.125L13.125 17.1336C13.0093 17.2502 12.8717 17.3426 12.72 17.4055C12.5683 17.4684 12.4056 17.5005 12.2414 17.5H3.75C3.41848 17.5 3.10054 17.3683 2.86612 17.1339C2.6317 16.8995 2.5 16.5815 2.5 16.25V3.75C2.5 3.41848 2.6317 3.10054 2.86612 2.86612C3.10054 2.6317 3.41848 2.5 3.75 2.5H16.25C16.5815 2.5 16.8995 2.6317 17.1339 2.86612C17.3683 3.10054 17.5 3.41848 17.5 3.75ZM3.75 16.25H11.875V12.5C11.875 12.3342 11.9408 12.1753 12.0581 12.0581C12.1753 11.9408 12.3342 11.875 12.5 11.875H16.25V3.75H3.75V16.25ZM13.125 13.125V15.3672L15.3664 13.125H13.125Z" fill="#E52A34"/>
-              </svg>
-            </div>
-            <h3 class="text-lg font-semibold text-black">
-              Add Rejection Notes
-            </h3>
+            <img src="/dist/images/icons/note_blue.svg" class="me-3" alt="note icon" id="note_icon-id">
+            <h3 class="text-base font-semibold text-gray_2-900" id="note_title-id"></h3>
           </div>
-          <button class="focus:ring-primary-500 focus:border-primary-500" onclick="toggleModal('modal_status-id')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
-              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="black" fill-opacity="0.54"/>
-            </svg>
+          <button class="focus:ring-primary-500 focus:border-primary-500" onclick="toggleModalDialog('modal_status-id')">
+            <img src="/dist/images/icons/CloseFilled.svg" alt="CloseFilled">
           </button>
-        </div> 
-        <textarea id="text_reject-id" rows="4" class="block p-2.5 w-full text-sm text-cloudy-130 rounded border border-secondary-100 focus:ring-primary-500 focus:border-primary-500" placeholder="..." disabled>Lack of Clarity for all of the documents.</textarea>
+        </div>
+        <form id="form_note-id">
+          <textarea name="note" id="note_text-id" rows="6" class="block form-control mb-4" placeholder="Insert revision explanation here..." oninput="checkInput(event, 'note_btn-id')"></textarea>
+          <input type="hidden" id="status_value-id" placeholder="...">
+          <div class="flex justify-end w-full">
+            <button type="button" class="block btn btn-primary" id="note_btn-id" onclick="submitNote('modal_status-id', 'form_note-id')" disabled>
+              Save Notes
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
 <!-- modal status -->
 
+
 <!-- modal status revise file -->
 <div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full max-w-md md:max-w-3xl max-h-full">
+  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
         <div class="flex items-start justify-between mb-5">
           <div class="flex items-center">
-            <div class="flex items-center justify-center rounded-full h-10 w-10 bg-cloudy-20 border-2 border-cloudy-10 me-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
-                <path d="M6.875 7.5C6.875 7.33424 6.94085 7.17527 7.05806 7.05806C7.17527 6.94085 7.33424 6.875 7.5 6.875H12.5C12.6658 6.875 12.8247 6.94085 12.9419 7.05806C13.0592 7.17527 13.125 7.33424 13.125 7.5C13.125 7.66576 13.0592 7.82473 12.9419 7.94194C12.8247 8.05915 12.6658 8.125 12.5 8.125H7.5C7.33424 8.125 7.17527 8.05915 7.05806 7.94194C6.94085 7.82473 6.875 7.66576 6.875 7.5ZM7.5 10.625H12.5C12.6658 10.625 12.8247 10.5592 12.9419 10.4419C13.0592 10.3247 13.125 10.1658 13.125 10C13.125 9.83424 13.0592 9.67527 12.9419 9.55806C12.8247 9.44085 12.6658 9.375 12.5 9.375H7.5C7.33424 9.375 7.17527 9.44085 7.05806 9.55806C6.94085 9.67527 6.875 9.83424 6.875 10C6.875 10.1658 6.94085 10.3247 7.05806 10.4419C7.17527 10.5592 7.33424 10.625 7.5 10.625ZM10 11.875H7.5C7.33424 11.875 7.17527 11.9408 7.05806 12.0581C6.94085 12.1753 6.875 12.3342 6.875 12.5C6.875 12.6658 6.94085 12.8247 7.05806 12.9419C7.17527 13.0592 7.33424 13.125 7.5 13.125H10C10.1658 13.125 10.3247 13.0592 10.4419 12.9419C10.5592 12.8247 10.625 12.6658 10.625 12.5C10.625 12.3342 10.5592 12.1753 10.4419 12.0581C10.3247 11.9408 10.1658 11.875 10 11.875ZM17.5 3.75V12.2414C17.5005 12.4056 17.4684 12.5683 17.4055 12.72C17.3426 12.8717 17.2502 13.0093 17.1336 13.125L13.125 17.1336C13.0093 17.2502 12.8717 17.3426 12.72 17.4055C12.5683 17.4684 12.4056 17.5005 12.2414 17.5H3.75C3.41848 17.5 3.10054 17.3683 2.86612 17.1339C2.6317 16.8995 2.5 16.5815 2.5 16.25V3.75C2.5 3.41848 2.6317 3.10054 2.86612 2.86612C3.10054 2.6317 3.41848 2.5 3.75 2.5H16.25C16.5815 2.5 16.8995 2.6317 17.1339 2.86612C17.3683 3.10054 17.5 3.41848 17.5 3.75ZM3.75 16.25H11.875V12.5C11.875 12.3342 11.9408 12.1753 12.0581 12.0581C12.1753 11.9408 12.3342 11.875 12.5 11.875H16.25V3.75H3.75V16.25ZM13.125 13.125V15.3672L15.3664 13.125H13.125Z" fill="#5E677B"/>
-              </svg>
-            </div>
+            <img src="/dist/images/icons/note_draft.svg" class="me-3" alt="note icon">
             <h3 class="text-lg font-medium text-gray_2-900">
               Revision Notes
             </h3>
           </div>
-          <button class="focus:ring-primary-500 focus:border-primary-500" onclick="toggleModal('modal_status_revise-id')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
-              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="black" fill-opacity="0.54"/>
-            </svg>
+          <button class="focus:ring-primary-500 focus:border-primary-500" onclick="toggleModalDialog('modal_status_revise-id')">
+            <img src="/dist/images/icons/CloseFilled.svg" alt="CloseFilled">
           </button>
         </div> 
         <textarea rows="6" class="block p-2.5 mb-2 w-full text-sm text-black rounded border border-secondary-100 focus:ring-primary-500 focus:border-primary-500" placeholder="..." disabled>Upload the most updated files BAST for this invoice, thank you.</textarea>
@@ -1582,7 +1383,7 @@
             </div>
           </div>
           <button type="button" class="block w-full text-cloudy-120 bg-primary-500 hover:bg-primary-700 border border-primary-500 whitespace-nowrap rounded text-sm font-bold px-5 py-2.5 md:w-auto ring-default"
-            onclick="toggleModal('modal_status_revise-id');toggleModal('modal_status_revise_upload-id');"
+            onclick="toggleModalDialog('modal_status_revise-id');toggleModalDialog('modal_status_revise_upload-id', 'z-40', 'static', 'inline');"
           >
             Upload Files
           </button>
@@ -1595,7 +1396,7 @@
 
 <!-- modal status revise upload file -->
 <div id="modal_status_revise_upload-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full max-w-md md:max-w-3xl max-h-full">
+  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
         <div class="flex items-start justify-between mb-3">
@@ -1609,22 +1410,11 @@
           <label class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]"
             onclick="handleFileSelect('upload_files_revise_input-id', 'upload_files_revise_btn-id', 'upload_files_revise_table-id', 'upload_files_revise-id')"
           >
-            <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
-              <div class="flex flex-shrink-0 justify-center items-center w-10 h-10 rounded-full bg-primary-700 border-[6px] border-primary-1 mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
-                  <g clip-path="url(#clip0_5292_3949)">
-                  <path d="M13.8335 13.3333L10.5002 10M10.5002 10L7.16688 13.3333M10.5002 10V17.5M17.4919 15.325C18.3047 14.8819 18.9467 14.1807 19.3168 13.3322C19.6868 12.4836 19.7637 11.536 19.5354 10.6389C19.307 9.74179 18.7865 8.94626 18.0558 8.37787C17.3251 7.80948 16.4259 7.50061 15.5002 7.5H14.4502C14.198 6.52436 13.7278 5.61861 13.0752 4.85082C12.4225 4.08304 11.6042 3.47321 10.682 3.06717C9.75967 2.66113 8.75734 2.46946 7.75031 2.50657C6.74328 2.54367 5.75777 2.80858 4.86786 3.28138C3.97795 3.75419 3.2068 4.42258 2.6124 5.23631C2.01799 6.05005 1.61579 6.98794 1.43603 7.97949C1.25627 8.97104 1.30363 9.99044 1.57456 10.961C1.84548 11.9317 2.33291 12.8282 3.00021 13.5833" stroke="#FDFDFD" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  </g>
-                  <defs>
-                    <clippath id="clip0_5292_3949">
-                      <rect width="20" height="20" fill="white" transform="translate(0.5)"/>
-                    </clippath>
-                  </defs>
-                </svg>
-              </div>
-              <p class="mb-1 text-sm text-gray-500"><span class="font-medium text-primary-900">Click to upload</span> or drag and drop</p>
-              <p class="text-xs text-gray-500">Only upload in .PDF</p>
-            </div>
+          <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
+            <img src="/dist/images/icons/dropzone.svg" alt="dropzone" class="mb-2">
+            <p class="mb-1 text-sm text-gray-500"><span class="font-semibold text-primary-900">Click to upload</span> or drag and drop</p>
+            <p class="text-xs text-gray-500">Only upload in .PDF</p>
+          </div>
             <input id="upload_files_revise_input-id" type="file" class="hidden" accept=".pdf" />
           </label>
         </div> 
@@ -1690,11 +1480,11 @@
 
 <!-- modal status revise hardcopy -->
 <div id="modal_status_hardcopy-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full max-w-md md:max-w-3xl max-h-full">
+  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <!-- header -->
       <div class="flex items-center p-2 h-16 md:p-4" style="background-image: url('/dist/images/bg/BG Oren.png'); background-size: cover;">
-        <button onclick="toggleModal('modal_status_hardcopy-id')">
+        <button onclick="toggleModalDialog('modal_status_hardcopy-id')">
           <img src="/dist/images/icons/heroicons-outline_x.svg" class="w-5 md:w-auto" alt="outline x">
         </button>
         <div class="flex justify-center w-full">
@@ -1712,7 +1502,7 @@
       </div>
 
       <div class="px-3 py-2 md:px-6 md:py-4">
-        <div class="flex items-start justify-start p-3 rounded-lg text-cloudy_t_general bg-warning_bg_general border border-warning_b_general gap-3 mb-5">
+        <div class="flex items-start justify-start p-3 rounded-lg text-cloudy-110 bg-warning_bg_general border border-warning_b_general gap-3 mb-5">
           <img src="/dist/images/icons/warning-orange.svg" alt="warning orange">
           <div class="flex flex-col">
             <span class="block text-sm font-bold">Please fill out this form after you send the hard copy documents!</span>
@@ -1736,11 +1526,14 @@
               <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="mb-5">
                   <label for="expedition_service-id" class="label-control">Expedition Service<span class="text-red-500">*</span></label>
-                  <select class="js-icon-single form-control" style="width: 100%;" name="state" required>
-                    <option value="">Select Service</option>
-                    <option value="jnt" data-image="/dist/images/jnt.png">JNT</option>
+                  <select id="expedition_select-id" style="width: 100%;" name="state" required>
+                    <option value=""></option>
+                    <option value="jnt" data-image="/dist/images/jnt.png">JNTs</option>
                     <option value="post" data-image="/dist/images/post.png">Kantor Pos</option>
                     <option value="jnt" data-image="/dist/images/jnt.png">JNT</option>
+                    <option value="jne" data-image="/dist/images/jne.png">JNE</option>
+                    <option value="jne" data-image="/dist/images/jne.png">JNE</option>
+                    <option value="jne" data-image="/dist/images/jne.png">JNE</option>
                     <option value="jne" data-image="/dist/images/jne.png">JNE</option>
                   </select>
                 </div>
@@ -1797,7 +1590,7 @@
               </div>
               <div class="flex items-start flex-col-reverse md:items-center md:flex-row gap-4 mb-5">
                 <button type="button" class="flex items-center justify-start btn-sm btn-default font-semibold"
-                  onclick="toggleModal('modal_choose_invoice-id');"
+                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline');"
                 >
                   <img src="/dist/images/icons/add-doc.svg" alt="add doc" class="me-2">
                   Choose Invoice(s)
@@ -1809,7 +1602,7 @@
                   <button>
                     <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
                   </button>
-                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModal('modal_q_send_doc-id');">How to Send? Read more.</span>
+                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
                 </div>
                 <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
                   onclick="handleSubmitHardcopy(this, 'form_expedition-id')"
@@ -1890,7 +1683,7 @@
               </div>
               <div class="flex items-start flex-col-reverse md:items-center md:flex-row gap-4 mb-5">
                 <button type="button" class="flex items-center justify-start btn-sm btn-default font-semibold"
-                  onclick="toggleModal('modal_choose_invoice-id');"
+                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline');"
                 >
                   <img src="/dist/images/icons/add-doc.svg" alt="add doc" class="me-2">
                   Choose Invoice(s)
@@ -1902,7 +1695,7 @@
                   <button>
                     <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
                   </button>
-                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModal('modal_q_send_doc-id');">How to Send? Read more.</span>
+                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
                 </div>
                 <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
                   onclick="handleSubmitHardcopy(this, 'form_self_courier-id')"
@@ -1923,11 +1716,11 @@
 
 <!-- modal q send document -->
 <div id="modal_q_send_doc-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-[60] justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-4 md:p-10 w-full max-w-md md:max-w-3xl max-h-full">
+  <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <!-- header -->
       <div class="flex items-center p-2 h-16 md:p-4" style="background-image: url('/dist/images/bg/BG Oren.png'); background-size: cover;">
-        <button onclick="toggleModal('modal_q_send_doc-id')">
+        <button onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline')">
           <img src="/dist/images/icons/heroicons-outline_x.svg" alt="outline x">
         </button>
         <div class="flex justify-center w-full">
@@ -1981,11 +1774,11 @@
 
 <!-- modal choose invoice -->
 <div id="modal_choose_invoice-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-[60] justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-4 md:p-10 w-full max-w-md md:max-w-3xl max-h-full">
+  <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
 
     <!-- header -->
     <div class="flex items-center justify-end mb-1.5">
-      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModal('modal_choose_invoice-id')">
+      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline')">
         <img src="/dist/images/icons/heroicons-outline_x.svg" alt="outline x">
       </button>
     </div>
@@ -1994,7 +1787,7 @@
     <div class="relative bg-white rounded-lg shadow">
       <!-- content -->
       <div class="px-3 py-2 md:px-5 md:py-4">
-        <div class="relative overflow-x-auto rounded-lg shadow-one mb-4">
+        <div class="relative overflow-auto rounded-lg shadow-one mb-4">
           <table class="table-responsive">
             <thead>
               <tr class="bg-cloudy-30">
@@ -2054,6 +1847,7 @@
                   Rp. 720.000
                 </td>
               </tr>
+          
               <tr class="hover:bg-cloudy-20">
                 <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
                   <label class="flex items-center justify-center">
@@ -2073,6 +1867,7 @@
                   Rp. 720.000
                 </td>
               </tr>
+              
             </tbody>
           </table>
         </div>
@@ -2082,7 +1877,7 @@
             <span class="text-cloudy-80"><span class="text-cloudy-130" id="invoice_selected-id">1</span> Invoices(s) Selected</span>
           </div>
           <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
-            onclick="toggleModal('modal_choose_invoice-id')"
+            onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline')"
           >
             Select Invoices
           </button>
@@ -2095,17 +1890,6 @@
 </div>
 <!-- modal choose invoice -->
 
-<!-- backdrop -->
-<div id="modal_status-id-backdrop" class="hidden bg-black/20 fixed inset-0 z-40"></div>
-<div id="modal_status_revise-id-backdrop" class="hidden bg-black/20 fixed inset-0 z-40"></div>
-<div id="modal_status_revise_upload-id-backdrop" class="hidden bg-black/20 fixed inset-0 z-40"></div>
-<div id="modal_status_hardcopy-id-backdrop" class="hidden bg-black/20 fixed inset-0 z-40"></div>
-<div id="modal_q_send_doc-id-backdrop" class="hidden bg-black/20 fixed inset-0 z-[50]"></div>
-<div id="modal_choose_invoice-id-backdrop" class="hidden bg-black/20 fixed inset-0 z-[50]"></div>
-<div id="drawer_document-id-backdrop" class="hidden bg-secondary-900/20 fixed inset-0 z-30"></div>
-<div id="drawer_document_detail-id-backdrop" class="hidden bg-secondary-900/20 fixed inset-0 z-30"></div>
-<!-- backdrop -->
-
 </body>
 <!-- Start script -->
 <script
@@ -2117,6 +1901,6 @@
 <!-- select2  -->
 <script src="/dist/js/select2/select2.min.js"></script>
 <script src="/dist/js/popper.min.js" charset="utf-8"></script>
-<script src="/dist/js/script.js"></script>
+<script src="/dist/js/main.js"></script>
 <!-- End script -->
 </html>

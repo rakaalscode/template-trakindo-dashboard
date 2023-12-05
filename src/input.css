@@ -5,6 +5,7 @@
 /* width */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 /* Track */
@@ -30,16 +31,32 @@
 .nav-menu-active {
   @apply bg-transparent text-secondary-900 md:border-b md:border-black;
 }
+
+.nav-menu-mobile {
+  @apply p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100
+}
 /* nav  */
 
 
 /* tabs underline button  */
-.tab-list {
+/* .tab-list {
   @apply text-secondary-300 mr-5 cursor-pointer hover:text-secondary-900 hover:underline;
+} */
+
+.tab-list {
+  @apply text-sm font-medium text-center text-secondary-300 rounded-lg mr-5 cursor-pointer hover:text-secondary-900 hover:underline;
+}
+
+.tab-list-badge{
+  @apply w-4 h-4 ms-2 text-[11px] font-semibold text-white bg-cloudy-70 rounded-full;
 }
 
 .active-tab {
   @apply text-secondary-900 mr-5 underline cursor-default;
+}
+
+.active-tab .tab-list-badge {
+  @apply bg-black;
 }
 
 .tab-list-2 {
@@ -73,7 +90,7 @@
 }
 
 .btn-primary {
-  @apply text-cloudy-120 bg-primary-500 border border-primary-500 hover:bg-primary-700 hover:border-primary-700;
+  @apply text-cloudy-120 bg-primary-500 border border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-700 hover:bg-primary-700 hover:border-primary-700 disabled:cursor-not-allowed disabled:bg-yellow-20 disabled:text-cloudy-70 disabled:border-yellow-20;
 }
 
 .btn-default {
@@ -109,6 +126,14 @@
 .badge-error {
   @apply bg-error-50 text-error-700;
 }
+
+.badge-green {
+  @apply bg-success-50 text-success-700;
+}
+
+.badge-orange {
+  @apply bg-orange_2-50 text-orange_2-700;
+}
 /* badge  */
 
 /* input  */
@@ -125,7 +150,11 @@
 }
 
 .form-control-search {
-  @apply text-sm border border-primary-500 block px-2 py-1 pe-10 bg-white rounded w-[150px] focus:ring-primary-500 focus-visible:ring focus:border-primary-500;
+  @apply text-sm border border-primary-500 block px-2 py-1 pe-10 bg-white rounded w-[150px] focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+}
+
+.form-control-search-mobile {
+  @apply text-sm border rounded-lg block w-full p-2.5 pl-10 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
 }
 
 .label-control-lg {
@@ -143,7 +172,7 @@
   @apply w-5 h-5 text-squash-3 border border-gray-300 rounded-md focus:ring-white disabled:text-secondary-100
 }
 
-.label-checkbpx {
+.label-checkbox {
   @apply w-full text-sm font-medium text-secondary-900;
 }
 /* checkbox  */
@@ -214,4 +243,6 @@
   @apply focus:outline-none focus-visible:ring;
 }
 /* global  */
+
+/* scroll  */
 
