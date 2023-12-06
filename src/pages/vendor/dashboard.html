@@ -21,116 +21,108 @@
 </head>
 <body class="font-roboto min-h-screen">
   
-  <!-- NAVBAR -->
-  <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-secondary-100">
-    <div class="max-w-screen-2xl flex justify-between items-center flex-shrink-0 mx-auto px-3 py-0 md:py-3 md:px-7 ">
-      <div class="items-center justify-between w-full md:flex md:w-auto" id="navbar-sticky">
-        <div class="flex items-center">
-          <a href="#" class="pr-2 md:pr-8">
-            <img src="/dist/images/trakindoLogo.png" class="w-[112px] md:w-full" alt="Trakindo Logo">
-          </a>
-          <button data-collapse-toggle="navbar-default" type="button" class="flex flex-col items-center nav-menu-mobile" aria-controls="navbar-default" aria-expanded="false" onclick="openDropdown(event, 'dropdownMenu-id', 'bottom-end', 'absolute', true)">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
+  <!-- navbar  -->
+  <nav class="fixed top-0 z-50 w-full bg-white border-b border-secondary-100">
+    <div class="px-4 py-3 md:px-8 md:py-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-start rtl:justify-end">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+              <span class="sr-only">Open sidebar</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+              </svg>
           </button>
-
-          <!-- Dekstop menu -->
-          <div class="relative hidden w-full md:block md:w-auto">
-            <ul class="flex flex-col text-base font-medium md:flex-row p-4 md:p-0 mt-2 border border-gray-100 rounded-lg bg-gray-50 md:flex md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
-              <li>
-                <a href="/src/pages/vendor/dashboard.html" class="block py-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
-              </li>
-              <li>
-                <a href="/src/pages/vendor/invoice_request.html" class="block py-2 nav-menu ">Invoice List</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Dekstop menu -->
-
-          <!-- Mobile menu -->
-          <div class="relative hidden w-full px-3 md:hidden " id="dropdownMenu-id">
-            <ul class="flex flex-col text-base font-medium p-4 md:p-0 mt-2 border border-secondary-100 rounded-lg bg-gray-100 rtl:space-x-reverse">
-              <li>
-                <a href="/src/pages/vendor/dashboard.html" class="block p-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
-              </li>
-              <li>
-                <a href="/src/pages/vendor/invoice_request.html" class="block p-2 nav-menu">Invoice List</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Mobile menu -->
+          <a href="#" class="flex md:me-6">
+            <img src="/dist/images/trakindoLogo.png" class="w-[112px] h-[30px] md:w-[148px] md:h-10" alt="Trakindo Logo" />
+          </a>
+          <ul class="items-center hidden space-x-8 font-medium md:flex">
+            <li>
+              <a href="/src/pages/vendor/dashboard.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
+            </li>
+            <li>
+              <a href="/src/pages/vendor/invoice_request.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Invoice Request List</a>
+            </li>
+          </ul>
         </div>
-      </div>
-
-      <!-- User -->
-      <div class="flex justify-end relative w-64 md:w-auto">
-        <button class="md:bg-white z-40 flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg" onclick="openDropdown(event,'dropdownUser-id', 'bottom-end', 'absolute', false)">
-          <div class="relative">
-            <img src="/dist/images/avatar-2.jpeg" alt="avatar" class="w-8 h-8 object-cover object-top rounded-full">
-            <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-white p-0.5">
-              <img src="/dist/images/icons/badge.svg" alt="badge">
-            </div>
-          </div>
-          <div class="hidden flex-col items-start md:flex">
-            <span class="block text-sm font-semibold text-black">SIGAP</span>
-            <span class="block text-xs text-cloudy-70">Vendor Warehouse</span>
-          </div>
-          <img src="/dist/images/icons/fi_chevron-down.svg" class="hidden dropdownUser-id md:block" alt="chevron down">
-        </button>
-
-        <!-- Dropdown -->
-        <div class="hidden z-40 w-full" id="dropdownUser-id">
-          <button class="bg-white z-40 flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg w-[180px] -ms-[32px] -mt-[44px] md:-ms-0 md:-mt-[60px] md:w-auto" onclick="openDropdown(event,'dropdownUser-id', 'bottom-end', 'absolute', false)">
-            <div class="relative whitespace-nowrap">
-              <img src="/dist/images/avatar-2.jpeg" alt="avatar" class="w-8 h-8 object-cover object-top rounded-full">
-              <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-white p-0.5">
-                <img src="/dist/images/icons/badge.svg" alt="badge">
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <button class="w-auto md:w-[185px] rounded focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
+              onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
+            >
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                  <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                </div>
+                <div class="hidden flex-col flex-1 items-start justify-start md:flex" role="none">
+                  <p class="block text-sm font-medium" role="none">
+                    Abisha Ilham
+                  </p>
+                  <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                    Vendor Warehouse
+                  </p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden md:block">
+                  <path d="M15 12.5L10 7.5L5 12.5" stroke="#BCBDC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </button>
+            <div class="z-60 hidden" id="dropdown-user">
+              <div class="p-3 w-[180px] md:w-[209px] -mt-[35px] -ml-[11px] md:-mt-[48px] md:-ml-[12px] text-sm font-medium text-black list-none bg-white divide-y divide-cloudy-10 rounded-lg">
+                <button class="md:w-[185px] rounded w-full focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
+                  onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
+                >
+                  <div class="flex w-full items-center gap-4 pb-3">
+                    <div class="relative">
+                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                      <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                    </div>
+                    <div class="flex flex-1 flex-col items-start justify-start" role="none">
+                      <p class="block text-sm" role="none">
+                        Abisha Ilham
+                      </p>
+                      <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                        Vendor Warehouse
+                      </p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden rotate-180 md:block">
+                      <path d="M15 12.5L10 7.5L5 12.5" stroke="#BCBDC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </button>
+                <ul class="space-y-3 pt-3" role="none">
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 hover:underline">
+                      <img src="/dist/images/icons/round-edit.svg" alt="round edit">
+                      <span>Edit profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-setting.svg" alt="round setting">
+                      <span>Setting</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-notif.svg" alt="round notif">
+                      <span>Notification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-exit.svg" alt="round exit">
+                      <span>Log off</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="flex flex-col text-left items-start justify-start">
-              <span class="block text-sm font-semibold text-black">SIGAP</span>
-              <span class="block text-xs text-cloudy-70">Vendor Warehouse</span>
-            </div>
-            <img src="/dist/images/icons/fi_chevron-down.svg" class="hidden md:block dropdownUser-id" alt="chevron down">
-          </button>
-          <div class="bg-white p-3 w-[180px] -ms-[32px] -mt-[10px] md:-ms-0 md:w-auto rounded-bl-lg rounded-br-lg">
-            <ul class="flex flex-col gap-3 border-t border-cloudy-10 pt-3">
-              <li>
-                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                  <img src="/dist/images/icons/round-edit.svg" alt="round edit">
-                  <span>Edit profile</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                  <img src="/dist/images/icons/round-setting.svg" alt="round setting">
-                  <span>Setting</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                  <img src="/dist/images/icons/round-notif.svg" alt="round notif">
-                  <span>Notification</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                  <img src="/dist/images/icons/round-exit.svg" alt="round exit">
-                  <span>Log off</span>
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
-        <!-- Dropdown -->
       </div>
-      <!-- User -->
-      
     </div>
   </nav>
-  <!-- NAVBAR -->
 
   <main class="pt-[4rem] md:pt-[5.25rem]">
     <!-- Card status -->
@@ -276,7 +268,7 @@
               </button>
 
               <!-- Open date rate -->
-              <div class="relative hidden z-40 px-2 w-full sm::w-[21rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
+              <div class="relative hidden z-60 px-2 w-full sm::w-[21rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
                   <button class="h-[43px] w-[43px] me-[67px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
@@ -376,7 +368,7 @@
               </button>
 
               <!-- Open sortby -->
-              <div class="relative hidden z-40 w-64" id="filterSortby-id">
+              <div class="relative hidden z-60 w-64" id="filterSortby-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
                   <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
@@ -869,7 +861,7 @@
     <!-- Filter table -->
 
     <!-- Document Form -->
-    <div id="drawer_document-id" class="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
+    <div id="drawer_document-id" class="fixed top-0 right-0 z-60 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
       <div class="p-3 md:p-6 pb-0">
 
       <!-- close -->
@@ -997,12 +989,14 @@
       </div>
 
       <div class="flex items-center justify-between gap-4 mb-4">
-        <h3 class="text-2xl font-medium text-secondary-900">
+        <h3 class="w-full md:w-auto text-2xl font-medium text-secondary-900">
           Goods or Services
         </h3>
-        <button type="button" class="flex items-center text-cloudy-120 bg-white border border-cloudy-120 hover:bg-gray-100 rounded-lg text-base font-bold px-5 py-2.5 ring-default">
+        <button type="button" class="w-full justify-center md:w-auto md:justify-center font-medium text-cloudy-120 text-center bg-white border border-cloudy-120 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-gray-100 hover:bg-gray-100">
           Add new row
-          <img src="/dist/images/icons/plus-circle-black.svg" alt="plus black" class="ms-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="ms-2">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17 13H13V17H11V13H7V11H11V7H13V11H17V13Z" fill="#1A202C"/>
+          </svg>
         </button>
       </div>
       <div class="relative overflow-x-auto rounded-lg mb-2">
@@ -1260,7 +1254,7 @@
     <!-- Document Form -->
 
     <!-- Document Detail -->
-    <div id="drawer_document_detail-id" class="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
+    <div id="drawer_document_detail-id" class="fixed top-0 right-0 z-60 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
       <div class="p-3 md:p-6 pb-0">
 
         <!-- close -->
@@ -1545,7 +1539,7 @@
   </main>
 
 <!-- snackbar -->
-<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-40 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
+<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-60 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
   <div class="flex items-center justify-between w-[540px] gap-3 p-4 mb-4 text-sm text-white rounded-xl shadow-light_raised" role="alert" id="bg_snackbar_alert">
     <p class="flex items-center gap-3">
       <img src="#" alt="info" class="hidden" id="icon_snackbar_alert">
@@ -1559,7 +1553,7 @@
 <!-- snackbar -->
 
 <!-- modal status -->
-<div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
@@ -1589,7 +1583,7 @@
 
 
 <!-- modal status revise file -->
-<div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
@@ -1622,7 +1616,7 @@
             </div>
           </div>
           <button type="button" class="block w-full text-cloudy-120 bg-primary-500 hover:bg-primary-700 border border-primary-500 whitespace-nowrap rounded text-sm font-bold px-5 py-2.5 md:w-auto ring-default"
-            onclick="toggleModalDialog('modal_status_revise-id');toggleModalDialog('modal_status_revise_upload-id', 'z-40', 'static', 'inline');"
+            onclick="toggleModalDialog('modal_status_revise-id');toggleModalDialog('modal_status_revise_upload-id', 'z-60', 'static', 'inline');"
           >
             Upload Files
           </button>
@@ -1634,7 +1628,7 @@
 <!-- modal status revise file -->
 
 <!-- modal status revise upload file -->
-<div id="modal_status_revise_upload-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status_revise_upload-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
@@ -1718,7 +1712,7 @@
 <!-- modal status revise upload file -->
 
 <!-- modal status revise hardcopy -->
-<div id="modal_status_hardcopy-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status_hardcopy-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <!-- header -->
@@ -1755,17 +1749,17 @@
               <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="mb-5">
                   <label for="awb_number" class="label-control">Enter AWB Number<span class="text-red-500">*</span></label>
-                  <input type="text" id="awb_number" class="form-control form-rounded" placeholder="AWB Number Here" required>
+                  <input type="text" id="awb_number" name="awb_number" class="form-control form-rounded" placeholder="AWB Number Here" required>
                 </div>
                 <div class="mb-5">
                   <label for="recipent_name" class="label-control">Enter Recipent Name<span class="text-red-500">*</span></label>
-                  <input type="text" id="recipent_name" class="form-control form-rounded" placeholder="Aldo Farado" required>
+                  <input type="text" id="recipent_name" name="recipent_name" class="form-control form-rounded" placeholder="Aldo Farado" required>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="mb-5">
                   <label for="expedition_service-id" class="label-control">Expedition Service<span class="text-red-500">*</span></label>
-                  <select id="expedition_select-id" style="width: 100%;" name="state" required>
+                  <select id="expedition_select-id" style="width: 100%;" name="expedition_select" required>
                     <option value=""></option>
                     <option value="jnt" data-image="/dist/images/jnt.png">JNTs</option>
                     <option value="post" data-image="/dist/images/post.png">Kantor Pos</option>
@@ -1778,7 +1772,7 @@
                 </div>
                 <div class="mb-5">
                   <label for="delivery_date" class="label-control">Delivery Date<span class="text-red-500">*</span></label>
-                  <input type="text" id="delivery_date" class="form-control form-rounded datepicker-flatpickr-custom" placeholder="Select Date">
+                  <input type="text" id="delivery_date" name="delivery_date" class="form-control form-rounded datepicker-flatpickr-custom" placeholder="Select Date">
                 </div>
               </div>
             </div>
@@ -1829,7 +1823,7 @@
               </div>
               <div class="flex items-start flex-col-reverse md:items-center md:flex-row gap-4 mb-5">
                 <button type="button" class="flex items-center justify-start btn-sm btn-default font-semibold"
-                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline');"
+                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-80', 'static', 'inline');"
                 >
                   <img src="/dist/images/icons/add-doc.svg" alt="add doc" class="me-2">
                   Choose Invoice(s)
@@ -1838,10 +1832,10 @@
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                  <button>
+                  <button type="button">
                     <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
                   </button>
-                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
+                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-80', 'static', 'inline');">How to Send? Read more.</span>
                 </div>
                 <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
                   onclick="handleSubmitHardcopy(this, 'form_expedition-id')"
@@ -1922,7 +1916,7 @@
               </div>
               <div class="flex items-start flex-col-reverse md:items-center md:flex-row gap-4 mb-5">
                 <button type="button" class="flex items-center justify-start btn-sm btn-default font-semibold"
-                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline');"
+                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-80', 'static', 'inline');"
                 >
                   <img src="/dist/images/icons/add-doc.svg" alt="add doc" class="me-2">
                   Choose Invoice(s)
@@ -1931,10 +1925,10 @@
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                  <button>
+                  <button type="button">
                     <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
                   </button>
-                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
+                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-80', 'static', 'inline');">How to Send? Read more.</span>
                 </div>
                 <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
                   onclick="handleSubmitHardcopy(this, 'form_self_courier-id')"
@@ -1954,7 +1948,7 @@
 <!-- modal status revise hardcopy -->
 
 <!-- modal q send document -->
-<div id="modal_q_send_doc-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-[60] justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_q_send_doc-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-90 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <!-- header -->
@@ -2012,12 +2006,12 @@
 <!-- modal q send document -->
 
 <!-- modal choose invoice -->
-<div id="modal_choose_invoice-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-[60] justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_choose_invoice-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-90 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
 
     <!-- header -->
     <div class="flex items-center justify-end mb-1.5">
-      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline')">
+      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModalDialog('modal_choose_invoice-id', 'z-80', 'static', 'inline')">
         <img src="/dist/images/icons/heroicons-outline_x.svg" alt="outline x">
       </button>
     </div>
@@ -2116,7 +2110,7 @@
             <span class="text-cloudy-80"><span class="text-cloudy-130" id="invoice_selected-id">1</span> Invoices(s) Selected</span>
           </div>
           <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
-            onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline')"
+            onclick="toggleModalDialog('modal_choose_invoice-id', 'z-80', 'static', 'inline')"
           >
             Select Invoices
           </button>

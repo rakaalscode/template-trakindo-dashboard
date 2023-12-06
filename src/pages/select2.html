@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/css/select2/select2.min.css" rel="stylesheet" />
+  <link href="/dist/css/select2/select2-styles.css" rel="stylesheet" />
+  <style>
+    .card {
+      position: relative;
+      height: auto;
+      width: 300px;
+      background-color: white;
+      border: 1px solid black;
+      padding: 1rem;
+      margin-bottom: 5rem;
+    }
+
+    
+
+    /* custom theme select2  */
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+<div class="card">
+  <select id="select1" style="width: 100%">
+    <option value=""></option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+</div>
+
+<div id="card" class="card">
+  <button id="openSelect2">open search</button>
+  <span id="status"></span>
+  <select id="select2" style="width: 100%">
+    <option value=""></option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+</div>
+
+<div id="card2" class="card">
+  <select id="select3" style="width: 100%" multiple>
+    <option value=""></option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+    <option value="4">Option 4</option>
+    <option value="5">Option 5</option>
+  </select>
+</div>
+
+<div id="card3" class="card">
+  <select id="select4" style="width: 100%">
+    <option value=""></option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+    <option value="4">Option 4</option>
+    <option value="5">Option 5</option>
+  </select>
+</div>
+
+
+</body>
+<script
+src="/dist/js/jquery-3.7.1.min.js"
+integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+crossorigin="anonymous"></script>
+<script src="/dist/js/select2/select2.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+     // Initialize Select2
+
+  $('#select1').select2({
+    theme: 'custom-theme', 
+    placeholder: 'Select Service',
+    minimumResultsForSearch: Infinity, // disable search
+  });
+
+  $('#select2').select2({
+    theme: 'custom-theme-2', 
+    placeholder: 'Select',
+  });
+
+  $('#select3').select2({
+    theme: 'custom-theme-2', 
+    placeholder: 'Find Name',
+    closeOnSelect: false,
+  });
+
+  $('#select4').select2({
+    theme: 'custom-theme-3', 
+    placeholder: 'Rp 1.000.000 - Rp 5.000.000',
+    closeOnSelect: false,
+    minimumResultsForSearch: Infinity, // disable search
+  });
+
+
+  $('#openSelect2').on('click', function() {
+    // Trigger the select2 dropdown to open
+    $('#status').html('Show');
+    $('#select2').select2('open');
+  });
+
+  // Adjust card height when Select2 dropdown is opened
+  $('#select2').on('select2:open', function() {
+    $('#card').height("245px");
+  });
+
+  // Adjust card height when Select2 dropdown is closed
+  $('#select2').on('select2:close', function() {
+    $('#status').html('Hide');
+    $('#card').height('auto');
+  });
+  
+});
+</script>
+
+</html>

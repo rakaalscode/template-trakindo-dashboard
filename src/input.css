@@ -23,6 +23,26 @@
   background: #555;
 }
 
+/* Toggle Checbox */
+input:checked ~ .dot {
+  transform: translateX(100%);
+}
+
+input:checked ~ .toggle-line {
+  background-color: #00AC64;
+}
+
+input[type="checkbox"]:disabled:checked + .toggle-line {
+  background-color: #00AC64;
+  opacity: 0.50;
+  cursor: not-allowed;
+}
+
+
+.readonly:checked + .toggle-line {
+  background-color: red; /* Change to your desired color */
+}
+
 /* nav  */
 .nav-menu {
   @apply text-secondary-500 bg-transparent md:bg-white md:border-b md:border-white  md:hover:text-secondary-900 md:hover:border-black;
@@ -133,6 +153,26 @@
 
 .badge-orange {
   @apply bg-orange_2-50 text-orange_2-700;
+}
+
+.badge-primary {
+  @apply bg-primary-2 text-primary-500;
+}
+
+.badge-blue2 {
+  @apply bg-blue_2-20 text-blue_general;
+}
+
+.badge-gray2 {
+  @apply bg-cloudy-30 text-cloudy-80;
+}
+
+.badge-orange2 {
+  @apply bg-orange_2-20 text-warning_b_general;
+}
+
+.badge-green2 {
+  @apply bg-green_2-20 text-green_general;
 }
 /* badge  */
 

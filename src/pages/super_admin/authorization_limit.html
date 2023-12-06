@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Start css -->
+  <!-- datepicker  -->
+  <link href="/dist/css/flatpickr/flatpickr.min.css" rel="stylesheet" />
+  <!-- select2 -->
+  <link href="/dist/css/select2/select2.min.css" rel="stylesheet" />
+  <link href="/dist/css/styles.css" rel="stylesheet">
+  <link href="/dist/css/select2/select2-styles.css" rel="stylesheet">
+  <link href="/dist/css/main.css" rel="stylesheet">
+  <!-- End css -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <title>Dashboard</title>
+</head>
+<body class="font-roboto min-h-screen">
+  
+  <!-- navbar  -->
+  <nav class="fixed top-0 z-50 w-full bg-white border-b border-secondary-100">
+    <div class="px-4 py-3 md:px-8 md:py-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-start rtl:justify-end">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+              <span class="sr-only">Open sidebar</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+              </svg>
+          </button>
+          <a href="#" class="flex md:me-6">
+            <img src="/dist/images/trakindoLogo.png" class="h-10 me-3" alt="Trakindo Logo" />
+          </a>
+          <ul class="items-center hidden space-x-8 font-medium md:flex">
+            <li>
+              <a href="#" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
+            </li>
+            <li>
+              <a href="#" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Invoice Request List</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <button class="w-auto md:w-[185px] rounded focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
+              onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
+            >
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                  <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                </div>
+                <div class="hidden flex-col flex-1 items-start justify-start md:flex" role="none">
+                  <p class="block text-sm font-medium" role="none">
+                    Abisha Ilham
+                  </p>
+                  <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                    Finance AP
+                  </p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden md:block">
+                  <path d="M15 12.5L10 7.5L5 12.5" stroke="#BCBDC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </button>
+            <div class="z-60 hidden" id="dropdown-user">
+              <div class="p-3 w-[180px] md:w-[209px] -mt-[35px] -ml-[11px] md:-mt-[48px] md:-ml-[12px] text-sm font-medium text-black list-none bg-white divide-y divide-cloudy-10 rounded-lg">
+                <button class="md:w-[185px] rounded w-full focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
+                  onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
+                >
+                  <div class="flex w-full items-center gap-4 pb-3">
+                    <div class="relative">
+                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                      <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                    </div>
+                    <div class="flex flex-1 flex-col items-start justify-start" role="none">
+                      <p class="block text-sm" role="none">
+                        Abisha Ilham
+                      </p>
+                      <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                        Finance AP
+                      </p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden rotate-180 md:block">
+                      <path d="M15 12.5L10 7.5L5 12.5" stroke="#BCBDC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </button>
+                <ul class="space-y-3 pt-3" role="none">
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 hover:underline">
+                      <img src="/dist/images/icons/round-edit.svg" alt="round edit">
+                      <span>Edit profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-setting.svg" alt="round setting">
+                      <span>Setting</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-notif.svg" alt="round notif">
+                      <span>Notification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-exit.svg" alt="round exit">
+                      <span>Log off</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- sidebar  -->
+  <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-[353px] h-screen pt-24 transition-transform -translate-x-full bg-cloudy-10 border-r border-cloudy-30 md:translate-x-0" aria-label="Sidebar">
+    
+    <div class="bg-cloudy-10">
+      <div class="px-8 pt-3">
+        <h3 class="font-roboto_condensed text-xl font-bold text-black">Superadmin Settings</h3>
+      </div>
+    </div>
+      
+    <hr class="my-4 border-b border-cloudy-30">
+
+    <div class="relative">
+      <div class="h-full px-8 pb-4 overflow-y-auto bg-cloudy-10">
+        <ul class="space-y-4 text-base font-medium">
+          <li>
+            <a href="/src/pages/super_admin/authorization_limit.html" class="flex items-center px-3 py-[14px] text-cloudy-120 bg-primary-500 rounded-lg hover:bg-primary-500 hover:text-cloudy-120 group" aria-current="page">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-cloudy-120 group-hover:text-cloudy-120">
+                <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="#1A202C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="ms-3">Authorization Limit</span>
+            </a>
+          </li>
+          <li>
+            <a href="/src/pages/super_admin/approval_permission.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-primary-500 hover:text-cloudy-120 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60 group-hover:text-cloudy-120">
+                <path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="ms-3">Approval Permission</span>
+            </a>
+          </li>
+          <li>
+            <a href="/src/pages/super_admin/email_automation.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-primary-500 hover:text-cloudy-120 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60 group-hover:text-cloudy-120">
+                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="ms-3">Email Automation & Template</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 justify-center hidden w-full px-4 pb-8 md:flex">
+      <button class="relative flex justify-between w-full rounded pt-6 border-t border-cloudy-140 focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
+        onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
+      >
+        <div class="flex items-center gap-4">
+          <div class="relative">
+            <img class="w-8 h-8 rounded-full object-cover flex-shrink-" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+            <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+          </div>
+          <div class="hidden flex-col items-start justify-start md:flex" role="none">
+            <p class="block text-sm font-medium" role="none">
+              Abisha Ilham
+            </p>
+            <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+              Finance AP
+            </p>
+          </div>
+        </div>
+        <div class=""> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+            <path d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5M13.3333 14.1667L17.5 10M17.5 10L13.3333 5.83333M17.5 10H7.5" stroke="#667085" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </button>
+    </div>
+
+  </aside>
+  
+  <!-- content  -->
+  <main class="max-w-screen-2xl mx-auto">
+    <div class="md:ml-[353px]">
+      <div class="pt-16 md:pt-20 pb-32">
+        <div class="flex flex-col gap-8 border-b border-cloudy-140 px-3 py-6 md:px-8 md:py-8">
+          <!-- title  -->
+          <div>
+            <h2 class="text-3xl font-medium text-cloudy-120">Authorization Limit</h2>
+            <span class="block text-lg text-cloudy-90">Set up where the <span class="font-semibold">final authorization</span> for invoice will be sent before get submitted to finance.</span>
+          </div>
+          
+          <!-- section rules  -->
+          <section class="flex flex-col gap-5">
+            <!-- head rules  -->
+            <div>
+              <h3 class="text-lg font-semibold text-cloudy-120">Invoice Authorization Rules</h3>
+              <span class="block font-medium text-cloudy-90">If Invoice Amount is</span>
+            </div>
+
+            <!-- row list -->
+            <div class="flex flex-col gap-6">
+              <div class="flex flex-col gap-6" id="authrows-id">
+                <!-- row 1 -->
+                <div class="flex flex-col items-start gap-4 w-full md:w-auto md:flex-row md:items-center ">
+                  <div class="flex items-center flex-row gap-2 w-full md:w-auto md:gap-4">
+                    <div class="flex items-center w-full md:w-auto">
+                      <div class="relative w-full md:w-[144px]">
+                        <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+                          <span class="text-secondary-500">USD</span>
+                        </div>
+                        <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="0" required>
+                      </div>
+                    </div>
+                    <span class="w-5 h-[2px] bg-gray-1"></span>
+                    <div class="flex items-center w-full md:w-auto">
+                      <div class="relative z-0 w-full group">
+                        <div class="relative w-full md:w-[144px]">
+                          <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+                            <span class="text-secondary-500">USD</span>
+                          </div>
+                          <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="0" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                    <span class="text-sm font-medium text-secondary-500">USD, send Invoice to</span>
+                    <div class="relative w-full md:w-[260px]">
+                      <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" value="Division Head (Arif Prawira)" required>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- row 2 -->
+                <div class="flex flex-col items-start gap-4 w-full md:w-auto md:flex-row md:items-center ">
+                  <div class="flex items-center flex-row gap-2 w-full md:w-auto md:gap-4">
+                    <div class="flex items-center w-full md:w-auto">
+                      <div class="relative z-0 w-full group">
+                        <div class="relative w-full md:w-[144px]">
+                          <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+                            <span class="text-secondary-500">USD</span>
+                          </div>
+                          <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="100.000" required>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="w-5 h-[2px] bg-gray-1"></span>
+                    <div class="flex items-center w-full md:w-auto">
+                      <div class="relative z-0 w-full group">
+                        <div class="relative w-full md:w-[144px]">
+                          <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+                            <span class="text-secondary-500">USD</span>
+                          </div>
+                          <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="20.000" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                    <span class="text-sm font-medium text-secondary-500">USD, send Invoice to</span>
+                    <div class="relative w-full md:w-[260px]">
+                      <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" value="Chief (Ali. R. Habsyi)" required>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- row 3 -->
+                <div class="flex flex-col items-start gap-4 w-full md:w-auto md:flex-row md:items-center ">
+                  <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                    <span class="text-sm font-medium text-secondary-500">Above</span>
+                    <div class="flex items-center w-full md:auto">
+                      <div class="relative z-0 w-full group">
+                        <div class="relative w-full md:w-[144px]">
+                          <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+                            <span class="text-secondary-500">USD</span>
+                          </div>
+                          <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="200.000" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                    <span class="text-sm font-medium text-secondary-500">USD, send Invoice to</span>
+                    <div class="relative w-full md:w-[260px]">
+                      <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" value="BOD (Bari Hamami)" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- add rows button  -->
+              <div class="flex">
+                <button type="button" class="font-medium text-cloudy-120 text-center bg-white border border-cloudy-120 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-gray-100 hover:bg-gray-100" id="add_rule_btn-id" onclick="addRuleToggle('add_rule_btn-id', 'form_add_rule-id');">
+                  Add new row
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="ms-2">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17 13H13V17H11V13H7V11H11V7H13V11H17V13Z" fill="#1A202C"/>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="w-full bg-white rounded-lg shadow-8 border border-secondary-100 hidden" id="form_add_rule-id">
+                <div class="flex items-center justify-between gap-8 bg-cloudy-20 px-3 md:px-6 py-2 rounded-tl-lg rounded-tr-lg">
+                  <h3 class="text-lg font-semibold text-gray_2-900">Add New Role</h3>
+                  <button onclick="addRuleToggle('add_rule_btn-id', 'form_add_rule-id');">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+                      <path d="M15 5L5 15M5 5L15 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="flex flex-col p-6 px-3 md:px-6 gap-6">
+                  <div class="flex flex-col items-start gap-4 w-full md:w-auto md:flex-row md:items-center ">
+                    <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                      <span class="text-sm font-medium text-secondary-500 whitespace-nowrap">If Invoice Amount is</span>
+                      <div class="w-[160px]">
+                        <select id="new_role-id" style="width: 160px;" name="state" required>
+                          <option value="above">Above</option>
+                          <option value="below">Below</option>
+                          <option value="between">Between</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div id="option_ab" class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                      <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                        <div class="flex items-center w-full md:auto">
+                          <div class="relative z-0 w-full group">
+                            <div class="relative w-full md:w-[144px]">
+                              <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+                                <span class="text-secondary-500">USD</span>
+                              </div>
+                              <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="200.000" required>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                        <span class="text-sm font-medium text-secondary-500">Send Invoice to</span>
+                        <div class="relative w-full md:w-[260px]">
+                          <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" value="Division Head (Arif Prawira" required>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="option_between" class="hidden items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                      <div class="flex items-center flex-row gap-2 w-full md:w-auto md:gap-4">
+                        <div class="flex items-center w-full md:w-auto">
+                          <div class="relative w-full md:w-[144px]">
+                            <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+                              <span class="text-secondary-500">USD</span>
+                            </div>
+                            <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="0" required>
+                          </div>
+                        </div>
+                        <span class="w-5 h-[2px] bg-gray-1"></span>
+                        <div class="flex items-center w-full md:w-auto">
+                          <div class="relative z-0 w-full group">
+                            <div class="relative w-full md:w-[144px]">
+                              <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+                                <span class="text-secondary-500">USD</span>
+                              </div>
+                              <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="0" required>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="hidden flex-col items-start gap-4 w-full md:w-auto md:flex-row md:items-center" id="option_between2">
+                    <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                      <span class="text-sm font-medium text-secondary-500 whitespace-nowrap">Send Invoice to</span>
+                      <div class="relative w-full md:w-[260px]">
+                        <input type="text" class="block w-full py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" value="Division Head (Arif Prawira)" required>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="p-6 border-t border-cloudy-140 px-3 md:px-6">
+                  <div class="flex items-center justify-end w-full">
+                    <button class="font-medium text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700" onclick="addRuleToggle('add_rule_btn-id', 'form_add_rule-id');">Add Rule</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="flex flex-col gap-8 px-3 py-6 md:px-8 md:py-8">
+
+          <!-- section currency  -->
+          <section class="flex flex-col gap-4">
+            <div>
+              <h2 class="text-3xl font-medium text-cloudy-120">Current currency value</h2>
+            </div>
+
+            <!-- row currency -->
+            <div class="flex flex-col items-start gap-4 md:flex-row md:items-center ">
+              <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
+                <div class="flex items-center gap-2">
+                  <img src="/dist/images/icons/US.svg" alt="US">
+                  <span class="text-sm font-medium text-cloudy-120">1 USD =</span>
+                </div>
+                <div class="flex items-center flex-row gap-4">
+                  <div class="flex items-center">
+                    <div class="relative z-0 w-full group">
+                      <div class="relative w-full md:w-[180px]">
+                        <input type="text" class="block w-full py-2 px-[14px] pe-10 text-secondary-900 font-medium border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" value="15.464,55" placeholder="0" required>
+                      </div>
+                      <div class="absolute start-0 flex items-start mt-1.5 pointer-events-none">
+                        <span class="inline text-sm text-cloudy-90 italic">Last changed: <span class="font-semibold">10/11/23</span></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <img src="/dist/images/icons/ID.svg" alt="ID">
+                    <span class="text-sm font-medium text-cloudy-120">IDR</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </section>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- action button -->
+  <div class="fixed bottom-0 left-0 z-20 w-full p-4 bg-secondary-900 border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6">
+    <div class="flex items-center justify-end w-full">
+      <button class="font-medium text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700">Save Changes</button>
+    </div>
+  </div>
+
+
+</body>
+<!-- Start script -->
+<script
+  src="/dist/js/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+<!-- datepicker  -->
+<script src="/dist/js/flatpickr/flatpickr.js"></script>
+<!-- select2  -->
+<script src="/dist/js/select2/select2.min.js"></script>
+<script src="/dist/js/popper.min.js" charset="utf-8"></script>
+<script src="/dist/js/main.js"></script>
+<!-- End script -->
+</html>

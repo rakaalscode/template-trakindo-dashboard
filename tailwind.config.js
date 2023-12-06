@@ -18,6 +18,11 @@ module.exports = {
     'bg-blue_general',
     'bg-green_general',
     'text-warning-700',
+    'text-error-700',
+    'z-60',
+    'z-70',
+    'z-80',
+    'z-90',
     'border-gray-300',
     'hover:bg-yellow-0',
     'hover:bg-squash-1',
@@ -31,14 +36,23 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: { 
-        "roboto": ['Roboto', 'sans-serif'] 
+        "roboto": ['Roboto', 'sans-serif'],
+        "roboto_condensed": ['Roboto Condensed', 'sans-serif'] 
       },
       boxShadow: {
         'one': '0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10)',
         'xs': '0px 1px 2px 0px rgba(16, 24, 40, 0.05);',
         'ds': '0px 12px 16px 0px rgba(129, 134, 142, 0.12);',
-        'light_raised': '0px 16px 20px 4px rgba(129, 134, 142, 0.16);'
-      }
+        'light_raised': '0px 16px 20px 4px rgba(129, 134, 142, 0.16);',
+        '8': '0px 8px 16px 0px rgba(129, 134, 142, 0.08);',
+      },
+      zIndex: {
+        '60': 60,
+        '70': 70,
+        '80': 80,
+        '90': 90,
+        '100': 100,
+      },
     },
     colors: {
       transparent: "transparent",
@@ -47,6 +61,7 @@ module.exports = {
       white: "#ffffff",
       primary: {
         1: '#FFF0D9',
+        2: '#FFF3D6',
         50: '#F9D88F',
         100: '#F9D070',
         300: '#FAC851',
@@ -66,6 +81,10 @@ module.exports = {
         50: '#ECFDF3',
         100: '#D1FADF',
         700: '#027A48',
+      },
+      
+      green_2: {
+        20: '#E5F6E5',
       },
       green: {
         50: '#87D8AF',
@@ -130,6 +149,7 @@ module.exports = {
         900: '#EF5120',
       },
       orange_2: {
+        20: '#FAEADF',
         50: '#FFF6ED',
         700: '#C4320A',
       },
@@ -150,6 +170,7 @@ module.exports = {
         900: '#381902',
       },
       gray: {
+        1: '#D9D9D9',
         60: '#B0B8C7',
         100: '#F2F4F7',
         300: '#D0D5DD',

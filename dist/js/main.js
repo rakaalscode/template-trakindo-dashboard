@@ -1,5 +1,41 @@
 $(document).ready(function() {
   
+  $('#new_role-id').select2({
+    theme: 'custom-theme1-1', 
+    minimumResultsForSearch: Infinity, // disable search
+    templateResult: formatOption, // Function for formatting the display of options,
+  });
+
+   // Attach an event listener for the "select2:select" event
+   $("#new_role-id").on("select2:select", function (e) {
+    let selectedOption = e.params.data;
+    
+    let optionABEl = document.getElementById('option_ab');
+    let optionBEl = document.getElementById('option_between');
+    let optionBEl2 = document.getElementById('option_between2');
+
+    if(selectedOption.id == 'above' || selectedOption.id == 'below') {
+      optionABEl.classList.add('flex');
+      optionBEl.classList.add('hidden');
+      optionBEl2.classList.add('hidden');
+      optionABEl.classList.remove('hidden');
+      optionBEl.classList.remove('hidden');
+      optionBEl2.classList.remove('hidden');
+      optionBEl.classList.add('hidden');
+      optionBEl2.classList.add('hidden');
+    } 
+    else if(selectedOption.id == 'between') {
+      optionABEl.classList.add('hidden');
+      optionBEl.classList.remove('hidden');
+      optionBEl2.classList.remove('hidden');
+      optionABEl.classList.add('hidden');
+      optionBEl.classList.remove('hidden');
+      optionBEl2.classList.remove('hidden');
+      optionBEl.classList.add('flex');
+      optionBEl2.classList.add('flex');
+    }
+  });
+
   $('#expedition_select-id').select2({
     theme: 'custom-theme', 
     minimumResultsForSearch: Infinity, // disable search
@@ -22,8 +58,8 @@ $(document).ready(function() {
     let backdropEl = document.createElement('div');
     let getRect = parentElement.getBoundingClientRect()
     
-    parentElement.classList.add('z-30');
-    backdropEl.innerHTML = `<div id="${'status_filter-id'}-backdrop" class="flex bg-black/20 fixed inset-0 z-20"></div>`;
+    parentElement.classList.add('z-60');
+    backdropEl.innerHTML = `<div id="${'status_filter-id'}-backdrop" class="flex bg-black/20 fixed inset-0 z-50"></div>`;
     document.body.appendChild(backdropEl);
     document.body.style.paddingBottom = "10rem"
     window.scrollTo({
@@ -35,7 +71,7 @@ $(document).ready(function() {
 
   $('#status_filter-id').on('select2:close', function() {
     let parentElement = document.getElementById('status_filter-id').parentNode;
-    parentElement.classList.remove('z-30');
+    parentElement.classList.remove('z-60');
     document.getElementById(`${'status_filter-id'}-backdrop`).remove();
     document.body.style.paddingBottom = "0"
     document.body.style.overflow = "auto";
@@ -171,45 +207,32 @@ $(document).ready(function() {
     $('#card_yard_leader-id').height(`${newHeight}px`);
   });
 
-  // Listen for the select2:unselect event
-  // $('#yard_leader-id').on('select2:unselect', function (e) {
-  //   let data = e.params.data; // Information about the removed option
-  //   console.log(data);
-  //   // console.log('Removed option:', removedOption);
-  //   // Add your custom logic here
-  // });
+    // Function to format the display of options
+    function formatOption(option) {
+      if (!option.id) {
+        return option.text;
+      }
+  
+      let $option = $(
+        `<div class="border-b-2 border-transparent py-2 px-2 text-secondary-500 font-medium">
+          <span>${option.text}</span>
+        </div>`
+      );
+  
+      return $option;
+    }
 
-  // $('#yard_leader-id').on('select2:select', function (e) {
-  //   let data = e.params.data; // Information about the removed option
-  //   console.log(data);
-  //   // console.log('Removed option:', removedOption);
-  //   // Add your custom logic here
-  // });
-
-  // $('#yard_leader-id').on('change', function (e) {
-  //   // Check if one or more options are selected
-  //     let selectedOptions = $('#yard_leader-id').val();
-  //     console.log(selectedOptions);
-  //   // if (selectedOptions && selectedOptions.length > 0) {
-  //   //   // Show the button if options are selected
-  //   //   $('#myButton').show();
-  //   // } else {
-  //   //   // Hide the button if no options are selected
-  //   //   $('#myButton').hide();
-  //   // }
-  // });
-
-  // Function to format the display of options
+  // Function to format the display of options 1
   function formatOption1(option) {
     if (!option.id) {
       return option.text;
     }
 
     let $option = $(
-      `<div class="flex items-center justify-between rounded bg-white border border-cloudy-0 px-4 py-3 hover:bg-cloudy-10">
+      `<div class="flex items-center justify-between rounded bg-white px-4 py-3 hover:bg-cloudy-10 group">
         <div class="flex items-center gap-4">
           <img src="${$(option.element).data('image')}" class="w-10 h-10 rounded-full object-cover" alt="logo">
-          <span class="text-sm font-medium text-secondary-900">${option.text}</span>
+          <span class="text-sm font-medium text-secondary-900 group-hover:text-secondary-900">${option.text}</span>
         </div>
         <img src="/dist/images/icons/checkbox-primary.svg" class="hidden" alt="checkbox">
       </div>`
@@ -336,7 +359,7 @@ $(document).ready(function() {
     // backdrop 
     let backdropEl = document.createElement('div');
     if(dropdownEl.classList.contains("hidden")) {
-      backdropEl.innerHTML = `<div id="${dropdownID}-backdrop" class="flex bg-black/20 fixed inset-0 z-30"></div>`;
+      backdropEl.innerHTML = `<div id="${dropdownID}-backdrop" class="flex bg-black/20 fixed inset-0 z-50"></div>`;
       document.body.appendChild(backdropEl);
       document.body.style.overflow = "hidden"
     } else {
@@ -346,6 +369,16 @@ $(document).ready(function() {
 
     dropdownEl.classList.toggle("hidden");
     dropdownEl.classList.toggle("block");
+  }
+
+  function selectRows(selectedElement) {
+    let selectedValue = selectedElement.getAttribute('value-data');
+    document.getElementById('rows_data-id').innerText = selectedValue;
+    document.getElementById('rows_value-id').innerText = selectedValue;
+    // Close the dropdown or perform any other actions as needed
+    // ...
+    // Optional: Hide the dropdown after selection
+    document.getElementById('rows_paginate_list-id').classList.add('hidden');
   }
 
   function selectOption(event, selectedID) {
@@ -610,17 +643,17 @@ $(document).ready(function() {
     searchContainer.classList.toggle('hidden');
   }
 
-  document.addEventListener('click', function(event) {
-    let searchContainer = document.getElementById('searchCon-id');
-    let searchCloseButton = document.getElementById('searchIcon-id');
+  // document.addEventListener('click', function(event) {
+  //   let searchContainer = document.getElementById('searchCon-id');
+  //   let searchCloseButton = document.getElementById('searchIcon-id');
 
-    if(!searchContainer.contains(event.target)) {
-      if(!searchContainer.classList.contains('hidden') && event.target !== searchCloseButton.children[0]) {
-          searchContainer.classList.add('hidden');
-          searchCloseButton.classList.remove('hidden');
-      }
-    }
-  });
+  //   if(!searchContainer.contains(event.target)) {
+  //     if(!searchContainer.classList.contains('hidden') && event.target !== searchCloseButton.children[0]) {
+  //         searchContainer.classList.add('hidden');
+  //         searchCloseButton.classList.remove('hidden');
+  //     }
+  //   }
+  // });
 
   function openTab(button) {
     let tabButtons = document.querySelectorAll('.tabs li span');
@@ -657,7 +690,7 @@ $(document).ready(function() {
     }
   }
 
-  function toggleBackdrop(modalID, index = 'z-30', type = 'static', positionBackdrop = 'outside') {
+  function toggleBackdrop(modalID, index = 'z-50', type = 'static', positionBackdrop = 'outside') {
     let modalEl = document.getElementById(modalID);
     if(modalEl.classList.contains("hidden")) {
       let backdropEl = document.createElement('div');
@@ -681,7 +714,7 @@ $(document).ready(function() {
     }
   }
 
-  function toggleBackdropdrawer(drawerID, index = 'z-30') {
+  function toggleBackdropdrawer(drawerID, index = 'z-50') {
     let backdropEl = document.getElementById(drawerID);
     if(backdropEl.classList.contains("translate-x-full")) {
       let backdropEl = document.createElement('div');
@@ -705,7 +738,7 @@ $(document).ready(function() {
     }
   }
 
-  function toggleModalDialog(modalID, index = 'z-30', type = 'static', backdrop = 'inline') {
+  function toggleModalDialog(modalID, index = 'z-50', type = 'static', backdrop = 'inline') {
     let modalEl = document.getElementById(modalID);
     
     toggleBackdrop(modalID, index, type, backdrop);
@@ -733,7 +766,7 @@ $(document).ready(function() {
         let backdropEl = document.createElement('div');
   
         dropdownEl.parentNode.insertBefore(backdropEl, dropdownEl.nextSibling);
-        backdropEl.innerHTML = `<div id="${dropdownID}-backdrop" class="flex bg-black/20 fixed inset-0 z-30"></div>`;
+        backdropEl.innerHTML = `<div id="${dropdownID}-backdrop" class="flex bg-black/20 fixed inset-0 z-50"></div>`;
         if(scroll) {
           document.body.style.overflow = "auto"
         } else {
@@ -763,7 +796,7 @@ $(document).ready(function() {
     dropdownEl.classList.toggle("block");
   }
 
-  function toggleModalDialog(modalID, index = 'z-30', type = 'static', backdrop = 'inline') {
+  function toggleModalDialog(modalID, index = 'z-50', type = 'static', backdrop = 'inline') {
     let modalEl = document.getElementById(modalID);
     
     toggleBackdrop(modalID, index, type, backdrop);
@@ -771,10 +804,10 @@ $(document).ready(function() {
     modalEl.classList.toggle("flex");
   }   
 
-  function toggleDrawer(drawerID, type) {
+  function toggleDrawer(drawerID, type, index) {
     let drawerEl = document.getElementById(drawerID);
 
-    toggleBackdropdrawer(drawerID);
+    toggleBackdropdrawer(drawerID, index);
     drawerEl.classList.toggle("transform-none");
     drawerEl.classList.toggle("translate-x-full");
   }
@@ -890,6 +923,11 @@ $(document).ready(function() {
     content.classList.toggle('block');
   }
 
+  function toggle(elementID) {
+    document.getElementById(elementID).classList.toggle("hidden");
+    document.getElementById(elementID).classList.toggle("flex");
+  }
+
   // Copy to clipboard 
   function copyToClipboard(elementIdOrText) {
     let copyText;
@@ -1002,7 +1040,7 @@ $(document).ready(function() {
     if(type == 'reject') {
       // closeDoc.setAttribute("onclick", "toggleDetailDocument('" + drawerID + "', 'snackbar-id', '" + type + "', true)")
       detailStatus.classList.add('cursor-pointer');
-      detailStatus.setAttribute("onclick", `toggleNotes('modal_status-id', 'z-40', 'static', 'inline', '${type}')`)
+      detailStatus.setAttribute("onclick", `toggleNotes('modal_status-id', 'z-60', 'static', 'inline', '${type}')`)
       textStatus.textContent = "Rejected";
       iconStatus.classList.add('bg-warning-50');
       iconStatus.innerHTML += `<img src="/dist/images/icons/round-alert-filled.svg" alt="alert">`;
@@ -1103,7 +1141,7 @@ $(document).ready(function() {
 
       detailStatus.children[1].classList.remove("hidden");
       detailStatus.classList.add('cursor-pointer');
-      detailStatus.setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-40', 'static', 'inline', '${type}')`)
+      detailStatus.setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
 
       textStatus.textContent = "Action Needed";
       textStatusFile.textContent = actionName;
@@ -1112,7 +1150,7 @@ $(document).ready(function() {
 
       resubmitBtn.classList.remove("hidden");
       resubmitBtn.classList.add("flex");
-      resubmitBtn.setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-40', 'static', 'inline', '${type}')`)
+      resubmitBtn.setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
 
       decision1.children[0].children[0].classList.add("bg-success-50", "text-success-700");
       decision1.children[0].children[0].innerHTML += `
@@ -1123,7 +1161,7 @@ $(document).ready(function() {
 
       decision2.children[0].children[0].classList.add("bg-warning-50", "text-warning-700");
       decision2.children[0].classList.add("cursor-pointer");
-      decision2.children[0].setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-40', 'static', 'inline', '${type}')`)
+      decision2.children[0].setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
       decision2.children[0].children[1].classList.remove('hidden');
       decision2.children[0].children[0].innerHTML += `
         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none" class="me-1.5">
@@ -1138,7 +1176,7 @@ $(document).ready(function() {
 
       detailStatus.children[1].classList.remove("hidden");
       detailStatus.classList.add('cursor-pointer');
-      detailStatus.setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-40', 'static', 'inline', '${type}')`)
+      detailStatus.setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
       textStatus.textContent = "Action Needed";
       textStatusFile.textContent = actionName;
       iconStatus.classList.add('bg-warning-100');
@@ -1146,7 +1184,7 @@ $(document).ready(function() {
 
       resubmitBtn.classList.remove("hidden");
       resubmitBtn.classList.add("flex");
-      resubmitBtn.setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-40', 'static', 'inline', '${type}')`)
+      resubmitBtn.setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
 
       decision1.children[0].children[0].classList.add("bg-success-50", "text-success-700");
       decision1.children[0].children[0].innerHTML += `
@@ -1157,7 +1195,7 @@ $(document).ready(function() {
 
       decision2.children[0].children[0].classList.add("bg-warning-50", "text-warning-700");
       decision2.children[0].classList.add("cursor-pointer");
-      decision2.children[0].setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-40', 'static', 'inline', '${type}')`)
+      decision2.children[0].setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
       decision2.children[0].children[1].classList.remove('hidden');
       decision2.children[0].children[0].innerHTML += `
         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none" class="me-1.5">
@@ -1183,4 +1221,14 @@ $(document).ready(function() {
       statusIcon.innerHTML += `<img src="/dist/images/icons/paymentProgress.svg" alt="paymentProgress">`;
       statusText.innerHTML = "Payment on Progress";
     }
+  }
+
+  function addRuleToggle(btnId, target) {
+    let btnEl = document.getElementById(btnId);
+    let ruleEl = document.getElementById(target);
+
+    btnEl.classList.toggle('hidden');
+    btnEl.classList.toggle('block');
+    ruleEl.classList.toggle('hidden');
+    ruleEl.classList.toggle('block');
   }

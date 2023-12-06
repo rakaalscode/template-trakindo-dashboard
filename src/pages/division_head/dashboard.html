@@ -21,116 +21,108 @@
 </head>
 <body class="font-roboto min-h-screen">
   
-  <!-- NAVBAR -->
-  <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-secondary-100">
-    <div class="max-w-screen-2xl flex justify-between items-center flex-shrink-0 mx-auto px-3 py-0 md:py-3 md:px-7 ">
-      <div class="items-center justify-between w-full md:flex md:w-auto" id="navbar-sticky">
-        <div class="flex items-center">
-          <a href="#" class="pr-2 md:pr-8">
-            <img src="/dist/images/trakindoLogo.png" class="w-[112px] md:w-full" alt="Trakindo Logo">
-          </a>
-          <button data-collapse-toggle="navbar-default" type="button" class="flex flex-col items-center nav-menu-mobile" aria-controls="navbar-default" aria-expanded="false" onclick="openDropdown(event, 'dropdownMenu-id', 'bottom-end', 'absolute', true)">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
+  <!-- navbar  -->
+  <nav class="fixed top-0 z-50 w-full bg-white border-b border-secondary-100">
+    <div class="px-4 py-3 md:px-8 md:py-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-start rtl:justify-end">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+              <span class="sr-only">Open sidebar</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+              </svg>
           </button>
-
-          <!-- Dekstop menu -->
-          <div class="relative hidden w-full md:block md:w-auto">
-            <ul class="flex flex-col text-base font-medium md:flex-row p-4 md:p-0 mt-2 border border-gray-100 rounded-lg bg-gray-50 md:flex md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
-              <li>
-                <a href="/src/pages/division_head/dashboard.html" class="block py-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
-              </li>
-              <li>
-                <a href="/src/pages/division_head/invoice_request.html" class="block py-2 nav-menu ">Invoice Request List</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Dekstop menu -->
-
-          <!-- Mobile menu -->
-          <div class="relative hidden w-full px-3 md:hidden " id="dropdownMenu-id">
-            <ul class="flex flex-col text-base font-medium p-4 md:p-0 mt-2 border border-secondary-100 rounded-lg bg-gray-100 rtl:space-x-reverse">
-              <li>
-                <a href="/src/pages/division_head/dashboard.html" class="block p-2 nav-menu nav-menu-active" aria-current="page">Dashboard</a>
-              </li>
-              <li>
-                <a href="/src/pages/division_head/invoice_request.html" class="block p-2 nav-menu">Invoice Request List</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Mobile menu -->
+          <a href="#" class="flex md:me-6">
+            <img src="/dist/images/trakindoLogo.png" class="w-[112px] h-[30px] md:w-[148px] md:h-10" alt="Trakindo Logo" />
+          </a>
+          <ul class="items-center hidden space-x-8 font-medium md:flex">
+            <li>
+              <a href="/src/pages/division_head/dashboard.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
+            </li>
+            <li>
+              <a href="/src/pages/division_head/invoice_request.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Invoice Request List</a>
+            </li>
+          </ul>
         </div>
-      </div>
-
-      <!-- User -->
-      <div class="flex justify-end relative w-64 md:w-auto">
-        <button class="md:bg-white z-40 flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg" onclick="openDropdown(event,'dropdownUser-id', 'bottom-end', 'absolute', false)">
-          <div class="relative">
-            <img src="/dist/images/avatar-2.jpeg" alt="avatar" class="w-8 h-8 object-cover object-top rounded-full">
-            <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-white p-0.5">
-              <img src="/dist/images/icons/badge.svg" alt="badge">
-            </div>
-          </div>
-          <div class="hidden flex-col items-start md:flex">
-            <span class="block text-sm font-semibold text-black">SIGAP</span>
-            <span class="block text-xs text-cloudy-70">Division Head</span>
-          </div>
-          <img src="/dist/images/icons/fi_chevron-down.svg" class="hidden dropdownUser-id md:block" alt="chevron down">
-        </button>
-
-        <!-- Dropdown -->
-        <div class="hidden z-40 w-full" id="dropdownUser-id">
-          <button class="bg-white z-40 flex items-center gap-4 p-3 rounded-tl-lg rounded-tr-lg w-[180px] -ms-[32px] -mt-[44px] md:-ms-0 md:-mt-[60px] md:w-auto" onclick="openDropdown(event,'dropdownUser-id', 'bottom-end', 'absolute', false)">
-            <div class="relative whitespace-nowrap">
-              <img src="/dist/images/avatar-2.jpeg" alt="avatar" class="w-8 h-8 object-cover object-top rounded-full">
-              <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-white p-0.5">
-                <img src="/dist/images/icons/badge.svg" alt="badge">
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <button class="w-auto md:w-[185px] rounded focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
+              onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
+            >
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                  <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                </div>
+                <div class="hidden flex-col flex-1 items-start justify-start md:flex" role="none">
+                  <p class="block text-sm font-medium" role="none">
+                    Abisha Ilham
+                  </p>
+                  <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                    Division Head
+                  </p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden md:block">
+                  <path d="M15 12.5L10 7.5L5 12.5" stroke="#BCBDC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </button>
+            <div class="z-60 hidden" id="dropdown-user">
+              <div class="p-3 w-[180px] md:w-[209px] -mt-[35px] -ml-[11px] md:-mt-[48px] md:-ml-[12px] text-sm font-medium text-black list-none bg-white divide-y divide-cloudy-10 rounded-lg">
+                <button class="md:w-[185px] rounded w-full focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
+                  onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
+                >
+                  <div class="flex w-full items-center gap-4 pb-3">
+                    <div class="relative">
+                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                      <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                    </div>
+                    <div class="flex flex-1 flex-col items-start justify-start" role="none">
+                      <p class="block text-sm" role="none">
+                        Abisha Ilham
+                      </p>
+                      <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                        Division Head
+                      </p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden rotate-180 md:block">
+                      <path d="M15 12.5L10 7.5L5 12.5" stroke="#BCBDC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </button>
+                <ul class="space-y-3 pt-3" role="none">
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 hover:underline">
+                      <img src="/dist/images/icons/round-edit.svg" alt="round edit">
+                      <span>Edit profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-setting.svg" alt="round setting">
+                      <span>Setting</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-notif.svg" alt="round notif">
+                      <span>Notification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-exit.svg" alt="round exit">
+                      <span>Log off</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="flex flex-col text-left items-start justify-start">
-              <span class="block text-sm font-semibold text-black">SIGAP</span>
-              <span class="block text-xs text-cloudy-70">Division Head</span>
-            </div>
-            <img src="/dist/images/icons/fi_chevron-down.svg" class="hidden md:block dropdownUser-id" alt="chevron down">
-          </button>
-          <div class="bg-white p-3 w-[180px] -ms-[32px] -mt-[10px] md:-ms-0 md:w-auto rounded-bl-lg rounded-br-lg">
-            <ul class="flex flex-col gap-3 border-t border-cloudy-10 pt-3">
-              <li>
-                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                  <img src="/dist/images/icons/round-edit.svg" alt="round edit">
-                  <span>Edit profile</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                  <img src="/dist/images/icons/round-setting.svg" alt="round setting">
-                  <span>Setting</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                  <img src="/dist/images/icons/round-notif.svg" alt="round notif">
-                  <span>Notification</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                  <img src="/dist/images/icons/round-exit.svg" alt="round exit">
-                  <span>Log off</span>
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
-        <!-- Dropdown -->
       </div>
-      <!-- User -->
-      
     </div>
   </nav>
-  <!-- NAVBAR -->
 
   <main class="pt-[4rem] md:pt-[5.25rem]">
     <!-- Card status -->
@@ -223,7 +215,7 @@
               </button>
 
               <!-- Open date rate -->
-              <div class="relative hidden z-40 px-2 w-full sm::w-[21rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
+              <div class="relative hidden z-60 px-2 w-full sm::w-[21rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
                   <button class="h-[43px] w-[43px] me-[67px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
@@ -234,23 +226,17 @@
                   
                   <!-- badges -->
                   <div class="flex flex-wrap flex-row gap-3 pt-3">
-                    <span class="inline-flex items-center badge badge-gray">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#667085"/>
-                      </svg>
-                      Draft
-                    </span>
                     <span class="inline-flex items-center badge badge-warning">
                       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
                         <circle cx="4" cy="4" r="3" fill="#F79009"/>
                       </svg>
-                      Waiting for Approval
+                      Need Verification
                     </span>
                     <span class="inline-flex items-center badge badge-blue">
                       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
                         <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
                       </svg>
-                      Submitted to Finance
+                      Waiting for Revision
                     </span>
                     <span class="inline-flex items-center badge badge-error">
                       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
@@ -323,7 +309,7 @@
               </button>
 
               <!-- Open sortby -->
-              <div class="relative hidden z-40 w-64" id="filterSortby-id">
+              <div class="relative hidden z-60 w-64" id="filterSortby-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
                   <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
@@ -654,399 +640,8 @@
     </section>
     <!-- Filter table -->
 
-    <!-- Document Form -->
-    <div id="drawer_document-id" class="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
-      <div class="p-3 md:p-6 pb-0">
-
-      <!-- close -->
-      <div class="flex justify-start">
-        <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer" onclick="modalConfirm('modal_confirm_document', 'z-40', 'static', 'outside')">
-      </div>
-      <!-- close -->
-
-      <!-- modal confirm -->
-      <div id="modal_confirm_document" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden absolute pl-2 z-50 justify-start items-start w-auto left-0 md:w-[400px] md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-h-full">
-          <div class="relative bg-white rounded-lg shadow">
-            <div class="p-4 text-center">
-              <h3 class="text-lg font-semibold text-black">
-                Attention!
-              </h3>
-              <p class="text-sm text-gray_2-500 mb-5">All data might be lost when you exit the form area, Are you sure about that?</p>
-              <button type="button" class="flex items-center justify-center w-full btn btn-primary mb-3"
-                onclick="modalConfirm('modal_confirm_document', 'z-40', 'static', 'outside', 'clear')"
-              >
-                Exit Form
-              </button>
-              <button type="button" class="flex items-center justify-center w-full btn btn-default"
-                onclick="saveDocument('drawer_document-id', 'draft', 'modal_confirm_document')"
-              >
-                Save as Draft
-                <img src="/dist/images/icons/save.svg" alt="save" class="ms-2">
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div id="modal_confirm_document-backdrop" class="hidden bg-black/20 fixed inset-0 z-40"></div> -->
-      <!-- modal confirm -->
-
-      <!-- header form -->
-      <div class="flex items-center justify-between flex-col py-4 md:flex-row gap-3 md:gap-0">
-        <h3 class="text-2xl font-medium text-secondary-900" id="form_document-id">
-          New Invoice Submission Form
-        </h3>
-        <div class="flex gap-3 w-full md:w-auto">
-          <button type="button" class="flex items-center justify-center w-full md:w-auto btn btn-default" 
-            onclick="saveDocument('drawer_document-id', 'draft')"
-          >
-            Save as Draft
-            <img src="/dist/images/icons/save.svg" alt="save" class="ms-2">
-          </button>
-          <button type="button" class="flex items-center justify-center w-full md:w-auto btn btn-primary" 
-            onclick="saveDocument('drawer_document-id', 'submit')"
-          > 
-            Submit Invoice
-          </button>
-        </div>
-      </div>
-      <!-- header form -->
-
-      <!-- table form -->
-      <div class="relative overflow-x-auto mb-5">
-        <table class="table-responsive mb-7">
-          <tr>
-            <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tl-lg">
-              Document Number
-            </th>
-            <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12 rounded-tr-lg">
-              <div class="flex items-center justify-between">
-                <span id="document_number-id">DOC-004/010456</span>
-                <span class="block cursor-pointer" onclick="copyToClipboard('document_number-id')">
-                  <img src="/dist/images/icons/copy-paste.svg" alt="copy paste">
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
-              Company Name 
-            </th>
-            <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
-              PT. Maju Jaya Abadi
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
-              Transaction Type
-            </th>
-            <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
-              Service
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
-              Invoice Number
-            </th>
-            <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-              <div class="flex items-center justify-between">
-                <span id="invoice_number-id">VI 231011 - 01/R01</span>
-                <span class="block cursor-pointer" onclick="copyToClipboard('invoice_number-id')">
-                  <img src="/dist/images/icons/copy-paste.svg" alt="copy paste">
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
-              Invoice Date
-            </th>
-            <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-              <div class="relative">
-                <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
-                  <img src="/dist/images/icons/date-range-filled.svg" alt="date range">
-                </div>
-                <input type="text" class="form-control-none datepicker-flatpickr-range">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg">
-              Contract No
-            </th>
-            <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 rounded-br-lg">
-              SN-004
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="flex items-center justify-between gap-4 mb-4">
-        <h3 class="text-2xl font-medium text-secondary-900">
-          Goods or Services
-        </h3>
-        <button type="button" class="flex items-center text-cloudy-120 bg-white border border-cloudy-120 hover:bg-gray-100 rounded-lg text-base font-bold px-5 py-2.5 ring-default">
-          Add new row
-          <img src="/dist/images/icons/plus-circle-black.svg" alt="plus black" class="ms-2">
-        </button>
-      </div>
-      <div class="relative overflow-x-auto rounded-lg mb-2">
-        <table class="table-responsive">
-          <thead>
-            <tr>
-              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tl-lg">
-                Description
-              </th>
-              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-1/12">
-                QTY
-              </th>
-              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
-                Rate
-              </th>
-              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tr-lg">
-                Amount
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-                TEST ABC
-              </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white whitespace-nowrap w-1/12">
-                20
-              </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-white w-8/12">
-                Rp1.500.000
-              </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-white w-8/12 whitespace-nowrap">
-                Rp. 30.000.000
-              </td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-                &nbsp;
-              </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-1/12">
-                &nbsp;
-              </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-                &nbsp;
-              </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-                &nbsp;
-              </td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg" colspan="3">
-              Total
-            </th>
-            <td class="px-6 py-2 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 rounded-br-lg whitespace-nowrap">
-              Rp. 30.000.000
-            </td>
-          </tfoot>
-        </table>
-      </div>
-    </div>
-
-    <hr class="border-[2px] mb-5 border-secondary-100">
-
-    <div class="p-3 md:p-6 pt-0">
-      <div class="relative">
-        <!-- heading -->
-        <div class="flex items-center justify-between">
-          <h3 class="text-xl font-medium text-secondary-900">Supporting Files</h3>
-          <button class="block cursor-pointer" onclick="toggleAccordion(event, 'supporting_files-id')">
-            <img src="/dist/images/icons/down-one.svg" alt="down one">
-          </button>
-        </div>
-        <!-- heading -->
-        
-        <div class="block py-5" id="supporting_files-id">
-          <div class="mb-8">
-            <label class="block text-base font-medium text-gray_natural-1300 mb-2 shadow-">Invoice & Faktur Pajak<span class="text-red-8">*</span></label>
-            <!-- <div class="relative overflow-x-auto rounded-lg mb-2">
-              <table class="table-responsive">
-                <thead>
-                  <tr class="bg-cloudy-30">
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
-                      No
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-6/12">
-                      Filename
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left w-[200px]">
-                      Upload Time
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tr-lg whitespace-nowrap">
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
-                      1
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
-                      Invoice For Transaction ABXY 2023 Update
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
-                      24/04/2023 - 15:00:00
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 rounded-br-lg whitespace-nowrap">
-                      <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
-                            <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                        </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer">
-                          <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div> -->
-            <div class="flex items-center justify-center w-full">
-              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]">
-                  <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
-                    <img src="/dist/images/icons/dropzone.svg" alt="dropzone" class="mb-2">
-                    <p class="mb-1 text-sm text-gray-500"><span class="font-semibold text-primary-900">Click to upload</span> or drag and drop</p>
-                    <p class="text-xs text-gray-500">Only upload in .PDF</p>
-                  </div>
-                  <input id="dropzone-file" type="file" class="hidden" />
-              </label>
-            </div> 
-          </div>
-
-          <div class="mb-8">
-            <label class="block text-base font-medium text-gray_natural-1300 mb-2">BAST</label>
-            <div class="relative overflow-x-auto rounded-lg mb-2">
-              <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
-                <thead>
-                  <tr class="bg-cloudy-30">
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
-                      No
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-6/12">
-                      Filename
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left w-[200px]">
-                      Upload Time
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tr-lg">
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
-                      1
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
-                      Invoice For Transaction ABXY 2023 Update
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
-                      24/04/2023 - 15:00:00
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 rounded-br-lg whitespace-nowrap">
-                      <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
-                            <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                        </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer">
-                          <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="flex items-center justify-center w-full">
-              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]">
-                <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
-                  <img src="/dist/images/icons/dropzone.svg" alt="dropzone" class="mb-2">
-                  <p class="mb-1 text-sm text-gray-500"><span class="font-semibold text-primary-900">Click to upload</span> or drag and drop</p>
-                  <p class="text-xs text-gray-500">Only upload in .PDF</p>
-                </div>
-                  <input id="dropzone-file2" type="file" class="hidden" />
-              </label>
-            </div> 
-          </div>
-
-          <div class="mb-8">
-            <label class="block text-base font-medium text-gray_natural-1300 mb-2">Other Documents (Optional)</label>
-            <div class="relative overflow-x-auto rounded-lg mb-2">
-              <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
-                <thead>
-                  <tr class="bg-cloudy-30">
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
-                      No
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-6/12">
-                      Filename
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left w-[200px]">
-                      Upload Time
-                    </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tr-lg">
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
-                      1
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
-                      Invoice For Transaction ABXY 2023 Update
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
-                      24/04/2023 - 15:00:00
-                    </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 rounded-br-lg whitespace-nowrap">
-                      <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
-                            <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                        </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer">
-                          <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="flex items-center justify-center w-full">
-              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]">
-                <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
-                  <img src="/dist/images/icons/dropzone.svg" alt="dropzone" class="mb-2">
-                  <p class="mb-1 text-sm text-gray-500"><span class="font-semibold text-primary-900">Click to upload</span> or drag and drop</p>
-                  <p class="text-xs text-gray-500">Only upload in .PDF</p>
-                </div>
-                  <input id="dropzone-file3" type="file" class="hidden" />
-              </label>
-            </div> 
-          </div>
-
-        </div>
-        
-      </div>
-    </div>
-
-
-    </div>
-    <!-- Document Form -->
-
     <!-- Document Detail -->
-    <div id="drawer_document_detail-id" class="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
+    <div id="drawer_document_detail-id" class="fixed top-0 right-0 z-60 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
       <div class="p-3 md:p-6 pb-0">
 
         <!-- close -->
@@ -1331,7 +926,7 @@
   </main>
 
 <!-- snackbar -->
-<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-40 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
+<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-60 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
   <div class="flex items-center justify-between w-[540px] gap-3 p-4 mb-4 text-sm text-white rounded-xl shadow-light_raised" role="alert" id="bg_snackbar_alert">
     <p class="flex items-center gap-3">
       <img src="#" alt="info" class="hidden" id="icon_snackbar_alert">
@@ -1345,7 +940,7 @@
 <!-- snackbar -->
 
 <!-- modal status -->
-<div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
@@ -1375,7 +970,7 @@
 
 
 <!-- modal status revise file -->
-<div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
@@ -1420,7 +1015,7 @@
 <!-- modal status revise file -->
 
 <!-- modal status revise upload file -->
-<div id="modal_status_revise_upload-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status_revise_upload-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
@@ -1504,7 +1099,7 @@
 <!-- modal status revise upload file -->
 
 <!-- modal status revise hardcopy -->
-<div id="modal_status_hardcopy-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status_hardcopy-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">z-70
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <!-- header -->
@@ -1740,7 +1335,7 @@
 <!-- modal status revise hardcopy -->
 
 <!-- modal q send document -->
-<div id="modal_q_send_doc-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-[60] justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_q_send_doc-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-80 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <!-- header -->
@@ -1798,7 +1393,7 @@
 <!-- modal q send document -->
 
 <!-- modal choose invoice -->
-<div id="modal_choose_invoice-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-[60] justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_choose_invoice-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-80 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
 
     <!-- header -->
