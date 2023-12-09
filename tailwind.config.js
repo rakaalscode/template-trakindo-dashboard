@@ -31,7 +31,10 @@ module.exports = {
     'focus:outline-none', 
     'focus:border-primary-500', 
     'focus:ring-0', 
-    'focus:ring-primary-500'
+    'focus:ring-primary-500',
+    'px-1.5',
+    'bg-orange-90'
+    // 'px-6', 'py-4', 'text-sm', 'font-medium', 'text-secondary-900', 'md:w-96', 'bg-white',
   ],
   theme: {
     extend: {
@@ -222,7 +225,8 @@ module.exports = {
       },
       yellow: {
         0: '#FEF9ED',
-        20: '#FFECBD'
+        20: '#FFECBD',
+        30: '#FFE198',
       },
       squash: {
         1: '#F3F3F3',

@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <title>Dashboard</title>
 </head>
 <body class="font-roboto min-h-screen">
@@ -129,26 +130,32 @@
       <!-- User -->
       
     </div>
+    <div class="px-4 pt-2 block md:hidden">
+      <div class="flex justify-between w-full gap-2">
+        <a href="#" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
+        <a href="#" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent ">Invoice Request List</a>
+      </div>
+    </div>
   </nav>
   <!-- NAVBAR -->
 
-  <main class="pt-[4rem] md:pt-[5.25rem]">
+  <main class="pt-[8rem] md:pt-[5.25rem]">
     <!-- Card status -->
     <section class="bg-white w-full border-b border-secondary-100 py-[19px]">
-      <div class="max-w-screen-2xl mx-auto px-3 py-0 md:px-7">
+      <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-none xl:grid-flow-col gap-6">
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-2 md:gap-3">
               <span class="block text-xs text-secondary-500 uppercase md:text-sm">EST. Values</span>
               <h1 class="text-[2rem] font-bold t-secondary-900">38.4M</h1>
             </div>
           </div>
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
+            <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/edit.svg" alt="edit">
-              <div class="flex flex-col gap-3"> 
+              <div class="flex flex-col gap-2 md:gap-3"> 
                 <span class="block text-xs text-secondary-500 uppercase md:text-sm">Draft</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
@@ -156,9 +163,9 @@
           </div>
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
+            <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/trend-up.svg" alt="trend up">
-              <div class="flex flex-col gap-3"> 
+              <div class="flex flex-col gap-2 md:gap-3"> 
                 <span class="block text-xs text-secondary-500 uppercase md:text-sm">Action Needed</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">0</h1>
               </div>
@@ -166,19 +173,19 @@
           </div>
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
+            <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/time-filled.svg" alt="time filled">
-              <div class="flex flex-col gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Waiting for verification</span>
+              <div class="flex flex-col gap-2 md:gap-3"> 
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Waiting for Approval</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
           </div>
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
+            <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/repeat-filled.svg" alt="repeat filled">
-              <div class="flex flex-col gap-3"> 
+              <div class="flex flex-col gap-2 md:gap-3"> 
                 <span class="block text-xs text-secondary-500 uppercase md:text-sm">Resubmitted</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
@@ -186,9 +193,9 @@
           </div>
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
+            <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/round-check.svg" alt="round check">
-              <div class="flex flex-col gap-3"> 
+              <div class="flex flex-col gap-2 md:gap-3"> 
                 <span class="block text-xs text-secondary-500 uppercase md:text-sm">Completed</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
@@ -196,9 +203,9 @@
           </div>
           <!-- Card -->
           <div class="bg-white">
-            <div class="flex items-start gap-3">
+            <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/round-close.svg" alt="round close">
-              <div class="flex flex-col gap-3"> 
+              <div class="flex flex-col gap-2 md:gap-3"> 
                 <span class="block text-xs text-secondary-500 uppercase md:text-sm">Rejected</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
@@ -211,7 +218,7 @@
 
     <!-- Table section -->
     <section class="py-4">
-      <div class="max-w-screen-2xl mx-auto px-3 py-0 md:px-7">
+      <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
 
         <!-- Filter table -->
 
@@ -278,7 +285,7 @@
               <!-- Open date rate -->
               <div class="relative hidden z-60 px-2 w-full sm::w-[21rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
-                  <button class="h-[43px] w-[43px] me-[67px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
+                  <button class="h-[43px] w-[43px] me-[71px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                   </button>
                 </div>
@@ -375,7 +382,7 @@
                 <img src="/dist/images/icons/sort-amount.svg" class="h-6 w-6" alt="search">
               </button>
 
-              <!-- Open sortby -->
+                            <!-- Open sortby -->
               <div class="relative hidden z-60 w-64" id="filterSortby-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
                   <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
@@ -387,33 +394,33 @@
                   <ul class="flex flex-col space-y-1 pt-3 pb-3">
                     <li>
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                        <label class="flex items-center gap-4">
-                          <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-checkbox">Newest Document</span>
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Newest Document</span>
                         </label>
                       </div>
                     </li>
                     <li>
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                        <label class="flex items-center gap-4">
-                          <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-checkbox">Status Document</span>
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Status Document</span>
                         </label>
                       </div>
                     </li>
                     <li>
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                        <label class="flex items-center gap-4">
-                          <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-checkbox">Lowest Total Amount</span>
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Lowest Total Amount</span>
                         </label>
                       </div>
                     </li>
                     <li>
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                        <label class="flex items-center gap-4">
-                          <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-checkbox">Highest Total Amount</span>
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Highest Total Amount</span>
                         </label>
                       </div>
                     </li>
@@ -425,7 +432,6 @@
                   </button>
                 </div>
               </div>
-              <div class="hidden opacity-25 fixed inset-0 z-30 bg-black" id="filterSortby-id-backdrop"></div>
               <!-- Open sortby -->
             </div>
             <!--  Sortby filter -->
@@ -1545,7 +1551,7 @@
   </main>
 
 <!-- snackbar -->
-<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-60 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
+<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-90 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
   <div class="flex items-center justify-between w-[540px] gap-3 p-4 mb-4 text-sm text-white rounded-xl shadow-light_raised" role="alert" id="bg_snackbar_alert">
     <p class="flex items-center gap-3">
       <img src="#" alt="info" class="hidden" id="icon_snackbar_alert">

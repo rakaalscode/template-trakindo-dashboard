@@ -23,27 +23,29 @@
 <body class="font-roboto min-h-screen">
   
   <!-- navbar  -->
-  <nav class="fixed top-0 z-50 w-full bg-white border-b border-secondary-100">
-    <div class="px-4 py-3 md:px-8 md:py-6">
+  <nav class="fixed top-0 z-50 w-full bg-white">
+    <div class="px-4 py-3 md:px-8 md:py-6 border-b border-secondary-100">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-start rtl:justify-end">
-          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex md:hidden items-center me-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            onclick="toggleSidebarMenu()"
+          >
               <span class="sr-only">Open sidebar</span>
               <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
               </svg>
           </button>
           <a href="#" class="flex md:me-6">
-            <img src="/dist/images/trakindoLogo.png" class="h-10 me-3" alt="Trakindo Logo" />
+            <img src="/dist/images/trakindoLogo.png" class="w-[112px] h-[30px] md:w-[148px] md:h-10" alt="Trakindo Logo" />
           </a>
-          <ul class="items-center hidden space-x-8 font-medium md:flex">
+          <!-- <ul class="items-center hidden space-x-8 font-medium md:flex">
             <li>
               <a href="#" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
             </li>
             <li>
               <a href="#" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Invoice Request List</a>
             </li>
-          </ul>
+          </ul> -->
         </div>
         <div class="flex items-center">
           <div class="flex items-center">
@@ -123,14 +125,23 @@
         </div>
       </div>
     </div>
+    <!-- <div class="px-4 pt-2 block md:hidden">
+      <div class="flex justify-between w-full gap-2">
+        <a href="#" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
+        <a href="#" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent ">Invoice Request List</a>
+      </div>
+    </div> -->
   </nav>
   
   <!-- sidebar  -->
-  <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-[353px] h-screen pt-24 transition-transform -translate-x-full bg-cloudy-10 border-r border-cloudy-30 md:translate-x-0" aria-label="Sidebar">
+  <aside id="sidebar_menu-id" class="fixed top-0 left-0 z-40 w-[353px] h-screen pt-24 transition-transform -translate-x-full bg-cloudy-10 border-r border-cloudy-30 md:translate-x-0" aria-label="Sidebar">
     
     <div class="bg-cloudy-10">
-      <div class="px-8 pt-3">
+      <div class="flex items-center justify-between px-8 pt-3">
         <h3 class="font-roboto_condensed text-xl font-bold text-black">Superadmin Settings</h3>
+        <button onclick="toggleSidebarMenu()" class="flex md:hidden">
+          <img src="/dist/images/icons/close-outline.svg" alt="close outline">
+        </button>
       </div>
     </div>
       
@@ -198,7 +209,7 @@
   <!-- content  -->
   <main class="max-w-screen-2xl mx-auto">
     <div class="md:ml-[353px]">
-      <div class="pt-16 md:pt-20 pb-32">
+      <div class="pt-28 md:pt-20 pb-32">
         <div class="flex flex-col items-center justify-between gap-8 px-3 py-6 pb-1 md:flex-row md:px-8 md:py-8 md:pb-0">
           <!-- title  -->
           <div>
@@ -208,11 +219,10 @@
           <button class="font-medium w-full justify-center md:w-auto text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700" onclick="toggleDrawer('drawer_email_template-id', '', 'z-50')">New</button>
         </div>
 
-        <div class="flex flex-col gap-8 px-3 py-6 md:px-8 md:py-8">
+        <div class="flex flex-col gap-8 px-4 py-6 md:px-8 md:py-8">
 
           <!-- list template  -->
           <div class="flex flex-col gap-8">
-
             <div class="w-full bg-white rounded-lg shadow-8">
               <div class="flex flex-row items-center justify-between bg-cloudy-20 mb-4 px-3 pt-6 md:px-8 pb-4 rounded-tl-lg rounded tr-lg md:flex-row">
                 <h3 class="text-2xl font-semibold text-secondary-900">Send Hard Copy Reminders</h3>

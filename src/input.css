@@ -2,10 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@media screen and (min-width: 768px) {
+  /* width */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Track */
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #BCBDC0;
+  }
+
+  /* Handle on hover */
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #BCBDC0;
+  }
+}
+
 /* width */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 /* Track */
@@ -15,12 +39,13 @@
 
 /* Handle */
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #4B5262;
+  background: #BCBDC0;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #BCBDC0;
 }
 
 /* Toggle Checbox */
@@ -194,7 +219,7 @@ input[type="checkbox"]:disabled:checked + .toggle-line {
 }
 
 .form-control-search-mobile {
-  @apply text-sm border rounded-lg block w-full p-2.5 pl-10 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+  @apply border rounded-lg block w-full p-2.5 pl-10 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
 }
 
 .label-control-lg {
@@ -250,19 +275,19 @@ input[type="checkbox"]:disabled:checked + .toggle-line {
 
 /* pagination  */
 .pagination {
-  @apply text-sm text-gray-700 font-medium inline-flex -space-x-px rtl:space-x-reverse h-8 md:h-10;
+  @apply text-sm text-gray-700 font-medium inline-flex -space-x-px rtl:space-x-reverse justify-center h-8 md:h-10 w-full md:w-auto md:justify-end;
 }
 
 .page-item {
-  @apply px-3 h-8 md:px-4 md:h-10 leading-tight bg-white border border-gray-300 hover:bg-gray-100;
+  @apply px-3.5 h-10 md:px-4 md:h-10 leading-tight bg-white border border-gray-300 hover:bg-gray-100;
 }
 
 .page-item-previous {
-  @apply px-3 h-8 md:px-4 md:h-10 ms-0 leading-tight bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700;
+  @apply px-3.5 h-10 md:px-4 md:h-10 ms-0 leading-tight bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700;
 }
 
 .page-item-next {
-  @apply px-3 h-8 md:px-4 md:h-10 leading-tight bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100;
+  @apply px-3.5 h-10 md:px-4 md:h-10 leading-tight bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100;
 }
 
 .page-item-active {

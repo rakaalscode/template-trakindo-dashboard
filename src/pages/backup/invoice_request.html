@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <title>Dashboard</title>
 </head>
 <body class="font-roboto min-h-screen">
@@ -128,19 +129,25 @@
       <!-- User -->
       
     </div>
+    <div class="px-4 pt-2 block md:hidden">
+      <div class="flex justify-between w-full gap-2">
+        <a href="#" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
+        <a href="#" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent ">Invoice Request List</a>
+      </div>
+    </div>
   </nav>
   <!-- NAVBAR -->
 
-  <main class="pt-[4rem] md:pt-[5.25rem]">
-    <div class="max-w-screen-2xl mx-auto px-3 py-0 md:px-7">
+  <main class="pt-[8rem] md:pt-[5.25rem]">
+    <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
       <div class="grid grid-cols-1 md:grid-cols-12">
 
         <!-- invoice list  -->  
         <div class="sm:col-span-6 md:col-span-6 lg:col-span-4">
 
           <!-- invoice header  -->
-          <div class="flex flex-col flex-wrap justify-between mt-6 gap-2 md:flex-row md:items-center">
-            <h3 class="flex text-2xl font-bold text-secondary-900">Invoice List</h3>
+          <div class="flex flex-col flex-wrap justify-between mt-3 md:mt-6 gap-3 md:flex-row md:items-center">
+            <h3 class="flex font-roboto_condensed text-2xl font-bold text-secondary-900">Invoice List</h3>
             <div class="flex justify-between items-center w-full gap-4 md:justify-center md:w-auto">
               <!--  Date rate filter -->
               <div class="relative flex items-center order-2 md:order-1">
@@ -151,7 +158,7 @@
                 <!-- Open date rate -->
                 <div class="relative hidden z-60 px-2 w-full sm::w-[21rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
                   <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
-                    <button class="h-[43px] w-[43px] me-[67px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
+                    <button class="h-[43px] w-[43px] me-[71px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                       <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                     </button>
                   </div>
@@ -249,57 +256,56 @@
                 </button>
   
                 <!-- Open sortby -->
-                <div class="relative hidden z-60 w-64" id="filterSortby-id">
-                  <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
-                    <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
-                      <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
-                    </button>
-                  </div>
-                  <div class="w-full bg-white rounded-lg p-4">
-                    <h3 class="text-lg font-medium text-gray_2-900">Sorty by</h3>
-                    <ul class="flex flex-col space-y-1 pt-3 pb-3">
-                      <li>
-                        <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                          <label class="flex items-center gap-4">
-                            <input type="checkbox" class="custom-checkbox"/>
-                            <span class="label-checkbox">Newest Document</span>
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                          <label class="flex items-center gap-4">
-                            <input type="checkbox" class="custom-checkbox"/>
-                            <span class="label-checkbox">Status Document</span>
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                          <label class="flex items-center gap-4">
-                            <input type="checkbox" class="custom-checkbox"/>
-                            <span class="label-checkbox">Lowest Total Amount</span>
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                          <label class="flex items-center gap-4">
-                            <input type="checkbox" class="custom-checkbox"/>
-                            <span class="label-checkbox">Highest Total Amount</span>
-                          </label>
-                        </div>
-                      </li>
-                    </ul>
-                    <button type="button" class="flex items-center justify-center w-full btn-lg btn-primary"
-                      onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')"
-                    >
-                      Apply
-                    </button>
-                  </div>
+              <div class="relative hidden z-60 w-64" id="filterSortby-id">
+                <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
+                  <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
+                    <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
+                  </button>
                 </div>
-                <div class="hidden opacity-25 fixed inset-0 z-30 bg-black" id="filterSortby-id-backdrop"></div>
-                <!-- Open sortby -->
+                <div class="w-full bg-white rounded-lg p-4">
+                  <h3 class="text-lg font-medium text-gray_2-900">Sorty by</h3>
+                  <ul class="flex flex-col space-y-1 pt-3 pb-3">
+                    <li>
+                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Newest Document</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Status Document</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Lowest Total Amount</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Highest Total Amount</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                  <button type="button" class="flex items-center justify-center w-full btn-lg btn-primary"
+                    onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')"
+                  >
+                    Apply
+                  </button>
+                </div>
+              </div>
+              <!-- Open sortby -->
               </div>
               <!--  Sortby filter -->
   
@@ -576,8 +582,13 @@
 
               <!-- heading -->
               <div class="flex items-center justify-between px-3 py-3 md:px-6 md:py-3">
-                <h3 class="text-xl font-medium text-secondary-900">Supporting Files</h3>
-                <button class="inline-flex items-center justify-center text-sm md:text-base text-secondary-900 cursor-pointer hover:underline">
+                <h3 class="text-lg md:text-xl font-medium text-secondary-900">Supporting Files</h3>
+                <button class="flex md:hidden items-center justify-center w-10 h-10 rounded-lg shadow-xs bg-white border border-gray-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+                    <path d="M15.8332 7.5H12.4998V2.5H7.49984V7.5H4.1665L9.99984 13.3333L15.8332 7.5ZM4.1665 15V16.6667H15.8332V15H4.1665Z" fill="#10181F"/>
+                  </svg>
+                </button>
+                <button class="hidden md:inline-flex items-center justify-center text-sm md:text-base text-secondary-900 cursor-pointer hover:underline">
                   <img src="/dist/images/icons/FileDownloadFilled.svg" class="me-2" alt="FileDownloadFilled">
                   Download All Files
                 </button>
@@ -847,33 +858,33 @@
       <div class="px-3 py-2 md:px-6 md:py-4">
 
         <div id="approval_list-id" class="tab-content">
-          <div class="relative overflow-x-auto max-h-[460px] custom-scrollbar overflow-y-auto rounded-lg shadow-one mb-4">
+          <div class="relative overflow-x-auto max-h-[264px] md:max-h-[434px] custom-scrollbar overflow-y-auto rounded-lg shadow-one mb-0 md:mb-4">
             <table class="table-responsive">
               <thead>
                 <tr class="bg-cloudy-30">
-                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-tl-lg">
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-tl-lg whitespace-nowrap">
                     Full Name
                   </th>
-                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140">
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
                     Position
                   </th>
-                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left whitespace-nowrap">
                     Status Approval
                   </th>
-                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left whitespace-nowrap">
                     Approval Date
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
                     Farhan Farhano
                   </td>
                   <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
                     Warehouse PIC
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
                     <span class="bg-success-50 text-success-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl cursor-pointer">
                       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
                         <circle cx="4" cy="4" r="3" fill="#12B76A"/>
@@ -881,18 +892,18 @@
                       Approved
                     </span>
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 rounded-br-lg">
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
                     23/04/2023
                   </td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
                     Farhan Farhano
                   </td>
                   <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
                     Warehouse PIC
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
                     <span class="bg-success-50 text-success-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl cursor-pointer">
                       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
                         <circle cx="4" cy="4" r="3" fill="#12B76A"/>
@@ -900,7 +911,45 @@
                       Approved
                     </span>
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 rounded-br-lg">
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                    23/04/2023
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                    Farhan Farhano
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                    Warehouse PIC
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                    <span class="bg-success-50 text-success-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl cursor-pointer">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                        <circle cx="4" cy="4" r="3" fill="#12B76A"/>
+                      </svg>
+                      Approved
+                    </span>
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                    23/04/2023
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg whitespace-nowrap">
+                    Farhan Farhano
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                    Warehouse PIC
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                    <span class="bg-success-50 text-success-700 text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl cursor-pointer">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                        <circle cx="4" cy="4" r="3" fill="#12B76A"/>
+                      </svg>
+                      Approved
+                    </span>
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 rounded-br-lg whitespace-nowrap">
                     23/04/2023
                   </td>
                 </tr>
@@ -911,43 +960,46 @@
         </div>
 
         <div id="log_history-id" class="tab-content hidden">
-          <div class="relative overflow-x-auto rounded-lg shadow-one mb-4 overflow-auto">
-            
             <!-- list log -->
-            <div class="relative overflow-auto custom-scrollbar max-h-[460px] min-w-full rounded-lg shadow-one px-5 py-6 border border-secondary-100">
-              <div class="flex justify-between min-w-[420px] gap-3 text-sm text-gray_2-500 py-4 border-b border-cloudy-20 last:border-b-0">
-                <img src="/dist/images/avatar-2.jpeg" class="w-12 h-12 rounded-full object-cover object-top flex-shrink-0"  alt="avatar">
-                <div class="flex-1 flex-shrink-0">
-                  <div class="flex flex-col">
-                    <span class="inline-flex text-base font-medium text-gray-700">name<span class="ms-2">Vendor</span></span>
-                    <span class="block mb-3 whitespace-nowrap">Add file to <span class="text-primary-500 font-medium">Submission Form</span></span>
-                    <div class="flex items-center gap-3">
-                      <img src="/dist/images/icons/_File upload icon.svg" alt="icon file upload">
-                      <div class="flex flex-col">
-                        <span class="block font-medium text-gray-700 mb-1 whitespace-nowrap">Submission Form.pdf</span>
-                        <span>720 KB</span>
+            <div class="relative overflow-x-auto max-h-[264px] md:max-h-[434px] custom-scrollbar min-w-full rounded-lg shadow-one px-3 py-2 md:px-5 md:py-6 border border-secondary-100">
+              <!-- card  -->
+              <div class="flex flex-col md:flex-row justify-between md:min-w-[420px] gap-3 text-sm text-gray_2-500 py-2 md:py-4 border-b border-cloudy-20 last:border-b-0">
+                <div class="flex gap-3 order-2 md:order-1">
+                  <img src="/dist/images/avatar-2.jpeg" class="w-12 h-12 rounded-full object-cover object-top flex-shrink-0" alt="avatar">
+                  <div class="flex-1">
+                    <div class="flex flex-col">
+                      <span class="inline-flex items-center text-base font-medium text-gray-700">BoboiBoy<span class="text-sm font-normal text-gray_2-500 ms-2">Vendor</span></span>
+                      <span class="block mb-3 whitespace-nowrap">Add file to <span class="text-primary-500 font-medium">Submission Form</span></span>
+                      <div class="flex items-center gap-3">
+                        <img src="/dist/images/icons/_File upload icon.svg" alt="icon file upload">
+                        <div class="flex flex-col">
+                          <span class="block font-medium text-gray-700 whitespace-nowrap">Submission Form.pdf</span>
+                          <span>720 KB</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <span class="block">17/04/2023</span>
+                <span class="block order-1 md:order-2">17/04/2023</span>
               </div>
-              <div class="flex justify-between min-w-[420px] gap-3 text-sm text-gray_2-500 py-4 border-b border-cloudy-20 last:border-b-0">
-                <img src="/dist/images/avatar-2.jpeg" class="w-12 h-12 rounded-full object-cover object-top flex-shrink-0"  alt="avatar">
-                <div class="flex-1 flex-shrink-0">
-                  <div class="flex flex-col">
-                    <span class="inline-flex text-base font-medium text-gray-700">name<span class="ms-2">Vendor</span></span>
-                    <span class="block whitespace-nowrap mb-3">Add file to 
-                      <span class="text-primary-500 font-medium">Send Hard Copy</span>
-                      <span class="text-gray_2-500 font-medium">via</span>
-                      <span class="text-secondary-900 font-medium">Self-Courier</span>
-                    </span>
+              <!-- card  -->
+              <div class="flex flex-col md:flex-row justify-between md:min-w-[420px] gap-3 text-sm text-gray_2-500 py-2 md:py-4 border-b border-cloudy-20 last:border-b-0">
+                <div class="flex gap-3 order-2 md:order-1">
+                  <img src="/dist/images/avatar-2.jpeg" class="w-12 h-12 rounded-full object-cover object-top flex-shrink-0" alt="avatar">
+                  <div class="flex-1">
+                    <div class="flex flex-col">
+                      <span class="inline-flex items-center text-base font-medium text-gray-700">BoboiBoy<span class="text-sm font-normal text-gray_2-500 ms-2">Vendor</span></span>
+                      <span class="block mb-3">Add file to 
+                        <span class="text-primary-500 font-medium">Send Hard Copy</span>
+                        <span class="text-gray_2-500 font-medium">via</span>
+                        <span class="text-secondary-900 font-medium">Self-Courier</span>
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <span class="block">17/04/2023</span>
+                <span class="block order-1 md:order-2">17/04/2023</span>
               </div>
             </div>
-          </div>
         </div>
         
       </div>
@@ -1074,7 +1126,7 @@
 <!-- modal yard leader -->
 
 <!-- snackbar -->
-<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-60 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
+<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-90 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
   <div class="flex items-center justify-between w-[540px] gap-3 p-4 mb-4 text-sm text-white rounded-xl shadow-light_raised" role="alert" id="bg_snackbar_alert">
     <p class="flex items-center gap-3">
       <img src="#" alt="info" class="hidden" id="icon_snackbar_alert">

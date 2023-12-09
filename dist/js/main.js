@@ -1,5 +1,64 @@
 $(document).ready(function() {
   
+  $('.action_status').select2({
+    theme: 'custom-theme-3', 
+    minimumResultsForSearch: Infinity, // disable search
+    selectionCssClass: 'select2-action-selection',
+    dropdownCssClass: 'select2-action-dropdown',
+    templateSelection: function(data, container) {
+      let text = data.text
+      let color = $(data.element).data('color')
+      let textColor = color == 'white' ? 'cloudy-70' : 'white'
+      let borderColor = color == 'white' ? 'cloudy-120' : color
+      let iconColor = color == 'white' ? 'cloudy-120' : "white"
+      let icon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none" class="text-${iconColor}">
+        <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z" fill="currentColor"/>
+      </svg>`
+      let element = `<div class="flex items-center justify-between font-medium border border-${borderColor} px-4 py-4 w-full rounded-md text-${textColor} bg-${color}">
+        <span class="block">${text}</span>${icon}           
+      </div>`;
+      
+      if(data.element) {
+        return $(element);
+      }
+      return data.text;
+    },
+    templateResult: formatOption6, // Function for formatting the display of options,
+  });
+
+  $('.action_status').on('select2:select', function(e) {
+    let selectedValue = e.params.data.id;
+    let yardLeader = document.getElementById('yard_group_value-id')
+    let statusEl = document.getElementById("status_value-id");
+
+    yardLeader.classList.remove('flex');
+    yardLeader.classList.add('hidden');
+    yardLeader.children[0].textContent = '';
+    yardLeader.children[1].textContent = '';
+
+    if(selectedValue == 'revision') {
+      statusEl.value = selectedValue
+
+      document.getElementById("note_icon-id").setAttribute('src', '/dist/images/icons/note_blue.svg');
+      document.getElementById("note_title-id").textContent = "Add Revision Notes"
+
+      toggleModalDialog('modal_status-id');
+    } else if(selectedValue == 'rejected') { 
+      statusEl.value = selectedValue
+
+      document.getElementById("note_icon-id").setAttribute('src', '/dist/images/icons/note_red.svg');
+      document.getElementById("note_title-id").textContent = "Add Rejected Notes"
+
+      toggleModalDialog('modal_status-id');
+    } else if(selectedValue == 'verified') { 
+      toggleSnackbar("snackbar-id", 'verified');
+    } else if(selectedValue == 'approved') { 
+      toggleSnackbar("snackbar-id", 'approved');
+    } else if(selectedValue == 'assign_to_yard_leader') {
+      toggleModalDialog('modal_yard_leader-id', 'z-50', 'dynamic');
+    }
+  });
+
   $('#new_role-id').select2({
     theme: 'custom-theme1-1', 
     minimumResultsForSearch: Infinity, // disable search
@@ -7,7 +66,7 @@ $(document).ready(function() {
   });
 
    // Attach an event listener for the "select2:select" event
-   $("#new_role-id").on("select2:select", function (e) {
+  $("#new_role-id").on("select2:select", function (e) {
     let selectedOption = e.params.data;
     
     let optionABEl = document.getElementById('option_ab');
@@ -42,14 +101,64 @@ $(document).ready(function() {
     placeholder: 'Select Service',
     templateResult: formatOption1, // Function for formatting the display of options,
   });
- 
+
+   // STATUS TAB SELECT2 
+
+  $('#status_invoice-id').select2({
+    theme: 'custom-theme-3', 
+    minimumResultsForSearch: Infinity, // disable search
+    selectionCssClass: 'select2-custom-status',
+    dropdownCssClass: 'select2-custom-dropdown-status',
+    templateSelection: function(data, container) {
+      let text = data.text
+      let badgeColor = $(data.element).data('badgeColor')
+      let count = $(data.element).data('count')
+
+      let element = `<div class="flex items-center">
+        <span class="block font-semibold text-cloudy-110 uppercase">${text}</span>
+        <div class="count text-xs font-medium text-white px-1.5 rounded-2xl border border-white ms-2 ${badgeColor}">${count}</div>
+      </div>`;
+      
+      if(data.element) {
+        return $(element);
+      }
+      return data.text;
+    },
+    templateResult: formatOption5, // Function for formatting the display of options,
+  });
+
+  $('#status_invoice-id').on('select2:open', function() {
+    let parentElement = document.getElementById('status_invoice-id').parentNode;
+    let backdropEl = document.createElement('div');
+    let getRect = parentElement.getBoundingClientRect()
+    
+    parentElement.classList.add('z-60');
+    backdropEl.innerHTML = `<div id="${'status_invoice-id'}-backdrop" class="flex bg-black/20 fixed inset-0 z-50"></div>`;
+    document.body.appendChild(backdropEl);
+    // document.body.style.paddingBottom = "10rem"
+    // window.scrollTo({
+    //   top: window.scrollY + getRect.top - 10,
+    //   behavior: 'auto'  // You can use 'auto' instead of 'smooth' for an instant scroll
+    // });
+    document.body.style.overflow = "hidden";
+  });
+
+  $('#status_invoice-id').on('select2:close', function() {
+    let parentElement = document.getElementById('status_invoice-id').parentNode;
+    parentElement.classList.remove('z-60');
+    document.getElementById(`${'status_invoice-id'}-backdrop`).remove();
+    // document.body.style.paddingBottom = "0"
+    document.body.style.overflow = "auto";
+  });
+
+  
   // STATUS FILTER SELECT2 
 
   $('#status_filter-id').select2({
     theme: 'custom-theme-3', 
     minimumResultsForSearch: Infinity, // disable search
-    selectionCssClass: 'select2-custom-selection',
-    dropdownCssClass: 'select2-custom-dropdown',
+    selectionCssClass: 'select2-custom-filter-selection',
+    dropdownCssClass: 'select2-custom-filter-dropdown',
     templateResult: formatOption4, // Function for formatting the display of options,
   });
 
@@ -61,11 +170,11 @@ $(document).ready(function() {
     parentElement.classList.add('z-60');
     backdropEl.innerHTML = `<div id="${'status_filter-id'}-backdrop" class="flex bg-black/20 fixed inset-0 z-50"></div>`;
     document.body.appendChild(backdropEl);
-    document.body.style.paddingBottom = "10rem"
-    window.scrollTo({
-      top: window.scrollY + getRect.top - 300,
-      behavior: 'auto'  // You can use 'auto' instead of 'smooth' for an instant scroll
-    });
+    // document.body.style.paddingBottom = "10rem"
+    // window.scrollTo({
+    //   top: window.scrollY + getRect.top - 10,
+    //   behavior: 'auto'  // You can use 'auto' instead of 'smooth' for an instant scroll
+    // });
     document.body.style.overflow = "hidden";
   });
 
@@ -73,7 +182,7 @@ $(document).ready(function() {
     let parentElement = document.getElementById('status_filter-id').parentNode;
     parentElement.classList.remove('z-60');
     document.getElementById(`${'status_filter-id'}-backdrop`).remove();
-    document.body.style.paddingBottom = "0"
+    // document.body.style.paddingBottom = "0"
     document.body.style.overflow = "auto";
   });
 
@@ -181,8 +290,8 @@ $(document).ready(function() {
     let selectionHeight = $('.select2-selection--multiple').outerHeight();
     let h;
     if(selectedOptions && selectedOptions.length > 0) {
-      h = 452;
-      $('#btn_yard-id').removeClass("hidden");
+      h = 400;
+      $('#btn_yard-id').addClass("hidden");
     } else {
       h = 400;
       $('#btn_yard-id').addClass("hidden");
@@ -207,20 +316,20 @@ $(document).ready(function() {
     $('#card_yard_leader-id').height(`${newHeight}px`);
   });
 
-    // Function to format the display of options
-    function formatOption(option) {
-      if (!option.id) {
-        return option.text;
-      }
-  
-      let $option = $(
-        `<div class="border-b-2 border-transparent py-2 px-2 text-secondary-500 font-medium">
-          <span>${option.text}</span>
-        </div>`
-      );
-  
-      return $option;
+  // Function to format the display of options
+  function formatOption(option) {
+    if (!option.id) {
+      return option.text;
     }
+
+    let $option = $(
+      `<div class="border-b-2 border-transparent py-2 px-2 text-secondary-500 font-medium">
+        <span>${option.text}</span>
+      </div>`
+    );
+
+    return $option;
+  }
 
   // Function to format the display of options 1
   function formatOption1(option) {
@@ -303,6 +412,44 @@ $(document).ready(function() {
     return $option;
   }
 
+  // Function to format the display of options 5
+  function formatOption5(option) {
+    if (!option.id) {
+      return option.text;
+    }
+
+    let badgeColor = $(option.element).data('badge-color') || 'white';
+    let count = $(option.element).data('count') || '0';
+
+    let $option = $(
+      `<div class="option flex items-center justify-between text-secondary-900 px-[14px] py-[10px] bg-white gap-2 group hover:bg-yellow-0">
+        <div class="flex items-center">
+          <span class="block font-semibold text-cloudy-110 uppercase">${option.text}</span>
+          <div class="count text-xs font-medium text-white px-1.5 rounded-2xl border border-white ms-2 ${badgeColor}">${count}</div>
+        </div>
+        <img src="/dist/images/icons/check.svg" class="group-hover:block hidden" alt="check">
+      </div>`
+    );
+
+    return $option;
+  }
+
+  // Function to format the display of options 6
+  function formatOption6(option) {
+    if (!option.id) {
+      return option.text;
+    }
+
+    let color = $(option.element).data('color')
+    let textColor = color == 'white' ? 'cloudy-70' : 'white'
+
+    let $option = $(
+      `<div class="text-cloudy-70 font-medium bg-white border-b border-cloudy-20 px-4 py-2.5 w-full whitespace-nowrap hover:text-${textColor} hover:bg-${color}">${option.text}</div>`
+    );
+
+    return $option;
+  }
+
   flatpickr(".datepicker-flatpickr-custom", {
     defaultDate: new Date(),
     dateFormat: "d/m/Y",
@@ -331,6 +478,40 @@ $(document).ready(function() {
         shorthand: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
         longhand: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       },
+    },
+    prevArrow: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M12.5 15L7.5 10L12.5 5" stroke="#667085" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+    nextArrow: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="rotate-180">
+      <path d="M12.5 15L7.5 10L12.5 5" stroke="#667085" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  });
+
+  flatpickr(".datepicker-flatpickr-range-calendar", {
+    dateFormat: "j M Y", // Format for "6 Jan 2023"
+    defaultDate: [
+      new Date("2023-01-06"),
+      new Date("2023-01-10"),
+    ],
+    disableMobile: "true",
+    mode: "range",
+    locale: {
+      rangeSeparator: '  -         ', // Change the range separator to "-"
+      firstDayOfWeek: 1, // 1 is Monday
+      weekdays: {
+        shorthand: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+        longhand: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      },
+    },
+    onChange: function(selectedDates, dateStr, instance) {
+      // Update the input value with a custom format after selection
+      // instance.input.value = formattedDate;
+
+      // const formattedDate = selectedDates.map(date => date.toLocaleDateString()).join(' - ');
+      // const formattedDate = selectedDates.map(date => instance.formatDate(date, "j M Y")).join(' - ');
+      const formattedDate = selectedDates.map(date => instance.formatDate(date, "j M Y")).join('  -         ');
+      instance.input.value = formattedDate;
+      console.log(formattedDate)
     },
     prevArrow: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
       <path d="M12.5 15L7.5 10L12.5 5" stroke="#667085" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
@@ -424,7 +605,7 @@ $(document).ready(function() {
     } else if(selectedItem.getAttribute('data-value') == 'approved') { 
       toggleSnackbar("snackbar-id", 'approved');
     } else if(selectedItem.getAttribute('data-value') == 'assign_to_yard_leader') {
-      toggleModalDialog('modal_yard_leader-id', 'z-30', 'dynamic');
+      toggleModalDialog('modal_yard_leader-id', 'z-50', 'dynamic');
     }
     
   }
@@ -461,19 +642,28 @@ $(document).ready(function() {
 
   function saveNextInvoice() {
     let statulEl = document.getElementById("checking_status-id");
-    let selectStatusElements = document.querySelectorAll('.select-status');
+    let selectStatusElements = document.querySelectorAll('.action_status');
+    let detailEl = document.getElementById('detail_invoice-id');
 
-    for (let i = 0; i < selectStatusElements.length; i++) {
-      let firstChild = selectStatusElements[i].children[0];
-      let dataValue = firstChild.getAttribute('data-value');
-      if (!dataValue.trim()) {
-        statulEl.textContent = 'Decide each files status to finish the document checking';
-        return false;
-      }
+    var selectedValues = [];
+    // Iterate through each Select2 element
+    $('.action_status').each(function() {
+      // Get the selected value and push it to the array
+      var selectedValue = $(this).val();
+      selectedValues.push(selectedValue);
+    });
+
+    var containsUndecided = selectedValues.includes('undecided');
+
+    if(containsUndecided) {
+      statulEl.textContent = 'Decide each files status to finish the document checking';
+      return false;
     }
 
     statulEl.textContent = '';
     alert('save success');
+    detailEl.classList.remove('transform-none')
+    detailEl.classList.add('translate-x-full')
     return true;
   }
 
@@ -524,7 +714,7 @@ $(document).ready(function() {
   function toggleSnackbar(modalID, type) {
     let snackbarEl = document.getElementById(modalID);
 
-    toggleBackdrop(modalID);
+    toggleBackdrop(modalID, 'z-60');
     snackbarEl.classList.toggle("hidden");
     snackbarEl.classList.toggle("flex");
 
@@ -694,6 +884,7 @@ $(document).ready(function() {
     let modalEl = document.getElementById(modalID);
     if(modalEl.classList.contains("hidden")) {
       let backdropEl = document.createElement('div');
+      console.log('dynamic')
       if(type == 'dynamic') { 
         document.addEventListener('click', closeModalOnClickOutside);
       }
@@ -773,7 +964,7 @@ $(document).ready(function() {
           document.body.style.paddingBottom = "10rem"
 
           window.scrollTo({
-            top: window.scrollY + getRect.top - 120,
+            top: window.scrollY + getRect.top - 130,
             behavior: 'auto'  // You can use 'auto' instead of 'smooth' for an instant scroll
           });
 
@@ -795,14 +986,6 @@ $(document).ready(function() {
     dropdownEl.classList.toggle("hidden");
     dropdownEl.classList.toggle("block");
   }
-
-  function toggleModalDialog(modalID, index = 'z-50', type = 'static', backdrop = 'inline') {
-    let modalEl = document.getElementById(modalID);
-    
-    toggleBackdrop(modalID, index, type, backdrop);
-    modalEl.classList.toggle("hidden");
-    modalEl.classList.toggle("flex");
-  }   
 
   function toggleDrawer(drawerID, type, index) {
     let drawerEl = document.getElementById(drawerID);
@@ -853,25 +1036,47 @@ $(document).ready(function() {
     }
   }
 
-  function handleFileSelect(inputID, buttonID, tableID, dropzoneID) {
+  function handleFileSelect(inputID, buttonID, tableID, dropzoneID, type = 'single') {
     let fileInput = document.getElementById(inputID);
     let buttonUpload = document.getElementById(buttonID);
     let dropZone = document.getElementById(dropzoneID);
     let fileTable = document.getElementById(tableID);
 
     fileInput.addEventListener('change', function() {
-        dropZone.classList.remove("hidden", "flex");
-        dropZone.classList.add("hidden");
+        if(type === 'single') { 
+          dropZone.classList.remove("hidden", "flex");
+          dropZone.classList.add("hidden");
 
-        fileTable.classList.remove("hidden", "block");
-        fileTable.classList.add("block");
+          fileTable.classList.remove("hidden", "block");
+          fileTable.classList.add("block");
+        }
 
-        buttonUpload.disabled = false;
-        buttonUpload.setAttribute("onclick", `handleSubmitFile()`)
+        if(type === 'multiple') { 
+
+          let tbody = fileTable.querySelector("tbody");
+
+          // add logic here 
+          // addRowsTable(tbody)
+          
+          if(tbody.rows.length > 0) {
+            fileTable.classList.remove("hidden", "block");
+            fileTable.classList.add("block");
+          } else {
+            fileTable.classList.remove("hidden", "block");
+            fileTable.classList.add("hidden");
+          }
+          
+        }
+
+        if(buttonUpload) {
+          buttonUpload.disabled = false;
+          buttonUpload.setAttribute("onclick", `handleSubmitFile()`)
+        }
+      
     });
   }
 
-  function handleDeleteFile(inputID, buttonID, tableID, dropzoneID) {
+  function handleDeleteFile(inputID, buttonID, tableID, dropzoneID, type = 'single', event) {
     let fileInput = document.getElementById(inputID);
     let buttonUpload = document.getElementById(buttonID);
     let dropZone = document.getElementById(dropzoneID);
@@ -879,14 +1084,71 @@ $(document).ready(function() {
 
     fileInput.value = '';
 
-    dropZone.classList.remove("hidden", "flex");
-    dropZone.classList.add("flex");
+    if(type === 'single') { 
+      dropZone.classList.remove("hidden", "flex");
+      dropZone.classList.add("flex");
+  
+      fileTable.classList.remove("hidden", "block");
+      fileTable.classList.add("hidden");
+    }
 
-    fileTable.classList.remove("hidden", "block");
-    fileTable.classList.add("hidden");
+    if(type === 'multiple') { 
 
-    buttonUpload.disabled = true;
-    buttonUpload.removeAttribute("onclick");
+      let tbody = fileTable.querySelector("tbody");
+
+      // add logic here 
+      // let row = event.parentNode.parentNode.parentNode;
+      // row.remove();
+
+      if(tbody.rows.length == 1) {
+        fileTable.classList.remove("hidden", "block");
+        fileTable.classList.add("hidden");
+      }
+      
+    }
+
+    if(buttonUpload) {
+      buttonUpload.disabled = true;
+      buttonUpload.removeAttribute("onclick");
+    }
+  }
+
+  function addRowsTable(tbody) {
+    // Insert a new row at the end of the tbody
+    let newRow = tbody.insertRow(tbody.rows.length);
+
+    // Insert cells in the new row
+    let cell1 = newRow.insertCell(0);
+    let cell2 = newRow.insertCell(1);
+    let cell3 = newRow.insertCell(2);
+    let cell4 = newRow.insertCell(3);
+    // let cell5 = newRow.insertCell(4);
+
+    // Add classes to the cells
+    cell1.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg";
+    cell2.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap";
+    cell3.className = "px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap";
+    cell4.className = "px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 rounded-br-lg whitespace-nowrap";
+    
+
+    // Set the content of cells (you can set this dynamically based on user input)
+    cell1.innerHTML = '1';
+    cell2.innerHTML = 'Invoice For Transaction ABXY 2023 Update';
+    cell3.innerHTML = '24/04/2023 - 15:00:00';
+    cell4.innerHTML = `
+      <div class="flex items-center justify-center gap-2">
+        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+          onclick="toggleModalDialog('modal_preview_pdf-id')"
+        >
+            <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+        </div>
+        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer"
+        onclick="handleDeleteFile('upload_invoice_pajak_input-id', '', 'invoice_pajak_table-id', 'upload_invoice_pajak-id', 'multiple', this)"
+        >
+          <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
+        </div>
+      </div>
+    `;
   }
 
   function handleSubmitFile() {
@@ -933,22 +1195,22 @@ $(document).ready(function() {
     let copyText;
 
     if (typeof elementIdOrText === 'string') {
-      // If the argument is a string, assume it's an element ID
-      let element = document.getElementById(elementIdOrText);
+        // If the argument is a string, assume it's an element ID
+        let element = document.getElementById(elementIdOrText);
 
-      if (element) {
-        // If the element is found, get its text content
-        copyText = element.textContent || element.innerText;
-      } else {
-        console.error('Element with ID ' + elementIdOrText + ' not found.');
-        return;
-      }
+        if (element) {
+            // If the element is found, get its value (for input elements)
+            copyText = element.value || element.textContent || element.innerText;
+        } else {
+            console.error('Element with ID ' + elementIdOrText + ' not found.');
+            return;
+        }
     } else if (typeof elementIdOrText === 'object' && elementIdOrText.nodeType === 1) {
-      // If the argument is an HTML element, get its text content
-      copyText = elementIdOrText.textContent || elementIdOrText.innerText;
+        // If the argument is an HTML element, get its value (for input elements)
+        copyText = elementIdOrText.value || elementIdOrText.textContent || elementIdOrText.innerText;
     } else {
-      console.error('Invalid argument. Please provide an element ID or an HTML element.');
-      return;
+        console.error('Invalid argument. Please provide an element ID or an HTML element.');
+        return;
     }
 
     // Create a temporary textarea to copy the text
@@ -982,6 +1244,7 @@ $(document).ready(function() {
 
     let decision1 = document.getElementById('detail_decision1-id');
     let decision2 = document.getElementById('detail_decision2-id');
+    let action2 = document.getElementById('detail_action2-id');
 
     let resubmitBtn = document.getElementById('resubmit_button-id');
     
@@ -1015,6 +1278,10 @@ $(document).ready(function() {
     decision2.children[0].children[1].classList.add("hidden");
     decision2.children[0].removeAttribute('onclick');
     decision2.children[0].classList.remove('cursor-pointer');
+    decision2.classList.add('bg-cloudy-10');
+
+    action2.children[0].children[2].classList.add('bg-orange-90/20');
+    action2.children[0].children[2].removeAttribute('onclick');
 
     resubmitBtn.classList.add("hidden");
     resubmitBtn.removeAttribute("onclick")
@@ -1159,6 +1426,7 @@ $(document).ready(function() {
         </svg> Approved
       `;
 
+      decision2.classList.remove('bg-cloudy-10');
       decision2.children[0].children[0].classList.add("bg-warning-50", "text-warning-700");
       decision2.children[0].classList.add("cursor-pointer");
       decision2.children[0].setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
@@ -1168,6 +1436,9 @@ $(document).ready(function() {
           <circle cx="4" cy="4" r="3" fill="#F79009"/>
         </svg> Action Needed
       `;
+      action2.children[0].children[2].classList.remove('bg-orange-90/20');
+      action2.children[0].children[2].classList.add('bg-orange-90');
+      action2.children[0].children[2].setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
 
     } else if(type == 'action_needed-hardcopy') {
 
@@ -1192,7 +1463,8 @@ $(document).ready(function() {
           <circle cx="4" cy="4" r="3" fill="#12B76A"/>
         </svg> Approved
       `;
-
+      
+      decision2.classList.remove('bg-cloudy-10');
       decision2.children[0].children[0].classList.add("bg-warning-50", "text-warning-700");
       decision2.children[0].classList.add("cursor-pointer");
       decision2.children[0].setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
@@ -1202,6 +1474,10 @@ $(document).ready(function() {
           <circle cx="4" cy="4" r="3" fill="#F79009"/>
         </svg> Action Needed
       `;
+      action2.children[0].children[2].classList.remove('bg-orange-90/20');
+      action2.children[0].children[2].classList.add('bg-orange-90');
+      action2.children[0].children[2].setAttribute("onclick", `toggleModalDialog('modal_status_${actionType}-id', 'z-60', 'static', 'inline', '${type}')`)
+
     }
   }
 
@@ -1231,4 +1507,118 @@ $(document).ready(function() {
     btnEl.classList.toggle('block');
     ruleEl.classList.toggle('hidden');
     ruleEl.classList.toggle('block');
+  }
+
+  function addRowGoods() {
+    // Get the tbody element
+    let tbody = document.querySelector("#goods_services-id tbody");
+    let removeBtnEl = document.getElementById("remove_goods_row-id");
+
+    // Check if there is at least one row in the tbody
+    if (tbody.rows.length > 0) {
+      removeBtnEl.classList.remove("hidden")
+      removeBtnEl.classList.add("inline-flex")
+    } else {
+      removeBtnEl.classList.remove("inline-flex")
+      removeBtnEl.classList.add("hidden")
+    }
+
+    // Insert a new row at the end of the tbody
+    let newRow = tbody.insertRow(tbody.rows.length);
+
+    // Insert cells in the new row
+    let cell1 = newRow.insertCell(0);
+    let cell2 = newRow.insertCell(1);
+    let cell3 = newRow.insertCell(2);
+    let cell4 = newRow.insertCell(3);
+    // let cell5 = newRow.insertCell(4);
+
+    // Add classes to the cells
+    cell1.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 md:w-96 bg-white";
+    cell2.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white md:w-24 whitespace-nowrap";
+    cell3.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-right md:w-48 bg-white";
+    cell4.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-right md:w-48 bg-white whitespace-nowrap";
+    
+
+    // Set the content of cells (you can set this dynamically based on user input)
+    cell1.innerHTML = '<input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap">';
+    cell2.innerHTML = '<input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap">';
+    cell3.innerHTML = '<input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap text-right">';
+    cell4.innerHTML = '<input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap text-right">';
+
+    // Add a Remove button to the last cell
+    // cell5.innerHTML = '<button onclick="removeRowGoods(this)">Remove</button>';
+  }
+
+  function removeLastRow() {
+    // Get the tbody element
+    let tbody = document.querySelector("#goods_services-id tbody");
+    let removeBtnEl = document.getElementById("remove_goods_row-id");
+
+    // Check if there is at least one row in the tbody
+    if (tbody.rows.length > 1) {
+      removeBtnEl.classList.remove("hidden")
+      removeBtnEl.classList.add("inline-flex")
+      // Remove the last row
+      tbody.deleteRow(tbody.rows.length - 1);
+    }
+
+    if(tbody.rows.length == 1) {
+      removeBtnEl.classList.add("hidden")
+      removeBtnEl.classList.remove("inline-flex")
+    }
+  }
+
+  // function removeRowGoods(button) {
+  //   // Get the row containing the button
+  //   let row = button.parentNode.parentNode;
+
+  //   // Remove the row
+  //   row.parentNode.removeChild(row);
+  // }
+
+  function toggleDetailInvoice(drawerID) {
+    let drawerEl = document.getElementById(drawerID)
+    if (window.innerWidth <= 768) {
+      if(drawerEl.classList.contains("translate-x-full")) {
+        document.body.style.overflow = "hidden"
+      } else {
+        document.body.style.overflow = "auto"
+      }
+
+      drawerEl.classList.toggle("transform-none");
+      drawerEl.classList.toggle("translate-x-full");
+    }
+  }
+
+  function toggleSidebarMenu() {
+    let sidebarEl = document.getElementById('sidebar_menu-id');
+    
+    sidebarEl.classList.toggle('-translate-x-full')
+    sidebarEl.classList.toggle('translate-x-0')
+    sidebarEl.classList.toggle('z-40')
+    sidebarEl.classList.toggle('z-60')
+    sidebarEl.classList.toggle('pt-24')
+    sidebarEl.classList.toggle('pt-0')
+
+    if(sidebarEl.classList.contains("translate-x-0")) {
+      let sidebarEl = document.createElement('div');
+      sidebarEl.innerHTML = `<div id="${'sidebar_menu-id'}-backdrop" class="flex bg-black/20 fixed inset-0 z-50"></div>`;
+      document.body.appendChild(sidebarEl);
+      document.body.style.overflow = "hidden"
+    } else {
+      document.getElementById(`${'sidebar_menu-id'}-backdrop`).remove();
+      document.body.style.overflow = "auto"
+    }
+
+    // if(sidebarEl.classList.contains('-translate-x-full')) {
+    //   sidebarEl.classList.toggle('-translate-x-full')
+    //   sidebarEl.classList.toggle('translate-x-0')
+    //   sidebarEl.classList.toggle('z-40')
+    //   sidebarEl.classList.toggle('z-60')
+    //   sidebarEl.classList.toggle('pt-24')
+    //   sidebarEl.classList.toggle('pt-0')
+    // } else {
+
+    // }
   }

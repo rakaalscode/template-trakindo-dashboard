@@ -38,10 +38,10 @@
           </a>
           <ul class="items-center hidden space-x-8 font-medium md:flex">
             <li>
-              <a href="/src/pages/chief_bod/dashboard.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Dashboard</a>
+              <a href="/src/pages/warehouse_pic/dashboard.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Dashboard</a>
             </li>
             <li>
-              <a href="/src/pages/chief_bod/invoice_request.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Invoice Request List</a>
+              <a href="/src/pages/warehouse_pic/invoice_request.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Invoice Request List</a>
             </li>
           </ul>
         </div>
@@ -60,7 +60,7 @@
                     Abisha Ilham
                   </p>
                   <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
-                    Chief
+                    Warehouse PIC
                   </p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden md:block">
@@ -83,7 +83,7 @@
                         Abisha Ilham
                       </p>
                       <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
-                        Chief
+                        Warehouse PIC
                       </p>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden rotate-180 md:block">
@@ -125,18 +125,18 @@
     </div>
     <div class="px-4 pt-2 block md:hidden">
       <div class="flex justify-between w-full gap-2">
-        <a href="/src/pages/chief_bod/dashboard.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent">Dashboard</a>
-        <a href="/src/pages/chief_bod/invoice_request.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Invoice Request List</a>
+        <a href="/src/pages/warehouse_pic/dashboard.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent">Dashboard</a>
+        <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Invoice Request List</a>
       </div>
     </div>
   </nav>
 
   <main class="pt-[8rem] md:pt-[5.25rem]">
     <div class="max-w-screen-2xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-12 md:h-screen md:overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-12  overflow-hidden">
 
         <!-- invoice list  -->  
-        <div class="md:col-span-4 md:h-screen">
+        <div class="md:col-span-4">
           <div class="px-4 py-0 md:px-0">
               <!-- invoice header  -->
             <div class="flex flex-col flex-wrap justify-between md:px-8 mt-3 md:mt-6 gap-3 md:flex-row md:items-center">
@@ -356,8 +356,8 @@
             </div>
 
             <!-- list  -->
-            <div class="relative md:max-h-[80vh] overflow-y-auto">
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+            <div class="overflow-y-auto h-full md:h-[500px] custom-scrollbar">
+              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10">
                 <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
                 <div class="flex items-center justify-between text-sm font-medium">
                   <div class="flex flex-col gap-4"> 
@@ -387,7 +387,8 @@
                   </div>
                 </div>
               </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+  
+              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10">
                 <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
                 <div class="flex items-center justify-between text-sm font-medium">
                   <div class="flex flex-col gap-4"> 
@@ -417,7 +418,7 @@
                   </div>
                 </div>
               </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10">
                 <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
                 <div class="flex items-center justify-between text-sm font-medium">
                   <div class="flex flex-col gap-4"> 
@@ -447,7 +448,7 @@
                   </div>
                 </div>
               </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10">
                 <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
                 <div class="flex items-center justify-between text-sm font-medium">
                   <div class="flex flex-col gap-4"> 
@@ -477,7 +478,7 @@
                   </div>
                 </div>
               </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10">
                 <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
                 <div class="flex items-center justify-between text-sm font-medium">
                   <div class="flex flex-col gap-4"> 
@@ -507,7 +508,7 @@
                   </div>
                 </div>
               </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10">
                 <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
                 <div class="flex items-center justify-between text-sm font-medium">
                   <div class="flex flex-col gap-4"> 
@@ -537,67 +538,6 @@
                   </div>
                 </div>
               </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <span class="inline-flex items-center badge badge-warning whitespace-nowrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                          <circle cx="4" cy="4" r="3" fill="#F79009"/>
-                        </svg>
-                        Waiting for Approval
-                      </span>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <span class="inline-flex items-center badge badge-warning whitespace-nowrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                          <circle cx="4" cy="4" r="3" fill="#F79009"/>
-                        </svg>
-                        Waiting for Approval
-                      </span>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
             </div>
 
             <!-- Pagination -->
@@ -669,22 +609,11 @@
           </div>
         </div>
         
-        <div id="detail_invoice-id" class="fixed top-0 right-0 z-50 h-full md:max-h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:relative md:col-span-8 md:transform-none md:z-auto">
+        <div class="relative md:col-span-8">
           <div class="px-4 pt-0 md:pt-6 md:px-8">
             <!-- <div class="p-0 py-6 pl-0 pr-0 md:py-6 md:pl-6 md:pr-3"> -->
 
-            <!-- close -->
-            <div class="flex justify-start gap-2 py-4 md:hidden">
-              <button onclick="toggleDetailInvoice('detail_invoice-id')">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
-                  <path d="M15 18L9 12L15 6" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <span class="block text-lg font-medium text-semi_black-100">009.23.33077279</span>
-            </div>
-            <!-- close -->
-
-            <div class="">
+            <!-- <div class="overflow-y-auto custom-scrollbar"> -->
               <!-- table -->
               <div class="relative overflow-x-auto mb-7">
                 <table class="table-responsive">
@@ -766,30 +695,36 @@
                   </tr>
                   <tr>
                     <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                      Description
+                    </th>
+                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 whitespace-nowrap">
+                      <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
                       GL Account<span class="text-red-500">*</span>
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12 whitespace-nowrap">
-                      <div class="relative hidden">
+                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 whitespace-nowrap">
+                      <div class="relative">
                         <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
                           <img src="/dist/images/icons/fi_search.svg" alt="search">
                         </div>
                         <input type="text" class="form-control-none w-full text-secondary-900 pr-5" id="gl_search_data-id" readonly>
                       </div>
-                      600000190
                     </td>
                   </tr>
                   <tr>
                     <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg">
                       Cost Center<span class="text-red-500">*</span>
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12 rounded-br-lg">
-                      <div class="relative hidden">
+                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 rounded-br-lg">
+                      <div class="relative">
                         <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
                           <img src="/dist/images/icons/fi_search.svg" alt="search">
                         </div>
                         <input type="text" class="form-control-none w-full text-secondary-900 pr-5" id="cost_center_data-id" readonly>
                       </div>
-                      10Z0210SM
                     </td>
                   </tr>
                 </table>
@@ -841,7 +776,7 @@
               </div>
 
               <!-- supporting files -->
-              <div class="relative mb-10">
+              <div class="relative mb-32">
 
                 <!-- heading -->
                 <div class="flex items-center justify-between px-3 py-3 md:px-6 md:py-3">
@@ -874,7 +809,7 @@
                         </div>
                       </div>
 
-                      <div class="flex flex-row-reverse items-end justify-between md:items-end md:flex-col gap-4">
+                      <div class="flex flex-row-reverse items-center justify-between md:items-end md:flex-col gap-4">
                         <div class="flex items-end justify-end gap-2">
                           <div class="flex items-center justify-center w-8 h-8 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id')">
                               <img src="/dist/images/icons/RemoveRedEyeFilled.svg" class="w-5 h-5" alt="eye">
@@ -891,29 +826,185 @@
                             </div>
                             <span class="text-sm md:text-base font-medium text-cloudy-130"></span>
                           </div>
-                          
-                          <div class="flex">
-                            <select class="action_status" style="width: 223px;" name="gl_account" required>
-                              <option value="undecided" data-color="white">undecided</option>
-                              <option value="revision" data-color="blue_general">Revision Needed</option>
-                              <option value="rejected" data-color="red_general">Rejected</option>
-                              <option value="approved" data-color="green_general">Approved</option>
-                            </select>
+
+                          <div class="relative inline-block select-status" data-value="" id="customSelect">
+                            <button class="flex items-center justify-between text-sm font-medium text-cloudy-70 px-4 py-[10px] w-[196px] rounded-md bg-white border border-black" data-value="" onclick="selectDropdown(event,'customSelectOptions')">
+                              Undecided
+                              <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-cloudy-120">
+                                <g>
+                                  <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                </g>
+                              </svg>
+                            </button>
+                            
+                            <div class="hidden bg-white text-base p-3 z-60 float-left list-none text-left rounded-md shadow-lg mt-1 space-y-2" style="min-width:12rem"  id="customSelectOptions">
+                              <button class="flex items-center justify-between text-sm font-medium text-cloudy-70 px-4 py-[10px] w-[196px] rounded-md bg-white border border-black" data-value="" 
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Undecided
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-cloudy-120">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                              <button class="flex items-center justify-between text-sm font-medium text-white px-4 py-[10px] w-[196px] rounded-md bg-red_general border border-red_general" data-value="rejected" 
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Rejected
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                              <button class="flex items-center justify-between text-sm font-medium text-white px-4 py-[10px] w-[196px] rounded-md bg-blue_general border border-blue_general" data-value="revision"
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Revision Needed
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                              <button class="flex items-center justify-between text-sm font-medium text-white px-4 py-[10px] w-[196px] rounded-md bg-warning_b_general border border-warning_b_general" data-value="assign_to_yard_leader"
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Assign to Yard Leader
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                              <button class="flex items-center justify-between text-sm font-medium text-white px-4 py-[10px] w-[196px] rounded-md bg-green_general border border-green_general" data-value="verified"
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Verified
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        
                         </div>
                         
+
                       </div>
                     </div>
                   </div>
-                  
+                  <div class="flex flex-col gap-3 px-4 py-4 bg-white border border-cloudy-140 rounded-lg md:px-8 md:py-4">
+                    <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-4">
+                      <div class="flex flex-col gap-6 md:gap-3">
+                        <h3 class="text-base md:text-xl font-medium text-secondary-900">BAST For Transaction ABXY 2023 Update</h3>
+                        <div class="flex flex-col gap-3 text-sm font-medium text-secondary-500">
+                          <div>
+                            <span class="inline-block w-[105px]">TYPE</span><span class="text-base text-secondary-900">: Invoice</span>
+                          </div>
+                          <div>
+                            <span class="inline-block w-[105px]">UPLOAD DATE</span><span class="text-base text-secondary-900">: 24/02/2023 1:34PM</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex flex-row-reverse items-center justify-between md:items-end md:flex-col gap-4">
+                        <div class="flex items-end justify-end gap-2">
+                          <div class="flex items-center justify-center w-8 h-8 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id')">
+                              <img src="/dist/images/icons/RemoveRedEyeFilled.svg" class="w-5 h-5" alt="eye">
+                          </div>
+                          <div class="flex items-center justify-center w-8 h-8 rounded shadow-one bg-cloudy-90 cursor-pointer" onclick="downloadInvoice()">
+                            <img src="/dist/images/icons/download.svg" class="w-4 h-4" alt="download">
+                          </div>
+                        </div>
+
+                        <div class="flex flex-col items-start md:flex-row md:items-center gap-3">
+                          <div class="hidden items-center gap-3" id="yard_group_value-id">
+                            <div class="flex flex-shrink-0 -space-x-4 rt rtl:space-x-reverse">
+                              
+                            </div>
+                            <span class="text-sm md:text-base font-medium text-cloudy-130"></span>
+                          </div>
+
+                          <div class="relative inline-block select-status" data-value="" id="customSelect">
+                            <button class="flex items-center justify-between text-sm font-medium text-cloudy-70 px-4 py-[10px] w-[196px] rounded-md bg-white border border-black" data-value="" onclick="selectDropdown(event,'customSelectOptions')">
+                              Undecided
+                              <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-cloudy-120">
+                                <g>
+                                  <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                </g>
+                              </svg>
+                            </button>
+                            
+                            <div class="hidden bg-white text-base p-3 z-60 float-left list-none text-left rounded-md shadow-lg mt-1 space-y-2" style="min-width:12rem"  id="customSelectOptions">
+                              <button class="flex items-center justify-between text-sm font-medium text-cloudy-70 px-4 py-[10px] w-[196px] rounded-md bg-white border border-black" data-value="" 
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Undecided
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-cloudy-120">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                              <button class="flex items-center justify-between text-sm font-medium text-white px-4 py-[10px] w-[196px] rounded-md bg-red_general border border-red_general" data-value="rejected" 
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Rejected
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                              <button class="flex items-center justify-between text-sm font-medium text-white px-4 py-[10px] w-[196px] rounded-md bg-blue_general border border-blue_general" data-value="revision"
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Revision Needed
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                              <button class="flex items-center justify-between text-sm font-medium text-white px-4 py-[10px] w-[196px] rounded-md bg-warning_b_general border border-warning_b_general" data-value="assign_to_yard_leader"
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Assign to Yard Leader
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                              <button class="flex items-center justify-between text-sm font-medium text-white px-4 py-[10px] w-[196px] rounded-md bg-green_general border border-green_general" data-value="verified"
+                                onclick="selectOption(event,'customSelect')"
+                              >
+                                Verified
+                                <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white">
+                                  <g>
+                                    <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z"/>
+                                  </g>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        
+
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <!-- list supporting files  -->
 
               <!-- </div> -->
               </div>
-            </div>
+            <!-- </div> -->
           </div>
+
           <div class="sticky bottom-0 px-4 py-4 md:px-8 md:py-6 bg-secondary-900">
             <div class="flex flex-col justify-between gap-3 md:gap-4 md:flex-row">
               <div class="flex flex-row md:flex-col justify-between md:justify-start gap-3">
@@ -934,7 +1025,6 @@
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
@@ -1235,7 +1325,7 @@
 <!-- modal yard leader -->
 
 <!-- snackbar -->
-<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-70 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
+<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-90 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
   <div class="flex items-center justify-between w-[540px] gap-3 p-4 mb-4 text-sm text-white rounded-xl shadow-light_raised" role="alert" id="bg_snackbar_alert">
     <p class="flex items-center gap-3">
       <img src="#" alt="info" class="hidden" id="icon_snackbar_alert">

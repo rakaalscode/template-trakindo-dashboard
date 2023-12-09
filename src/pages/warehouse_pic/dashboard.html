@@ -17,16 +17,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <title>Dashboard</title>
 </head>
 <body class="font-roboto min-h-screen">
   
   <!-- navbar  -->
-  <nav class="fixed top-0 z-50 w-full bg-white border-b border-secondary-100">
-    <div class="px-4 py-3 md:px-8 md:py-6">
+  <nav class="fixed top-0 z-50 w-full bg-white">
+    <div class="px-4 py-3 md:px-8 md:py-6 border-b border-secondary-100">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-start rtl:justify-end">
-          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="hidden items-center me-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
               <span class="sr-only">Open sidebar</span>
               <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
@@ -122,35 +123,41 @@
         </div>
       </div>
     </div>
+    <div class="px-4 pt-2 block md:hidden">
+      <div class="flex justify-between w-full gap-2">
+        <a href="/src/pages/warehouse_pic/dashboard.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
+        <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent ">Invoice Request List</a>
+      </div>
+    </div>
   </nav>
 
-  <main class="pt-[4rem] md:pt-[5.25rem]">
+  <main class="pt-[8rem] md:pt-[5.25rem]">
     <!-- Card status -->
     <section class="bg-white w-full border-b border-secondary-100 py-[19px]">
-      <div class="max-w-screen-2xl mx-auto px-3 py-0 md:px-7">
+      <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-none xl:grid-flow-col gap-6">
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-2 md:gap-3">
               <span class="block text-xs text-secondary-500 uppercase md:text-sm">EST. Values</span>
               <h1 class="text-[2rem] font-bold t-secondary-900">38.4M</h1>
             </div>
           </div>
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
+            <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/time-filled.svg" alt="time filled">
-              <div class="flex flex-col gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Waiting for Verification</span>
+              <div class="flex flex-col gap-2 md:gap-3"> 
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Need Verification</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
           </div>
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
-            <div class="flex items-start gap-3">
+            <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/AccessTimeFilled.svg" alt="AccessTimeFilled">
-              <div class="flex flex-col gap-3"> 
+              <div class="flex flex-col gap-2 md:gap-3"> 
                 <span class="block text-xs text-secondary-500 uppercase md:text-sm">Waiting for Revision</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">0</h1>
               </div>
@@ -158,9 +165,9 @@
           </div>
           <!-- Card -->
           <div class="bg-white">
-            <div class="flex items-start gap-3">
+            <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/round-close.svg" alt="round close">
-              <div class="flex flex-col gap-3"> 
+              <div class="flex flex-col gap-2 md:gap-3"> 
                 <span class="block text-xs text-secondary-500 uppercase md:text-sm">Rejected</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
@@ -173,7 +180,7 @@
 
     <!-- Table section -->
     <section class="py-4">
-      <div class="max-w-screen-2xl mx-auto px-3 py-0 md:px-7">
+      <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
 
         <!-- Filter table -->
 
@@ -217,7 +224,7 @@
               <!-- Open date rate -->
               <div class="relative hidden z-60 px-2 w-full sm::w-[21rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
-                  <button class="h-[43px] w-[43px] me-[67px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
+                  <button class="h-[43px] w-[43px] me-[71px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                   </button>
                 </div>
@@ -308,7 +315,7 @@
                 <img src="/dist/images/icons/sort-amount.svg" class="h-6 w-6" alt="search">
               </button>
 
-              <!-- Open sortby -->
+                            <!-- Open sortby -->
               <div class="relative hidden z-60 w-64" id="filterSortby-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
                   <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
@@ -320,33 +327,33 @@
                   <ul class="flex flex-col space-y-1 pt-3 pb-3">
                     <li>
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                        <label class="flex items-center gap-4">
-                          <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-checkbox">Newest Document</span>
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Newest Document</span>
                         </label>
                       </div>
                     </li>
                     <li>
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                        <label class="flex items-center gap-4">
-                          <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-checkbox">Status Document</span>
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Status Document</span>
                         </label>
                       </div>
                     </li>
                     <li>
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                        <label class="flex items-center gap-4">
-                          <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-checkbox">Lowest Total Amount</span>
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Lowest Total Amount</span>
                         </label>
                       </div>
                     </li>
                     <li>
                       <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
-                        <label class="flex items-center gap-4">
-                          <input type="checkbox" class="custom-checkbox"/>
-                          <span class="label-checkbox">Highest Total Amount</span>
+                        <label class="flex items-center gap-4 cursor-pointer">
+                          <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
+                          <span class="label-checkbox whitespace-nowrap">Highest Total Amount</span>
                         </label>
                       </div>
                     </li>
@@ -358,7 +365,6 @@
                   </button>
                 </div>
               </div>
-              <div class="hidden opacity-25 fixed inset-0 z-30 bg-black" id="filterSortby-id-backdrop"></div>
               <!-- Open sortby -->
             </div>
             <!--  Sortby filter -->
@@ -603,7 +609,7 @@
           <ul class="pagination">
             <li>
               <a href="#" class="flex items-center justify-center page-item-previous">
-                <img src="/dist/images/icons/chevron-back.svg" alt="chevron back">
+                <img src="/dist/images/icons/chevron-back.svg" class="flex-shrink-0" alt="chevron back">
               </a>
             </li>
             <li>
@@ -619,9 +625,6 @@
               <a href="#" class="flex items-center justify-center page-item cursor-default hover:bg-transparent">...</a>
             </li>
             <li>
-              <a href="#" class="flex items-center justify-center page-item">8</a>
-            </li>
-            <li>
               <a href="#" class="flex items-center justify-center page-item">9</a>
             </li>
             <li>
@@ -629,7 +632,7 @@
             </li>
             <li>
               <a href="#" class="flex items-center justify-center page-item-next">
-                <img src="/dist/images/icons/chevron-back.svg" class="rotate-180" alt="chevron back">
+                <img src="/dist/images/icons/chevron-back.svg" class="rotate-180 flex-shrink-0" alt="chevron back">
               </a>
             </li>
           </ul>
@@ -708,6 +711,14 @@
               </th>
               <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
                 24/04/2023
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                Faktur Pajak Number
+              </th>
+              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+                000.000-00.00000000
               </td>
             </tr>
             <tr>
@@ -860,12 +871,17 @@
                     <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       Invoice
                     </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap">
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap" id="detail_action1-id">
                       <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                          onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
+                        >
                             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer"
+                          onclick=" toggleSnackbar('snackbar-id', 'download');"
+                          
+                        >
                           <img src="/dist/images/icons/download.svg" alt="download">
                         </div>
                         <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20 cursor-pointer">
@@ -892,12 +908,17 @@
                     <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       BAST
                     </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap">
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap" id="detail_action2-id">
                       <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                          onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
+                        >
                             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer"
+                          onclick=" toggleSnackbar('snackbar-id', 'download', 'z-70');"
+                          
+                        >
                           <img src="/dist/images/icons/download.svg" alt="download">
                         </div>
                         <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20 cursor-pointer">
@@ -926,7 +947,7 @@
   </main>
 
 <!-- snackbar -->
-<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-60 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
+<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-90 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
   <div class="flex items-center justify-between w-[540px] gap-3 p-4 mb-4 text-sm text-white rounded-xl shadow-light_raised" role="alert" id="bg_snackbar_alert">
     <p class="flex items-center gap-3">
       <img src="#" alt="info" class="hidden" id="icon_snackbar_alert">
