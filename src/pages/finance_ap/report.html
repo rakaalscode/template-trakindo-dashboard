@@ -38,10 +38,10 @@
           </a>
           <ul class="items-center hidden space-x-8 font-medium md:flex">
             <li>
-              <a href="#" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
+              <a href="/src/pages/finance_ap/dashboard.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Dashboard</a>
             </li>
             <li>
-              <a href="#" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Invoice Request List</a>
+              <a href="/src/pages/finance_ap/report.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Report</a>
             </li>
           </ul>
         </div>
@@ -125,8 +125,8 @@
     </div>
     <div class="px-4 pt-2 block md:hidden">
       <div class="flex justify-between w-full gap-2">
-        <a href="#" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
-        <a href="#" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent ">Invoice Request List</a>
+        <a href="/src/pages/finance_ap/dashboard.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent">Dashboard</a>
+        <a href="/src/pages/finance_ap/report.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Report</a>
       </div>
     </div>
   </nav>
@@ -134,7 +134,7 @@
   <main class="pt-[8rem] md:pt-[5.25rem]">
 
     <!-- report dashboard -->
-    <section class="bg-white w-full py-[19px]">
+    <section class="py-[20px]">
       <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
 
         <!-- title  -->
@@ -154,13 +154,148 @@
           </div>
         </div>
 
-        <div class="w-[450px] border rounded-lg p-3">
-          <div class="flex justify-between">
-            <div class="w-[240px]">
-              <canvas id="myDoughnutChart"></canvas>
+        <!-- chart -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
+
+          <!-- invoice values vendor - Doughnut  -->
+          <div class="md:col-span-5">
+            <div class="w-full border border-cloudy-140 rounded-lg shadow-one p-6">
+              <h3 class="text-xl font-medium mb-7">Invoice Valuse based on Vendor</h3>
+              <div class="flex justify-between flex-col md:flex-row gap-3">
+                <div class="w-full md:w-[240px]">
+                  <canvas id="invoice_doughnut_chart"></canvas>
+                </div>
+                <div id="invoice_doughnut_legend"></div>
+              </div>
             </div>
-            <div id="legend"></div>
           </div>
+          
+          <!-- invoice daily - Line  -->
+          <div class="md:col-span-7">
+            <div class="w-full border border-cloudy-140 rounded-lg shadow-one p-6">
+              <h3 class="text-xl font-medium mb-7">Daily Invoice Paid vs Invoice Unpaid</h3>
+              <div class="flex justify-between flex-col md:flex-row gap-3">
+                <div class="relative w-full">
+                  <canvas id="invoice_line_daily_chart"></canvas>
+                  <div id="invoice_line_daily_legend" class="absolute right-5 -top-4">
+                    <div class="flex text-sm font-medium text-gray_2-500 gap-3">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="h-2 w-2 rounded-full bg-green-700"></span>
+                        invoice Paid
+                      </span>
+                      <span class="inline-flex items-center gap-2">
+                        <span class="h-2 w-2 rounded-full bg-orange-700"></span>
+                        invoice Unpaid
+                      </span>
+                    </div> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- invoice status - Bar  -->
+          <div class="md:col-span-6">
+            <div class="w-full border border-cloudy-140 rounded-lg shadow-one p-6">
+              <h3 class="text-xl font-medium mb-7">Number of Invoice based on Status</h3>
+              <div class="flex justify-between flex-col md:flex-row gap-3">
+                <div class="w-full">
+                  <canvas id="invoice_bar_status_chart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- invoice status thousan number - Bar  -->
+          <div class="md:col-span-6">
+            <div class="w-full border border-cloudy-140 rounded-lg shadow-one p-6">
+              <div class="flex flex-col md:flex-row justify-between gap-3">
+                <h3 class="text-xl font-medium mb-7">Number of Invoice based on Status</h3>
+                <span class="italic text-cloudy-90">(Number in Thousands)</span>
+              </div>
+              <div class="flex justify-between flex-col md:flex-row gap-3">
+                <div class="w-full">
+                  <canvas id="invoice_bar_status_chart2"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- table -->
+        <h3 class="text-xl font-medium mb-5">Number of Invoice based on Status</h3>
+        <div class="relative overflow-x-auto">
+          <table class="table-responsive">
+            <thead class="text-base font-medium text-secondary-900 bg-cloudy-30 uppercase font-small-caps">
+              <tr>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 rounded-tl-lg">
+                  <div class="flex items-center justify-between">
+                    Vendor's name
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140">
+                  <div class="flex items-center justify-between">
+                    Total value
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[130px]">
+                  <div class="flex items-center justify-between">
+                    total invoice
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 rounded-tr-lg min-w-[130px]">
+                  <div class="flex items-center justify-between">
+                    invoice paid
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="tbody-sm">
+              <tr>
+                <td class="tbody-col whitespace-nowrap">
+                  PT Jaya Abadi Sentosa
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  Rp. 691.232.011
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  2
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  2
+                </td>
+              </tr>
+              <tr>
+                <td class="tbody-col whitespace-nowrap rounded-bl-lg">
+                  PT Jaya Abadi Sentosa
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  Rp. 691.232.011
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  2
+                </td>
+                <td class="tbody-col whitespace-nowrap rounded-br-lg">
+                  2
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Table -->
         </div>
 
       </div>
@@ -195,66 +330,8 @@
 <!-- chartJs -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-<!-- <script src="/dist/js/chartjs/chartjs-script.js"></script> -->
+<script src="/dist/js/chartjs/chartjs-script.js"></script>
 <script src="/dist/js/popper.min.js" charset="utf-8"></script>
 <script src="/dist/js/main.js"></script>
 <!-- End script -->
-
-<script>
-    // Your data for the doughnut chart
-    var data = {
-      // labels: ["Vendor A", "Vendor B", "Vendor C", "Vendor D", "Vendor E", "Vendor F",],
-      labels: ["Vendor A", "Vendor B"],
-      datasets: [{
-        // data: [19, 33, 12, 14, 17, 5],
-        data: [19, 33],
-        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-        borderColor: "red"
-      }],
-    };
-
-    // Configuration options for the doughnut chart
-    var options = {
-      legend: {
-        display: false
-      },
-      plugins: {
-        datalabels: {
-          color: 'white', // Set the color of the data labels to white
-          formatter: function(value, context) {
-            return value + '%'; // Format the label as percentage
-          }
-        },
-      }
-    };
-
-    // Custom legend callback
-    var legendCallback = function(chart) {
-      var legendHtml = '<ul class="custom-legend">';
-      var data = chart.data;
-      console.log(data);
-      for (var i = 0; i < data.labels.length; i++) {
-        legendHtml += '<li>';
-        legendHtml += '<span class="legend-icon" style="background-color:' + data.datasets[0].backgroundColor[i] + '"></span>';
-        legendHtml += '<span class="legend-text">' + data.labels[i] + '</span>';
-        legendHtml += '</li>';
-      }
-
-      legendHtml += '</ul>';
-      return legendHtml;
-    };
-
-    // Get the doughnut chart canvas element
-    var ctx = document.getElementById('myDoughnutChart').getContext('2d');
-
-    // Create the doughnut chart
-    var myDoughnutChart = new Chart(ctx, {
-      type: 'doughnut',
-      data: data,
-      options: options,
-      plugins: [ChartDataLabels],
-    });
-
-    document.getElementById('legend').innerHTML = legendCallback(myDoughnutChart);
-  </script>
 </html>

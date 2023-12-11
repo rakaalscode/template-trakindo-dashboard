@@ -33,7 +33,14 @@ module.exports = {
     'focus:ring-0', 
     'focus:ring-primary-500',
     'px-1.5',
-    'bg-orange-90'
+    'bg-orange-90',
+    'gap-7',
+    'block',
+    'h-2.5',
+    'w-2.5',
+    'mt-1.5',
+    'rounded-full',
+    'whitespace-nowrap',
     // 'px-6', 'py-4', 'text-sm', 'font-medium', 'text-secondary-900', 'md:w-96', 'bg-white',
   ],
   theme: {
