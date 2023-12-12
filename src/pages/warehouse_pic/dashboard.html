@@ -204,6 +204,29 @@
             </li>
           </ul>
 
+          <!-- <ul class="hidden md:flex flex-wrap text-sm font-medium text-center text-secondary-90 tabs">
+            <li class="me-3">
+              <a href="#" class="inline-flex items-center px-4 py-2.5 bg-white rounded-lg shadow-xs border border-gray-300 group hover:bg-primary-500 active-tab-3" aria-current="page" onclick="openTab(this, 'active-tab-3', '.tabs li a')">All Documents
+                <span class="text-[11px] font-semibold text-semi_black-100 px-1 border-[2px] rounded-2xl border-white ms-2 bg-cloudy-30 group-hover:bg-cloudy-30 group-hover:text-semi_black-100">99+</span>
+              </a>
+            </li>
+            <li class="me-3">
+              <a href="#" class="inline-flex items-center px-4 py-2.5 bg-white rounded-lg shadow-xs border border-gray-300 group hover:bg-primary-500" onclick="openTab(this, 'active-tab-3', '.tabs li a')">Need Verification
+                <span class="text-[11px] font-semibold text-white px-1 border-[2px] rounded-2xl border-white ms-2 bg-primary-500 group-hover:bg-cloudy-30 group-hover:text-semi_black-100">70</span>
+              </a>
+            </li>
+            <li class="me-3">
+              <a href="#" class="inline-flex items-center px-4 py-2.5 bg-white rounded-lg shadow-xs border border-gray-300 group hover:bg-primary-500" onclick="openTab(this, 'active-tab-3', '.tabs li a')">Verified
+                <span class="text-[11px] font-semibold text-white px-1 border-[2px] rounded-2xl border-white ms-2 bg-green-500 group-hover:bg-cloudy-30 group-hover:text-semi_black-100">70</span>
+              </a>
+            </li>
+            <li class="me-3">
+              <a href="#" class="inline-flex items-center px-4 py-2.5 bg-white rounded-lg shadow-xs border border-gray-300 group hover:bg-primary-500" onclick="openTab(this, 'active-tab-3', '.tabs li a')">Rejected
+                <span class="text-[11px] font-semibold text-white px-1 border-[2px] rounded-2xl border-white ms-2 bg-red-500 group-hover:bg-cloudy-30 group-hover:text-semi_black-100">70</span>
+              </a>
+            </li>
+          </ul> -->
+
           <div class="flex w-full md:hidden">
             <select id="status_filter-id" style="width: 100%;" name="short_by" required>
               <option value="all">All Documents</option>
@@ -441,7 +464,7 @@
                 </td>
                 <td class="tbody-col-sm text-center">
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'reject')">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </div>
                     <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
@@ -485,7 +508,7 @@
                 </td>
                 <td class="tbody-col-sm text-center">
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'revision')">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </div>
                     <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
@@ -529,7 +552,7 @@
                 </td>
                 <td class="tbody-col-sm text-center">
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'verification')">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </div>
                     <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
@@ -988,7 +1011,6 @@
   </div>
 </div>
 <!-- modal status -->
-
 
 <!-- modal status revise file -->
 <div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
@@ -1530,6 +1552,31 @@
   </div>
 </div>
 <!-- modal choose invoice -->
+
+<!-- modal preview pdf-->
+<div id="modal_preview_pdf-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+
+    <!-- header -->
+    <div class="flex items-center justify-end px-4 py-2 bg-cloudy-20 rounded-tl-xl rounded-tr-xl">
+      <button onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+          <path d="M5 15L15 5M5 5L15 15" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <!-- header -->
+
+    <div class="relative bg-white rounded-bl-lg rounded-br-lg shadow min-h-[650px]">
+      <!-- content -->
+      <div class="px-3 py-2 md:px-6 md:py-4">
+        <p>preview pdf</p>
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+</div>
+<!-- modal preview pdf-->
 
 </body>
 <!-- Start script -->

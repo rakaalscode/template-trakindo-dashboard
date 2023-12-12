@@ -996,18 +996,20 @@
 <!-- modal log history -->
 
 <!-- modal preview pdf-->
-<div id="modal_preview_pdf-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-60 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_preview_pdf-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
 
     <!-- header -->
-    <div class="flex items-center justify-end mb-1.5">
-      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModalDialog('modal_preview_pdf-id')">
-        <img src="/dist/images/icons/heroicons-outline_x.svg" alt="outline x">
+    <div class="flex items-center justify-end px-4 py-2 bg-cloudy-20 rounded-tl-xl rounded-tr-xl">
+      <button onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+          <path d="M5 15L15 5M5 5L15 15" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </button>
     </div>
     <!-- header -->
 
-    <div class="relative bg-white rounded-lg shadow h-[650px]">
+    <div class="relative bg-white rounded-bl-lg rounded-br-lg shadow min-h-[650px]">
       <!-- content -->
       <div class="px-3 py-2 md:px-6 md:py-4">
         <p>preview pdf</p>

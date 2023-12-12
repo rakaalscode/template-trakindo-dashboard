@@ -487,16 +487,21 @@ $(document).ready(function() {
     </svg>`,
   });
 
+
+  const currentDate = new Date();
+  const nextDay = new Date(currentDate);
+  nextDay.setDate(currentDate.getDate() + 1);
+
   flatpickr(".datepicker-flatpickr-range-calendar", {
     dateFormat: "j M Y", // Format for "6 Jan 2023"
     defaultDate: [
-      new Date("2023-01-06"),
-      new Date("2023-01-10"),
+      currentDate,
+      nextDay,
     ],
     disableMobile: "true",
     mode: "range",
     locale: {
-      rangeSeparator: '  -         ', // Change the range separator to "-"
+      rangeSeparator: '               ', // Change the range separator to "-"
       firstDayOfWeek: 1, // 1 is Monday
       weekdays: {
         shorthand: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
@@ -507,11 +512,8 @@ $(document).ready(function() {
       // Update the input value with a custom format after selection
       // instance.input.value = formattedDate;
 
-      // const formattedDate = selectedDates.map(date => date.toLocaleDateString()).join(' - ');
-      // const formattedDate = selectedDates.map(date => instance.formatDate(date, "j M Y")).join(' - ');
-      const formattedDate = selectedDates.map(date => instance.formatDate(date, "j M Y")).join('  -         ');
+      const formattedDate = selectedDates.map(date => instance.formatDate(date, "j M Y")).join('               ');
       instance.input.value = formattedDate;
-      console.log(formattedDate)
     },
     prevArrow: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
       <path d="M12.5 15L7.5 10L12.5 5" stroke="#667085" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
@@ -845,14 +847,14 @@ $(document).ready(function() {
   //   }
   // });
 
-  function openTab(button) {
-    let tabButtons = document.querySelectorAll('.tabs li span');
+  function openTab(button, active = 'active-tab', element = '.tabs li span') {
+    let tabButtons = document.querySelectorAll(element);
     tabButtons.forEach(function(tabButton) {
-      tabButton.classList.remove('active-tab');
+      tabButton.classList.remove(active);
     });
 
     if (button) {
-      button.classList.add('active-tab');
+      button.classList.add(active);
     }
   }
 
@@ -1622,3 +1624,11 @@ $(document).ready(function() {
 
     // }
   }
+
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   ClassicEditor
+  //     .create(document.querySelector('#editor'))
+  //     .catch(error => {
+  //         console.error(error);
+  //     });
+  // });

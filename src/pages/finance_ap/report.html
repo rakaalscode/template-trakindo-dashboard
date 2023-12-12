@@ -141,16 +141,17 @@
         <div class="flex flex-col items-start justify-start gap-3 md:flex-row md:items-center md:justify-between mb-5">
           <h3 class="text-2xl font-bold font-roboto_condensed">Invoice Overview</h3>
           <div class="relative w-[280px]">
-            <div class="absolute inset-y-0 right-[18px] flex items-center ps-3.5 pointer-events-none">
+            <div class="absolute inset-y-0 right-[12px] flex items-center ps-3.5 pointer-events-none">
               <img src="/dist/images/icons/icon-park-solid_down-one.svg" alt="down solid">
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="absolute inset-y-2.5 left-[10px]">
               <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="absolute inset-y-2.5 left-1 right-[0.7rem] mx-auto">
+            <span class="w-2.5 h-[1.2px] bg-secondary-500 absolute inset-y-5 inset-0 right-10 left-4 mx-auto"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="absolute inset-y-2.5 inset-0 left-4 mx-auto">
               <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <input type="text" id="from" class="text-sm border rounded-lg block w-full pl-10 p-2.5 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500 datepicker-flatpickr-range-calendar">
+            <input type="text" id="from" class="text-sm font-medium border rounded-lg block w-full pl-9 p-2.5 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500 datepicker-flatpickr-range-calendar">
           </div>
         </div>
 
@@ -161,7 +162,7 @@
           <div class="md:col-span-5">
             <div class="w-full border border-cloudy-140 rounded-lg shadow-one p-6">
               <h3 class="text-xl font-medium mb-7">Invoice Valuse based on Vendor</h3>
-              <div class="flex justify-between flex-col md:flex-row gap-3">
+              <div class="flex justify-start md:justify-between flex-col md:flex-row gap-3">
                 <div class="w-full md:w-[240px]">
                   <canvas id="invoice_doughnut_chart"></canvas>
                 </div>

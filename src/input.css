@@ -63,6 +63,9 @@ input[type="checkbox"]:disabled:checked + .toggle-line {
   cursor: not-allowed;
 }
 
+input[type="checkbox"]:disabled:checked + .ceki {
+  cursor: not-allowed;
+}
 
 .readonly:checked + .toggle-line {
   background-color: red; /* Change to your desired color */
@@ -110,6 +113,14 @@ input[type="checkbox"]:disabled:checked + .toggle-line {
 
 .active-tab-2 {
   @apply  text-cloudy-120 border-cloudy-110;
+}
+
+.active-tab-3{
+  @apply bg-primary-500 text-semi_black-100;
+}
+
+.active-tab-3 .span {
+  @apply bg-cloudy-30 text-semi_black-100;
 }
 /* tabs underline button  */
 
