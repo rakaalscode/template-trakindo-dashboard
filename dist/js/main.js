@@ -1625,6 +1625,18 @@ $(document).ready(function() {
     // }
   }
 
+  function updateCharacterCount(inputId, counterId, maxCharacters) {
+    const inputElement = document.getElementById(inputId);
+    let inputText = inputElement.value;
+    if (inputText.length > maxCharacters) {
+      inputText = inputText.substring(0, maxCharacters);
+      inputElement.value = inputText;
+    }
+    const remainingCharacters = maxCharacters - inputText.length;
+    document.getElementById(counterId).textContent = `${remainingCharacters} characters remaining`;
+  }
+
+
   // document.addEventListener('DOMContentLoaded', function () {
   //   ClassicEditor
   //     .create(document.querySelector('#editor'))

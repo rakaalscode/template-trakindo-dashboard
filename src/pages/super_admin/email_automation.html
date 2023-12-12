@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <title>Dashboard</title>
+  <title>Email Automation</title>
 </head>
 <body class="font-roboto min-h-screen">
   
@@ -437,16 +437,16 @@
         <div class="flex flex-col md:flex-row gap-4 mb:gap-8">
           <div class="relative">
             <label for="" class="block text-lg font-medium text-cloudy-120 mb-3">Email subject</label>
-            <input type="text" class="block w-full md:w-[575px] py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="" required>
-            <span class="block text-sm text-cloudy-70 mt-1">150 characters remaining</span>
+            <input type="text" id="input_email_subject" class="block w-full md:w-[575px] py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="" oninput="updateCharacterCount('input_email_subject' , 'input_email_subject_count', 150)" required>
+            <span class="block text-sm text-cloudy-70 mt-1" id="input_email_subject_count">150 characters remaining</span>
           </div>
         </div>
 
         <div class="flex flex-col md:flex-row gap-4 mb:gap-8">
           <div class="relative">
             <label for="" class="block text-lg font-medium text-cloudy-120 mb-3">Preview text</label>
-            <input type="text" class="block w-full md:w-[575px] py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="" required>
-            <span class="block text-sm text-cloudy-70 mt-1">150 characters remaining</span>
+            <input type="text" id="input_preview_text" class="block w-full md:w-[575px] py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" placeholder="" oninput="updateCharacterCount('input_preview_text' , 'input_preview_text_count', 150)" required>
+            <span class="block text-sm text-cloudy-70 mt-1" id="input_preview_text_count">150 characters remaining</span>
           </div>
           <div class="flex flex-col justify-end">
             <p class="text-cloudy-90">This text will appear in the email preview <br> after the subject</p>

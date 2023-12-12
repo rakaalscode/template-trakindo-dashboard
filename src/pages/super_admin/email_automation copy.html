@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Start css -->
+  <!-- datepicker  -->
+  <link href="/dist/css/flatpickr/flatpickr.min.css" rel="stylesheet" />
+  <!-- select2 -->
+  <link href="/dist/css/select2/select2.min.css" rel="stylesheet" />
+  <link href="/dist/css/styles.css" rel="stylesheet">
+  <link href="/dist/css/select2/select2-styles.css" rel="stylesheet">
+  <link href="/dist/css/main.css" rel="stylesheet">
+  <!-- End css -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <title>Email Automation</title>
+</head>
+<body class="font-roboto min-h-screen">
+  
+  <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+    <span class="block text-sm font-medium cursor-pointer bg-blue-500 p-2 rounded" onclick="appendToTextarea('Company 1', 'bg-blue-500')">Company 1</span>
+        <span class="block text-sm font-medium cursor-pointer bg-green-500 p-2 rounded" onclick="appendToTextarea('Company 2', 'bg-green-500')">Company 2</span>
+        <span class="block text-sm font-medium cursor-pointer bg-yellow-30 p-2 rounded" onclick="appendToTextarea('Company 3', 'bg-yellow-30')">Company 3</span>
+
+    <label for="message" class="block mt-4 text-sm font-medium text-gray-700">Message</label>
+    <textarea id="message" class="mt-1 p-2 border rounded-md w-full" rows="4" placeholder="Hi (company name) and some text ~"></textarea>
+
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Send Email</button>
+</div>
+
+</body>
+<!-- Start script -->
+<script
+  src="/dist/js/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+<!-- datepicker  -->
+<script src="/dist/js/flatpickr/flatpickr.js"></script>
+<!-- select2  -->
+<script src="/dist/js/select2/select2.min.js"></script>
+<!-- cke editor  -->
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script> -->
+<script src="/dist/js/popper.min.js" charset="utf-8"></script>
+<script src="/dist/js/main.js"></script>
+<!-- End script -->
+</html>
