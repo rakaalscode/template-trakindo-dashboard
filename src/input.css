@@ -164,51 +164,63 @@ input[type="checkbox"]:disabled:checked + .ceki {
 
 /* badge  */
 .badge {
-  @apply text-sm font-medium px-3 py-1 rounded-2xl;
+  @apply text-sm font-normal px-3 py-1 rounded-2xl;
+}
+
+.badge-default {
+  @apply font-normal bg-gray-100 text-gray-700;
 }
 
 .badge-gray {
-  @apply bg-gray-100 text-gray-700;
+  @apply font-medium bg-gray-100 text-gray-700;
 }
 
 .badge-warning {
-  @apply bg-warning-50 text-warning-700;
+  @apply font-medium bg-warning-50 text-warning-700;
 }
 
 .badge-blue {
-  @apply bg-blue_2-50 text-blue_2-700;
+  @apply font-medium bg-blue_2-50 text-blue_2-700;
 }
 
 .badge-error {
-  @apply bg-error-50 text-error-700;
+  @apply font-medium bg-error-50 text-error-700;
 }
 
 .badge-green {
-  @apply bg-success-50 text-success-700;
+  @apply font-medium bg-success-50 text-success-700;
 }
 
 .badge-orange {
-  @apply bg-orange_2-50 text-orange_2-700;
+  @apply font-medium bg-orange_2-50 text-orange_2-700;
 }
 
 .badge-primary {
-  @apply bg-primary-2 text-primary-500;
+  @apply font-medium bg-primary-2 text-primary-500;
 }
 
 .badge-blue2 {
-  @apply bg-blue_2-20 text-blue_general;
+  @apply font-medium bg-blue_2-20 text-blue_general;
 }
 
 .badge-gray2 {
-  @apply bg-cloudy-30 text-cloudy-80;
+  @apply font-medium bg-cloudy-30 text-cloudy-80;
 }
 
 .badge-orange2 {
-  @apply bg-orange_2-20 text-warning_b_general;
+  @apply font-medium bg-orange_2-20 text-warning_b_general;
 }
 
 .badge-green2 {
-  @apply bg-green_2-20 text-green_general;
+  @apply font-medium bg-green_2-20 text-green_general;
+}
+
+.active-badge {
+  @apply font-medium
+}
+
+.active-badge span {
+  @apply block
 }
 /* badge  */
 
@@ -226,7 +238,7 @@ input[type="checkbox"]:disabled:checked + .ceki {
 }
 
 .form-control-search {
-  @apply text-sm border border-primary-500 block px-2 py-1 pe-10 bg-white rounded w-[150px] focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+  @apply text-base border border-primary-500 block px-2 py-2 pe-10 bg-white rounded-lg focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
 }
 
 .form-control-search-mobile {

@@ -305,7 +305,7 @@
   background-position: 11px;
   background-size: auto;
   padding: 10px 14px 9px 40px;
-  border: 1px solid #4272DD;
+  border: 1px solid #FDBA12;
   border-radius: 8px;
 
   font-family: Roboto;
@@ -315,7 +315,7 @@
 }
 
 .select2-container--custom-theme-2 .select2-search--dropdown .select2-search__field:focus {
-  border: 1px solid #4272DD;
+  border: 1px solid #FDBA12;
   border-radius: 8px;
   outline: none;
   box-shadow: 2px 2px 8px 0px rgba(53, 106, 230, 0.32);

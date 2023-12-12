@@ -52,7 +52,7 @@
             >
               <div class="flex items-center gap-4">
                 <div class="relative">
-                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
                   <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
                 </div>
                 <div class="hidden flex-col flex-1 items-start justify-start md:flex" role="none">
@@ -75,7 +75,7 @@
                 >
                   <div class="flex w-full items-center gap-4 pb-3">
                     <div class="relative">
-                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
                       <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
                     </div>
                     <div class="flex flex-1 flex-col items-start justify-start" role="none">
@@ -144,15 +144,15 @@
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
             <div class="flex items-start gap-2 md:gap-3">
-              <img src="/dist/images/icons/trend-up.svg" alt="trend up">
+              <img src="/dist/images/icons/AccessTimeFilled.svg" alt="AccessTimeFilled">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Action Needed</span>
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">In Progress</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">0</h1>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="bg-white border-r border-secondary-100">
+          <!-- <div class="bg-white border-r border-secondary-100">
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/time-filled.svg" alt="time filled">
               <div class="flex flex-col gap-2 md:gap-3"> 
@@ -160,9 +160,9 @@
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- Card -->
-          <div class="bg-white border-r border-secondary-100">
+          <!-- <div class="bg-white border-r border-secondary-100">
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/repeat-filled.svg" alt="repeat filled">
               <div class="flex flex-col gap-2 md:gap-3"> 
@@ -170,7 +170,7 @@
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
             <div class="flex items-start gap-2 md:gap-3">
@@ -208,7 +208,7 @@
             <li class="py-1 md:py-4">
               <span class="inline-block tab-list active-tab" onclick="openTab(this)">All Documents</span>
             </li>
-            <li class="py-1 md:py-4">
+            <!-- <li class="py-1 md:py-4">
               <span class="inline-block tab-list" onclick="openTab(this)">Waiting Verification</span>
             </li>
             <li class="py-1 md:py-4">
@@ -219,9 +219,15 @@
             </li>
             <li class="py-1 md:py-4">
               <span class="inline-block tab-list" onclick="openTab(this)">Payment Complete</span>
-            </li>
+            </li> -->
             <li class="py-1 md:py-4">
               <span class="inline-block tab-list" onclick="openTab(this)">Draft</span>
+            </li>
+            <li class="py-1 md:py-4">
+              <span class="inline-block tab-list" onclick="openTab(this)">In Progress</span>
+            </li>
+            <li class="py-1 md:py-4">
+              <span class="inline-block tab-list" onclick="openTab(this)">Completed</span>
             </li>
             <li class="py-1 md:py-4">
               <span class="inline-block tab-list" onclick="openTab(this)">Rejected</span>
@@ -230,12 +236,14 @@
 
           <div class="flex w-full md:hidden">
             <select id="status_filter-id" style="width: 100%;" name="short_by" required>
-              <option value="all">All Documents</option>
+              <!-- <option value="all">All Documents</option>
               <option value="verification">Waiting Verification</option>
               <option value="action_needed">Action Needed</option>
               <option value="submitted">Submitted to Finance</option>
-              <option value="complete">Payment Complete</option>
+              <option value="complete">Payment Complete</option> -->
               <option value="draft">Draft</option>
+              <option value="in_progress">In Progress</option>
+              <option value="completed">Completed</option>
               <option value="rejected">Rejected</option>
             </select>
           </div>
@@ -273,29 +281,21 @@
                   <h3 class="text-lg font-medium text-gray_2-900">Filter by</h3>
                   
                   <!-- badges -->
-                  <div class="flex flex-wrap flex-row gap-3 pt-3">
-                    <span class="inline-flex items-center badge badge-gray">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#667085"/>
-                      </svg>
+                  <div class="flex flex-wrap flex-row gap-3 pt-3 badges">
+                    <span class="inline-flex items-center badge badge-default gray cursor-pointer" data-value="draft" onclick="filterBadge(this)">
+                      <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-gray_2-500 hidden"></span>
                       Draft
                     </span>
-                    <span class="inline-flex items-center badge badge-warning">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#F79009"/>
-                      </svg>
-                      Waiting for Approval
+                    <span class="inline-flex items-center badge badge-default blue cursor-pointer" data-value="in_progress" onclick="filterBadge(this)">
+                      <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500 hidden"></span>
+                      In Progress
                     </span>
-                    <span class="inline-flex items-center badge badge-blue">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
-                      </svg>
-                      Submitted to Finance
+                    <span class="inline-flex items-center badge badge-default green cursor-pointer" data-value="in_progress" onclick="filterBadge(this)">
+                      <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-green-500 hidden"></span>
+                      Complete
                     </span>
-                    <span class="inline-flex items-center badge badge-error">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#F04438"/>
-                      </svg>
+                    <span class="inline-flex items-center badge badge-default error cursor-pointer" data-value="rejected" onclick="filterBadge(this)">
+                      <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-error-500 hidden"></span>
                       Rejected
                     </span>
                   </div>
@@ -419,7 +419,7 @@
             <!-- Search filter -->
             <div class="hidden items-center order-3 md:flex">
               <div class="relative hidden" id="searchCon-id">
-                <input type="search" class="form-control-search" placeholder="Search">
+                <input type="search" class="form-control-search w-[240px]" placeholder="Search">
                 <button class="absolute inset-y-0 end-0 flex items-center pe-2 cursor-pointer" id="searchClose-id" onclick="toggleSearch()">
                   <img src="/dist/images/icons/search.svg" class="w-full" alt="search">
                 </button>
@@ -447,7 +447,7 @@
         <div class="relative overflow-x-auto">
           <!-- Table -->
           <table class="table-responsive">
-            <thead class="thead-bold font-small-caps">
+            <!-- <thead class="thead-bold font-small-caps">
               <tr>
                 <th scope="col" class="thead-col-sm text-center w-1 rounded-tl-lg">
                   No
@@ -459,7 +459,7 @@
                   Status
                 </th>
                 <th scope="col" class="thead-col">
-                  Last Update
+                  Submitted Date
                 </th>
                 <th scope="col" class="thead-col">
                   Document No.
@@ -478,6 +478,72 @@
                 </th>
                 <th scope="col" class="thead-col text-center rounded-tr-lg">
                   Amount
+                </th>
+              </tr>
+            </thead> -->
+            <thead class="text-base font-medium text-secondary-900 bg-cloudy-30 uppercase font-small-caps">
+              <tr>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[10px]">
+                  No
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 text-center">
+                  Action
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[230px]">
+                  <div class="flex items-center justify-between">
+                    Status
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Submitted Date
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Document No.
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Contract No.
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[160px]">
+                  <div class="flex items-center justify-between">
+                    Invoice No.
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Invoice Date
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 rounded-tr-lg min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Amount
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
                 </th>
               </tr>
             </thead>
@@ -508,7 +574,7 @@
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
+                  31/08/2023
                 </td>
                 <td class="tbody-col">
                   DOC-004/010457
@@ -519,13 +585,10 @@
                 <td class="tbody-col">
                   VI 231011 - 01/R01
                 </td>
-                <td class="tbody-col text-center">
+                <td class="tbody-col">
                   31/08/2023
                 </td>
                 <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
                   Rp120.211.553
                 </td>
               </tr>
@@ -549,7 +612,7 @@
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
+                  31/08/2023
                 </td>
                 <td class="tbody-col">
                   DOC-004/010457
@@ -560,13 +623,10 @@
                 <td class="tbody-col">
                   VI 231011 - 01/R01
                 </td>
-                <td class="tbody-col text-center">
+                <td class="tbody-col">
                   31/08/2023
                 </td>
                 <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
                   Rp120.211.553
                 </td>
               </tr>
@@ -586,11 +646,11 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
                       <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
                     </svg>
-                    Submitted to Finance
+                    In Progress
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
+                  31/08/2023
                 </td>
                 <td class="tbody-col">
                   DOC-004/010457
@@ -601,13 +661,10 @@
                 <td class="tbody-col">
                   VI 231011 - 01/R01
                 </td>
-                <td class="tbody-col text-center">
+                <td class="tbody-col">
                   31/08/2023
                 </td>
                 <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
                   Rp120.211.553
                 </td>
               </tr>
@@ -631,7 +688,7 @@
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
+                  31/08/2023
                 </td>
                 <td class="tbody-col">
                   DOC-004/010457
@@ -642,13 +699,10 @@
                 <td class="tbody-col">
                   VI 231011 - 01/R01
                 </td>
-                <td class="tbody-col text-center">
+                <td class="tbody-col">
                   31/08/2023
                 </td>
                 <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
                   Rp120.211.553
                 </td>
               </tr>
@@ -668,11 +722,11 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
                       <circle cx="4" cy="4" r="3" fill="#12B76A"/>
                     </svg>
-                    Payment Completed
+                    Complete
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
+                  31/08/2023
                 </td>
                 <td class="tbody-col">
                   DOC-004/010457
@@ -683,13 +737,10 @@
                 <td class="tbody-col">
                   VI 231011 - 01/R01
                 </td>
-                <td class="tbody-col text-center">
+                <td class="tbody-col">
                   31/08/2023
                 </td>
                 <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
                   Rp120.211.553
                 </td>
               </tr>
@@ -713,7 +764,7 @@
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
+                  31/08/2023
                 </td>
                 <td class="tbody-col">
                   DOC-004/010457
@@ -724,13 +775,10 @@
                 <td class="tbody-col">
                   VI 231011 - 01/R01
                 </td>
-                <td class="tbody-col text-center">
+                <td class="tbody-col">
                   31/08/2023
                 </td>
                 <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
                   Rp120.211.553
                 </td>
               </tr>
@@ -754,7 +802,7 @@
                   </span>
                 </td>
                 <td class="tbody-col">
-                  22/02/2023 1:45PM
+                  31/08/2023
                 </td>
                 <td class="tbody-col">
                   DOC-004/010457
@@ -765,13 +813,10 @@
                 <td class="tbody-col">
                   VI 231011 - 01/R01
                 </td>
-                <td class="tbody-col text-center">
+                <td class="tbody-col">
                   31/08/2023
                 </td>
                 <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
                   Rp120.211.553
                 </td>
               </tr>
@@ -1361,7 +1406,7 @@
                 Last Update
               </th>
               <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
-                22/02/2023 1:45PM
+                31/08/2023
               </td>
             </tr>
             <tr id="detail_status-id">

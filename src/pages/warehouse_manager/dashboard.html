@@ -52,7 +52,7 @@
             >
               <div class="flex items-center gap-4">
                 <div class="relative">
-                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
                   <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
                 </div>
                 <div class="hidden flex-col flex-1 items-start justify-start md:flex" role="none">
@@ -75,7 +75,7 @@
                 >
                   <div class="flex w-full items-center gap-4 pb-3">
                     <div class="relative">
-                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
                       <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
                     </div>
                     <div class="flex flex-1 flex-col items-start justify-start" role="none">
@@ -232,23 +232,17 @@
                   <h3 class="text-lg font-medium text-gray_2-900">Filter by</h3>
                   
                   <!-- badges -->
-                  <div class="flex flex-wrap flex-row gap-3 pt-3">
-                    <span class="inline-flex items-center badge badge-warning">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#F79009"/>
-                      </svg>
+                  <div class="flex flex-wrap flex-row gap-3 pt-3 badges">
+                    <span class="inline-flex items-center badge badge-default warning cursor-pointer" data-value="verification" onclick="filterBadge(this)">
+                      <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500 hidden"></span>
                       Need Verification
                     </span>
-                    <span class="inline-flex items-center badge badge-blue">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
-                      </svg>
+                    <span class="inline-flex items-center badge badge-default blue cursor-pointer" data-value="waiting_revision" onclick="filterBadge(this)">
+                      <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500 hidden"></span>
                       Waiting for Revision
                     </span>
-                    <span class="inline-flex items-center badge badge-error">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                        <circle cx="4" cy="4" r="3" fill="#F04438"/>
-                      </svg>
+                    <span class="inline-flex items-center badge badge-default error cursor-pointer" data-value="rejected" onclick="filterBadge(this)">
+                      <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-error-500 hidden"></span>
                       Rejected
                     </span>
                   </div>
@@ -315,7 +309,7 @@
                 <img src="/dist/images/icons/sort-amount.svg" class="h-6 w-6" alt="search">
               </button>
 
-                            <!-- Open sortby -->
+              <!-- Open sortby -->
               <div class="relative hidden z-60 w-64" id="filterSortby-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
                   <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
@@ -372,7 +366,7 @@
             <!-- Search filter -->
             <div class="hidden items-center order-3 md:flex">
               <div class="relative hidden" id="searchCon-id">
-                <input type="search" class="form-control-search" placeholder="Search">
+                <input type="search" class="form-control-search w-[240px]" placeholder="Search">
                 <button class="absolute inset-y-0 end-0 flex items-center pe-2 cursor-pointer" id="searchClose-id" onclick="toggleSearch()">
                   <img src="/dist/images/icons/search.svg" class="w-full" alt="search">
                 </button>

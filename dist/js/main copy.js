@@ -858,33 +858,6 @@ $(document).ready(function() {
     }
   }
 
-  function filterBadge(button) {
-    let badgeButtons = document.querySelectorAll('.badges span');
-    badgeButtons.forEach(function(tabButton) {
-      tabButton.classList.remove('active-badge', 'badge-warning', 'badge-blue', 'badge-error', 'badge-gray', 'badge-green');
-    });
-
-    if (button) {
-      let badgeClass = '';
-      let value = button.getAttribute('data-value');
-      if(button.classList.contains('warning')) {
-        badgeClass = 'badge-warning'
-      } else if(button.classList.contains('blue')) {
-        badgeClass = 'badge-blue'
-      } else if(button.classList.contains('gray')) {
-        badgeClass = 'badge-gray'
-      } else if(button.classList.contains('green')) {
-        badgeClass = 'badge-green'
-      } if(button.classList.contains('error')) {
-        badgeClass = 'badge-error'
-      }
-      button.classList.add('active-badge');
-      button.classList.add(badgeClass);
-      console.log(value);
-    }
-  }
-
-
   function openTabContent(tabId, button) {
     // Hide all tabs and remove active class from all buttons
     let tabs = document.querySelectorAll('.tab-content');
@@ -1375,7 +1348,7 @@ $(document).ready(function() {
     } else if(type == 'submit' || type == 'revision') {
       detailStatus.classList.remove('cursor-pointer');
       // detailStatus.setAttribute("onclick", "toggleModal('modal_status-id', '" + type + "')")
-      textStatus.textContent = "In Progress";
+      textStatus.textContent = "Submitted to Finance";
       iconStatus.classList.add('bg-blue_2-20');
       iconStatus.innerHTML += `<img src="/dist/images/icons/round-history-filled.svg" alt="history">`;
 
@@ -1405,7 +1378,7 @@ $(document).ready(function() {
     } else if(type == 'approve') {
       detailStatus.classList.remove('cursor-pointer');
       // detailStatus.setAttribute("onclick", "toggleModal('modal_status-id', '" + type + "')")
-      textStatus.textContent = "Complete";
+      textStatus.textContent = "Payment Complete";
       iconStatus.classList.add('bg-success-100');
       iconStatus.innerHTML += `<img src="/dist/images/icons/round-check-filled.svg" alt="check">`;
 
@@ -1639,7 +1612,55 @@ $(document).ready(function() {
       document.getElementById(`${'sidebar_menu-id'}-backdrop`).remove();
       document.body.style.overflow = "auto"
     }
+
+    // if(sidebarEl.classList.contains('-translate-x-full')) {
+    //   sidebarEl.classList.toggle('-translate-x-full')
+    //   sidebarEl.classList.toggle('translate-x-0')
+    //   sidebarEl.classList.toggle('z-40')
+    //   sidebarEl.classList.toggle('z-60')
+    //   sidebarEl.classList.toggle('pt-24')
+    //   sidebarEl.classList.toggle('pt-0')
+    // } else {
+
+    // }
   }
+
+  // limit text input
+  // function updateCharacterCount(inputId, counterId, maxCharacters) {
+  //   const inputText = document.getElementById(inputId).value;
+  //   const remainingCharacters = maxCharacters - inputText.length;
+  //   document.getElementById(counterId).textContent = `${remainingCharacters} characters remaining`;
+  // }
+
+  // function appendToTextarea(companyName, bgColor) {
+  //   const textarea = document.getElementById('message');
+  //   const spanElement = document.createElement('span');
+  //   spanElement.textContent = companyName;
+  //   spanElement.className = `block text-sm font-medium cursor-pointer ${bgColor} p-2 rounded`;
+  //   console.log(spanElement);
+  //   // Append the new span element to the existing content
+  //   textarea.value += spanElement.outerHTML;
+  // }
+
+  // function appendToTextarea(companyName, bgColor) {
+  //   const textarea = document.getElementById('message');
+  //   const spanElement = document.createElement('span');
+  //   spanElement.textContent = companyName;
+  //   spanElement.className = `block text-sm font-medium cursor-pointer ${bgColor} p-2 rounded`;
+
+  //   // Append the new span element's HTML to the existing content
+  //   textarea.innerHTML += spanElement.outerHTML;
+  // }
+
+  // function appendToTextarea(companyName, bgColor) {
+  //   const messageDiv = document.getElementById('message');
+  //   const spanElement = document.createElement('span');
+  //   spanElement.textContent = companyName;
+  //   spanElement.className = `inline-block text-sm font-medium ${bgColor} p-2 rounded`;
+
+  //   // Append the new span element to the existing content
+  //   messageDiv.appendChild(spanElement);
+  // }
 
   function updateCharacterCount(inputId, counterId, maxCharacters) {
     const inputElement = document.getElementById(inputId);
@@ -1652,55 +1673,26 @@ $(document).ready(function() {
     document.getElementById(counterId).textContent = `${remainingCharacters} characters remaining`;
   }
 
+  function appendToTextarea(companyName) {
+    const textarea = document.getElementById('message');
+    const currentHTML = textarea.innerHTML;
+    const newHTML = `${currentHTML} <span class="text-sm font-medium cursor-pointer bg-blue-200 p-2 rounded">${companyName}</span>`;
 
-  function appendToContentEditable(companyName, bgColor) {
-    const messageDiv = document.getElementById('message');
-    const spanElement = document.createElement('span');
-    spanElement.textContent = companyName;
-    spanElement.className = `inline-flex items-center badge badge-blue2 font-medium ${bgColor}`;
+    // Set the innerHTML
+    textarea.innerHTML = newHTML;
+}
 
-    // Append the new span element to the existing content
-    messageDiv.appendChild(spanElement);
+  // function copyToTextarea(text, bgColor, textColor) {
+  //   const textarea = document.getElementById('message');
+  //   textarea.value = text;
+  //   textarea.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue(`--${bgColor}`);
+  //   textarea.style.color = getComputedStyle(document.documentElement).getPropertyValue(`--${textColor}`);
+  // }
 
-    const space = document.createTextNode('\u00A0'); // '\u00A0' is the Unicode for non-breaking space
-    messageDiv.appendChild(space);
-
-    messageDiv.focus();
-
-    // Move the cursor to the end of the content
-    if (window.getSelection) {
-        const selection = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(messageDiv);
-        range.collapse(false); // Collapse the range to the end
-        selection.removeAllRanges();
-        selection.addRange(range);
-    } else if (document.selection) {
-        const range = document.body.createTextRange();
-        range.moveToElementText(messageDiv);
-        range.collapse(false); // Collapse the range to the end
-        range.select();
-    }
-  }
-
-  // Add event listener for "keydown" on messageDiv
-  const messageDiv = document.getElementById('message');
-  messageDiv.addEventListener('keydown', handleKeyDown);
-
-  function handleKeyDown(event) {
-    // Check if the pressed key is the "Delete" key (keyCode 46)
-    if (event.keyCode === 46 || event.keyCode === 8) {
-      // Get the selection and the range
-      const selection = window.getSelection();
-      const range = selection.getRangeAt(0);
-      
-      // Check if the cursor is at the end of the messageDiv
-    if (range.endOffset === messageDiv.childNodes.length) {
-        // Remove the last spanElement and the non-breaking space
-        messageDiv.removeChild(messageDiv.lastChild); // Remove non-breaking space
-        messageDiv.removeChild(messageDiv.lastChild); // Remove spanElement
-      }
-    }
-  }
-
-
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   ClassicEditor
+  //     .create(document.querySelector('#editor'))
+  //     .catch(error => {
+  //         console.error(error);
+  //     });
+  // });

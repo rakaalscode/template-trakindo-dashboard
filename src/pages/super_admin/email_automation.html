@@ -54,7 +54,7 @@
             >
               <div class="flex items-center gap-4">
                 <div class="relative">
-                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
                   <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
                 </div>
                 <div class="hidden flex-col flex-1 items-start justify-start md:flex" role="none">
@@ -77,7 +77,7 @@
                 >
                   <div class="flex w-full items-center gap-4 pb-3">
                     <div class="relative">
-                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
                       <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
                     </div>
                     <div class="flex flex-1 flex-col items-start justify-start" role="none">
@@ -184,7 +184,7 @@
       >
         <div class="flex items-center gap-4">
           <div class="relative">
-            <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+            <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
             <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
           </div>
           <div class="hidden flex-col items-start justify-start md:flex" role="none">
@@ -457,22 +457,23 @@
           <div class="relative">
             <label for="" class="block text-lg font-medium text-cloudy-120 mb-3">Preview text</label>
             <textarea name="preview_text" id="preview_text-id" cols="30" rows="5" class="block w-full md:w-[575px] py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500"></textarea>
-            <!-- <div id="editor"></div> -->
+            <!-- <div id="message" class="block p-2 w-full md:w-[575px] py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" contenteditable="true" placeholder="" spellcheck="false"></div> -->
+
           </div>
-          <div class="flex flex-col justify-end">
+          <div class="flex flex-col justify-end w-[350px]">
             <p class="font-medium text-cloudy-120">Parameters Options</p>
             <p class="text-cloudy-90 mb-1">Use this to automatically get replaced by system</p>
             <div class="inline-flex flex-wrap gap-2" id="parametersContainer">
-              <span class="inline-flex items-center badge badge-blue2 font-medium cursor-pointer">
+              <span class="inline-flex items-center badge badge-blue2 font-medium cursor-pointer" onclick="appendToContentEditable('Company 1', 'badge-blue2')">
                 Company Name
               </span>
-              <span class="inline-flex items-center badge badge-gray2 font-medium cursor-pointer">
+              <span class="inline-flex items-center badge badge-gray2 font-medium cursor-pointer" onclick="appendToContentEditable('Invoice Number', 'badge-gray2')">
                 Invoice Number
               </span>
-              <span class="inline-flex items-center badge badge-orange2 font-medium cursor-pointer">
+              <span class="inline-flex items-center badge badge-orange2 font-medium cursor-pointer" onclick="appendToContentEditable('Clearing Date', 'badge-orange2')">
                 Clearing Date
               </span>
-              <span class="inline-flex items-center badge badge-green2 font-medium cursor-pointer">
+              <span class="inline-flex items-center badge badge-green2 font-medium cursor-pointer" onclick="appendToContentEditable('Clearing Number', 'badge-green2')">
                 Clearing Number
               </span>
             </div>

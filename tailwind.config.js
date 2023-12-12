@@ -47,7 +47,9 @@ module.exports = {
     'hover:bg-warning_b_general',
     'hover:text-cloudy-70',
     'hover:text-white',
-    'block', 'text-sm', 'font-medium', 'cursor-pointer' , 'p-2', 'rounded', 'bg-blue-500', 'bg-green-500', 'bg-yellow-30'
+    'block', 'text-sm', 'font-medium', 'cursor-pointer' , 'p-2', 'rounded', 'bg-blue-500', 'bg-green-500', 'bg-yellow-30',
+    'badge', 'badge-blue2', 'badge-gray2', 'badge-orange2', 'badge-green2',
+    'badge-warning', 'badge-blue', 'badge-error', 'badge-success'
     // 'px-6', 'py-4', 'text-sm', 'font-medium', 'text-secondary-900', 'md:w-96', 'bg-white',
   ],
   theme: {
@@ -97,6 +99,7 @@ module.exports = {
       success: {
         50: '#ECFDF3',
         100: '#D1FADF',
+        500: '#12B76A',
         700: '#027A48',
       },
       
@@ -142,6 +145,7 @@ module.exports = {
       blue_2: {
         20: '#E0EEFA',
         50: '#EFF8FF',
+        500: '#2E90FA',
         700: '#175CD3'
       },
       "blue_general": '#2196F3',
@@ -205,6 +209,7 @@ module.exports = {
       warning: {
         50: "#FFFAEB",
         100: "#FEF0C7",
+        500: '#F79009',
         700: '#B54708',
         800: '#AE4408',
         1000: '#FFEBB1'
