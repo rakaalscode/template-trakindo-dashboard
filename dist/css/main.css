@@ -1121,6 +1121,10 @@ video {
   width: 180px;
 }
 
+.w-\[188px\] {
+  width: 188px;
+}
+
 .w-\[196px\] {
   width: 196px;
 }
@@ -1161,14 +1165,6 @@ video {
   width: 100%;
 }
 
-.w-\[188px\] {
-  width: 188px;
-}
-
-.w-\[1880px\] {
-  width: 1880px;
-}
-
 .min-w-\[10px\] {
   min-width: 10px;
 }
@@ -1181,6 +1177,10 @@ video {
   min-width: 140px;
 }
 
+.min-w-\[160px\] {
+  min-width: 160px;
+}
+
 .min-w-\[1px\] {
   min-width: 1px;
 }
@@ -1189,20 +1189,16 @@ video {
   min-width: 208px;
 }
 
-.min-w-full {
-  min-width: 100%;
-}
-
-.min-w-\[200px\] {
-  min-width: 200px;
-}
-
 .min-w-\[230px\] {
   min-width: 230px;
 }
 
-.min-w-\[160px\] {
-  min-width: 160px;
+.min-w-full {
+  min-width: 100%;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .max-w-md {
@@ -4579,13 +4575,11 @@ input[type="checkbox"]:disabled:checked + .ceki {
   padding-bottom: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  font-weight: 400;
 }
 
 .badge-default {
   --tw-bg-opacity: 1;
   background-color: rgb(242 244 247 / var(--tw-bg-opacity));
-  font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(52 64 84 / var(--tw-text-opacity));
 }
@@ -5580,6 +5574,10 @@ input[type="checkbox"]:disabled:checked + .ceki {
 
   .md\:w-\[260px\] {
     width: 260px;
+  }
+
+  .md\:w-\[325px\] {
+    width: 325px;
   }
 
   .md\:w-\[400px\] {

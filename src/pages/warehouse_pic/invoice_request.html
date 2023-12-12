@@ -149,7 +149,7 @@
                   </button>
     
                   <!-- Open date rate -->
-                  <div class="relative hidden z-60 px-2 w-full sm::w-[21rem] md:w-[21rem] md:px-0" id="filterDateRate-id">
+                  <div class="relative hidden z-60 px-2 w-full sm::w-[21rem] md:w-[325px] md:px-0" id="filterDateRate-id">
                     <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
                       <button class="h-[43px] w-[43px] me-[71px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                         <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
@@ -160,18 +160,21 @@
                       
                       <!-- badges -->
                       <div class="flex flex-wrap flex-row gap-3 pt-3 badges">
-                        <span class="inline-flex items-center badge badge-default warning cursor-pointer" data-value="verification" onclick="filterBadge(this)">
-                          <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500 hidden"></span>
+                        <label class="warning inline-flex items-center badge badge-warning cursor-pointer font-medium">
+                          <input type="checkbox" class="hidden" name="status" value="verification" checked onchange="toggleDotVisibility(this)">
+                          <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                           Need Verification
-                        </span>
-                        <span class="inline-flex items-center badge badge-default blue cursor-pointer" data-value="waiting_revision" onclick="filterBadge(this)">
-                          <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500 hidden"></span>
+                        </label>
+                        <label class="blue inline-flex items-center badge badge-blue cursor-pointer font-medium">
+                          <input type="checkbox" class="hidden" name="status" value="waiting_revision" checked onchange="toggleDotVisibility(this)">
+                          <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                           Waiting for Revision
-                        </span>
-                        <span class="inline-flex items-center badge badge-default error cursor-pointer" data-value="rejected" onclick="filterBadge(this)">
-                          <span class="w-1.5 h-1.5 rounded-full me-1.5 bg-error-500 hidden"></span>
+                        </label>
+                        <label class="error inline-flex items-center badge badge-error cursor-pointer font-medium">
+                          <input type="checkbox" class="hidden" name="status" value="rejected" checked onchange="toggleDotVisibility(this)">
+                          <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
                           Rejected
-                        </span>
+                        </label>
                       </div>
                       <!-- badges -->
     

@@ -1,0 +1,116 @@
+div.dataTables_wrapper .dataTables_filter {
+  margin-bottom: 20px;
+}
+
+/* custom icon sort */
+/* .custom-sort-icon {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 5px 4px 0;
+  border-color: #000 transparent transparent transparent;
+} */
+
+/* rounded  */
+.custom-table {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  overflow: hidden; 
+}
+
+/* thead */
+.custom-table thead {
+  color: #10181F;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-variant: all-small-caps;
+  background-color: #E8ECF4;
+}
+
+/* tbody */
+.custom-table tbody {
+  color: #10181F;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.custom-table tbody td {
+  border: 1px solid #E4E7EC;
+}
+
+/* info */
+.custom-table .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_length {
+  color: #344054;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* length */
+.custom-table .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_length {
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+/* length select  */
+/* .dataTables_wrapper .dataTables_length select {
+  border-radius: 4px;
+  padding: 4px 8px;
+  background-color: #79808F;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+} */
+
+/* Style the select box */
+.dataTables_wrapper .dataTables_length select {
+  border-radius: 4px;
+  padding: 4px 8px;
+  background-color: #79808F;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Replace the default dropdown arrow with an upward-pointing triangle (▲) */
+.dataTables_wrapper .dataTables_length select::-ms-expand,
+.dataTables_wrapper .dataTables_length select::after {
+  content: "▲";
+  display: inline-block;
+  margin-left: 5px; /* Adjust the spacing between the text and the icon */
+}
+
+
+/* Style the dropdown icon for modern browsers */
+.dataTables_wrapper .dataTables_length select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+table.custom-table.dataTable.no-footer {
+  border-bottom: none
+}
+
+/* bottom  */
+#myTable_wrapper .bottom {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid #E4E7EC;
+  padding: 11px 24px 16px;
+  overflow: hidden;
+}
+

@@ -858,32 +858,27 @@ $(document).ready(function() {
     }
   }
 
-  function filterBadge(button) {
-    let badgeButtons = document.querySelectorAll('.badges span');
-    badgeButtons.forEach(function(tabButton) {
-      tabButton.classList.remove('active-badge', 'badge-warning', 'badge-blue', 'badge-error', 'badge-gray', 'badge-green');
-    });
+  function toggleDotVisibility(checkbox) {
+    const label = checkbox.parentElement;
+    const dot = checkbox.parentElement.querySelector('.dot-filter-badge');
+    dot.classList.toggle('hidden', !checkbox.checked);
 
-    if (button) {
-      let badgeClass = '';
-      let value = button.getAttribute('data-value');
-      if(button.classList.contains('warning')) {
-        badgeClass = 'badge-warning'
-      } else if(button.classList.contains('blue')) {
-        badgeClass = 'badge-blue'
-      } else if(button.classList.contains('gray')) {
-        badgeClass = 'badge-gray'
-      } else if(button.classList.contains('green')) {
-        badgeClass = 'badge-green'
-      } if(button.classList.contains('error')) {
-        badgeClass = 'badge-error'
-      }
-      button.classList.add('active-badge');
-      button.classList.add(badgeClass);
-      console.log(value);
+    if (checkbox.checked) {
+      const bgColorClass = label.classList.item(0); // Assuming the color class is always the 5th class
+      label.classList.add('badge-' + bgColorClass);
+      label.classList.remove('badge-default');
+      label.classList.add('font-medium');
+      // label.querySelector('span').classList.add('badge-' + bgColorClass);
+      // label.querySelector('span').classList.add('font-medium');
+    } else {
+      const bgColorClass = label.classList.item(0); // Assuming the color class is always the 5th class
+      label.classList.remove('badge-' + bgColorClass);
+      label.classList.add('badge-default');
+      label.classList.remove('font-medium');
+      // label.querySelector('span').classList.remove('badge-' + bgColorClass);
+      // label.querySelector('span').classList.remove('font-medium');
     }
   }
-
 
   function openTabContent(tabId, button) {
     // Hide all tabs and remove active class from all buttons
@@ -1653,54 +1648,54 @@ $(document).ready(function() {
   }
 
 
-  function appendToContentEditable(companyName, bgColor) {
-    const messageDiv = document.getElementById('message');
-    const spanElement = document.createElement('span');
-    spanElement.textContent = companyName;
-    spanElement.className = `inline-flex items-center badge badge-blue2 font-medium ${bgColor}`;
+  // function appendToContentEditable(companyName, bgColor) {
+  //   const messageDiv = document.getElementById('message');
+  //   const spanElement = document.createElement('span');
+  //   spanElement.textContent = companyName;
+  //   spanElement.className = `inline-flex items-center badge badge-blue2 font-medium ${bgColor}`;
 
-    // Append the new span element to the existing content
-    messageDiv.appendChild(spanElement);
+  //   // Append the new span element to the existing content
+  //   messageDiv.appendChild(spanElement);
 
-    const space = document.createTextNode('\u00A0'); // '\u00A0' is the Unicode for non-breaking space
-    messageDiv.appendChild(space);
+  //   const space = document.createTextNode('\u00A0'); // '\u00A0' is the Unicode for non-breaking space
+  //   messageDiv.appendChild(space);
 
-    messageDiv.focus();
+  //   messageDiv.focus();
 
-    // Move the cursor to the end of the content
-    if (window.getSelection) {
-        const selection = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(messageDiv);
-        range.collapse(false); // Collapse the range to the end
-        selection.removeAllRanges();
-        selection.addRange(range);
-    } else if (document.selection) {
-        const range = document.body.createTextRange();
-        range.moveToElementText(messageDiv);
-        range.collapse(false); // Collapse the range to the end
-        range.select();
-    }
-  }
+  //   // Move the cursor to the end of the content
+  //   if (window.getSelection) {
+  //       const selection = window.getSelection();
+  //       const range = document.createRange();
+  //       range.selectNodeContents(messageDiv);
+  //       range.collapse(false); // Collapse the range to the end
+  //       selection.removeAllRanges();
+  //       selection.addRange(range);
+  //   } else if (document.selection) {
+  //       const range = document.body.createTextRange();
+  //       range.moveToElementText(messageDiv);
+  //       range.collapse(false); // Collapse the range to the end
+  //       range.select();
+  //   }
+  // }
 
   // Add event listener for "keydown" on messageDiv
-  const messageDiv = document.getElementById('message');
-  messageDiv.addEventListener('keydown', handleKeyDown);
+  // const messageDiv = document.getElementById('message');
+  // messageDiv.addEventListener('keydown', handleKeyDown);
 
-  function handleKeyDown(event) {
-    // Check if the pressed key is the "Delete" key (keyCode 46)
-    if (event.keyCode === 46 || event.keyCode === 8) {
-      // Get the selection and the range
-      const selection = window.getSelection();
-      const range = selection.getRangeAt(0);
+  // function handleKeyDown(event) {
+  //   // Check if the pressed key is the "Delete" key (keyCode 46)
+  //   if (event.keyCode === 46 || event.keyCode === 8) {
+  //     // Get the selection and the range
+  //     const selection = window.getSelection();
+  //     const range = selection.getRangeAt(0);
       
-      // Check if the cursor is at the end of the messageDiv
-    if (range.endOffset === messageDiv.childNodes.length) {
-        // Remove the last spanElement and the non-breaking space
-        messageDiv.removeChild(messageDiv.lastChild); // Remove non-breaking space
-        messageDiv.removeChild(messageDiv.lastChild); // Remove spanElement
-      }
-    }
-  }
+  //     // Check if the cursor is at the end of the messageDiv
+  //   if (range.endOffset === messageDiv.childNodes.length) {
+  //       // Remove the last spanElement and the non-breaking space
+  //       messageDiv.removeChild(messageDiv.lastChild); // Remove non-breaking space
+  //       messageDiv.removeChild(messageDiv.lastChild); // Remove spanElement
+  //     }
+  //   }
+  // }
 
 
