@@ -41,11 +41,11 @@
           </a>
           <ul class="items-center hidden space-x-8 font-medium md:flex">
             <li>
-              <a href="/src/pages/finance_ap/dashboard.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
+              <a href="/src/pages/vendor/dashboard.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
             </li>
-            <li>
-              <a href="/src/pages/finance_ap/report.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Report</a>
-            </li>
+            <!-- <li>
+              <a href="/src/pages/vendor/invoice_request.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Invoice Request List</a>
+            </li> -->
           </ul>
         </div>
         <div class="flex items-center">
@@ -63,7 +63,7 @@
                     Abisha Ilham
                   </p>
                   <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
-                    Finance AP
+                    Vendor Warehouse
                   </p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden md:block">
@@ -86,7 +86,7 @@
                         Abisha Ilham
                       </p>
                       <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
-                        Finance AP
+                        Vendor Warehouse
                       </p>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden rotate-180 md:block">
@@ -99,18 +99,6 @@
                     <a href="#" class="flex items-center gap-4 py-1 hover:underline">
                       <img src="/dist/images/icons/round-edit.svg" alt="round edit">
                       <span>Edit profile</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                      <img src="/dist/images/icons/round-setting.svg" alt="round setting">
-                      <span>Setting</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
-                      <img src="/dist/images/icons/round-notif.svg" alt="round notif">
-                      <span>Notification</span>
                     </a>
                   </li>
                   <li>
@@ -128,8 +116,8 @@
     </div>
     <div class="px-4 pt-2 block md:hidden">
       <div class="flex justify-between w-full gap-2">
-        <a href="/src/pages/finance_ap/dashboard.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
-        <a href="/src/pages/finance_ap/report.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent">Report</a>
+        <a href="/src/pages/vendor/dashboard.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
+        <!-- <a href="/src/pages/vendor/invoice_request.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent ">Invoice Request List</a> -->
       </div>
     </div>
   </nav>
@@ -138,21 +126,21 @@
     <!-- Card status -->
     <section class="bg-white w-full border-b border-secondary-100 py-[19px]">
       <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-none xl:grid-flow-col gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-none xl:grid-flow-col gap-6 -divide-x-4">
           <!-- Card -->
           <!-- <div class="bg-white border-r border-secondary-100">
             <div class="flex flex-col gap-2 md:gap-3">
               <span class="block text-xs text-secondary-500 uppercase md:text-sm">EST. Values</span>
-              <h1 class="text-xl md:text-[2rem] font-bold t-secondary-900">Rp395mil</h1>
+              <h1 class="text-[2rem] font-bold t-secondary-900">38.4M</h1>
             </div>
           </div> -->
           <!-- Card -->
           <div class="bg-white border-r border-secondary-100">
             <div class="flex items-start gap-2 md:gap-3">
-              <img src="/dist/images/icons/IconMoney.svg" alt="IconMoney">
+              <img src="/dist/images/icons/edit.svg" alt="edit">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Total Paid</span>
-                <h1 class="text-xl md:text-[2rem] font-bold t-secondary-900">Rp25,6mil</h1>
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Draft</span>
+                <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
           </div>
@@ -161,18 +149,48 @@
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/AccessTimeFilled.svg" alt="AccessTimeFilled">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">total on progress</span>
-                <h1 class="text-xl md:text-[2rem] font-bold t-secondary-900">Rp370,4mil</h1>
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">In Progress</span>
+                <h1 class="text-[2rem] font-bold t-secondary-900">0</h1>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <!-- <div class="bg-white border-r border-secondary-100">
+            <div class="flex items-start gap-2 md:gap-3">
+              <img src="/dist/images/icons/time-filled.svg" alt="time filled">
+              <div class="flex flex-col gap-2 md:gap-3"> 
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Waiting for Approval</span>
+                <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
+              </div>
+            </div>
+          </div> -->
+          <!-- Card -->
+          <!-- <div class="bg-white border-r border-secondary-100">
+            <div class="flex items-start gap-2 md:gap-3">
+              <img src="/dist/images/icons/repeat-filled.svg" alt="repeat filled">
+              <div class="flex flex-col gap-2 md:gap-3"> 
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Resubmitted</span>
+                <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
+              </div>
+            </div>
+          </div> -->
+          <!-- Card -->
+          <div class="bg-white border-r border-secondary-100">
+            <div class="flex items-start gap-2 md:gap-3">
+              <img src="/dist/images/icons/round-check.svg" alt="round check">
+              <div class="flex flex-col gap-2 md:gap-3"> 
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Completed</span>
+                <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
           </div>
           <!-- Card -->
           <div class="bg-white">
             <div class="flex items-start gap-2 md:gap-3">
-              <img src="/dist/images/icons/InsertDriveFileFilled.svg" alt="InsertDriveFileFilled">
+              <img src="/dist/images/icons/round-close.svg" alt="round close">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">total invoice</span>
-                <h1 class="text-xl md:text-[2rem] font-bold t-secondary-900">27</h1>
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Rejected</span>
+                <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
           </div>
@@ -187,38 +205,68 @@
 
         <!-- Filter table -->
 
-        <!-- Filter data -->
-        <div class="flex flex-col items-start justify-between pb-1 md:items-center md:flex-row">
-          
         <!-- Filter status -->
-        <div class="flex w-full pb-4 md:pb-0 md:w-auto">
+        <div class="flex pb-4 md:pb-0">
           <ul class="flex-wrap text-base font-medium tabs hidden md:flex">
             <li class="py-1 md:py-4">
-              <span class="inline-flex items-center tab-list active-tab group" onclick="openTab(this)">All Batch 
-                <span class="inline-flex items-center justify-center tab-list-badge group-hover:bg-black">2</span>
-              </span>
+              <span class="inline-block tab-list active-tab" onclick="openTab(this)">All Documents</span>
+            </li>
+            <!-- <li class="py-1 md:py-4">
+              <span class="inline-block tab-list" onclick="openTab(this)">Waiting Verification</span>
             </li>
             <li class="py-1 md:py-4">
-              <span class="inline-flex items-center tab-list" onclick="openTab(this)">Is Collecting 
-              </span>
+              <span class="inline-block tab-list" onclick="openTab(this)">Action Needed</span>
             </li>
             <li class="py-1 md:py-4">
-              <span class="inline-flex items-center tab-list group" onclick="openTab(this)">Submitted to Finance
-                <span class="inline-flex items-center justify-center tab-list-badge group-hover:bg-black">2</span>
-              </span>
+              <span class="inline-block tab-list" onclick="openTab(this)">Submitted to Finance</span>
+            </li>
+            <li class="py-1 md:py-4">
+              <span class="inline-block tab-list" onclick="openTab(this)">Payment Complete</span>
+            </li> -->
+            <li class="py-1 md:py-4">
+              <span class="inline-block tab-list" onclick="openTab(this)">Draft</span>
+            </li>
+            <li class="py-1 md:py-4">
+              <span class="inline-block tab-list" onclick="openTab(this)">In Progress</span>
+            </li>
+            <li class="py-1 md:py-4">
+              <span class="inline-block tab-list" onclick="openTab(this)">Completed</span>
+            </li>
+            <li class="py-1 md:py-4">
+              <span class="inline-block tab-list" onclick="openTab(this)">Rejected</span>
             </li>
           </ul>
 
           <div class="flex w-full md:hidden">
             <select id="status_filter-id" style="width: 100%;" name="short_by" required>
-              <option value="all">All Batch</option>
-              <option value="action_needed">Is Collecting</option>
+              <!-- <option value="all">All Documents</option>
               <option value="verification">Waiting Verification</option>
+              <option value="action_needed">Action Needed</option>
+              <option value="submitted">Submitted to Finance</option>
+              <option value="complete">Payment Complete</option> -->
+              <option value="draft">Draft</option>
+              <option value="in_progress">In Progress</option>
+              <option value="completed">Completed</option>
+              <option value="rejected">Rejected</option>
             </select>
           </div>
         </div>
         <!-- Filter status -->
-          <div class="flex justify-between items-center w-full gap-4 pb-5 md:pb-0 md:justify-center md:w-auto md:mb-0">
+
+        <!-- Filter data -->
+        <div class="flex flex-col flex-wrap items-start justify-between pb-5 md:items-center md:flex-row">
+          <div class="flex justify-between w-full gap-2 mb-4 md:mb-0 md:w-auto">
+            <button type="button" class="flex items-center w-full btn-lg btn-success" onclick="toggleDrawer('drawer_document-id')">
+              New Document
+              <img src="/dist/images/icons/plus-circle.svg" alt="plus circle" class="ms-2">
+            </button>
+            <button type="button" class="btn-lg btn-outline-success w-full" 
+              onclick="toggleSnackbar('snackbar-id', 'download')"
+            >
+              Download to Excel
+            </button>
+          </div>
+          <div class="flex justify-between items-center w-full gap-4 md:justify-center md:w-auto">
             <!--  Date rate filter -->
             <div class="relative flex items-center order-2 md:order-1">
               <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:px-0 md:py-4 md:shadow-none" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed', false)">
@@ -234,23 +282,27 @@
                 </div>
                 <div class="w-full bg-white rounded-lg p-4">
                   <h3 class="text-lg font-medium text-gray_2-900">Filter by</h3>
-                  
                   <!-- badges -->
                   <div class="flex flex-wrap flex-row gap-3 pt-3 badges">
                     <label class="gray inline-flex items-center badge badge-gray cursor-pointer font-medium">
                       <input type="checkbox" class="hidden" name="status" value="draft" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-gray_2-500"></span>
-                      Is Collecting
+                      Draft
                     </label>
                     <label class="blue inline-flex items-center badge badge-blue cursor-pointer font-medium">
-                      <input type="checkbox" class="hidden" name="status" value="waiting_revision" checked onchange="toggleDotVisibility(this)">
+                      <input type="checkbox" class="hidden" name="status" value="in_progress" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
-                      Payment on Progress
+                      In Progress
                     </label>
                     <label class="green inline-flex items-center badge badge-green cursor-pointer font-medium">
                       <input type="checkbox" class="hidden" name="status" value="completed" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-green-500"></span>
-                      Payment Complete
+                      Completed
+                    </label>
+                    <label class="error inline-flex items-center badge badge-error cursor-pointer font-medium">
+                      <input type="checkbox" class="hidden" name="status" value="rejected" checked onchange="toggleDotVisibility(this)">
+                      <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
+                      Rejected
                     </label>
                   </div>
                   <!-- badges -->
@@ -391,132 +443,459 @@
         <!-- Filter table -->
         <div class="relative overflow-x-auto">
           <!-- Table -->
-          <table id="financeTable" class="custom-table">
-            <thead>
+          <table class="table-responsive">
+            <!-- <thead class="thead-bold font-small-caps">
               <tr>
-                <th>No</th>
-                <th>Action</th>
-                <th>Title</th>
-                <th>Total Invoices</th>
-                <th>Submitted Date</th>
-                <th>Status</th>
-                <th>Last Update</th>
+                <th scope="col" class="thead-col-sm text-center w-1 rounded-tl-lg">
+                  No
+                </th>
+                <th scope="col" class="thead-col text-center">
+                  Action
+                </th>
+                <th scope="col" class="thead-col min-w-[208px]">
+                  Status
+                </th>
+                <th scope="col" class="thead-col">
+                  Submitted Date
+                </th>
+                <th scope="col" class="thead-col">
+                  Document No.
+                </th>
+                <th scope="col" class="thead-col">
+                  Contract No.
+                </th>
+                <th scope="col" class="thead-col">
+                  Invoice No.
+                </th>
+                <th scope="col" class="thead-col text-center">
+                  Issued Date
+                </th>
+                <th scope="col" class="thead-col">
+                  Transaction Type
+                </th>
+                <th scope="col" class="thead-col text-center rounded-tr-lg">
+                  Amount
+                </th>
+              </tr>
+            </thead> -->
+            <thead class="text-base font-medium text-secondary-900 bg-cloudy-30 uppercase font-small-caps">
+              <tr>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[10px]">
+                  No
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 text-center">
+                  Action
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[230px]">
+                  <div class="flex items-center justify-between">
+                    Status
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Submitted Date
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Document No.
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Contract No.
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[160px]">
+                  <div class="flex items-center justify-between">
+                    Invoice No.
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Invoice Date
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 rounded-tr-lg min-w-[140px]">
+                  <div class="flex items-center justify-between">
+                    Amount
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="tbody-sm">
               <tr>
-                <td>
-                  <label class="flex items-center justify-center">
-                    <input type="checkbox" class="custom-checkbox"/>
-                  </label>
+                <td class="tbody-col-sm text-center">
+                  1.
                 </td>
-                <td>
+                <td class="tbody-col-sm text-center">
                   <div class="flex items-center justify-center gap-2">
-                    <a href="/src/pages/finance_ap/detail.html">
-                      <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
-                        <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                      </div>
-                    </a>
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleDrawer('drawer_document-id')">
+                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    </div>
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-green-90 cursor-pointer">
+                      <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
+                    </div>
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer">
+                      <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
+                    </div>
                   </div>
                 </td>
-                <td>
-                  <a href="/src/pages/finance_ap/detail.html">
-                    Batch 12092023
-                  </a>
+                <td class="tbody-col">
+                  <span class="inline-flex items-center badge badge-gray cursor-pointer" onclick="toggleDrawer('drawer_document-id')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                      <circle cx="4" cy="4" r="3" fill="#667085"/>
+                    </svg>
+                    Draft
+                  </span>
                 </td>
-                <td>1</td>
-                <td>12-09-2023 - 8:00AM</td>
-                <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-gray cursor-pointer font-medium">
-                    <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-gray_2-500"></span>
-                    Is Collecting
-                  </label>
+                <td class="tbody-col">
+                  31/08/2023
                 </td>
-                <td>12-09-2023 9:00AM</td>
+                <td class="tbody-col">
+                  DOC-004/010457
+                </td>
+                <td class="tbody-col">
+                  ASD/AE/23-2023
+                </td>
+                <td class="tbody-col">
+                  VI 231011 - 01/R01
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  Rp120.211.553
+                </td>
               </tr>
               <tr>
-                <td>
-                  <label class="flex items-center justify-center">
-                    <input type="checkbox" class="custom-checkbox"/>
-                  </label>
+                <td class="tbody-col-sm text-center">
+                  2.
                 </td>
-                <td>
+                <td class="tbody-col-sm text-center">
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer" onclick="toggleSnackbar('snackbar-id', 'gl-download')">
-                      <img src="/dist/images/icons/Vector.svg" alt="vector">
-                    </div>
-                    <a href="/src/pages/finance_ap/detail.html">
-                      <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
-                        <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                      </div>
-                    </a>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-primary-500 cursor-pointer">
-                      <img src="/dist/images/icons/mingcute_send-fill.svg" alt="send">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'reject')">
+                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </div>
                   </div>
                 </td>
-                <td>
-                  <a href="/src/pages/finance_ap/detail.html">
-                    Batch 12092023
-                  </a>
+                <td class="tbody-col">
+                  <span class="inline-flex items-center badge badge-error cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'reject')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                      <circle cx="4" cy="4" r="3" fill="#F04438"/>
+                    </svg>
+                    Rejected
+                  </span>
                 </td>
-                <td>1</td>
-                <td>12-09-2023 - 8:00AM</td>
-                <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-blue cursor-pointer font-medium">
-                    <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
-                    Submitted to Finance
-                  </label>
+                <td class="tbody-col">
+                  31/08/2023
                 </td>
-                <td>12-09-2023 9:00AM</td>
+                <td class="tbody-col">
+                  DOC-004/010457
+                </td>
+                <td class="tbody-col">
+                  ASD/AE/23-2023
+                </td>
+                <td class="tbody-col">
+                  VI 231011 - 01/R01
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  Rp120.211.553
+                </td>
               </tr>
               <tr>
-                <td>
-                  <label class="flex items-center justify-center">
-                    <input type="checkbox" class="custom-checkbox"/>
-                  </label>
+                <td class="tbody-col-sm text-center">
+                  3.
                 </td>
-                <td>
+                <td class="tbody-col-sm text-center">
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer" onclick="toggleSnackbar('snackbar-id', 'gl-download')">
-                      <img src="/dist/images/icons/Vector.svg" alt="vector">
-                    </div>
-                    <a href="/src/pages/finance_ap/detail.html">
-                      <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
-                        <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                      </div>
-                    </a>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-primary-500 cursor-pointer">
-                      <img src="/dist/images/icons/mingcute_send-fill.svg" alt="send">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'submit')">
+                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </div>
                   </div>
                 </td>
-                <td>
-                  <a href="/src/pages/finance_ap/detail.html">
-                    Batch 12092023
-                  </a>
+                <td class="tbody-col">
+                  <span class="inline-flex items-center badge badge-blue cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'submit')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                      <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
+                    </svg>
+                    In Progress
+                  </span>
                 </td>
-                <td>1</td>
-                <td>12-09-2023 - 8:00AM</td>
-                <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-blue cursor-pointer font-medium">
-                    <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
-                    Submitted to Finance
-                  </label>
+                <td class="tbody-col">
+                  31/08/2023
                 </td>
-                <td>12-09-2023 9:00AM</td>
+                <td class="tbody-col">
+                  DOC-004/010457
+                </td>
+                <td class="tbody-col">
+                  ASD/AE/23-2023
+                </td>
+                <td class="tbody-col">
+                  VI 231011 - 01/R01
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  Rp120.211.553
+                </td>
+              </tr>
+              <tr>
+                <td class="tbody-col-sm text-center">
+                  4.
+                </td>
+                <td class="tbody-col-sm text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'verification')">
+                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    </div>
+                  </div>
+                </td>
+                <td class="tbody-col">
+                  <span class="inline-flex items-center badge badge-warning cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'verification')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                      <circle cx="4" cy="4" r="3" fill="#F79009"/>
+                    </svg>
+                    Waiting for Verification
+                  </span>
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  DOC-004/010457
+                </td>
+                <td class="tbody-col">
+                  ASD/AE/23-2023
+                </td>
+                <td class="tbody-col">
+                  VI 231011 - 01/R01
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  Rp120.211.553
+                </td>
+              </tr>
+              <tr>
+                <td class="tbody-col-sm text-center">
+                  5.
+                </td>
+                <td class="tbody-col-sm text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'approve')">
+                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    </div>
+                  </div>
+                </td>
+                <td class="tbody-col">
+                  <span class="inline-flex items-center badge badge-green cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'approve')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                      <circle cx="4" cy="4" r="3" fill="#12B76A"/>
+                    </svg>
+                    Complete
+                  </span>
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  DOC-004/010457
+                </td>
+                <td class="tbody-col">
+                  ASD/AE/23-2023
+                </td>
+                <td class="tbody-col">
+                  VI 231011 - 01/R01
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  Rp120.211.553
+                </td>
+              </tr>
+              <tr>
+                <td class="tbody-col-sm text-center">
+                  6.
+                </td>
+                <td class="tbody-col-sm text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'action_needed-revise')">
+                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    </div>
+                  </div>
+                </td>
+                <td class="tbody-col">
+                  <span class="inline-flex items-center badge badge-orange cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'action_needed-revise')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                      <circle cx="4" cy="4" r="3" fill="#FB6514"/>
+                    </svg>
+                    Action Needed
+                  </span>
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  DOC-004/010457
+                </td>
+                <td class="tbody-col">
+                  ASD/AE/23-2023
+                </td>
+                <td class="tbody-col">
+                  VI 231011 - 01/R01
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  Rp120.211.553
+                </td>
+              </tr>
+              <tr>
+                <td class="tbody-col-sm text-center">
+                  7.
+                </td>
+                <td class="tbody-col-sm text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'action_needed-hardcopy')">
+                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    </div>
+                  </div>
+                </td>
+                <td class="tbody-col">
+                  <span class="inline-flex items-center badge badge-orange cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'action_needed-hardcopy')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
+                      <circle cx="4" cy="4" r="3" fill="#FB6514"/>
+                    </svg>
+                    Action Needed
+                  </span>
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  DOC-004/010457
+                </td>
+                <td class="tbody-col">
+                  ASD/AE/23-2023
+                </td>
+                <td class="tbody-col">
+                  VI 231011 - 01/R01
+                </td>
+                <td class="tbody-col">
+                  31/08/2023
+                </td>
+                <td class="tbody-col">
+                  Rp120.211.553
+                </td>
               </tr>
             </tbody>
           </table>
           <!-- Table -->
         </div>
+
+        <!-- Pagination -->
+        <nav class="flex items-center flex-column flex-wrap p-0 pt-3 md:px-6 md:py-3 md:flex-row justify-between md:border border-cloudy-140 rounded-bl-lg rounded-br-lg" aria-label="Table navigation">
+          <span class="text-sm text-gray-700 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing 1 to <span id="rows_value-id">4</span> of 10 rows 
+            <button id="rows_paginate-id" class="inline-block relative text-sm text-white bg-cloudy-80 rounded w-12 py-1.5 mx-2" 
+              onclick="openDropdown(event, 'rows_paginate_list-id', 'top', 'absolute', true)"
+            >
+              <div class="flex items-center justify-center gap-2">
+                <span value-data="4" id="rows_data-id">4</span>
+                <img src="/dist/images/icons/polygon.svg" alt="polygon">
+              </div>
+            </button>  
+            rows per page
+          </span>
+          
+          <div class="relative hidden" id="rows_paginate_list-id">
+            <ul class="flex flex-col items-center justify-center page-rows gap-2">
+              <li>
+                <div class="flex justify-center page-rows-item" value-data="2" onclick="selectRows(this)">2</div>
+              </li>
+              <li>
+                <div class="flex justify-center page-rows-item" value-data="4" onclick="selectRows(this)">4</div>
+              </li>
+              <li>
+                <div class="flex justify-center page-rows-item" value-data="6" onclick="selectRows(this)">6</div>
+              </li>
+              <li>
+                <div class="flex justify-center page-rows-item" value-data="8" onclick="selectRows(this)">8</div>
+              </li>
+              <li>
+                <div class="flex justify-center page-rows-item" value-data="10" onclick="selectRows(this)">10</div>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="pagination">
+            <li>
+              <a href="#" class="flex items-center justify-center page-item-previous">
+                <img src="/dist/images/icons/chevron-back.svg" alt="chevron back">
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-current="page" class="flex items-center justify-center page-item page-item-active">1</a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center page-item">2</a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center page-item">3</a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center page-item cursor-default hover:bg-transparent">...</a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center page-item">9</a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center page-item">10</a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center page-item-next">
+                <img src="/dist/images/icons/chevron-back.svg" class="rotate-180" alt="chevron back">
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Pagination -->
+
       </div>
     </section>
     <!-- Filter table -->
 
     <!-- Document Form -->
     <div id="drawer_document-id" class="fixed top-0 right-0 z-60 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
-      <div class="p-3 md:p-6 pb-0">
+      <div class="p-3 pb-5 md:p-6">
 
       <!-- close -->
       <div class="flex justify-start">
@@ -611,7 +990,7 @@
             </th>
             <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
               <div class="flex items-center justify-between">
-                <span id="invoice_number-id">VI 231011 - 01/R01</span>
+                <input type="text" id="invoice_number-id" class="text-sm font-medium text-secondary-900 w-full outline-none">
                 <span class="block cursor-pointer" onclick="copyToClipboard('invoice_number-id')">
                   <img src="/dist/images/icons/copy-paste.svg" alt="copy paste">
                 </span>
@@ -632,83 +1011,92 @@
             </td>
           </tr>
           <tr>
+            <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              Faktur Pajak Number
+            </th>
+            <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
+              <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none">
+            </td>
+          </tr>
+          <tr>
             <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg">
               Contract No
             </th>
             <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 rounded-br-lg">
-              SN-004
+              <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none">
             </td>
           </tr>
         </table>
       </div>
 
       <div class="flex items-center justify-between gap-4 mb-4">
-        <h3 class="text-2xl font-medium text-secondary-900">
+        <h3 class="w-full md:w-auto text-2xl font-medium text-secondary-900">
           Goods or Services
         </h3>
-        <button type="button" class="flex items-center text-cloudy-120 bg-white border border-cloudy-120 hover:bg-gray-100 rounded-lg text-base font-bold px-5 py-2.5 ring-default">
+        <!-- <button type="button" class="w-full justify-center md:w-auto md:justify-center font-medium text-cloudy-120 text-center bg-white border border-cloudy-120 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-gray-100 hover:bg-gray-100">
           Add new row
-          <img src="/dist/images/icons/plus-circle-black.svg" alt="plus black" class="ms-2">
-        </button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="ms-2">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17 13H13V17H11V13H7V11H11V7H13V11H17V13Z" fill="#1A202C"/>
+          </svg>
+        </button> -->
       </div>
-      <div class="relative overflow-x-auto rounded-lg mb-2">
-        <table class="table-responsive">
+      <div class="relative overflow-x-auto w-full rounded-lg mb-2">
+        <table class="table-responsive" id="goods_services-id">
           <thead>
             <tr>
-              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tl-lg">
+              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 rounded-tl-lg">
                 Description
               </th>
-              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-1/12">
+              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30">
                 QTY
               </th>
-              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30">
                 Rate
               </th>
-              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tr-lg">
+              <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 rounded-tr-lg whitespace-nowrap">
                 Amount
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-                TEST ABC
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 md:w-96 bg-white">
+                <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap ">
               </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white whitespace-nowrap w-1/12">
-                20
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white md:w-24 whitespace-nowrap">
+                <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap ">
               </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-white w-8/12">
-                Rp1.500.000
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 md:w-48 bg-white">
+                <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap text-right ">
               </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-white w-8/12 whitespace-nowrap">
-                Rp. 30.000.000
-              </td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-                &nbsp;
-              </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-1/12">
-                &nbsp;
-              </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-                &nbsp;
-              </td>
-              <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-                &nbsp;
+              <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 md:w-48 bg-white whitespace-nowrap">
+                <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap text-right ">
               </td>
             </tr>
           </tbody>
           <tfoot>
-            <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg" colspan="3">
+            <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-30 rounded-bl-lg" colspan="3">
               Total
             </th>
-            <td class="px-6 py-2 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 rounded-br-lg whitespace-nowrap">
-              Rp. 30.000.000
+            <td class="px-6 py-2 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white rounded-br-lg whitespace-nowrap">
+              Rp0
             </td>
           </tfoot>
         </table>
       </div>
+
+      <div class="flex w-full justify-center pt-2 gap-3">
+        <button type="button" class="w-full justify-center md:w-auto md:justify-center font-medium text-white text-center bg-red-500 border border-red-500 rounded-lg px-5 py-2.5 hidden items-center focus:ring-4 focus:outline-none focus:ring-gray-100 hover:bg-red-700" id="remove_goods_row-id" onclick="removeLastRow()">
+          Remove row
+        </button>
+        <button type="button" class="w-full justify-center md:w-auto md:justify-center font-medium text-cloudy-120 text-center bg-white border border-cloudy-120 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-gray-100 hover:bg-gray-100" onclick="addRowGoods()">
+          Add new row
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="ms-2">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17 13H13V17H11V13H7V11H11V7H13V11H17V13Z" fill="#1A202C"/>
+          </svg>
+        </button>
+      </div>
+
     </div>
 
     <hr class="border-[2px] mb-5 border-secondary-100">
@@ -725,24 +1113,74 @@
         <!-- heading -->
         
         <div class="block py-5" id="supporting_files-id">
+          
           <div class="mb-8">
-            <label class="block text-base font-medium text-gray_natural-1300 mb-2 shadow-">Invoice & Faktur Pajak<span class="text-red-8">*</span></label>
+            <label class="block text-base font-medium text-gray_natural-1300 mb-2">Invoice & Faktur Pajak<span class="text-red-8">*</span></label>
+            <div class="relative overflow-x-auto rounded-lg mb-2 hidden" id="invoice_pajak_table-id">
+              <table class="table-responsive">
+                <thead>
+                  <tr class="bg-cloudy-30">
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
+                      No
+                    </th>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-6/12">
+                      Filename
+                    </th>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left w-[200px]">
+                      Upload Time
+                    </th>
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tr-lg whitespace-nowrap">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
+                      1
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                      Invoice For Transaction ABXY 2023 Update
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                      24/04/2023 - 15:00:00
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 rounded-br-lg whitespace-nowrap">
+                      <div class="flex items-center justify-center gap-2">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                          onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
+                        >
+                            <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                        </div>
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer"
+                        onclick="handleDeleteFile('upload_invoice_pajak_input-id', '', 'invoice_pajak_table-id', 'upload_invoice_pajak-id', 'multiple', this)"
+                        >
+                          <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <div class="flex items-center justify-center w-full">
-              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]">
+              <label for="upload_invoice_pajak_input-id" id="upload_invoice_pajak-id" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]"
+                onclick="handleFileSelect('upload_invoice_pajak_input-id', '', 'invoice_pajak_table-id', 'upload_invoice_pajak-id', 'multiple')"
+              >
                   <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
                     <img src="/dist/images/icons/dropzone.svg" alt="dropzone" class="mb-2">
                     <p class="mb-1 text-sm text-gray-500"><span class="font-semibold text-primary-900">Click to upload</span> or drag and drop</p>
                     <p class="text-xs text-gray-500">Only upload in .PDF</p>
                   </div>
-                  <input id="dropzone-file" type="file" class="hidden" />
+                  <input id="upload_invoice_pajak_input-id" type="file" class="hidden" accept=".pdf" />
               </label>
             </div> 
           </div>
-
+          
           <div class="mb-8">
             <label class="block text-base font-medium text-gray_natural-1300 mb-2">BAST</label>
-            <div class="relative overflow-x-auto rounded-lg mb-2">
-              <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
+            <div class="relative overflow-x-auto rounded-lg mb-2 hidden" id="bast_table-id">
+              <table class="table-responsive">
                 <thead>
                   <tr class="bg-cloudy-30">
                     <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
@@ -754,7 +1192,7 @@
                     <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left w-[200px]">
                       Upload Time
                     </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tr-lg">
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tr-lg whitespace-nowrap">
                       Action
                     </th>
                   </tr>
@@ -772,10 +1210,14 @@
                     </td>
                     <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 rounded-br-lg whitespace-nowrap">
                       <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                          onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
+                        >
                             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer"
+                        onclick="handleDeleteFile('upload_bast_input-id', '', 'bast_table-id', 'upload_bast-id', 'multiple', this)"
+                        >
                           <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
                         </div>
                       </div>
@@ -785,21 +1227,24 @@
               </table>
             </div>
             <div class="flex items-center justify-center w-full">
-              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]">
-                <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
-                  <img src="/dist/images/icons/dropzone.svg" alt="dropzone" class="mb-2">
-                  <p class="mb-1 text-sm text-gray-500"><span class="font-semibold text-primary-900">Click to upload</span> or drag and drop</p>
-                  <p class="text-xs text-gray-500">Only upload in .PDF</p>
-                </div>
-                  <input id="dropzone-file2" type="file" class="hidden" />
+              <label for="upload_bast_input-id" id="upload_bast-id" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]"
+                onclick="handleFileSelect('upload_bast_input-id', '', 'bast_table-id', 'upload_bast-id', 'multiple')"
+              >
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
+                    <img src="/dist/images/icons/dropzone.svg" alt="dropzone" class="mb-2">
+                    <p class="mb-1 text-sm text-gray-500"><span class="font-semibold text-primary-900">Click to upload</span> or drag and drop</p>
+                    <p class="text-xs text-gray-500">Only upload in .PDF</p>
+                  </div>
+                  <input id="upload_bast_input-id" type="file" class="hidden" accept=".pdf" />
               </label>
             </div> 
           </div>
+
 
           <div class="mb-8">
             <label class="block text-base font-medium text-gray_natural-1300 mb-2">Other Documents (Optional)</label>
-            <div class="relative overflow-x-auto rounded-lg mb-2">
-              <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
+            <div class="relative overflow-x-auto rounded-lg mb-2 hidden" id="others_doc_table-id">
+              <table class="table-responsive">
                 <thead>
                   <tr class="bg-cloudy-30">
                     <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
@@ -811,7 +1256,7 @@
                     <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left w-[200px]">
                       Upload Time
                     </th>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tr-lg">
+                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tr-lg whitespace-nowrap">
                       Action
                     </th>
                   </tr>
@@ -829,10 +1274,14 @@
                     </td>
                     <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 rounded-br-lg whitespace-nowrap">
                       <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                          onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
+                        >
                             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer"
+                        onclick="handleDeleteFile('upload_other_doc_input-id', '', 'others_doc_table-id', 'upload_other_doc-id', 'multiple', this)"
+                        >
                           <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
                         </div>
                       </div>
@@ -842,19 +1291,20 @@
               </table>
             </div>
             <div class="flex items-center justify-center w-full">
-              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]">
-                <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
-                  <img src="/dist/images/icons/dropzone.svg" alt="dropzone" class="mb-2">
-                  <p class="mb-1 text-sm text-gray-500"><span class="font-semibold text-primary-900">Click to upload</span> or drag and drop</p>
-                  <p class="text-xs text-gray-500">Only upload in .PDF</p>
-                </div>
-                  <input id="dropzone-file3" type="file" class="hidden" />
+              <label for="upload_other_doc_input-id" id="upload_other_doc-id" class="flex flex-col items-center justify-center w-full h-[150px] border border-gray-60 border-dashed rounded-lg cursor-pointer bg-gray_2-100 hover:bg-gray-100 md:h-[192px]"
+                onclick="handleFileSelect('upload_other_doc_input-id', '', 'others_doc_table-id', 'upload_other_doc-id', 'multiple')"
+              >
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6 ">
+                    <img src="/dist/images/icons/dropzone.svg" alt="dropzone" class="mb-2">
+                    <p class="mb-1 text-sm text-gray-500"><span class="font-semibold text-primary-900">Click to upload</span> or drag and drop</p>
+                    <p class="text-xs text-gray-500">Only upload in .PDF</p>
+                  </div>
+                  <input id="upload_other_doc_input-id" type="file" class="hidden" accept=".pdf" />
               </label>
             </div> 
           </div>
 
         </div>
-        
       </div>
     </div>
 
@@ -934,6 +1384,14 @@
             </tr>
             <tr>
               <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                Faktur Pajak Number
+              </th>
+              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+                000.000-00.00000000
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
                 Contract No
               </th>
               <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
@@ -945,7 +1403,7 @@
                 Last Update
               </th>
               <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
-                22/02/2023 1:45PM
+                31/08/2023
               </td>
             </tr>
             <tr id="detail_status-id">
@@ -1082,12 +1540,16 @@
                     <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       Invoice
                     </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap">
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap" id="detail_action1-id">
                       <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
-                            <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                          onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
+                        >
+                          <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer"
+                          onclick=" toggleSnackbar('snackbar-id', 'download');"
+                        >
                           <img src="/dist/images/icons/download.svg" alt="download">
                         </div>
                         <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20 cursor-pointer">
@@ -1114,12 +1576,17 @@
                     <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       BAST
                     </td>
-                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap">
+                    <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap" id="detail_action2-id">
                       <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                          onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
+                        >
                             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer"
+                          onclick=" toggleSnackbar('snackbar-id', 'download', 'z-70');"
+                          
+                        >
                           <img src="/dist/images/icons/download.svg" alt="download">
                         </div>
                         <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20 cursor-pointer">
@@ -1162,7 +1629,7 @@
 <!-- snackbar -->
 
 <!-- modal status -->
-<div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
@@ -1192,7 +1659,7 @@
 
 
 <!-- modal status revise file -->
-<div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
@@ -1225,7 +1692,7 @@
             </div>
           </div>
           <button type="button" class="block w-full text-cloudy-120 bg-primary-500 hover:bg-primary-700 border border-primary-500 whitespace-nowrap rounded text-sm font-bold px-5 py-2.5 md:w-auto ring-default"
-            onclick="toggleModalDialog('modal_status_revise-id');toggleModalDialog('modal_status_revise_upload-id', 'z-40', 'static', 'inline');"
+            onclick="toggleModalDialog('modal_status_revise-id');toggleModalDialog('modal_status_revise_upload-id', 'z-60', 'static', 'inline');"
           >
             Upload Files
           </button>
@@ -1293,7 +1760,9 @@
                 </td>
                 <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 rounded-br-lg whitespace-nowrap">
                   <div class="flex items-center justify-start gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                      onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
+                    >
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </div>
                     <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer"
@@ -1358,17 +1827,17 @@
               <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="mb-5">
                   <label for="awb_number" class="label-control">Enter AWB Number<span class="text-red-500">*</span></label>
-                  <input type="text" id="awb_number" class="form-control form-rounded" placeholder="AWB Number Here" required>
+                  <input type="text" id="awb_number" name="awb_number" class="form-control form-rounded" placeholder="AWB Number Here" required>
                 </div>
                 <div class="mb-5">
                   <label for="recipent_name" class="label-control">Enter Recipent Name<span class="text-red-500">*</span></label>
-                  <input type="text" id="recipent_name" class="form-control form-rounded" placeholder="Aldo Farado" required>
+                  <input type="text" id="recipent_name" name="recipent_name" class="form-control form-rounded" placeholder="Aldo Farado" required>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="mb-5">
                   <label for="expedition_service-id" class="label-control">Expedition Service<span class="text-red-500">*</span></label>
-                  <select id="expedition_select-id" style="width: 100%;" name="state" required>
+                  <select id="expedition_select-id" style="width: 100%;" name="expedition_select" required>
                     <option value=""></option>
                     <option value="jnt" data-image="/dist/images/jnt.png">JNTs</option>
                     <option value="post" data-image="/dist/images/post.png">Kantor Pos</option>
@@ -1381,7 +1850,7 @@
                 </div>
                 <div class="mb-5">
                   <label for="delivery_date" class="label-control">Delivery Date<span class="text-red-500">*</span></label>
-                  <input type="text" id="delivery_date" class="form-control form-rounded datepicker-flatpickr-custom" placeholder="Select Date">
+                  <input type="text" id="delivery_date" name="delivery_date" class="form-control form-rounded datepicker-flatpickr-custom" placeholder="Select Date">
                 </div>
               </div>
             </div>
@@ -1432,7 +1901,7 @@
               </div>
               <div class="flex items-start flex-col-reverse md:items-center md:flex-row gap-4 mb-5">
                 <button type="button" class="flex items-center justify-start btn-sm btn-default font-semibold"
-                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline');"
+                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-80', 'static', 'inline');"
                 >
                   <img src="/dist/images/icons/add-doc.svg" alt="add doc" class="me-2">
                   Choose Invoice(s)
@@ -1441,10 +1910,10 @@
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                  <button>
+                  <button type="button">
                     <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
                   </button>
-                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
+                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-80', 'static', 'inline');">How to Send? Read more.</span>
                 </div>
                 <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
                   onclick="handleSubmitHardcopy(this, 'form_expedition-id')"
@@ -1525,7 +1994,7 @@
               </div>
               <div class="flex items-start flex-col-reverse md:items-center md:flex-row gap-4 mb-5">
                 <button type="button" class="flex items-center justify-start btn-sm btn-default font-semibold"
-                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline');"
+                  onclick="toggleModalDialog('modal_choose_invoice-id', 'z-80', 'static', 'inline');"
                 >
                   <img src="/dist/images/icons/add-doc.svg" alt="add doc" class="me-2">
                   Choose Invoice(s)
@@ -1534,10 +2003,10 @@
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                  <button>
+                  <button type="button">
                     <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
                   </button>
-                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
+                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-80', 'static', 'inline');">How to Send? Read more.</span>
                 </div>
                 <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
                   onclick="handleSubmitHardcopy(this, 'form_self_courier-id')"
@@ -1557,7 +2026,7 @@
 <!-- modal status revise hardcopy -->
 
 <!-- modal q send document -->
-<div id="modal_q_send_doc-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-80 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_q_send_doc-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-90 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
     <div class="relative bg-white rounded-lg shadow">
       <!-- header -->
@@ -1615,12 +2084,12 @@
 <!-- modal q send document -->
 
 <!-- modal choose invoice -->
-<div id="modal_choose_invoice-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-80 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+<div id="modal_choose_invoice-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-90 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
 
     <!-- header -->
     <div class="flex items-center justify-end mb-1.5">
-      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline')">
+      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModalDialog('modal_choose_invoice-id', 'z-80', 'static', 'inline')">
         <img src="/dist/images/icons/heroicons-outline_x.svg" alt="outline x">
       </button>
     </div>
@@ -1719,7 +2188,7 @@
             <span class="text-cloudy-80"><span class="text-cloudy-130" id="invoice_selected-id">1</span> Invoices(s) Selected</span>
           </div>
           <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
-            onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline')"
+            onclick="toggleModalDialog('modal_choose_invoice-id', 'z-80', 'static', 'inline')"
           >
             Select Invoices
           </button>
@@ -1731,6 +2200,29 @@
   </div>
 </div>
 <!-- modal choose invoice -->
+
+<!-- modal preview pdf-->
+<div id="modal_preview_pdf-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+
+    <!-- header -->
+    <div class="flex items-center justify-end mb-1.5">
+      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+        <img src="/dist/images/icons/heroicons-outline_x.svg" alt="outline x">
+      </button>
+    </div>
+    <!-- header -->
+
+    <div class="relative bg-white rounded-lg shadow h-[650px]">
+      <!-- content -->
+      <div class="px-3 py-2 md:px-6 md:py-4">
+        <p>preview pdf</p>
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+</div>
+<!-- modal preview pdf-->
 
 </body>
 <!-- Start script -->

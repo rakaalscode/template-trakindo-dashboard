@@ -238,7 +238,7 @@ input[type="checkbox"]:disabled:checked + .ceki {
 }
 
 .form-control-search {
-  @apply text-base border border-primary-500 block px-2 py-2 pe-10 bg-white rounded-lg focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+  @apply text-base border border-secondary-100 md:border-primary-500 block px-2 py-2 ps-10 pe-2 md:pe-10 md:ps-2 bg-white rounded-lg focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
 }
 
 .form-control-search-mobile {
@@ -325,6 +325,41 @@ input[type="checkbox"]:disabled:checked + .ceki {
   @apply w-12 p-2 cursor-pointer hover:bg-cloudy-90;
 }
 /* pagination  */
+
+/* tab invoice  */
+.tab-invoice {
+  @apply bg-semi_white-1 px-[14px] py-3 text-sm font-medium text-cloudy-70 border-b-2 border-semi_white-1 uppercase hover:text-cloudy-110
+}
+
+.tab-invoice.primary {
+  @apply hover:border-b-primary-500 
+}
+.tab-invoice.primary:hover span, .tab-invoice.primary.active span {
+  @apply bg-primary-500 
+}
+.tab-invoice.primary.active {
+  @apply border-b-primary-500 text-cloudy-110
+}
+
+.tab-invoice.blue {
+  @apply hover:border-b-blue_general
+}
+.tab-invoice.blue:hover span, .tab-invoice.blue.active span {
+  @apply bg-blue_general
+}
+.tab-invoice.blue.active {
+  @apply border-b-blue_general text-cloudy-110
+}
+
+.tab-invoice.error {
+  @apply hover:border-b-red_general
+}
+.tab-invoice.error:hover span, .tab-invoice.error.active span {
+  @apply bg-red_general
+}
+.tab-invoice.active {
+  @apply border-b-red_general text-cloudy-110
+}
 
 /* global  */
 .ring-default {

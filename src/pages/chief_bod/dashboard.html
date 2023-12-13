@@ -9,6 +9,9 @@
   <link href="/dist/css/flatpickr/flatpickr.min.css" rel="stylesheet" />
   <!-- select2 -->
   <link href="/dist/css/select2/select2.min.css" rel="stylesheet" />
+  <!-- datatables  -->
+  <link href="/dist/css/datatables/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="/dist/css/datatables/datatables.style.css" rel="stylesheet">
   <link href="/dist/css/styles.css" rel="stylesheet">
   <link href="/dist/css/select2/select2-styles.css" rel="stylesheet">
   <link href="/dist/css/main.css" rel="stylesheet">
@@ -60,7 +63,7 @@
                     Abisha Ilham
                   </p>
                   <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
-                    Chief
+                    Warehouse PIC
                   </p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden md:block">
@@ -83,7 +86,7 @@
                         Abisha Ilham
                       </p>
                       <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
-                        Chief
+                        Warehouse PIC
                       </p>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden rotate-180 md:block">
@@ -187,43 +190,44 @@
         <!-- Filter data -->
         <div class="flex flex-col flex-wrap items-start justify-between pb-1 md:items-center md:flex-row">
           
-        <!-- Filter status -->
-        <div class="flex w-full pb-4 md:pb-0 md:w-auto">
-          <ul class="flex-wrap text-base font-medium tabs hidden md:flex">
-            <li class="py-1 md:py-4">
-              <span class="inline-block tab-list active-tab" onclick="openTab(this)">All Documents</span>
-            </li>
-            <li class="py-1 md:py-4">
-              <span class="inline-block tab-list" onclick="openTab(this)">Need Verification</span>
-            </li>
-            <li class="py-1 md:py-4">
-              <span class="inline-block tab-list" onclick="openTab(this)">Waiting for Verification</span>
-            </li>
-            <li class="py-1 md:py-4">
-              <span class="inline-block tab-list" onclick="openTab(this)">Rejected</span>
-            </li>
-          </ul>
+          <!-- Filter status -->
+          <div class="flex w-full md:w-auto pb-4 md:pb-0">
+            <ul class="flex-wrap text-base font-medium tabs hidden md:flex">
+              <li class="py-1 md:py-4">
+                <span class="inline-block tab-list active-tab" onclick="openTab(this)">All Documents</span>
+              </li>
+              <li class="py-1 md:py-4">
+                <span class="inline-block tab-list" onclick="openTab(this)">Need Verification</span>
+              </li>
+              <li class="py-1 md:py-4">
+                <span class="inline-block tab-list" onclick="openTab(this)">Waiting for Revision</span>
+              </li>
+              <li class="py-1 md:py-4">
+                <span class="inline-block tab-list" onclick="openTab(this)">Rejected</span>
+              </li>
+            </ul>
 
-          <div class="flex w-full md:hidden">
-            <select id="status_filter-id" style="width: 100%;" name="short_by" required>
-              <option value="all">All Documents</option>
-              <option value="action_needed">Need Verification</option>
-              <option value="verification">Waiting Verification</option>
-              <option value="rejected">Rejected</option>
-            </select>
+            <div class="flex w-full md:hidden">
+              <select id="status_filter-id" style="width: 100%;" name="short_by" required>
+                <option value="draft">Draft</option>
+                <option value="verification">Need Verification</option>
+                <option value="revision">Waiting for Revision</option>
+                <option value="rejected">Rejected</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <!-- Filter status -->
+          <!-- Filter status -->
+        
           <div class="flex justify-between items-center w-full gap-4 pb-5 md:pb-0 md:justify-center md:w-auto md:mb-0">
             <!--  Date rate filter -->
             <div class="relative flex items-center order-2 md:order-1">
-              <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:p-0 md:shadow-none" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed', false)">
+              <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:px-0 md:py-4 md:shadow-none" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed', false)">
                 <img src="/dist/images/icons/filter.svg" class="w-6 h-6" alt="filter">
               </button>
 
               <!-- Open date rate -->
               <div class="relative hidden z-60 px-2 w-full sm::w-[21rem] md:w-[325px] md:px-0" id="filterDateRate-id">
-                <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
+                <div class="flex justify-end mb-2 -mt-[45px] md:-mt-10">
                   <button class="h-[43px] w-[43px] me-[71px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                   </button>
@@ -308,13 +312,13 @@
 
             <!--  Sortby filter -->
             <div class="relative flex items-center order-3 md:order-2">
-              <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:p-0 md:shadow-none" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed', false)">
+              <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:px-0 md:py-4 md:shadow-none" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed', false)">
                 <img src="/dist/images/icons/sort-amount.svg" class="h-6 w-6" alt="search">
               </button>
 
               <!-- Open sortby -->
               <div class="relative hidden z-60 w-64" id="filterSortby-id">
-                <div class="flex justify-end mb-2 -mt-[45px] md:-mt-6">
+                <div class="flex justify-end mb-2 -mt-[45px] md:-mt-10">
                   <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                   </button>
@@ -367,25 +371,16 @@
             <!--  Sortby filter -->
 
             <!-- Search filter -->
-            <div class="hidden items-center order-3 md:flex">
-              <div class="relative hidden" id="searchCon-id">
-                <input type="search" class="form-control-search w-[240px]" placeholder="Search">
-                <button class="absolute inset-y-0 end-0 flex items-center pe-2 cursor-pointer" id="searchClose-id" onclick="toggleSearch()">
+            <div class="flex flex-1 items-start md:flex-auto md:items-center md:order-2">
+              <div class="block relative w-full md:w-auto md:hidden" id="searchCon-id">
+                <input type="search" class="form-control-search w-full md:w-[240px]" id="search_input_vendor" placeholder="Search">
+                <button class="absolute inset-y-0 left-0 md:right-0 md:left-auto flex items-center ps-2 pe-0 md:ps-0 md:pe-2 cursor-pointer" id="searchClose-id" onclick="toggleSearch()">
                   <img src="/dist/images/icons/search.svg" class="w-full" alt="search">
                 </button>
               </div>
-              <button id="searchIcon-id" onclick="toggleSearch()" class="ring-default">
+              <button id="searchIcon-id" onclick="toggleSearch()" class="hidden md:block ring-default">
                 <img src="/dist/images/icons/search.svg" class="w-full" alt="search">
               </button>
-            </div>
-
-            <div class="flex flex-1 items-start md:hidden">
-              <div class="relative w-full">
-                <input type="search" class="block form-control-search-mobile" placeholder="Search">
-                <button class="absolute inset-y-0 start-0 flex items-center ps-2 cursor-pointer">
-                  <img src="/dist/images/icons/search.svg" class="w-full" alt="search">
-                </button>
-              </div>
             </div>
             <!-- Search filter -->
 
@@ -396,49 +391,27 @@
         <!-- Filter table -->
         <div class="relative overflow-x-auto">
           <!-- Table -->
-          <table class="table-responsive">
-            <thead class="thead-bold font-small-caps">
+          <table id="warehouseTable" class="custom-table">
+            <thead>
               <tr>
-                <th scope="col" class="thead-col-sm text-center w-1 rounded-tl-lg">
-                  No
-                </th>
-                <th scope="col" class="thead-col text-center">
-                  Action
-                </th>
-                <th scope="col" class="thead-col min-w-[208px]">
-                  Status
-                </th>
-                <th scope="col" class="thead-col">
-                  Last Update
-                </th>
-                <th scope="col" class="thead-col">
-                  Document No.
-                </th>
-                <th scope="col" class="thead-col">
-                  Contract No.
-                </th>
-                <th scope="col" class="thead-col">
-                  Invoice No.
-                </th>
-                <th scope="col" class="thead-col text-center">
-                  Issued Date
-                </th>
-                <th scope="col" class="thead-col">
-                  Transaction Type
-                </th>
-                <th scope="col" class="thead-col text-center rounded-tr-lg">
-                  Amount
-                </th>
+                <th>No</th>
+                <th>Action</th>
+                <th>Status</th>
+                <th>Last Update</th>
+                <th>Document No.</th>
+                <th>Contract No.</th>
+                <th>Invoice No.</th>
+                <th>Issued Date</th>
+                <th>Transaction Type</th>
+                <th>Amount</th>
               </tr>
             </thead>
-            <tbody class="tbody-sm">
+            <tbody>
               <tr>
-                <td class="tbody-col-sm text-center">
-                  1.
-                </td>
-                <td class="tbody-col-sm text-center">
+                <td>1.</td>
+                <td>
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'reject')">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </div>
                     <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
@@ -446,196 +419,76 @@
                     </div>
                   </div>
                 </td>
-                <td class="tbody-col">
-                  <span class="inline-flex items-center badge badge-error cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'reject')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                      <circle cx="4" cy="4" r="3" fill="#F04438"/>
-                    </svg>
-                    Rejected
-                  </span>
-                </td>
-                <td class="tbody-col">
-                  22/02/2023 1:45PM
-                </td>
-                <td class="tbody-col">
-                  DOC-004/010457
-                </td>
-                <td class="tbody-col">
-                  ASD/AE/23-2023
-                </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
-                </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
-                </td>
-              </tr>
-              <tr>
-                <td class="tbody-col-sm text-center">
-                  2.
-                </td>
-                <td class="tbody-col-sm text-center">
-                  <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'revision')">
-                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                    </div>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
-                      <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
-                    </div>
-                  </div>
-                </td>
-                <td class="tbody-col">
-                  <span class="inline-flex items-center badge badge-blue cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'revision')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                      <circle cx="4" cy="4" r="3" fill="#2E90FA"/>
-                    </svg>
-                    Waiting for Revision
-                  </span>
-                </td>
-                <td class="tbody-col">
-                  22/02/2023 1:45PM
-                </td>
-                <td class="tbody-col">
-                  DOC-004/010457
-                </td>
-                <td class="tbody-col">
-                  ASD/AE/23-2023
-                </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
-                </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
-                </td>
-              </tr>
-              <tr>
-                <td class="tbody-col-sm text-center">
-                  3.
-                </td>
-                <td class="tbody-col-sm text-center">
-                  <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'verification')">
-                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                    </div>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
-                      <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
-                    </div>
-                  </div>
-                </td>
-                <td class="tbody-col">
-                  <span class="inline-flex items-center badge badge-warning cursor-pointer" onclick="detailDrawer('drawer_document_detail-id', 'verification')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                      <circle cx="4" cy="4" r="3" fill="#F79009"/>
-                    </svg>
+                <td class="whitespace-nowrap">
+                  <label class="inline-flex items-center badge badge-warning cursor-pointer font-medium" onclick="detailDrawer('drawer_document_detail-id', 'verification')">
+                    <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                     Need Verification
-                  </span>
+                  </label>
                 </td>
-                <td class="tbody-col">
-                  22/02/2023 1:45PM
+                <td>22/02/2023 1:45PM</td>
+                <td>DOC-004/010457</td>
+                <td>ASD/AE/23-2023</td>
+                <td>VI 231011 - 01/R01</td>
+                <td>31/08/2023</td>
+                <td>Service</td>
+                <td>Rp120.211.553</td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>
+                  <div class="flex items-center justify-center gap-2">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    </div>
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
+                      <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
+                    </div>
+                  </div>
                 </td>
-                <td class="tbody-col">
-                  DOC-004/010457
+                <td class="whitespace-nowrap">
+                  <label class="inline-flex items-center badge badge-error cursor-pointer font-medium" onclick="detailDrawer('drawer_document_detail-id', 'reject')">
+                    <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
+                    Rejected
+                  </label>
                 </td>
-                <td class="tbody-col">
-                  ASD/AE/23-2023
+                <td>22/02/2023 1:45PM</td>
+                <td>DOC-004/010457</td>
+                <td>ASD/AE/23-2023</td>
+                <td>VI 231011 - 01/R01</td>
+                <td>31/08/2023</td>
+                <td>Service</td>
+                <td>Rp120.211.553</td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>
+                  <div class="flex items-center justify-center gap-2">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+                      <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
+                    </div>
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
+                      <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
+                    </div>
+                  </div>
                 </td>
-                <td class="tbody-col">
-                  VI 231011 - 01/R01
+                <td class="whitespace-nowrap">
+                  <label class="inline-flex items-center badge badge-blue cursor-pointer font-medium" onclick="detailDrawer('drawer_document_detail-id', 'revision')">
+                    <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
+                    Waiting for Revision
+                  </label>
                 </td>
-                <td class="tbody-col text-center">
-                  31/08/2023
-                </td>
-                <td class="tbody-col">
-                  Service
-                </td>
-                <td class="tbody-col text-center">
-                  Rp120.211.553
-                </td>
+                <td>22/02/2023 1:45PM</td>
+                <td>DOC-004/010457</td>
+                <td>ASD/AE/23-2023</td>
+                <td>VI 231011 - 01/R01</td>
+                <td>31/08/2023</td>
+                <td>Service</td>
+                <td>Rp120.211.553</td>
               </tr>
             </tbody>
           </table>
           <!-- Table -->
         </div>
-
-        <!-- Pagination -->
-        <nav class="flex items-center flex-column flex-wrap p-0 pt-3 md:px-6 md:py-3 md:flex-row justify-between md:border border-cloudy-140 rounded-bl-lg rounded-br-lg" aria-label="Table navigation">
-          <span class="text-sm text-gray-700 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing 1 to <span id="rows_value-id">4</span> of 10 rows 
-            <button id="rows_paginate-id" class="inline-block relative text-sm text-white bg-cloudy-80 rounded w-12 py-1.5 mx-2" 
-              onclick="openDropdown(event, 'rows_paginate_list-id', 'top', 'absolute', true)"
-            >
-              <div class="flex items-center justify-center gap-2">
-                <span value-data="4" id="rows_data-id">4</span>
-                <img src="/dist/images/icons/polygon.svg" alt="polygon">
-              </div>
-            </button>  
-            rows per page
-          </span>
-          
-          <div class="relative hidden" id="rows_paginate_list-id">
-            <ul class="flex flex-col items-center justify-center page-rows gap-2">
-              <li>
-                <div class="flex justify-center page-rows-item" value-data="2" onclick="selectRows(this)">2</div>
-              </li>
-              <li>
-                <div class="flex justify-center page-rows-item" value-data="4" onclick="selectRows(this)">4</div>
-              </li>
-              <li>
-                <div class="flex justify-center page-rows-item" value-data="6" onclick="selectRows(this)">6</div>
-              </li>
-              <li>
-                <div class="flex justify-center page-rows-item" value-data="8" onclick="selectRows(this)">8</div>
-              </li>
-              <li>
-                <div class="flex justify-center page-rows-item" value-data="10" onclick="selectRows(this)">10</div>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="pagination">
-            <li>
-              <a href="#" class="flex items-center justify-center page-item-previous">
-                <img src="/dist/images/icons/chevron-back.svg" class="flex-shrink-0" alt="chevron back">
-              </a>
-            </li>
-            <li>
-              <a href="#" aria-current="page" class="flex items-center justify-center page-item page-item-active">1</a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center justify-center page-item">2</a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center justify-center page-item">3</a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center justify-center page-item cursor-default hover:bg-transparent">...</a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center justify-center page-item">9</a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center justify-center page-item">10</a>
-            </li>
-            <li>
-              <a href="#" class="flex items-center justify-center page-item-next">
-                <img src="/dist/images/icons/chevron-back.svg" class="rotate-180 flex-shrink-0" alt="chevron back">
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <!-- Pagination -->
-
       </div>
     </section>
     <!-- Filter table -->
@@ -985,7 +838,6 @@
   </div>
 </div>
 <!-- modal status -->
-
 
 <!-- modal status revise file -->
 <div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
@@ -1528,6 +1380,31 @@
 </div>
 <!-- modal choose invoice -->
 
+<!-- modal preview pdf-->
+<div id="modal_preview_pdf-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+
+    <!-- header -->
+    <div class="flex items-center justify-end px-4 py-2 bg-cloudy-20 rounded-tl-xl rounded-tr-xl">
+      <button onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+          <path d="M5 15L15 5M5 5L15 15" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <!-- header -->
+
+    <div class="relative bg-white rounded-bl-lg rounded-br-lg shadow min-h-[650px]">
+      <!-- content -->
+      <div class="px-3 py-2 md:px-6 md:py-4">
+        <p>preview pdf</p>
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+</div>
+<!-- modal preview pdf-->
+
 </body>
 <!-- Start script -->
 <script
@@ -1538,6 +1415,9 @@
 <script src="/dist/js/flatpickr/flatpickr.js"></script>
 <!-- select2  -->
 <script src="/dist/js/select2/select2.min.js"></script>
+<!-- datatables  -->
+<script src="/dist/js/datatables/jquery.dataTables.min.js"></script>
+<script src="/dist/js/datatables/datatables.script.js"></script>
 <script src="/dist/js/popper.min.js" charset="utf-8"></script>
 <script src="/dist/js/main.js"></script>
 <!-- End script -->

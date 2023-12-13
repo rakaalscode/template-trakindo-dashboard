@@ -444,7 +444,7 @@ $(document).ready(function() {
     let textColor = color == 'white' ? 'cloudy-70' : 'white'
 
     let $option = $(
-      `<div class="text-cloudy-70 font-medium bg-white border-b border-cloudy-20 px-4 py-2.5 w-full whitespace-nowrap hover:text-${textColor} hover:bg-${color}">${option.text}</div>`
+      `<div class="text-cloudy-70 font-medium bg-white border-b border-cloudy-20 px-4 py-2.5 w-full whitespace-nowrap hover:bg-cloudy-20">${option.text}</div>`
     );
 
     return $option;
@@ -831,8 +831,14 @@ $(document).ready(function() {
     let searchIcon = document.getElementById('searchIcon-id');
     let searchContainer= document.getElementById('searchCon-id');
 
-    searchIcon.classList.toggle('hidden');
-    searchContainer.classList.toggle('hidden');
+    searchIcon.classList.toggle('md:hidden');
+    searchContainer.classList.toggle('md:hidden');
+    searchIcon.classList.toggle('block');
+    searchContainer.classList.toggle('block');
+
+    if(!searchContainer.classList.contains('block')) {
+      searchContainer.children[0].focus();
+    }
   }
 
   // document.addEventListener('click', function(event) {
@@ -858,6 +864,17 @@ $(document).ready(function() {
     }
   }
 
+  function openTabInvoice(button) {
+    let tabButtons = document.querySelectorAll('.tabinvoices div');
+    tabButtons.forEach(function(tabButton) {
+      tabButton.classList.remove('active');
+    });
+
+    if (button) {
+      button.classList.add('active');
+    }
+  }
+
   function toggleDotVisibility(checkbox) {
     const label = checkbox.parentElement;
     const dot = checkbox.parentElement.querySelector('.dot-filter-badge');
@@ -868,15 +885,11 @@ $(document).ready(function() {
       label.classList.add('badge-' + bgColorClass);
       label.classList.remove('badge-default');
       label.classList.add('font-medium');
-      // label.querySelector('span').classList.add('badge-' + bgColorClass);
-      // label.querySelector('span').classList.add('font-medium');
     } else {
       const bgColorClass = label.classList.item(0); // Assuming the color class is always the 5th class
       label.classList.remove('badge-' + bgColorClass);
       label.classList.add('badge-default');
       label.classList.remove('font-medium');
-      // label.querySelector('span').classList.remove('badge-' + bgColorClass);
-      // label.querySelector('span').classList.remove('font-medium');
     }
   }
 
@@ -1329,6 +1342,7 @@ $(document).ready(function() {
     }
 
     if(type == 'reject') {
+      console.log('reject');
       // closeDoc.setAttribute("onclick", "toggleDetailDocument('" + drawerID + "', 'snackbar-id', '" + type + "', true)")
       detailStatus.classList.add('cursor-pointer');
       detailStatus.setAttribute("onclick", `toggleNotes('modal_status-id', 'z-60', 'static', 'inline', '${type}')`)

@@ -674,6 +674,7 @@
   height: 150px;
   overflow-y: auto;
   border-radius: 8px;
+  box-shadow: 0px 12px 16px 0px rgba(129, 134, 142, 0.12);
 }
 
 .select2-container--custom-theme-3 .select2-results__option {

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Start css -->
+  <!-- datepicker  -->
+  <link href="/dist/css/flatpickr/flatpickr.min.css" rel="stylesheet" />
+  <!-- select2 -->
+  <link href="/dist/css/select2/select2.min.css" rel="stylesheet" />
+  <!-- datatables  -->
+  <link href="/dist/css/datatables/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="/dist/css/datatables/datatables.style.css" rel="stylesheet">
+  <link href="/dist/css/styles.css" rel="stylesheet">
+  <link href="/dist/css/select2/select2-styles.css" rel="stylesheet">
+  <link href="/dist/css/main.css" rel="stylesheet">
+  <!-- End css -->
+
+  <style>
+    .custom-icon {
+    margin-right: 5px; /* Adjust the margin as needed */
+  }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <title>Dashboard</title>
+</head>
+<body class="font-roboto min-h-screen">
+
+  <input type="text" id="searchInput" placeholder="Search...">
+
+    <div class="max-w-5xl mx-auto p-3">
+      <table id="myTable" class="custom-table">
+        <thead>
+            <tr>
+              <th>No</th>
+              <th>Action</th>
+              <th>Status</th>
+              <th>Submitted Date</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>edit | Delete</td>
+            <td>Draft</td>
+            <td>22/02/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>edit | Delete</td>
+            <td>Rejected</td>
+            <td>15/02/2023</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>edit | Delete</td>
+            <td>Complete</td>
+            <td>15/02/2023</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+<!-- Start script -->
+<script
+  src="/dist/js/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+<!-- datepicker  -->
+<script src="/dist/js/flatpickr/flatpickr.js"></script>
+<!-- select2  -->
+<script src="/dist/js/select2/select2.min.js"></script>
+<!-- datatables  -->
+<script src="/dist/js/datatables/jquery.dataTables.min.js"></script>
+<script src="/dist/js/datatables/datatables.script.js"></script>
+<script src="/dist/js/popper.min.js" charset="utf-8"></script>
+<script src="/dist/js/main.js"></script>
+<!-- End script -->
+</html>

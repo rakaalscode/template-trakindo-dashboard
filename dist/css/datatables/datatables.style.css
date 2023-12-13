@@ -1,3 +1,7 @@
+.t-text-center {
+  text-align: center !important;
+}
+
 div.dataTables_wrapper .dataTables_filter {
   margin-bottom: 20px;
 }
@@ -15,14 +19,14 @@ div.dataTables_wrapper .dataTables_filter {
 } */
 
 /* rounded  */
-.custom-table {
+table.custom-table {
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   overflow: hidden; 
 }
 
 /* thead */
-.custom-table thead {
+table.custom-table thead {
   color: #10181F;
   font-family: Roboto;
   font-size: 16px;
@@ -32,8 +36,18 @@ div.dataTables_wrapper .dataTables_filter {
   background-color: #E8ECF4;
 }
 
+/* thead */
+table.custom-table thead th {
+  border: 1px solid #E4E7EC;
+  border-bottom: none;
+}
+
+table.custom-table.dataTable>thead>tr>th, table.dataTable>thead>tr>td {
+  border-bottom: none;
+}
+
 /* tbody */
-.custom-table tbody {
+table.custom-table tbody {
   color: #10181F;
   font-family: Roboto;
   font-size: 14px;
@@ -41,12 +55,21 @@ div.dataTables_wrapper .dataTables_filter {
   font-weight: 400;
 }
 
-.custom-table tbody td {
+/* column  */
+table.custom-table tbody td {
   border: 1px solid #E4E7EC;
 }
 
+table.custom-table.dataTable tbody th, table.custom-table.dataTable tbody td {
+  padding: 16px 12px;
+}
+
+table.dataTable.stripe>tbody>tr.odd>*{
+  box-shadow: none;
+}
+
 /* info */
-.custom-table .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_length {
+table.custom-table .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_length {
   color: #344054;
   font-family: Roboto;
   font-size: 14px;
@@ -54,59 +77,49 @@ div.dataTables_wrapper .dataTables_filter {
   font-weight: 400;
 }
 
+.dataTables_wrapper .dataTables_info {
+  padding-top: 7px;
+}
+
 /* length */
-.custom-table .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_length {
-  margin-top: 8px;
+table.custom-table .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_length {
+  margin-top: 3px;
   margin-left: 8px;
 }
 
-/* length select  */
-/* .dataTables_wrapper .dataTables_length select {
-  border-radius: 4px;
-  padding: 4px 8px;
-  background-color: #79808F;
-  color: #FFF;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-} */
-
-/* Style the select box */
+/* Remove the default arrow icon */
 .dataTables_wrapper .dataTables_length select {
-  border-radius: 4px;
-  padding: 4px 8px;
-  background-color: #79808F;
-  color: #FFF;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-}
-
-/* Replace the default dropdown arrow with an upward-pointing triangle (▲) */
-.dataTables_wrapper .dataTables_length select::-ms-expand,
-.dataTables_wrapper .dataTables_length select::after {
-  content: "▲";
-  display: inline-block;
-  margin-left: 5px; /* Adjust the spacing between the text and the icon */
-}
-
-
-/* Style the dropdown icon for modern browsers */
-.dataTables_wrapper .dataTables_length select {
+  margin: 0;      
+  margin-right: 8px;
+  min-width: 41px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+
+  background-color: #79808F;
+  background-image:url('/dist/images/icons/polygon.svg');
+  background-position: 80%;
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  color: white;
+  padding-left: 6px;
 }
 
-
+/* no footer  */
 table.custom-table.dataTable.no-footer {
   border-bottom: none
 }
 
 /* bottom  */
-#myTable_wrapper .bottom {
+.dataTables_wrapper.no-footer .bottom {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border: 1px solid #E4E7EC;
@@ -114,3 +127,131 @@ table.custom-table.dataTable.no-footer {
   overflow: hidden;
 }
 
+/* pagination  */
+.dataTables_wrapper .dataTables_paginate {
+  display: inline-flex;
+  padding-top: 0;
+}
+
+/* pagination item  */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  background: #FFF;
+  border: 0;
+  border-top: 1px solid #D0D5DD;
+  border-right: 1px solid #D0D5DD;
+  border-bottom: 1px solid #D0D5DD;
+  border-radius: 0;
+  color: #344054 !important;
+  margin-left: 0;
+  padding: 7px 14px;
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* pagination item prev  */
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous {
+  border: 1px solid #D0D5DD;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.next {
+  border-top: 1px solid #D0D5DD;
+  border-right: 1px solid #D0D5DD;
+  border-bottom: 1px solid #D0D5DD;
+  border-radius: 0px 8px 8px 0px;
+}
+
+/* ellipsis  */
+.dataTables_wrapper .dataTables_paginate .ellipsis {
+  padding: 7px 14px 8.5px;
+  border-top: 1px solid #D0D5DD;
+  border-right: 1px solid #D0D5DD;
+  border-bottom: 1px solid #D0D5DD;
+}
+
+/* active  */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  background: #FDBA12;
+  color: white !important;
+  border: 0;
+  border-top: 1px solid #D0D5DD;
+  border-right: 1px solid #D0D5DD;
+  border-bottom: 1px solid #D0D5DD;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.previous.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.previous.disabled:active {
+  border: 1px solid #D0D5DD;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.next.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.next.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.next.disabled:active {
+  border-top: 1px solid #D0D5DD;
+  border-right: 1px solid #D0D5DD;
+  border-bottom: 1px solid #D0D5DD;
+  border-radius: 0px 8px 8px 0px;
+}
+
+/* hover  */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: #FDBA12;
+  border: 0;
+  border-top: 1px solid #D0D5DD;
+  border-right: 1px solid #D0D5DD;
+  border-bottom: 1px solid #D0D5DD;
+}
+
+/* icon sort  */
+table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {
+  bottom: 50%;
+  content: "";
+  content: ""/"";
+}
+
+table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {
+  top: 50%;
+  content: "";
+  content: ""/"";
+}
+
+.custom-table thead .sorting_asc {
+  background-image: url("/dist/images/icons/arrow-select.svg");
+  background-repeat: no-repeat;
+  background-position: 96%;
+  background-size: 16px 16px;
+}
+.custom-table thead .sorting_desc {
+  background-image: url("/dist/images/icons/arrow-select.svg");
+  background-repeat: no-repeat;
+  background-position: 96%;
+  background-size: 16px 16px;
+}
+.custom-table .sorting {
+  background-image: url("/dist/images/icons/arrow-select.svg");
+  background-repeat: no-repeat;
+  background-position: 96%;
+  background-size: 16px 16px;
+}
+
+.custom-table .sorting_disabled.sorting, .custom-table thead .sorting_disabled.sorting_desc, .custom-table thead .sorting_disabled.sorting_asc {
+  background-image: none !important;
+  padding-right: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .dataTables_wrapper.no-footer .bottom {
+    padding: 6px 0px 0px;
+    border: transparent;
+  }
+
+  .dataTables_wrapper .dataTables_info {
+    display: inline-flex;
+  }
+
+  .dataTables_wrapper .dataTables_length {
+    display: inline-flex;
+  }
+}
