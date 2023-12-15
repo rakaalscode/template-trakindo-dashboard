@@ -363,12 +363,10 @@
                     </div>
                     <div>
                       <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <span class="inline-flex items-center badge badge-warning whitespace-nowrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                          <circle cx="4" cy="4" r="3" fill="#F79009"/>
-                        </svg>
+                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
+                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
                         Waiting for Approval
-                      </span>
+                      </label>
                     </div>
                   </div>
                   <div class="flex flex-col text-right gap-4"> 
@@ -393,12 +391,10 @@
                     </div>
                     <div>
                       <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <span class="inline-flex items-center badge badge-warning whitespace-nowrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                          <circle cx="4" cy="4" r="3" fill="#F79009"/>
-                        </svg>
+                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
+                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
                         Waiting for Approval
-                      </span>
+                      </label>
                     </div>
                   </div>
                   <div class="flex flex-col text-right gap-4"> 
@@ -423,12 +419,10 @@
                     </div>
                     <div>
                       <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <span class="inline-flex items-center badge badge-warning whitespace-nowrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8" fill="none" class="me-1.5">
-                          <circle cx="4" cy="4" r="3" fill="#F79009"/>
-                        </svg>
+                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
+                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
                         Waiting for Approval
-                      </span>
+                      </label>
                     </div>
                   </div>
                   <div class="flex flex-col text-right gap-4"> 
@@ -603,7 +597,7 @@
                             <img src="/dist/images/icons/clockFilledWarning.svg" alt="clock warning">
                           </div>
                           <div class="flex flex-col">
-                            <span class="text-secondary-900" id="status_detail_name-id">Waiting for Approval</span>
+                            <span class="text-secondary-900 font-semibold" id="status_detail_name-id">Waiting for Approval</span>
                             <span class="text-gray_2-500 font-normal" id="status_detail_name_file-id"></span>
                           </div>
                         </div>
@@ -772,7 +766,7 @@
           <div class="sticky bottom-0 px-4 py-4 md:px-8 md:py-6 bg-secondary-900">
             <div class="flex flex-col justify-between gap-3 md:gap-4 md:flex-row">
               <div class="flex flex-row md:flex-col justify-between md:justify-start gap-3">
-                <button type="button" class="flex items-center text-sm md:text-base text-white font-medium" onclick="toggleModalDialog('modal_history-id')">
+                <button type="button" class="flex items-center text-sm md:text-base text-white font-medium underline" onclick="toggleModalDialog('modal_history-id')">
                   <img src="/dist/images/icons/HistoryFilled.svg" alt="history filled" class="me-2">
                   Log History
                 </button>

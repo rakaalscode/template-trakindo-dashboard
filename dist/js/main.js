@@ -14,7 +14,7 @@ $(document).ready(function() {
       let icon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none" class="text-${iconColor}">
         <path d="M1.51301 0.153333L0.333008 1.33333L6.99967 8L13.6663 1.33333L12.4863 0.153332L6.99967 5.64L1.51301 0.153333Z" fill="currentColor"/>
       </svg>`
-      let element = `<div class="flex items-center justify-between font-medium border border-${borderColor} px-4 py-4 w-full rounded-md text-${textColor} bg-${color}">
+      let element = `<div class="flex items-center justify-between font-medium border border-${borderColor} px-4 py-2.5 md:px-4 md:py-4 w-full rounded-md text-${textColor} bg-${color}">
         <span class="block">${text}</span>${icon}           
       </div>`;
       
@@ -209,6 +209,7 @@ $(document).ready(function() {
     theme: 'custom-theme-2', 
     placeholder: 'Search',
     closeOnSelect: true,
+    dropdownCssClass: 'select2-theme-2-custom-selection',
     templateResult: formatOption2, // Function for formatting the display of options,
   });
 
@@ -241,6 +242,7 @@ $(document).ready(function() {
     theme: 'custom-theme-2', 
     placeholder: 'Search',
     closeOnSelect: true,
+    dropdownCssClass: 'select2-theme-2-custom-selection',
     templateResult: formatOption2, // Function for formatting the display of options,
   });
 
@@ -266,6 +268,39 @@ $(document).ready(function() {
     $('#card_cost_center-id').height('auto');
   });
 
+   // IO Number SELECT2 
+
+  // io number search
+  $('#io_number-id').select2({
+    theme: 'custom-theme-2', 
+    placeholder: 'Search',
+    closeOnSelect: true,
+    dropdownCssClass: 'select2-theme-2-custom-selection',
+    templateResult: formatOption2, // Function for formatting the display of options,
+  });
+
+  // open modal cost 
+  $('#io_number_data-id').on('click', function() {
+    // Trigger the select2 dropdown to open
+    toggleModalDialog('modal_io_number-id');
+    $('#io_number-id').select2('open');
+  });
+
+  // open cost
+  $('#io_number-id').on('select2:open', function() {
+    console.log('open select');
+    $('#card_io_number-id').height("444px");
+  });
+
+  // close cost
+  $('#io_number-id').on('select2:close', function() {
+    console.log('close');
+    
+    $('#io_number_data-id').val($(this).find(':selected').text());
+    toggleModalDialog('modal_io_number-id');
+    $('#card_io_number-id').height('auto');
+  });
+
   // YARD LEADER SELECT2 
 
   // cost search account
@@ -273,6 +308,7 @@ $(document).ready(function() {
     theme: 'custom-theme-2', 
     placeholder: 'Find Name',
     closeOnSelect: true,
+    dropdownCssClass: 'select2-theme-2-custom-selection',
     templateSelection: function(data, container) {
       let optionData = data.text.split('*');
       let text = optionData[0];
@@ -323,7 +359,7 @@ $(document).ready(function() {
     }
 
     let $option = $(
-      `<div class="border-b-2 border-transparent py-2 px-2 text-secondary-500 font-medium">
+      `<div class="border-b-2 border-transparent py-3 px-2 text-secondary-500 font-medium">
         <span>${option.text}</span>
       </div>`
     );
@@ -873,6 +909,14 @@ $(document).ready(function() {
     if (button) {
       button.classList.add('active');
     }
+
+    let container = document.getElementById('scrollContainer');
+    let tabPosition = button.offsetLeft - 50;
+
+    container.scrollTo({
+      left: tabPosition,
+      behavior: 'smooth' // You can use 'auto' for instant scroll
+    });
   }
 
   function toggleDotVisibility(checkbox) {
@@ -921,7 +965,6 @@ $(document).ready(function() {
     let modalEl = document.getElementById(modalID);
     if(modalEl.classList.contains("hidden")) {
       let backdropEl = document.createElement('div');
-      console.log('dynamic')
       if(type == 'dynamic') { 
         document.addEventListener('click', closeModalOnClickOutside);
       }
@@ -1363,9 +1406,13 @@ $(document).ready(function() {
         </svg>Rejected
       `;
 
-    } else if(type == 'verification') {
+    } else if(type == 'verification' || type == 'need_approval') {
       // closeDoc.setAttribute("onclick", "toggleDetailDocument('" + drawerID + "', 'snackbar-id', '" + type + "', true)")
-      textStatus.textContent = "Waiting for Verification";
+      if(type == 'verification') {
+        textStatus.textContent = "Waiting for Verification";
+      }else if(type == 'need_approval') {
+        textStatus.textContent = "Waiting for Approval";
+      }
       iconStatus.classList.add('bg-warning-100');
       iconStatus.innerHTML += `<img src="/dist/images/icons/round-warning-filled.svg" alt="warning">`;
 
@@ -1381,10 +1428,16 @@ $(document).ready(function() {
           <circle cx="4" cy="4" r="3" fill="#F04438"></circle>
         </svg>Rejected
       `;
-    } else if(type == 'submit' || type == 'revision') {
+    } else if(type == 'submit' || type == 'revision' || type == 'in_progress') {
       detailStatus.classList.remove('cursor-pointer');
       // detailStatus.setAttribute("onclick", "toggleModal('modal_status-id', '" + type + "')")
-      textStatus.textContent = "In Progress";
+      if(type == 'in_progress') {
+        textStatus.textContent = "In Progress";
+      } else if(type == 'revision') {
+        textStatus.textContent = "Waiting for Revision";
+      } else if(type == 'submit') {
+        textStatus.textContent = "Submitted to Finance";
+      }
       iconStatus.classList.add('bg-blue_2-20');
       iconStatus.innerHTML += `<img src="/dist/images/icons/round-history-filled.svg" alt="history">`;
 
@@ -1411,10 +1464,16 @@ $(document).ready(function() {
         </svg> Approved
       `;
 
-    } else if(type == 'approve') {
+    } else if(type == 'approve' || type == 'verified' || type == 'completed') {
       detailStatus.classList.remove('cursor-pointer');
       // detailStatus.setAttribute("onclick", "toggleModal('modal_status-id', '" + type + "')")
-      textStatus.textContent = "Complete";
+      if(type == 'approve') {
+        textStatus.textContent = "Approved";
+      } else if(type == 'verified') {
+        textStatus.textContent = "Verified";
+      } else if(type == 'completed') {
+        textStatus.textContent = "Completed";
+      }
       iconStatus.classList.add('bg-success-100');
       iconStatus.innerHTML += `<img src="/dist/images/icons/round-check-filled.svg" alt="check">`;
 
@@ -1532,7 +1591,7 @@ $(document).ready(function() {
       statusIcon.innerHTML += `<img src="/dist/images/icons/round-check-filled.svg" alt="check">`;
       statusText.innerHTML = "Payment Complete";
     } else if(type == 'on_progress') {
-      statusIcon.innerHTML += `<img src="/dist/images/icons/paymentProgress.svg" alt="paymentProgress">`;
+      statusIcon.innerHTML += `<img src="/dist/images/icons/AccessTimeFilled2.svg" alt="AccessTimeFilled2">`;
       statusText.innerHTML = "Payment on Progress";
     }
   }
@@ -1662,35 +1721,42 @@ $(document).ready(function() {
   }
 
 
-  // function appendToContentEditable(companyName, bgColor) {
-  //   const messageDiv = document.getElementById('message');
-  //   const spanElement = document.createElement('span');
-  //   spanElement.textContent = companyName;
-  //   spanElement.className = `inline-flex items-center badge badge-blue2 font-medium ${bgColor}`;
+  function appendToContentEditable(companyName, bgColor) {
+    const messageDiv = document.getElementById('message');
+    const spanElement = document.createElement('span');
+    spanElement.textContent = companyName;
+    spanElement.className = `inline-block mb- badge badge-blue2 font-medium ${bgColor}`;
 
-  //   // Append the new span element to the existing content
-  //   messageDiv.appendChild(spanElement);
+    // Append the new span element to the existing content
+    messageDiv.appendChild(spanElement);
 
-  //   const space = document.createTextNode('\u00A0'); // '\u00A0' is the Unicode for non-breaking space
-  //   messageDiv.appendChild(space);
+    const space = document.createTextNode('\u00A0'); // '\u00A0' is the Unicode for non-breaking space
+    messageDiv.appendChild(space);
 
-  //   messageDiv.focus();
+    messageDiv.focus();
 
-  //   // Move the cursor to the end of the content
-  //   if (window.getSelection) {
-  //       const selection = window.getSelection();
-  //       const range = document.createRange();
-  //       range.selectNodeContents(messageDiv);
-  //       range.collapse(false); // Collapse the range to the end
-  //       selection.removeAllRanges();
-  //       selection.addRange(range);
-  //   } else if (document.selection) {
-  //       const range = document.body.createTextRange();
-  //       range.moveToElementText(messageDiv);
-  //       range.collapse(false); // Collapse the range to the end
-  //       range.select();
-  //   }
-  // }
+    // Move the cursor to the end of the content
+    if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(messageDiv);
+        range.collapse(false); // Collapse the range to the end
+        selection.removeAllRanges();
+        selection.addRange(range);
+    } else if (document.selection) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(messageDiv);
+        range.collapse(false); // Collapse the range to the end
+        range.select();
+    }
+  }
+
+  // Get textarea element
+
+  function addQuickWord(quickWord) {
+    const textarea = document.getElementById('preview_text-id');
+    textarea.value += quickWord;
+  }
 
   // Add event listener for "keydown" on messageDiv
   // const messageDiv = document.getElementById('message');

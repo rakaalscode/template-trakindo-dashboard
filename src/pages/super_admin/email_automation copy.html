@@ -24,17 +24,20 @@
   <title>Email Automation</title>
 </head>
 <body class="font-roboto min-h-screen">
-  
-  <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
-    <span class="block text-sm font-medium cursor-pointer bg-blue-500 p-2 rounded" onclick="appendToContentEditable('Company 1', 'bg-blue-500')">Company 1</span>
-    <span class="block text-sm font-medium cursor-pointer bg-green-500 p-2 rounded" onclick="appendToContentEditable('Company 2', 'bg-green-500')">Company 2</span>
-    <span class="block text-sm font-medium cursor-pointer bg-yellow-30 p-2 rounded" onclick="appendToContentEditable('Company 3', 'bg-yellow-30')">Company 3</span>
 
-    <label for="message" class="block mt-4 text-sm font-medium text-gray-700">Message</label>
-    <div id="message" class="mt-1 p-2 border rounded-md w-full" contenteditable="true" placeholder="Hi (company name) and some text ~"></div>
+  <div class="max-w-5xl mx-auto">
+    <!-- <div id="editor"></div>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded" id="appended">Append Text</button> -->
 
-    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300" id="message">Send Email</button>
-</div>
+  <!-- Badges using Tailwind CSS -->
+  <div class="cursor-pointer py-2 px-4 bg-blue-500 text-white rounded" onclick="addQuickWord('{{ companyName }}')">Company Name</div>
+  <div class="cursor-pointer py-2 px-4 bg-green-500 text-white rounded" onclick="addQuickWord('{{ invoceNumber }}')">Invoice Number</div>
+  <div class="cursor-pointer py-2 px-4 bg-yellow-30 text-white rounded" onclick="addQuickWord('{{ clearingDate }}')">Clearing Date</div>
+
+  <!-- Textarea element using Tailwind CSS -->
+  <textarea class="w-full h-32 mt-4 p-2 border border-gray-300" id="myTextarea" placeholder="Click a badge to add a quick word"></textarea>
+  </div>
+
 
 </body>
 <!-- Start script -->
@@ -50,5 +53,52 @@
 <!-- <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script> -->
 <script src="/dist/js/popper.min.js" charset="utf-8"></script>
 <script src="/dist/js/main.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+
 <!-- End script -->
+
+<script>
+
+  // Get textarea element
+  const textarea = document.getElementById('myTextarea');
+
+  // Function to add quick word to textarea
+  function addQuickWord(quickWord) {
+    // Append the quick word to the existing textarea content
+    textarea.value += quickWord;
+
+    // Log a message to indicate the addition of the quick word
+    console.log('Quick word added to textarea:', textarea.value);
+  }
+
+    // let editor;
+
+    // ClassicEditor
+    // .create( document.querySelector( '#editor' ) )
+    // .then( newEditor  => {
+    //   editor = newEditor;
+    // })
+    // .catch( error => {
+    //   console.error( error );
+    // });
+
+    // // Assuming there is a <button id="submit">Submit</button> in your application.
+    // document.querySelector( '#appended' ).addEventListener( 'click', () => {
+    //   // const editorData = editor.getData();
+    //   // editor.setData( `<span class="inline-flex bg-red-8 text-white rounded-lg px-3 py-1">Some text hehe.</span>` );
+
+    //   const extraText = '<span class="inline-flex bg-red-800 text-white rounded-lg px-3 py-1">Some text hehe.</span>';
+      
+    //   // Convert HTML string to a view fragment
+    //   const viewFragment = editor.data.processor.toView(extraText);
+      
+    //   // Insert the view fragment at the current selection or at the end of the content
+    //   if (editor.model.document.selection.hasSelection) {
+    //     editor.model.insertContent(viewFragment, editor.model.document.selection.getFirstPosition());
+    //   } else {
+    //     editor.model.insertContent(viewFragment);
+    //   }
+    // });
+</script>
+
 </html>

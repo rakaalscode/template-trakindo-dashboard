@@ -43,9 +43,9 @@
             <li>
               <a href="/src/pages/finance_ap/dashboard.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
             </li>
-            <li>
+            <!-- <li>
               <a href="/src/pages/finance_ap/report.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Report</a>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="flex items-center">
@@ -129,7 +129,7 @@
     <div class="px-4 pt-2 block md:hidden">
       <div class="flex justify-between w-full gap-2">
         <a href="/src/pages/finance_ap/dashboard.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
-        <a href="/src/pages/finance_ap/report.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent">Report</a>
+        <!-- <a href="/src/pages/finance_ap/report.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent">Report</a> -->
       </div>
     </div>
   </nav>
@@ -441,7 +441,7 @@
                     </div>
                   </div>
                 </td>
-                <td>
+                <td class="whitespace-nowrap">
                   <label class="inline-flex items-center badge badge-green cursor-pointer font-medium" onclick="detailInvoice('drawer_invoice_detail-id', 'complete')">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-green-500"></span>
                     Payment on Progress
@@ -480,7 +480,7 @@
                     </div>
                   </div>
                 </td>
-                <td>
+                <td class="whitespace-nowrap">
                   <label class="inline-flex items-center badge badge-blue cursor-pointer font-medium" onclick="detailInvoice('drawer_invoice_detail-id', 'on_progress')">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                     Payment on Progress
@@ -516,18 +516,23 @@
       <div class="p-3 md:p-6 pb-0">
 
         <!-- close -->
-        <div class="flex justify-start">
-          <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer" id="document_detail_close-id" onclick="toggleDrawer('drawer_invoice_detail-id')">
+        <div class="flex items-start justify-start mb-2 md:mb-4">
+          <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer hidden md:block" id="document_detail_close-id" onclick="toggleDrawer('drawer_invoice_detail-id')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none" class="cursor-pointer md:hidden" onclick="toggleDrawer('drawer_invoice_detail-id')">
+            <path d="M1 15L15 1M1 1L15 15" stroke="#444950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
         <!-- close -->
-
-        <!-- header form -->
-        <div class="flex items-center justify-between flex-col py-4 md:flex-row gap-3 md:gap-0">
-          <h3 class="text-2xl font-medium text-secondary-900">
-            Detail Invoice Submission
-          </h3>
+        
+        <div class="flex flex-col justify-between gap-4 md:flex-row">
+          <!-- header form -->
+          <div class="flex flex-1 items-center text-center justify-between y-4 md:flex-row gap-3 md:gap-0 flex-row mb-4">
+            <h3 class="flex text-xl md:text-2xl font-medium text-secondary-900">
+              Detail Invoice Submission
+            </h3>
+          </div>
+          <!-- header form -->
         </div>
-        <!-- header form -->
 
         <!-- table form -->
         <div class="mb-7">
@@ -856,14 +861,16 @@
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
 
     <!-- header -->
-    <div class="flex items-center justify-end mb-1.5">
-      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
-        <img src="/dist/images/icons/heroicons-outline_x.svg" alt="outline x">
+    <div class="flex items-center justify-end px-4 py-2 bg-cloudy-20 rounded-tl-xl rounded-tr-xl">
+      <button onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+          <path d="M5 15L15 5M5 5L15 15" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </button>
     </div>
     <!-- header -->
 
-    <div class="relative bg-white rounded-lg shadow h-[650px]">
+    <div class="relative bg-white rounded-bl-lg rounded-br-lg shadow min-h-[650px]">
       <!-- content -->
       <div class="px-3 py-2 md:px-6 md:py-4">
         <p>preview pdf</p>

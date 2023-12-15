@@ -63,7 +63,7 @@
                     Abisha Ilham
                   </p>
                   <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
-                    Warehouse PIC
+                    Warehouse Manager
                   </p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden md:block">
@@ -86,7 +86,7 @@
                         Abisha Ilham
                       </p>
                       <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
-                        Warehouse PIC
+                        Warehouse Manager
                       </p>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden rotate-180 md:block">
@@ -151,7 +151,7 @@
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/time-filled.svg" alt="time filled">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Need Verification</span>
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Need Approval</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
@@ -197,7 +197,7 @@
                 <span class="inline-block tab-list active-tab" onclick="openTab(this)">All Documents</span>
               </li>
               <li class="py-1 md:py-4">
-                <span class="inline-block tab-list" onclick="openTab(this)">Need Verification</span>
+                <span class="inline-block tab-list" onclick="openTab(this)">Need Approval</span>
               </li>
               <li class="py-1 md:py-4">
                 <span class="inline-block tab-list" onclick="openTab(this)">Waiting for Revision</span>
@@ -210,7 +210,7 @@
             <div class="flex w-full md:hidden">
               <select id="status_filter-id" style="width: 100%;" name="short_by" required>
                 <option value="draft">Draft</option>
-                <option value="verification">Need Verification</option>
+                <option value="verification">Need Approval</option>
                 <option value="revision">Waiting for Revision</option>
                 <option value="rejected">Rejected</option>
               </select>
@@ -240,7 +240,7 @@
                     <label class="warning inline-flex items-center badge badge-warning cursor-pointer font-medium">
                       <input type="checkbox" class="hidden" name="status" value="verification" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
-                      Need Verification
+                      Need Approval
                     </label>
                     <label class="blue inline-flex items-center badge badge-blue cursor-pointer font-medium">
                       <input type="checkbox" class="hidden" name="status" value="waiting_revision" checked onchange="toggleDotVisibility(this)">
@@ -411,18 +411,18 @@
                 <td>1.</td>
                 <td>
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+                    <!-- <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                    </div>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
+                    </div> -->
+                    <a href="/src/pages/warehouse_manager/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
                       <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
-                    </div>
+                    </a>
                   </div>
                 </td>
                 <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-warning cursor-pointer font-medium" onclick="detailDrawer('drawer_document_detail-id', 'verification')">
+                  <label class="inline-flex items-center badge badge-warning font-medium">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
-                    Need Verification
+                    Need Approval
                   </label>
                 </td>
                 <td>22/02/2023 1:45PM</td>
@@ -437,16 +437,16 @@
                 <td>2.</td>
                 <td>
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+                    <a href="/src/pages/warehouse_manager/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                    </div>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
+                    </a>
+                    <!-- <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
                       <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
-                    </div>
+                    </div> -->
                   </div>
                 </td>
                 <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-error cursor-pointer font-medium" onclick="detailDrawer('drawer_document_detail-id', 'reject')">
+                  <label class="inline-flex items-center badge badge-error font-medium">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
                     Rejected
                   </label>
@@ -463,16 +463,16 @@
                 <td>3.</td>
                 <td>
                   <div class="flex items-center justify-center gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+                    <a href="/src/pages/warehouse_manager/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
-                    </div>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
+                    </a>
+                    <!-- <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
                       <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
-                    </div>
+                    </div> -->
                   </div>
                 </td>
                 <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-blue cursor-pointer font-medium" onclick="detailDrawer('drawer_document_detail-id', 'revision')">
+                  <label class="inline-flex items-center badge badge-blue font-medium">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                     Waiting for Revision
                   </label>
@@ -498,30 +498,35 @@
       <div class="p-3 md:p-6 pb-0">
 
         <!-- close -->
-        <div class="flex justify-start">
-          <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer" id="document_detail_close-id" onclick="toggleDrawer('drawer_document_detail-id', 'reject')">
+        <div class="flex items-start justify-start mb-2 md:mb-4">
+          <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer hidden md:block" id="document_detail_close-id" onclick="toggleDrawer('drawer_document_detail-id', 'reject')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none" class="cursor-pointer md:hidden" onclick="toggleDrawer('drawer_document_detail-id', 'reject')">
+            <path d="M1 15L15 1M1 1L15 15" stroke="#444950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
         <!-- close -->
-
-        <!-- header form -->
-        <div class="flex items-center justify-between flex-col py-4 md:flex-row gap-3 md:gap-0">
-          <h3 class="text-2xl font-medium text-secondary-900">
-            Invoice Detail
-          </h3>
-          <div class="flex gap-3 w-full md:w-auto">
-            <button type="button" class="flex items-center justify-center w-full btn btn-default" 
+        
+        <div class="flex flex-col justify-between gap-4 md:flex-row">
+          <!-- header form -->
+          <div class="flex flex-1 items-center text-center justify-between y-4 md:flex-row gap-3 md:gap-0 flex-row mb-0 md:mb-4">
+            <h3 class="flex text-xl md:text-2xl font-medium text-secondary-900">
+              Invoice Detail
+            </h3>
+            <button type="button" class="flex items-center justify-center w-auto shadow-xs border-gray-300 md:shadow-none text-sm font-medium rounded-lg px-2 py-2 md:px-5 md:py-2.5 text-cloudy-120 bg-white border md:border-[#1A202C] hover:bg-gray-100  whitespace-nowrap" 
             >
-              Log History
-              <img src="/dist/images/icons/history-filled.svg" alt="history filled" class="ms-2">
+              <span class="hidden md:block">Log History</span>
+              <img src="/dist/images/icons/history-filled.svg" alt="history filled" class="ms-0 md:ms-2">
             </button>
-            <button type="button" class="hidden items-center justify-center w-full btn btn-primary" id="resubmit_button-id"
+          </div>
+          <div class="w-full md:w-auto">
+            <button type="button" class="flex items-center w-full mb-4 md:mb-0 md:w-auto justify-center text-sm font-semibold rounded-lg px-5 py-2.5 whitespace-nowrap text-cloudy-120 bg-primary-500 border border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-700 hover:bg-primary-700 hover:border-primary-700 disabled:cursor-not-allowed disabled:bg-yellow-20 disabled:text-cloudy-70 disabled:border-yellow-20" id="resubmit_button-id"
             >
               Resubmit Document
               <img src="/dist/images/icons/ph_warning-fill.svg" alt="ph warning" class="ms-2">
             </button>
           </div>
+          <!-- header form -->
         </div>
-        <!-- header form -->
 
         <!-- table form -->
         <div class="relative overflow-x-auto rounded-lg mb-5">

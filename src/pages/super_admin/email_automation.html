@@ -154,16 +154,16 @@
       <div class="h-full px-8 pb-4 overflow-y-auto bg-cloudy-10">
         <ul class="space-y-4 text-base font-medium">
           <li>
-            <a href="/src/pages/super_admin/authorization_limit.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-primary-500 hover:text-cloudy-120 group">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60 group-hover:text-cloudy-120">
+            <a href="/src/pages/super_admin/authorization_limit.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-cloudy-20 hover:text-cloudy-120 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60">
                 <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span class="ms-3">Authorization Limit</span>
             </a>
           </li>
           <li>
-            <a href="/src/pages/super_admin/approval_permission.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-primary-500 hover:text-cloudy-120 group">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60 group-hover:text-cloudy-120">
+            <a href="/src/pages/super_admin/approval_permission.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-cloudy-20 hover:text-cloudy-120 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60">
                 <path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span class="ms-3">Approval Permission</span>
@@ -212,14 +212,14 @@
   <!-- content  -->
   <main class="max-w-screen-2xl mx-auto">
     <div class="md:ml-[353px]">
-      <div class="pt-28 md:pt-20 pb-32">
-        <div class="flex flex-col items-center justify-between gap-8 px-3 py-6 pb-1 md:flex-row md:px-8 md:py-8 md:pb-0">
+      <div class="pt-16 pb-4 md:pt-20 md:pb-32">
+        <div class="flex flex-col items-center justify-between gap-8 px-4 py-6 pb-1 md:flex-row md:px-8 md:py-8 md:pb-0">
           <!-- title  -->
           <div>
-            <h2 class="text-3xl font-medium text-cloudy-120">Email Automation & Template</h2>
-            <span class="block text-lg text-cloudy-90">Set up what kind of files get reviewed by each roles.</span>
+            <h2 class="text-2xl md:text-3xl font-medium text-cloudy-120 mb-2">Email Automation & Template</h2>
+            <span class="block text-base md:text-lg text-cloudy-90">Set up what kind of files get reviewed by each roles.</span>
           </div>
-          <button class="font-medium w-full justify-center md:w-auto text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700" onclick="toggleDrawer('drawer_email_template-id', '', 'z-50')">New</button>
+          <button class="font-bold w-full justify-center md:w-auto text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700" onclick="toggleDrawer('drawer_email_template-id', '', 'z-50')">New</button>
         </div>
 
         <div class="flex flex-col gap-8 px-4 py-6 md:px-8 md:py-8">
@@ -227,25 +227,32 @@
           <!-- list template  -->
           <div class="flex flex-col gap-8">
             <div class="w-full bg-white rounded-lg shadow-8">
-              <div class="flex flex-row items-center justify-between bg-cloudy-20 mb-4 px-3 pt-6 md:px-8 pb-4 rounded-tl-lg rounded tr-lg md:flex-row">
-                <h3 class="text-2xl font-semibold text-secondary-900">Send Hard Copy Reminders</h3>
-                <a href="#" class="inline-flex items-center text-sm md:text-base text-blue_general font-bold whitespace-nowrap">Edit Template 
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="text-blue_general -rotate-90 ms-2 hidden md:block">
-                    <path d="M15 7.5L10 12.5L5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <div class="flex flex-row items-center justify-between bg-cloudy-20 mb-4 px-3 pt-4 pb-4 md:pt-6 md:px-8 md:pb-4 rounded-tl-lg rounded-tr-lg md:flex-row">
+                <h3 class="text-xl md:text-2xl font-semibold text-secondary-900">Send Hard Copy Reminders</h3>
+                <a href="#" class="inline-flex items-center text-sm md:text-base text-blue_general font-bold whitespace-nowrap">
+                  <div class="hidden md:flex items-center">
+                    <span>Edit Template</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="text-blue_general -rotate-90 ms-2 hidden md:block">
+                      <path d="M15 7.5L10 12.5L5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+                    <path d="M9.16675 3.33301H3.33341C2.89139 3.33301 2.46746 3.5086 2.1549 3.82116C1.84234 4.13372 1.66675 4.55765 1.66675 4.99967V16.6663C1.66675 17.1084 1.84234 17.5323 2.1549 17.8449C2.46746 18.1574 2.89139 18.333 3.33341 18.333H15.0001C15.4421 18.333 15.866 18.1574 16.1786 17.8449C16.4912 17.5323 16.6667 17.1084 16.6667 16.6663V10.833" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.4167 2.0832C15.7483 1.75168 16.1979 1.56543 16.6667 1.56543C17.1356 1.56543 17.5852 1.75168 17.9167 2.0832C18.2483 2.41472 18.4345 2.86436 18.4345 3.3332C18.4345 3.80204 18.2483 4.25168 17.9167 4.5832L10.0001 12.4999L6.66675 13.3332L7.50008 9.99986L15.4167 2.0832Z" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
               </div>
-              <div class="flex flex-col items-center justify-between pb-6 md:flex-row">
-                <div class="flex flex-1 flex-col px-6 pb-6 mb-6 gap-5 border-b border-secondary-100 md:border-b-transparent md:border-r md:pb-0 md:mb-0">
+              <div class="flex flex-col items-start md:items-center md:justify-between pb-6 md:flex-row">
+                <div class="flex flex-1 flex-col px-3 pb-6 mb-6 gap-5 border-b border-secondary-100 md:border-b-transparent md:border-r md:px-6 md:pb-0 md:mb-0">
                   <div>
-                    <p class="font-semibold text-cloudy-90 uppercase mb-1">Subject</p>
-                    <p class="text-xl font-medium text-cloudy-120">Dont Forget to Send Your Invoice!</p>
+                    <p class="text-sm md:text-base font-semibold text-cloudy-90 uppercase mb-1">Subject</p>
+                    <p class="text-lg md:text-xl font-medium text-cloudy-120">Dont Forget to Send Your Invoice!</p>
                   </div>
                   <div>
-                    <p class="font-semibold text-cloudy-90 uppercase mb-1">Schedule</p>
+                    <p class="text-sm md:text-base font-semibold text-cloudy-90 uppercase mb-1">Schedule</p>
                     <div class="flex items-center gap-2">
-                      <div class="inline-flex items-center text-sm font-medium text-gray_2-500 p-4 py-2 border border-gray-300 shadow-xs rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2">
+                      <div class="inline-flex items-center text-xs md:text-sm font-medium text-gray_2-500 p-2 md:p-4 md:py-2 border border-gray-300 shadow-xs rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2 h-4 w-4 md:h-5 md:w-5">
                           <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Monthly, Every 24th
@@ -253,8 +260,8 @@
                       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewbox="0 0 6 6" fill="none">
                         <circle cx="3" cy="3" r="3" fill="#D9D9D9"/>
                       </svg>
-                      <div class="inline-flex items-center text-sm font-medium text-gray_2-500 p-4 py-2 border border-gray-300 shadow-xs rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2">
+                      <div class="inline-flex items-center text-xs md:text-sm font-medium text-gray_2-500 p-2 md:p-4 md:py-2 border border-gray-300 shadow-xs rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2 h-4 w-4 md:h-5 md:w-5">
                           <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Monthly, Every 26th
@@ -262,14 +269,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="flex flex-1 flex-col px-6 gap-5">
+                <div class="flex flex-1 flex-col px-3 md:px-6 gap-5">
                   <div>
-                    <p class="font-semibold text-cloudy-90 uppercase mb-1">TO</p>
-                    <p class="text-xl text-cloudy-120">All Vendor</p>
+                    <p class="text-sm md:text-base font-semibold text-cloudy-90 uppercase mb-1">TO</p>
+                    <p class="text-lg md:text-xl font-medium md:font-normal text-cloudy-120">All Vendor</p>
                   </div>
                   <div>
-                    <span class="inline-flex items-center flex-wrap gap-2 font-medium text-cloudy-90">With 
-                      <span class="inline-flex items-center badge badge-primary font-medium cursor-pointer">
+                    <span class="text-base flex flex-col text-start justify-start md:inline-flex md:flex-row md:items-center flex-wrap gap-2 font-medium text-cloudy-90">With 
+                      <span class="inline-flex items-center badge badge-md badge-primary font-medium cursor-pointer">
                         Action Needed - Send Hard Copy
                       </span>
                     </span>
@@ -280,25 +287,32 @@
             </div>
 
             <div class="w-full bg-white rounded-lg shadow-8">
-              <div class="flex flex-row items-center justify-between bg-cloudy-20 mb-4 px-3 pt-6 md:px-8 pb-4 rounded-tl-lg rounded-tr-lg md:flex-row">
-                <h3 class="text-2xl font-semibold text-secondary-900">Send Hard Copy Reminders</h3>
-                <a href="#" class="inline-flex items-center text-sm md:text-base text-blue_general font-bold whitespace-nowrap">Edit Template 
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="text-blue_general -rotate-90 ms-2 hidden md:block">
-                    <path d="M15 7.5L10 12.5L5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <div class="flex flex-row items-center justify-between bg-cloudy-20 mb-4 px-3 pt-4 pb-4 md:pt-6 md:px-8 md:pb-4 rounded-tl-lg rounded-tr-lg md:flex-row">
+                <h3 class="text-xl md:text-2xl font-semibold text-secondary-900">Send Hard Copy Reminders</h3>
+                <a href="#" class="inline-flex items-center text-sm md:text-base text-blue_general font-bold whitespace-nowrap">
+                  <div class="hidden md:flex items-center">
+                    <span>Edit Template</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="text-blue_general -rotate-90 ms-2 hidden md:block">
+                      <path d="M15 7.5L10 12.5L5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+                    <path d="M9.16675 3.33301H3.33341C2.89139 3.33301 2.46746 3.5086 2.1549 3.82116C1.84234 4.13372 1.66675 4.55765 1.66675 4.99967V16.6663C1.66675 17.1084 1.84234 17.5323 2.1549 17.8449C2.46746 18.1574 2.89139 18.333 3.33341 18.333H15.0001C15.4421 18.333 15.866 18.1574 16.1786 17.8449C16.4912 17.5323 16.6667 17.1084 16.6667 16.6663V10.833" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.4167 2.0832C15.7483 1.75168 16.1979 1.56543 16.6667 1.56543C17.1356 1.56543 17.5852 1.75168 17.9167 2.0832C18.2483 2.41472 18.4345 2.86436 18.4345 3.3332C18.4345 3.80204 18.2483 4.25168 17.9167 4.5832L10.0001 12.4999L6.66675 13.3332L7.50008 9.99986L15.4167 2.0832Z" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
               </div>
-              <div class="flex flex-col items-center justify-between pb-6 md:flex-row">
-                <div class="flex flex-1 flex-col px-6 pb-6 mb-6 gap-5 border-b border-secondary-100 md:border-b-transparent md:border-r md:pb-0 md:mb-0">
+              <div class="flex flex-col items-start md:items-center md:justify-between pb-6 md:flex-row">
+                <div class="flex flex-1 flex-col px-3 pb-6 mb-6 gap-5 border-b border-secondary-100 md:border-b-transparent md:border-r md:px-6 md:pb-0 md:mb-0">
                   <div>
-                    <p class="font-semibold text-cloudy-90 uppercase mb-1">Subject</p>
-                    <p class="text-xl font-medium text-cloudy-120">Dont Forget to Send Your Invoice!</p>
+                    <p class="text-sm md:text-base font-semibold text-cloudy-90 uppercase mb-1">Subject</p>
+                    <p class="text-lg md:text-xl font-medium text-cloudy-120">Dont Forget to Send Your Invoice!</p>
                   </div>
                   <div>
-                    <p class="font-semibold text-cloudy-90 uppercase mb-1">Schedule</p>
+                    <p class="text-sm md:text-base font-semibold text-cloudy-90 uppercase mb-1">Schedule</p>
                     <div class="flex items-center gap-2">
-                      <div class="inline-flex items-center text-sm font-medium text-gray_2-500 p-4 py-2 border border-gray-300 shadow-xs rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2">
+                      <div class="inline-flex items-center text-xs md:text-sm font-medium text-gray_2-500 p-2 md:p-4 md:py-2 border border-gray-300 shadow-xs rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2 h-4 w-4 md:h-5 md:w-5">
                           <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Monthly, Every 24th
@@ -306,8 +320,8 @@
                       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewbox="0 0 6 6" fill="none">
                         <circle cx="3" cy="3" r="3" fill="#D9D9D9"/>
                       </svg>
-                      <div class="inline-flex items-center text-sm font-medium text-gray_2-500 p-4 py-2 border border-gray-300 shadow-xs rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2">
+                      <div class="inline-flex items-center text-xs md:text-sm font-medium text-gray_2-500 p-2 md:p-4 md:py-2 border border-gray-300 shadow-xs rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2 h-4 w-4 md:h-5 md:w-5">
                           <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Monthly, Every 26th
@@ -315,14 +329,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="flex flex-1 flex-col px-6 gap-5">
+                <div class="flex flex-1 flex-col px-3 md:px-6 gap-5">
                   <div>
-                    <p class="font-semibold text-cloudy-90 uppercase mb-1">TO</p>
-                    <p class="text-xl text-cloudy-120">All Vendor</p>
+                    <p class="text-sm md:text-base font-semibold text-cloudy-90 uppercase mb-1">TO</p>
+                    <p class="text-lg md:text-xl font-medium md:font-normal text-cloudy-120">All Vendor</p>
                   </div>
                   <div>
-                    <span class="inline-flex items-center flex-wrap gap-2 font-medium text-cloudy-90">With 
-                      <span class="inline-flex items-center badge badge-primary font-medium cursor-pointer">
+                    <span class="text-base flex flex-col text-start justify-start md:inline-flex md:flex-row md:items-center flex-wrap gap-2 font-medium text-cloudy-90">With 
+                      <span class="inline-flex items-center badge badge-md badge-primary font-medium cursor-pointer">
                         Action Needed - Send Hard Copy
                       </span>
                     </span>
@@ -331,27 +345,33 @@
                 </div>
               </div>
             </div>
-
             <div class="w-full bg-white rounded-lg shadow-8">
-              <div class="flex flex-row items-center justify-between bg-cloudy-20 mb-4 px-3 pt-6 md:px-8 pb-4 rounded-tl-lg rounded tr-lg md:flex-row">
-                <h3 class="text-2xl font-semibold text-secondary-900">Send Hard Copy Reminders</h3>
-                <a href="#" class="inline-flex items-center text-sm md:text-base text-blue_general font-bold whitespace-nowrap">Edit Template 
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="text-blue_general -rotate-90 ms-2 hidden md:block">
-                    <path d="M15 7.5L10 12.5L5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <div class="flex flex-row items-center justify-between bg-cloudy-20 mb-4 px-3 pt-4 pb-4 md:pt-6 md:px-8 md:pb-4 rounded-tl-lg rounded-tr-lg md:flex-row">
+                <h3 class="text-xl md:text-2xl font-semibold text-secondary-900">Send Hard Copy Reminders</h3>
+                <a href="#" class="inline-flex items-center text-sm md:text-base text-blue_general font-bold whitespace-nowrap">
+                  <div class="hidden md:flex items-center">
+                    <span>Edit Template</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="text-blue_general -rotate-90 ms-2 hidden md:block">
+                      <path d="M15 7.5L10 12.5L5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+                    <path d="M9.16675 3.33301H3.33341C2.89139 3.33301 2.46746 3.5086 2.1549 3.82116C1.84234 4.13372 1.66675 4.55765 1.66675 4.99967V16.6663C1.66675 17.1084 1.84234 17.5323 2.1549 17.8449C2.46746 18.1574 2.89139 18.333 3.33341 18.333H15.0001C15.4421 18.333 15.866 18.1574 16.1786 17.8449C16.4912 17.5323 16.6667 17.1084 16.6667 16.6663V10.833" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.4167 2.0832C15.7483 1.75168 16.1979 1.56543 16.6667 1.56543C17.1356 1.56543 17.5852 1.75168 17.9167 2.0832C18.2483 2.41472 18.4345 2.86436 18.4345 3.3332C18.4345 3.80204 18.2483 4.25168 17.9167 4.5832L10.0001 12.4999L6.66675 13.3332L7.50008 9.99986L15.4167 2.0832Z" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
               </div>
-              <div class="flex flex-col items-center justify-between pb-6 md:flex-row">
-                <div class="flex flex-1 flex-col px-6 pb-6 mb-6 gap-5 border-b border-secondary-100 md:border-b-transparent md:border-r md:pb-0 md:mb-0">
+              <div class="flex flex-col items-start md:items-center md:justify-between pb-6 md:flex-row">
+                <div class="flex flex-1 flex-col px-3 pb-6 mb-6 gap-5 border-b border-secondary-100 md:border-b-transparent md:border-r md:px-6 md:pb-0 md:mb-0">
                   <div>
-                    <p class="font-semibold text-cloudy-90 uppercase mb-1">Subject</p>
-                    <p class="text-xl font-medium text-cloudy-120">Dont Forget to Send Your Invoice!</p>
+                    <p class="text-sm md:text-base font-semibold text-cloudy-90 uppercase mb-1">Subject</p>
+                    <p class="text-lg md:text-xl font-medium text-cloudy-120">Dont Forget to Send Your Invoice!</p>
                   </div>
                   <div>
-                    <p class="font-semibold text-cloudy-90 uppercase mb-1">Schedule</p>
+                    <p class="text-sm md:text-base font-semibold text-cloudy-90 uppercase mb-1">Schedule</p>
                     <div class="flex items-center gap-2">
-                      <div class="inline-flex items-center text-sm font-medium text-gray_2-500 p-4 py-2 border border-gray-300 shadow-xs rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2">
+                      <div class="inline-flex items-center text-xs md:text-sm font-medium text-gray_2-500 p-2 md:p-4 md:py-2 border border-gray-300 shadow-xs rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2 h-4 w-4 md:h-5 md:w-5">
                           <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Monthly, Every 24th
@@ -359,8 +379,8 @@
                       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewbox="0 0 6 6" fill="none">
                         <circle cx="3" cy="3" r="3" fill="#D9D9D9"/>
                       </svg>
-                      <div class="inline-flex items-center text-sm font-medium text-gray_2-500 p-4 py-2 border border-gray-300 shadow-xs rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2">
+                      <div class="inline-flex items-center text-xs md:text-sm font-medium text-gray_2-500 p-2 md:p-4 md:py-2 border border-gray-300 shadow-xs rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="me-2 h-4 w-4 md:h-5 md:w-5">
                           <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Monthly, Every 26th
@@ -368,14 +388,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="flex flex-1 flex-col px-6 gap-5">
+                <div class="flex flex-1 flex-col px-3 md:px-6 gap-5">
                   <div>
-                    <p class="font-semibold text-cloudy-90 uppercase mb-1">TO</p>
-                    <p class="text-xl text-cloudy-120">All Vendor</p>
+                    <p class="text-sm md:text-base font-semibold text-cloudy-90 uppercase mb-1">TO</p>
+                    <p class="text-lg md:text-xl font-medium md:font-normal text-cloudy-120">All Vendor</p>
                   </div>
                   <div>
-                    <span class="inline-flex items-center flex-wrap gap-2 font-medium text-cloudy-90">With 
-                      <span class="inline-flex items-center badge badge-primary font-medium cursor-pointer">
+                    <span class="text-base flex flex-col text-start justify-start md:inline-flex md:flex-row md:items-center flex-wrap gap-2 font-medium text-cloudy-90">With 
+                      <span class="inline-flex items-center badge badge-md badge-primary font-medium cursor-pointer">
                         Action Needed - Send Hard Copy
                       </span>
                     </span>
@@ -384,7 +404,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -396,20 +415,28 @@
   <div id="drawer_email_template-id" class="fixed top-0 right-0 z-[60] h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-9/12 lg:w-9/12" tabindex="-1" aria-labelledby="drawer-right-label">
 
     <div class="bg-cloudy-20">
-      <div class="p-3 pb-0 md:pb-0 md:p-6">
-        <!-- close -->
-        <div class="flex justify-start">
-          <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer" id="document_detail_close-id" onclick="toggleDrawer('drawer_email_template-id', 'reject')">
-        </div>
+      <div class="p-4 md:pb-0 md:p-6">
 
-        <!-- header form -->
-        <div class="flex items-center justify-between flex-col py-4 md:flex-row gap-3 md:gap-0">
-          <h3 class="text-2xl font-medium text-secondary-900">
-            New Email Template
-          </h3>
-          <div class="flex gap-3 w-full md:w-auto">
-            <button class="w-full justify-center md:justify-start md:w-auto font-medium text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700" onclick="toggleDrawer('drawer_email_template-id', '', 'z-50')" >Create Template</button>
+        <div class="flex flex-row items-center md:items-start md:justify-start md:flex-col">
+          
+          <!-- close -->
+          <div class="flex w-auto">
+            <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer hidden md:block" id="document_detail_close-id" onclick="toggleDrawer('drawer_email_template-id', 'reject')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28" fill="none" class="block md:hidden" onclick="toggleDrawer('drawer_email_template-id', 'reject')">
+              <path d="M7 21L21 7M7 7L21 21" stroke="#444950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
+
+          <!-- header form -->
+          <div class="flex items-center justify-center w-full md:justify-between flex-col md:py-4 md:flex-row gap-3 md:gap-0">
+            <h3 class="text-xl md:text-2xl font-semibold text-secondary-900">
+              New Email Template
+            </h3>
+            <div class="gap-3 w-full md:w-auto hidden md:flex">
+              <button class="w-full justify-center md:justify-start md:w-auto font-medium text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700" onclick="toggleDrawer('drawer_email_template-id', '', 'z-50')" >Create Template</button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -460,23 +487,22 @@
           <div class="relative">
             <label for="" class="block text-lg font-medium text-cloudy-120 mb-3">Preview text</label>
             <textarea name="preview_text" id="preview_text-id" cols="30" rows="5" class="block w-full md:w-[575px] py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500"></textarea>
-            <!-- <div id="message" class="block p-2 w-full md:w-[575px] py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" contenteditable="true" placeholder="" spellcheck="false"></div> -->
-
+            <!-- <div id="message" class="block p-2 w-full md:w-[575px] min-h-[150px] py-2 px-[14px] pe-10 text-gray_2-900 border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" contenteditable="true" placeholder="" spellcheck="false"></div> -->
           </div>
           <div class="flex flex-col justify-end w-[350px]">
             <p class="font-medium text-cloudy-120">Parameters Options</p>
             <p class="text-cloudy-90 mb-1">Use this to automatically get replaced by system</p>
             <div class="inline-flex flex-wrap gap-2" id="parametersContainer">
-              <span class="inline-flex items-center badge badge-blue2 font-medium cursor-pointer" onclick="appendToContentEditable('Company 1', 'badge-blue2')">
+              <span class="inline-flex items-center badge badge-blue2 font-medium cursor-pointer" onclick="addQuickWord('{{ company Name }}')">
                 Company Name
               </span>
-              <span class="inline-flex items-center badge badge-gray2 font-medium cursor-pointer" onclick="appendToContentEditable('Invoice Number', 'badge-gray2')">
+              <span class="inline-flex items-center badge badge-gray2 font-medium cursor-pointer" onclick="addQuickWord('{{ Invoice Number }}')">
                 Invoice Number
               </span>
-              <span class="inline-flex items-center badge badge-orange2 font-medium cursor-pointer" onclick="appendToContentEditable('Clearing Date', 'badge-orange2')">
+              <span class="inline-flex items-center badge badge-orange2 font-medium cursor-pointer" onclick="addQuickWord('{{ Clearing Date }}')">
                 Clearing Date
               </span>
-              <span class="inline-flex items-center badge badge-green2 font-medium cursor-pointer" onclick="appendToContentEditable('Clearing Number', 'badge-green2')">
+              <span class="inline-flex items-center badge badge-green2 font-medium cursor-pointer" onclick="addQuickWord('{{ Clearing Number }}')">
                 Clearing Number
               </span>
             </div>
@@ -495,8 +521,11 @@
         </button>
       </div>
     </div>
-
     <div class="flex flex-col gap-5 mt-5" id="receipent_automation-id"></div>
+
+    <div class="flex md:hidden px-4 pb-6">
+      <button class="w-full justify-center md:justify-start md:w-auto font-bold text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700" onclick="toggleDrawer('drawer_email_template-id', '', 'z-50')" >Create Template</button>
+    </div>
 
   </div>
 

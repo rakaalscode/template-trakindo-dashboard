@@ -146,7 +146,7 @@ $(document).ready( function () {
       {"targets": 0, "orderable": false, "className": "t-text-center"},
       {"targets": 1, "orderable": false, "className": "t-text-center"},
       {"targets": 2, "orderable": false, "className": "t-text-center"},
-      {"targets": 3, "orderable": false, "className": "t-text-center"},
+      {"targets": 3, "orderable": false, "className": "t-text-center whitespace-nowrap"},
     ],
     "dom": '<"top">rt<"bottom"ilp><"clear">',
     "language": {

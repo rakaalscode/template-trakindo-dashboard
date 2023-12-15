@@ -91,7 +91,17 @@
   height: auto !important;
 }
 
+.select2-theme-2-custom-selection .select2-container--custom-theme-2 .select2-search--dropdown {
+  top: -44px !important;
+}
 
+.select2-theme-2-custom-selection .select2-search--dropdown {
+  top: -44px !important;
+}
+
+.select2-theme-2-custom-selection .select2-search__field {
+  box-shadow: 2px 2px 8px 0px rgba(252, 186, 18, 0.24) !important;
+}
 
 /* custom theme select2  */
 
@@ -109,7 +119,7 @@
   background-color: #fff;
   border: 1px solid #DEDDDE;
   border-radius: 4px;
-  height: 41px;
+  height: 49px;
 
   font-family: Roboto;
   font-size: 16px;
@@ -120,8 +130,9 @@
 /* inner select  */
 .select2-container--custom-theme .select2-selection--single .select2-selection__rendered {
   color: #444;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 10px;
 }
 
 .select2-container--custom-theme .select2-selection--single .select2-selection__arrow {
@@ -137,7 +148,7 @@
   height: 20px;
   left: 50%;
   margin-left: -20px;
-  margin-top: -2px;
+  margin-top: 1px;
   position: absolute;
   top: 50%;
   width: 20px;
@@ -257,6 +268,7 @@
 .select2-container--custom-theme1-1 .select2-results {
   max-height: 313px;
   overflow-y: auto;
+  box-shadow: 0px 8px 16px 0px rgba(129, 134, 142, 0.08);
 }
 
 /* selected item  */
@@ -272,9 +284,10 @@
 }
 
 .select2-container--custom-theme1-1 .select2-results__option--highlighted.select2-results__option--selectable div {
-  background-color: #fff;
-  border-bottom: 2px solid #7D8085;
-  color: #10181F;
+  background-color: #F6F8FB;
+  border-bottom: 2px solid transparent;
+
+  /* color: #10181F; */
 }
 
 .select2-container--custom-theme1-1 .select2-results__option--highlighted.select2-results__option--selectable div img {
@@ -282,7 +295,7 @@
 }
 
 .select2-container--custom-theme1-1 .select2-results__option {
-  padding: 6px 0 6px 0;
+  padding: 0 0 0 0;
 }
 
 /* custom theme 2 select2  */
@@ -494,9 +507,11 @@
 
 /* multiple focus  */
 .select2-container--custom-theme-2.select2-container--focus .select2-selection--multiple {
-  border: 1px solid var(--dashboard-secondary-blue-blue-80, #2196F3);
-  box-shadow: 2px 2px 8px 0px rgba(53, 106, 230, 0.32);
+  border: 1px solid #FDBA12;
+  box-shadow: 2px 2px 8px 0px rgba(253, 186, 18, 0.32);
   outline: 0;
+
+
 }
 
 /* search input  */
@@ -685,5 +700,15 @@
   border-color: transparent;
   background-color: transparent;
   /* padding-top: 12px; */
+}
+
+@media screen and (max-width: 768px) {
+  .select2-action-selection {
+    height: 41px !important;
+  }
+  
+  .select2-action-selection .select2-selection__arrow {
+    top: 7px !important;
+  }
 }
 

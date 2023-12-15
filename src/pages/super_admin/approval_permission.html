@@ -154,8 +154,8 @@
       <div class="h-full px-8 pb-4 overflow-y-auto bg-cloudy-10">
         <ul class="space-y-4 text-base font-medium">
           <li>
-            <a href="/src/pages/super_admin/authorization_limit.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-primary-500 hover:text-cloudy-120 group">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60 group-hover:text-cloudy-120">
+            <a href="/src/pages/super_admin/authorization_limit.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-cloudy-20 hover:text-cloudy-120 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60">
                 <path d="M2 17L12 22L22 17M2 12L12 17L22 12M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span class="ms-3">Authorization Limit</span>
@@ -170,8 +170,8 @@
             </a>
           </li>
           <li>
-            <a href="/src/pages/super_admin/email_automation.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-primary-500 hover:text-cloudy-120 group">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60 group-hover:text-cloudy-120">
+            <a href="/src/pages/super_admin/email_automation.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-cloudy-20 hover:text-cloudy-120 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60">
                 <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span class="ms-3">Email Automation & Template</span>
@@ -212,247 +212,287 @@
   <!-- content  -->
   <main class="max-w-screen-2xl mx-auto">
     <div class="md:ml-[353px]">
-      <div class="pt-28 md:pt-20 pb-32">
+      <div class="pt-16 pb-24 md:pt-20 md:pb-32">
 
         <div class="flex flex-col gap-8 border-b border-cloudy-140 px-4 py-6 md:px-8 md:py-8">
           <!-- title  -->
           <div>
-            <h2 class="text-3xl font-medium text-cloudy-120">Approval Permission</h2>
-            <span class="block text-lg text-cloudy-90">Set up what kind of files get reviewed by each roles.</span>
+            <h2 class="text-2xl md:text-3xl font-medium text-cloudy-120 mb-2">Approval Permission</h2>
+            <span class="block text-base md:text-lg text-cloudy-90">Set up what kind of files get reviewed by each roles.</span>
           </div>
           
           <!-- section rules  -->
           <section class="flex flex-col gap-5">
             <!-- head rules  -->
             <div>
-              <h3 class="text-lg font-semibold text-cloudy-120">Invoice Approval Rules</h3>
-              <span class="block text-cloudy-90">Each role must have at least one file type tp take action (<span class="italic">to approve, reject, or ask for revision</span>).</span>
+              <h3 class="text-lg font-semibold text-cloudy-120 mb-2">Invoice Approval Rules</h3>
+              <span class="block text-base font-medium md:font-normal text-cloudy-90">Each role must have at least one file type tp take action (<span class="italic">to approve, reject, or ask for revision</span>).</span>
             </div>
           </section>
         </div>
 
         <div class="flex flex-col gap-8 px-4 py-6 md:px-8 md:py-8">
-
           <!-- section permissions  -->
           <section class="flex flex-col gap-4">
-            
-            <div class="relative overflow-x-auto">
-              <table class="w-full md:w-[70%] text-sm text-left rtl:text-right">
-                  <thead class="text-lg text-cloudy-90 font-medium">
-                    <tr>
-                      <th scope="col" class="px-6 py-3 w-5/12">
-                        Roles
-                      </th>
-                      <th scope="col" class=" px-3md:px-6 py-3 w-4/12">
-                        Invoice & Faktur Pajak
-                      </th>
-                      <th scope="col" class="px-6 py-3 w-4/12">
-                        BAST File
-                      </th>
-                      <th scope="col" class="px-6 py-3 w-4/12">
-                        Other File
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row" class="px-6 py-4 text-lg font-semibold text-cloudy-120">
-                        Warehouse PIC
-                      </th>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-1" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-1" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-2" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-2" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-3" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-3" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="px-6 py-4 text-lg font-semibold text-cloudy-120">
-                        Yard Leader
-                      </th>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-4" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-4" class="sr-only">
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-5" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-5" class="sr-only" checked disabled>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-6" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-6" class="sr-only">
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="px-6 py-4 text-lg font-semibold text-cloudy-120">
-                        Warehouse Manager
-                      </th>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-7" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-7" class="sr-only" checked disabled>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-8" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-8" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-9" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-9" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="px-6 py-4 text-lg font-semibold text-cloudy-120">
-                        Division Head
-                      </th>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-10" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-10" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-11" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-11" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-12" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-12" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="px-6 py-4 text-lg font-semibold text-cloudy-120">
-                        Authorization Limit
-                      </th>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-13" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-13" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-14" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-14" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center justify-start w-full">
-                          <label for="toggle-15" class="flex items-center cursor-pointer">
-                            <div class="relative">
-                              <input type="checkbox" id="toggle-15" class="sr-only" checked>
-                              <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
-                              <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
-                            </div>
-                          </label>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-              </table>
-          </div>
-            
+            <ul class="flex flex-col gap-4 md:gap-6">
+              <li class="text-lg text-cloudy-90 font-medium hidden md:block">
+                <div class="flex items-center gap-16">
+                  <div class="flex">
+                    <div class="w-[180px]">
+                      <span class="block">Roles</span>
+                    </div>
+                  </div>
+                  <div class="flex gap-8">
+                    <div class="w-[160px]">
+                      <span class="block w-[111px]">Invoice & Faktur Pajak</span>
+                    </div>
+                    <div class="w-[160px]">
+                      <span class="block w-[50px]">BAST File</span>
+                    </div>
+                    <div class="w-[160px]">
+                      <span class="block w-[50px]">Other File</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="text-lg font-semibold text-cloudy-120">
+                <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-16">
+                  <div class="flex">
+                    <div class="w-[180px]">
+                      <span class="block ">Warehouse PIC</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-start pb-4 border-b border-b-cloudy-30 md:border-none md:pb-0 w-full md:w-auto md:flex-row md:items-center gap-4 md:gap-8">
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Invoice & Faktur Pajak</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-1" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-1" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">BAST File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-2" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-2" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Other File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-3" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-3" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="text-lg font-semibold text-cloudy-120">
+                <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-16">
+                  <div class="flex">
+                    <div class="w-[180px]">
+                      <span class="block ">Yard Leader</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-start pb-4 border-b border-b-cloudy-30 md:border-none md:pb-0 w-full md:w-auto md:flex-row md:items-center gap-4 md:gap-8">
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Invoice & Faktur Pajak</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-4" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-4" class="sr-only">
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">BAST File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-5" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-5" class="sr-only" checked disabled>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Other File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-6" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-6" class="sr-only">
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="text-lg font-semibold text-cloudy-120">
+                <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-16">
+                  <div class="flex">
+                    <div class="w-[180px]">
+                      <span class="block ">Warehouse Manager</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-start pb-4 border-b border-b-cloudy-30 md:border-none md:pb-0 w-full md:w-auto md:flex-row md:items-center gap-4 md:gap-8">
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Invoice & Faktur Pajak</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-7" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-7" class="sr-only" checked disabled>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">BAST File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-8" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-8" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Other File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-9" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-9" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="text-lg font-semibold text-cloudy-120">
+                <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-16">
+                  <div class="flex">
+                    <div class="w-[180px]">
+                      <span class="block ">Division Head</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-start pb-4 border-b border-b-cloudy-30 md:border-none md:pb-0 w-full md:w-auto md:flex-row md:items-center gap-4 md:gap-8">
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Invoice & Faktur Pajak</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-10" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-10" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">BAST File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-11" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-11" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Other File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-12" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-12" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="text-lg font-semibold text-cloudy-120">
+                <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-16">
+                  <div class="flex">
+                    <div class="w-[180px]">
+                      <span class="block ">Authorization Limit</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-start pb-4 border-b border-b-cloudy-30 md:border-none md:pb-0 w-full md:w-auto md:flex-row md:items-center gap-4 md:gap-8">
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Invoice & Faktur Pajak</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-13" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-13" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">BAST File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-14" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-14" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex w-full md:w-[160px]">
+                      <div class="flex flex-1 text-base md:text-lg text-cloudy-90 font-medium md:hidden">Other File</div>
+                      <div class="flex items-center justify-start">
+                        <label for="toggle-15" class="flex items-center cursor-pointer">
+                          <div class="relative">
+                            <input type="checkbox" id="toggle-15" class="sr-only" checked>
+                            <div class="toggle-line block bg-gray-60 w-11 h-6 rounded-full"></div>
+                            <div class="dot absolute left-[0.1rem] top-[0.13rem] bg-white w-5 h-5 rounded-full transition"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </section>
-
         </div>
-
       </div>
     </div>
   </main>
@@ -460,10 +500,9 @@
   <!-- action button -->
   <div class="fixed bottom-0 left-0 z-20 w-full p-4 bg-secondary-900 border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6">
     <div class="flex items-center justify-end w-full">
-      <button class="font-medium text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700">Save Changes</button>
+      <button class="font-bold text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700">Save Changes</button>
     </div>
   </div>
-
 
 </body>
 <!-- Start script -->

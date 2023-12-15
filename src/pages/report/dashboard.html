@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Start css -->
+  <!-- datepicker  -->
+  <link href="/dist/css/flatpickr/flatpickr.min.css" rel="stylesheet" />
+  <!-- select2 -->
+  <link href="/dist/css/select2/select2.min.css" rel="stylesheet" />
+  <!-- datatables  -->
+  <link href="/dist/css/datatables/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="/dist/css/datatables/datatables.style.css" rel="stylesheet">
+  <link href="/dist/css/styles.css" rel="stylesheet">
+  <link href="/dist/css/select2/select2-styles.css" rel="stylesheet">
+  <link href="/dist/css/main.css" rel="stylesheet">
+  <!-- End css -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <title>Dasbhaord</title>
+</head>
+<body class="font-roboto min-h-screen">
+  
+  <!-- navbar  -->
+  <nav class="fixed top-0 z-50 w-full bg-white">
+    <div class="px-4 py-3 md:px-8 md:py-6 border-b border-secondary-100">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-start rtl:justify-end">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="hidden items-center me-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+              <span class="sr-only">Open sidebar</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+              </svg>
+          </button>
+          <a href="#" class="flex md:me-6">
+            <img src="/dist/images/trakindoLogo.png" class="w-[112px] h-[30px] md:w-[148px] md:h-10" alt="Trakindo Logo" />
+          </a>
+          <ul class="items-center hidden space-x-8 font-medium md:flex">
+            <li>
+              <a href="/src/pages/report/dashboard.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
+            </li>
+            <li>
+              <a href="/src/pages/report/invoice_list.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Invoice List</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <button class="w-auto md:w-[185px] rounded focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
+              onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
+            >
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
+                  <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                </div>
+                <div class="hidden flex-col flex-1 items-start justify-start md:flex" role="none">
+                  <p class="block text-sm font-medium" role="none">
+                    Abisha Ilham
+                  </p>
+                  <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                    Finance AP
+                  </p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden md:block">
+                  <path d="M15 12.5L10 7.5L5 12.5" stroke="#BCBDC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </button>
+            <div class="z-60 hidden" id="dropdown-user">
+              <div class="p-3 w-[180px] md:w-[209px] -mt-[35px] -ml-[11px] md:-mt-[48px] md:-ml-[12px] text-sm font-medium text-black list-none bg-white divide-y divide-cloudy-10 rounded-lg">
+                <button class="md:w-[185px] rounded w-full focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
+                  onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
+                >
+                  <div class="flex w-full items-center gap-4 pb-3">
+                    <div class="relative">
+                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
+                      <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                    </div>
+                    <div class="flex flex-1 flex-col items-start justify-start" role="none">
+                      <p class="block text-sm" role="none">
+                        Abisha Ilham
+                      </p>
+                      <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                        Finance AP
+                      </p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="hidden rotate-180 md:block">
+                      <path d="M15 12.5L10 7.5L5 12.5" stroke="#BCBDC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </button>
+                <ul class="space-y-3 pt-3" role="none">
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 hover:underline">
+                      <img src="/dist/images/icons/round-edit.svg" alt="round edit">
+                      <span>Edit profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-setting.svg" alt="round setting">
+                      <span>Setting</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-notif.svg" alt="round notif">
+                      <span>Notification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-4 py-1 text-sm font-semibold text-black hover:underline">
+                      <img src="/dist/images/icons/round-exit.svg" alt="round exit">
+                      <span>Log off</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="px-4 pt-2 block md:hidden">
+      <div class="flex justify-between w-full gap-2">
+        <a href="/src/pages/report/dashboard.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent">Dashboard</a>
+        <a href="/src/pages/report/invoice_list.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Report</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-[8rem] md:pt-[5.25rem]">
+
+    <!-- report dashboard -->
+    <section class="py-[20px]">
+      <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
+
+        <!-- title  -->
+        <div class="flex flex-col items-start justify-start gap-3 md:flex-row md:items-center md:justify-between mb-5">
+          <h3 class="text-2xl font-bold font-roboto_condensed">Invoice Overview</h3>
+          <div class="relative w-[280px]">
+            <div class="absolute inset-y-0 right-[12px] flex items-center ps-3.5 pointer-events-none">
+              <img src="/dist/images/icons/icon-park-solid_down-one.svg" alt="down solid">
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="absolute inset-y-2.5 left-[10px]">
+              <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="w-2.5 h-[1.2px] bg-secondary-500 absolute inset-y-5 inset-0 right-10 left-4 mx-auto"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none" class="absolute inset-y-2.5 inset-0 left-4 mx-auto">
+              <path d="M13.3333 1.66797V5.0013M6.66667 1.66797V5.0013M2.5 8.33464H17.5M4.16667 3.33464H15.8333C16.7538 3.33464 17.5 4.08083 17.5 5.0013V16.668C17.5 17.5884 16.7538 18.3346 15.8333 18.3346H4.16667C3.24619 18.3346 2.5 17.5884 2.5 16.668V5.0013C2.5 4.08083 3.24619 3.33464 4.16667 3.33464Z" stroke="#FDBA12" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input type="text" id="from" class="text-sm font-medium border rounded-lg block w-full pl-9 p-2.5 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500 datepicker-flatpickr-range-calendar">
+          </div>
+        </div>
+
+        <!-- chart -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
+
+          <!-- invoice values vendor - Doughnut  -->
+          <div class="md:col-span-5">
+            <div class="w-full border border-cloudy-140 rounded-lg shadow-one p-6">
+              <h3 class="text-xl font-medium mb-7">Invoice Valuse based on Vendor</h3>
+              <div class="flex justify-start md:justify-between flex-col md:flex-row gap-3">
+                <div class="w-full md:w-[240px]">
+                  <canvas id="invoice_doughnut_chart"></canvas>
+                </div>
+                <div id="invoice_doughnut_legend"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- invoice daily - Line  -->
+          <div class="md:col-span-7">
+            <div class="w-full border border-cloudy-140 rounded-lg shadow-one p-6">
+              <h3 class="text-xl font-medium mb-7">Daily Invoice Paid vs Invoice Unpaid</h3>
+              <div class="flex justify-between flex-col md:flex-row gap-3">
+                <div class="relative w-full">
+                  <canvas id="invoice_line_daily_chart"></canvas>
+                  <div id="invoice_line_daily_legend" class="absolute right-5 -top-4">
+                    <div class="flex text-sm font-medium text-gray_2-500 gap-3">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="h-2 w-2 rounded-full bg-green-700"></span>
+                        invoice Paid
+                      </span>
+                      <span class="inline-flex items-center gap-2">
+                        <span class="h-2 w-2 rounded-full bg-orange-700"></span>
+                        invoice Unpaid
+                      </span>
+                    </div> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- invoice status - Bar  -->
+          <div class="md:col-span-6">
+            <div class="w-full border border-cloudy-140 rounded-lg shadow-one p-6">
+              <h3 class="text-xl font-medium mb-7">Number of Invoice based on Status</h3>
+              <div class="flex justify-between flex-col md:flex-row gap-3">
+                <div class="w-full">
+                  <canvas id="invoice_bar_status_chart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- invoice status thousan number - Bar  -->
+          <div class="md:col-span-6">
+            <div class="w-full border border-cloudy-140 rounded-lg shadow-one p-6">
+              <div class="flex flex-col md:flex-row justify-between gap-3">
+                <h3 class="text-xl font-medium mb-7">Number of Invoice based on Status</h3>
+                <span class="italic text-cloudy-90">(Number in Thousands)</span>
+              </div>
+              <div class="flex justify-between flex-col md:flex-row gap-3">
+                <div class="w-full">
+                  <canvas id="invoice_bar_status_chart2"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- table -->
+        <h3 class="text-xl font-medium mb-5">Number of Invoice based on Status</h3>
+        <div class="relative overflow-x-auto">
+          <table class="table-responsive">
+            <thead class="text-base font-medium text-secondary-900 bg-cloudy-30 uppercase font-small-caps">
+              <tr>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 rounded-tl-lg">
+                  <div class="flex items-center justify-between">
+                    Vendor's name
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140">
+                  <div class="flex items-center justify-between">
+                    Total value
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 min-w-[130px]">
+                  <div class="flex items-center justify-between">
+                    total invoice
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+                <th scope="col" class="px-3 py-3 border border-r border-cloudy-140 rounded-tr-lg min-w-[130px]">
+                  <div class="flex items-center justify-between">
+                    invoice paid
+                    <button>
+                      <img src="/dist/images/icons/arrow-select.svg" class="h-4 w-4" alt="arrow select">
+                    </button>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="tbody-sm">
+              <tr>
+                <td class="tbody-col whitespace-nowrap">
+                  PT Jaya Abadi Sentosa
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  Rp. 691.232.011
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  2
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  2
+                </td>
+              </tr>
+              <tr>
+                <td class="tbody-col whitespace-nowrap rounded-bl-lg">
+                  PT Jaya Abadi Sentosa
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  Rp. 691.232.011
+                </td>
+                <td class="tbody-col whitespace-nowrap">
+                  2
+                </td>
+                <td class="tbody-col whitespace-nowrap rounded-br-lg">
+                  2
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Table -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+<!-- snackbar -->
+<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-90 justify-center items-start pt-20 px-2 w-full md:px-0 md:inset-0 h-[calc(100%-1rem)] max-h-full" id="snackbar-id">
+  <div class="flex items-center justify-between w-[540px] gap-3 p-4 mb-4 text-sm text-white rounded-xl shadow-light_raised" role="alert" id="bg_snackbar_alert">
+    <p class="flex items-center gap-3">
+      <img src="#" alt="info" class="hidden" id="icon_snackbar_alert">
+      <span id="text_snackbar_alert"></span>
+    </p>
+    <div class="flex-shrink-0">
+      <span class="font-bold">Close in <span class="countdown_snackbar">3</span>s</span>
+    </div>
+  </div>
+</div>
+<!-- snackbar -->
+
+</body>
+<!-- Start script -->
+<script
+  src="/dist/js/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+<!-- datepicker  -->
+<script src="/dist/js/flatpickr/flatpickr.js"></script>
+<!-- select2  -->
+<script src="/dist/js/select2/select2.min.js"></script>
+<!-- chartJs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script src="/dist/js/chartjs/chartjs-script.js"></script>
+<script src="/dist/js/popper.min.js" charset="utf-8"></script>
+<script src="/dist/js/main.js"></script>
+<!-- End script -->
+</html>

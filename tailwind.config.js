@@ -2,6 +2,7 @@
 module.exports = {
   mode: 'jit',
   content: ["./src/**/*.{html,js}"],
+  // important: true,
   safelist: [
     {
       pattern: /bg-(cloudy|success|blue|blue_2|red|error|warning)-(20|50|60|100|700|general)/,
@@ -213,6 +214,9 @@ module.exports = {
         700: '#B54708',
         800: '#AE4408',
         1000: '#FFEBB1'
+      },
+      warning_d: {
+        10: '#ED8A09'
       },
       "warning_b_general": '#F26D0F',
       "warning_bg_general": '#FAF4E0',

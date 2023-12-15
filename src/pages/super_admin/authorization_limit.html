@@ -162,16 +162,16 @@
             </a>
           </li>
           <li>
-            <a href="/src/pages/super_admin/approval_permission.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-primary-500 hover:text-cloudy-120 group">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60 group-hover:text-cloudy-120">
+            <a href="/src/pages/super_admin/approval_permission.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-cloudy-20 hover:text-cloudy-120 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60">
                 <path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span class="ms-3">Approval Permission</span>
             </a>
           </li>
           <li>
-            <a href="/src/pages/super_admin/email_automation.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-primary-500 hover:text-cloudy-120 group">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60 group-hover:text-cloudy-120">
+            <a href="/src/pages/super_admin/email_automation.html" class="flex items-center px-3 py-[14px] text-cloudy-90 bg-transparent rounded-lg hover:bg-cloudy-20 hover:text-cloudy-120 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="text-gray-60">
                 <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span class="ms-3">Email Automation & Template</span>
@@ -212,19 +212,19 @@
   <!-- content  -->
   <main class="max-w-screen-2xl mx-auto">
     <div class="md:ml-[353px]">
-      <div class="pt-28 md:pt-20 pb-32">
+      <div class="pt-16 pb-24 md:pt-20 md:pb-32">
         <div class="flex flex-col gap-8 border-b border-cloudy-140 px-4 py-6 md:px-8 md:py-8">
           <!-- title  -->
           <div>
-            <h2 class="text-3xl font-medium text-cloudy-120">Authorization Limit</h2>
-            <span class="block text-lg text-cloudy-90">Set up where the <span class="font-semibold">final authorization</span> for invoice will be sent before get submitted to finance.</span>
+            <h2 class="text-2xl md:text-3xl font-medium text-cloudy-120 mb-2">Authorization Limit</h2>
+            <span class="block text-base md:text-lg text-cloudy-90">Set up where the <span class="font-semibold">final authorization</span> for invoice will be sent before get submitted to finance.</span>
           </div>
           
           <!-- section rules  -->
           <section class="flex flex-col gap-5">
             <!-- head rules  -->
             <div>
-              <h3 class="text-lg font-semibold text-cloudy-120">Invoice Authorization Rules</h3>
+              <h3 class="text-lg font-semibold text-cloudy-120 uppercase mb-2">Invoice Authorization Rules</h3>
               <span class="block font-medium text-cloudy-90">If Invoice Amount is</span>
             </div>
 
@@ -320,7 +320,7 @@
               </div>
               <!-- add rows button  -->
               <div class="flex">
-                <button type="button" class="font-medium text-cloudy-120 text-center bg-white border border-cloudy-120 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-gray-100 hover:bg-gray-100" id="add_rule_btn-id" onclick="addRuleToggle('add_rule_btn-id', 'form_add_rule-id');">
+                <button type="button" class="w-full justify-center md:w-auto font-medium text-cloudy-120 text-center bg-white border border-cloudy-120 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-gray-100 hover:bg-gray-100" id="add_rule_btn-id" onclick="addRuleToggle('add_rule_btn-id', 'form_add_rule-id');">
                   Add new row
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" class="ms-2">
                     <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17 13H13V17H11V13H7V11H11V7H13V11H17V13Z" fill="#1A202C"/>
@@ -421,24 +421,24 @@
           <!-- section currency  -->
           <section class="flex flex-col gap-4">
             <div>
-              <h2 class="text-3xl font-medium text-cloudy-120">Current currency value</h2>
+              <h2 class="text-lg font-semibold text-cloudy-120 uppercase">Current currency value</h2>
             </div>
 
             <!-- row currency -->
             <div class="flex flex-col items-start gap-4 md:flex-row md:items-center ">
               <div class="flex items-start flex-col gap-2 w-full md:w-auto md:flex-row md:items-center md:gap-4">
-                <div class="flex items-center gap-2">
-                  <img src="/dist/images/icons/US.svg" alt="US">
-                  <span class="text-sm font-medium text-cloudy-120">1 USD =</span>
-                </div>
-                <div class="flex items-center flex-row gap-4">
+                <div class="flex items-center flex-row gap-3 md:gap-4">
+                  <div class="flex items-center gap-2">
+                    <img src="/dist/images/icons/US.svg" alt="US">
+                    <span class="text-sm font-medium text-cloudy-120 whitespace-nowrap">1 USD =</span>
+                  </div>
                   <div class="flex items-center">
-                    <div class="relative z-0 w-full group">
-                      <div class="relative w-full md:w-[180px]">
+                    <div class="relative z-0 group">
+                      <div class="relative w-[180px]">
                         <input type="text" class="block w-full py-2 px-[14px] pe-10 text-secondary-900 font-medium border border-gray-300 rounded-lg bg-white shadow-xs outline-none focus:ring-primary-500 focus:border-primary-500 read-only:text-secondary-500" value="15.464,55" placeholder="0" required>
                       </div>
                       <div class="absolute start-0 flex items-start mt-1.5 pointer-events-none">
-                        <span class="inline text-sm text-cloudy-90 italic">Last changed: <span class="font-semibold">10/11/23</span></span>
+                        <span class="inline text-xs md:text-sm text-cloudy-90 italic">Last changed: <span class="font-semibold">10/11/23</span></span>
                       </div>
                     </div>
                   </div>
@@ -461,7 +461,7 @@
   <!-- action button -->
   <div class="fixed bottom-0 left-0 z-20 w-full p-4 bg-secondary-900 border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6">
     <div class="flex items-center justify-end w-full">
-      <button class="font-medium text-cloudy-120 text-center bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700">Save Changes</button>
+      <button class="font-bold text-cloudy-120 text-center w-full justify-center md:w-auto md:text-start bg-primary-500 border border-primary-500 rounded-lg px-5 py-2.5 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-primary-700 hover:bg-primary-700">Save Changes</button>
     </div>
   </div>
 

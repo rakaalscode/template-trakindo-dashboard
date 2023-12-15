@@ -65,6 +65,11 @@ input[type="checkbox"]:disabled:checked + .toggle-line {
 
 input[type="checkbox"]:disabled:checked + .ceki {
   cursor: not-allowed;
+
+}
+
+input[type="checkbox"]:disabled:checked ~ .dot {
+  cursor: not-allowed;
 }
 
 .readonly:checked + .toggle-line {
@@ -126,11 +131,11 @@ input[type="checkbox"]:disabled:checked + .ceki {
 
 /* button  */
 .btn {
-  @apply text-sm font-medium rounded-lg px-5 py-2.5 whitespace-nowrap;
+  @apply text-sm font-semibold rounded-lg px-5 py-2.5 whitespace-nowrap;
 }
 
 .btn-sm {
-  @apply text-sm rounded-md px-4 py-2 whitespace-nowrap;
+  @apply text-sm font-semibold rounded-md px-4 py-2 whitespace-nowrap;
 }
 
 .btn-lg {
@@ -167,6 +172,10 @@ input[type="checkbox"]:disabled:checked + .ceki {
   @apply text-sm px-3 py-1 rounded-2xl;
 }
 
+.badge-md {
+  @apply text-base;
+}
+
 .badge-default {
   @apply bg-gray-100 text-gray-700;
 }
@@ -193,6 +202,10 @@ input[type="checkbox"]:disabled:checked + .ceki {
 
 .badge-orange {
   @apply font-medium bg-orange_2-50 text-orange_2-700;
+}
+
+.badge-warning-dark {
+  @apply font-medium bg-warning-1000 text-warning-800;
 }
 
 .badge-primary {
@@ -226,11 +239,15 @@ input[type="checkbox"]:disabled:checked + .ceki {
 
 /* input  */
 .form-control {
-  @apply text-sm border rounded-lg block w-full p-2.5 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+  @apply text-base border rounded-lg block w-full p-3 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+}
+
+.form-control-l-icon {
+  @apply text-base border rounded-lg block w-full p-3 pl-10 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
 }
 
 .form-control-none {
-  @apply text-sm rounded-lg block w-full outline-none focus:outline-none;
+  @apply text-base rounded-lg block w-full outline-none focus:outline-none;
 }
 
 .form-rounded {
@@ -328,32 +345,26 @@ input[type="checkbox"]:disabled:checked + .ceki {
 
 /* tab invoice  */
 .tab-invoice {
-  @apply bg-semi_white-1 px-[14px] py-3 text-sm font-medium text-cloudy-70 border-b-2 border-semi_white-1 uppercase hover:text-cloudy-110
+  @apply bg-semi_white-1 px-[14px] py-3 text-sm font-semibold text-cloudy-70 border-b-[3px] border-semi_white-1 uppercase hover:text-cloudy-110
 }
 
-.tab-invoice.primary {
-  @apply hover:border-b-primary-500 
+.tab-invoice {
+  @apply hover:border-b-cloudy-20
 }
-.tab-invoice.primary:hover span, .tab-invoice.primary.active span {
+.tab-invoice.primary.active span {
   @apply bg-primary-500 
 }
 .tab-invoice.primary.active {
   @apply border-b-primary-500 text-cloudy-110
 }
 
-.tab-invoice.blue {
-  @apply hover:border-b-blue_general
-}
-.tab-invoice.blue:hover span, .tab-invoice.blue.active span {
+.tab-invoice.blue.active span {
   @apply bg-blue_general
 }
 .tab-invoice.blue.active {
   @apply border-b-blue_general text-cloudy-110
 }
 
-.tab-invoice.error {
-  @apply hover:border-b-red_general
-}
 .tab-invoice.error:hover span, .tab-invoice.error.active span {
   @apply bg-red_general
 }
