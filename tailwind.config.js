@@ -173,6 +173,7 @@ module.exports = {
       orange_2: {
         20: '#FAEADF',
         50: '#FFF6ED',
+        500: '#FB6514',
         700: '#C4320A',
       },
       purple: {

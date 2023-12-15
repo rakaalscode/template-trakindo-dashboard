@@ -167,6 +167,26 @@
             </div>
           </div>
           <!-- Card -->
+          <div class="bg-white border-r border-secondary-100">
+            <div class="flex items-start gap-2 md:gap-3">
+              <img src="/dist/images/icons/AccessTimeFilledApproval.svg" alt="AccessTimeFilled">
+              <div class="flex flex-col gap-2 md:gap-3"> 
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Waiting for Approval</span>
+                <h1 class="text-[2rem] font-bold t-secondary-900">0</h1>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="bg-white border-r border-secondary-100">
+            <div class="flex items-start gap-2 md:gap-3">
+              <img src="/dist/images/icons/AccessTimeFilledSubmitted.svg" alt="AccessTimeFilled">
+              <div class="flex flex-col gap-2 md:gap-3"> 
+                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Submitted to Finance</span>
+                <h1 class="text-[2rem] font-bold t-secondary-900">0</h1>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
           <div class="bg-white">
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/round-close.svg" alt="round close">
@@ -203,6 +223,12 @@
                 <span class="inline-block tab-list" onclick="openTab(this)">Waiting for Revision</span>
               </li>
               <li class="py-1 md:py-4">
+                <span class="inline-block tab-list" onclick="openTab(this)">Waiting for Approval</span>
+              </li>
+              <li class="py-1 md:py-4">
+                <span class="inline-block tab-list" onclick="openTab(this)">Submitted to Finance</span>
+              </li>
+              <li class="py-1 md:py-4">
                 <span class="inline-block tab-list" onclick="openTab(this)">Rejected</span>
               </li>
             </ul>
@@ -232,7 +258,7 @@
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                   </button>
                 </div>
-                <div class="w-full bg-white rounded-lg p-4">
+                <div class="w-full bg-white rounded-lg p-4 overflow-y-auto max-h-[550px]">
                   <h3 class="text-lg font-medium text-gray_2-900">Filter by</h3>
                   
                   <!-- badges -->
@@ -246,6 +272,16 @@
                       <input type="checkbox" class="hidden" name="status" value="waiting_revision" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                       Waiting for Revision
+                    </label>
+                    <label class="warning inline-flex items-center badge badge-warning cursor-pointer font-medium">
+                      <input type="checkbox" class="hidden" name="status" value="waiting_approval" checked onchange="toggleDotVisibility(this)">
+                      <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
+                      Waiting for Approval
+                    </label>
+                    <label class="blue inline-flex items-center badge badge-blue cursor-pointer font-medium">
+                      <input type="checkbox" class="hidden" name="status" value="waiting_approval" checked onchange="toggleDotVisibility(this)">
+                      <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
+                      Submitted to Finance
                     </label>
                     <label class="error inline-flex items-center badge badge-error cursor-pointer font-medium">
                       <input type="checkbox" class="hidden" name="status" value="rejected" checked onchange="toggleDotVisibility(this)">
@@ -402,7 +438,7 @@
                 <th>Contract No.</th>
                 <th>Invoice No.</th>
                 <th>Issued Date</th>
-                <th>Transaction Type</th>
+                <!-- <th>Transaction Type</th> -->
                 <th>Amount</th>
               </tr>
             </thead>
@@ -427,7 +463,7 @@
                 <td>ASD/AE/23-2023</td>
                 <td>VI 231011 - 01/R01</td>
                 <td>31/08/2023</td>
-                <td>Service</td>
+                <!-- <td>Service</td> -->
                 <td>Rp120.211.553</td>
               </tr>
               <tr>
@@ -450,7 +486,7 @@
                 <td>ASD/AE/23-2023</td>
                 <td>VI 231011 - 01/R01</td>
                 <td>31/08/2023</td>
-                <td>Service</td>
+                <!-- <td>Service</td> -->
                 <td>Rp120.211.553</td>
               </tr>
               <tr>
@@ -473,7 +509,7 @@
                 <td>ASD/AE/23-2023</td>
                 <td>VI 231011 - 01/R01</td>
                 <td>31/08/2023</td>
-                <td>Service</td>
+                <!-- <td>Service</td> -->
                 <td>Rp120.211.553</td>
               </tr>
               <tr>
@@ -496,7 +532,7 @@
                 <td>ASD/AE/23-2023</td>
                 <td>VI 231011 - 01/R01</td>
                 <td>31/08/2023</td>
-                <td>Service</td>
+                <!-- <td>Service</td> -->
                 <td>Rp120.211.553</td>
               </tr>
               <tr>
@@ -519,7 +555,7 @@
                 <td>ASD/AE/23-2023</td>
                 <td>VI 231011 - 01/R01</td>
                 <td>31/08/2023</td>
-                <td>Service</td>
+                <!-- <td>Service</td> -->
                 <td>Rp120.211.553</td>
               </tr>
             </tbody>
@@ -776,7 +812,7 @@
                         >
                           <img src="/dist/images/icons/download.svg" alt="download">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20">
                           <img src="/dist/images/icons/wrench.svg" alt="wrench">
                         </div>
                       </div>
@@ -813,7 +849,7 @@
                         >
                           <img src="/dist/images/icons/download.svg" alt="download">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20">
                           <img src="/dist/images/icons/wrench.svg" alt="wrench">
                         </div>
                       </div>

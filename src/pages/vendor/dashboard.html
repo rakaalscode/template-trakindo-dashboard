@@ -277,7 +277,7 @@
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                   </button>
                 </div>
-                <div class="w-full bg-white rounded-lg p-4">
+                <div class="w-full bg-white rounded-lg p-4 overflow-y-auto max-h-[550px]">
                   <h3 class="text-lg font-medium text-gray_2-900">Filter by</h3>
                   <!-- badges -->
                   <div class="flex flex-wrap flex-row gap-3 pt-3 badges">
@@ -300,6 +300,11 @@
                       <input type="checkbox" class="hidden" name="status" value="rejected" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
                       Rejected
+                    </label>
+                    <label class="warning inline-flex items-center badge badge-warning cursor-pointer font-medium">
+                      <input type="checkbox" class="hidden" name="status" value="action_needed" checked onchange="toggleDotVisibility(this)">
+                      <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
+                      Action Needed
                     </label>
                   </div>
                   <!-- badges -->
@@ -1042,6 +1047,7 @@
               Invoice Detail
             </h3>
             <button type="button" class="flex items-center justify-center w-auto shadow-xs border-gray-300 md:shadow-none text-sm font-medium rounded-lg px-2 py-2 md:px-5 md:py-2.5 text-cloudy-120 bg-white border md:border-[#1A202C] hover:bg-gray-100  whitespace-nowrap" 
+              onclick="toggleModalDialog('modal_history-id', 'z-60')"
             >
               <span class="hidden md:block">Log History</span>
               <img src="/dist/images/icons/history-filled.svg" alt="history filled" class="ms-0 md:ms-2">
@@ -1267,7 +1273,7 @@
                         >
                           <img src="/dist/images/icons/download.svg" alt="download">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20">
                           <img src="/dist/images/icons/wrench.svg" alt="wrench">
                         </div>
                       </div>
@@ -1304,7 +1310,7 @@
                         >
                           <img src="/dist/images/icons/download.svg" alt="download">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20 cursor-pointer">
+                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-orange-90/20">
                           <img src="/dist/images/icons/wrench.svg" alt="wrench">
                         </div>
                       </div>
@@ -1938,16 +1944,18 @@
   <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
 
     <!-- header -->
-    <div class="flex items-center justify-end mb-1.5">
-      <button class="w-6 h-6 rounded bg-white p-0.5" onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
-        <img src="/dist/images/icons/heroicons-outline_x.svg" alt="outline x">
+    <div class="flex items-center justify-end px-4 py-2 bg-cloudy-20 rounded-tl-xl rounded-tr-xl">
+      <button onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+          <path d="M5 15L15 5M5 5L15 15" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </button>
     </div>
     <!-- header -->
 
-    <div class="relative bg-white rounded-lg shadow h-[650px]">
+    <div class="relative bg-white rounded-bl-lg rounded-br-lg shadow min-h-[650px]">
       <!-- content -->
-      <div class="px-3 py-3 md:px-6 md:py-4">
+      <div class="px-3 py-2 md:px-6 md:py-4">
         <p>preview pdf</p>
       </div>
       <!-- content -->
@@ -1955,6 +1963,152 @@
   </div>
 </div>
 <!-- modal preview pdf-->
+
+<!-- modal log history -->
+<div id="modal_history-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+    
+    <div class="relative bg-white rounded-xl shadow h-[370px] md:h-[565px]">
+
+      <!-- header -->
+      <div class="flex items-center justify-end px-4 py-2 bg-cloudy-20 rounded-tl-xl rounded-tr-xl">
+        <button onclick="toggleModalDialog('modal_history-id')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+            <path d="M5 15L15 5M5 5L15 15" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <!-- header -->
+
+      <!-- content -->
+      <div class="text-base font-medium">
+        <div class="flex tabs">
+          <button class="tab-list-2 active-tab-2" onclick="openTabContent('approval_list-id', this)">Approval List</button>
+          <button class="tab-list-2" onclick="openTabContent('log_history-id', this)">Log History</button>
+        </div>
+      </div>
+
+      <div class="px-2 py-4 md:px-6 md:py-5">
+
+        <div id="approval_list-id" class="tab-content">
+          <div class="relative overflow-x-auto max-h-[264px] md:max-h-[434px] custom-scrollbar overflow-y-auto rounded-lg shadow-one mb-0 md:mb-4">
+            <table class="table-responsive">
+              <thead>
+                <tr class="bg-cloudy-30">
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-tl-lg whitespace-nowrap">
+                    Invoice Number
+                  </th>
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                    Invoice Date
+                  </th>
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left whitespace-nowrap">
+                    Status
+                  </th>
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left whitespace-nowrap">
+                    Last Update
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                    VI 231011 - 01/R01
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                    24/04/2023
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                    <label class="inline-flex items-center badge badge-green cursor-pointer font-medium">
+                      <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-green-500"></span>
+                      Approved
+                    </label>
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                    28/04/2023
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                    VI 231011 - 01/R01
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                    24/04/2023
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                    -
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                    28/04/2023
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg whitespace-nowrap">
+                    VI 231011 - 01/R01
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                    24/04/2023
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                    -
+                  </td>
+                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 rounded-br-lg whitespace-nowrap">
+                    28/04/2023
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="log_history-id" class="tab-content hidden">
+            <!-- list log -->
+            <div class="relative overflow-x-auto max-h-[264px] md:max-h-[434px] custom-scrollbar min-w-full rounded-lg shadow-one px-3 py-2 md:px-5 md:py-6 border border-secondary-100">
+              <!-- card  -->
+              <div class="flex flex-col md:flex-row justify-between md:min-w-[420px] gap-3 text-sm text-gray_2-500 py-2 md:py-4 border-b border-cloudy-20 last:border-b-0">
+                <div class="flex gap-3 order-2 md:order-1">
+                  <img src="/dist/images/avatar-2.jpeg" class="w-12 h-12 rounded-full object-cover object-top flex-shrink-0" alt="avatar">
+                  <div class="flex-1">
+                    <div class="flex flex-col">
+                      <span class="inline-flex items-center text-base font-medium text-gray-700">BoboiBoy<span class="text-sm font-normal text-gray_2-500 ms-2">Vendor</span></span>
+                      <span class="block mb-3 whitespace-nowrap">Add file to <span class="text-primary-500 font-medium">Submission Form</span></span>
+                      <div class="flex items-center gap-3">
+                        <img src="/dist/images/icons/_File upload icon.svg" alt="icon file upload">
+                        <div class="flex flex-col">
+                          <span class="block font-medium text-gray-700 whitespace-nowrap">Submission Form.pdf</span>
+                          <span>720 KB</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="block order-1 md:order-2">17/04/2023</span>
+              </div>
+              <!-- card  -->
+              <div class="flex flex-col md:flex-row justify-between md:min-w-[420px] gap-3 text-sm text-gray_2-500 py-2 md:py-4 border-b border-cloudy-20 last:border-b-0">
+                <div class="flex gap-3 order-2 md:order-1">
+                  <img src="/dist/images/avatar-2.jpeg" class="w-12 h-12 rounded-full object-cover object-top flex-shrink-0" alt="avatar">
+                  <div class="flex-1">
+                    <div class="flex flex-col">
+                      <span class="inline-flex items-center text-base font-medium text-gray-700">BoboiBoy<span class="text-sm font-normal text-gray_2-500 ms-2">Vendor</span></span>
+                      <span class="block mb-3">Add file to 
+                        <span class="text-primary-500 font-medium">Send Hard Copy</span>
+                        <span class="text-gray_2-500 font-medium">via</span>
+                        <span class="text-secondary-900 font-medium">Self-Courier</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <span class="block order-1 md:order-2">17/04/2023</span>
+              </div>
+            </div>
+        </div>
+        
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+</div>
+<!-- modal log history -->
 
 </body>
 <!-- Start script -->

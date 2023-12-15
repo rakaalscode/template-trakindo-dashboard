@@ -200,9 +200,9 @@ createChart('invoice_line_daily_chart', 'line', lineData, lineOptions, []);
 
 
 let barData = {
-  labels: ["Waiting for Verification", "Action Needed", "Resubmitted", "Rejected", "Payment Complete"],
+  labels: ["Draft", "Submitted", "Waiting for Verification", "Waiting for Approval", "Need Verification", "Need Approval", "Action Needed - Revision Required", "Action Needed - Waiting for Hard Copy", "Submitted to Finance", "Completed", "Rejected"],
   datasets: [{
-    data: [45, 46, 50, 30, 50],
+    data: [45, 46, 30, 50, 30, 50, 30 ,40 ,38, 28, 50],
     backgroundColor: (context) => {
       if (!context.chart.chartArea) {
         return;
@@ -231,9 +231,9 @@ let barData = {
 
 
 let barData2 = {
-  labels: ["Waiting for Verification", "Action Needed", "Resubmitted", "Rejected", "Payment Complete"],
+  labels: ["Draft", "Submitted", "Waiting for Verification", "Waiting for Approval", "Need Verification", "Need Approval", "Action Needed - Revision Required", "Action Needed - Waiting for Hard Copy", "Submitted to Finance", "Completed", "Rejected"],
   datasets: [{
-    data: [450000, 460000, 500000, 300000, 500000],
+    data: [450000, 460000, 300000, 500000, 300000, 500000, 300000 ,400000 ,380000, 280000, 500000],
     backgroundColor: (context) => {
       if (!context.chart.chartArea) {
         return;

@@ -104,6 +104,17 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   @apply w-4 h-4 ms-2 text-[11px] font-semibold text-white bg-cloudy-70 rounded-full;
 }
 
+.tab-status {
+  @apply text-sm font-medium px-4 py-2.5 text-secondary-900 bg-white border border-gray-300 rounded-lg shadow-xs cursor-pointer;
+}
+.tab-status.active {
+  @apply bg-primary-500 border-primary-500;
+}
+.tab-status.active span {
+  @apply bg-white;
+}
+
+
 .active-tab {
   @apply text-secondary-900 mr-5 underline cursor-default;
 }
@@ -365,11 +376,25 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   @apply border-b-blue_general text-cloudy-110
 }
 
-.tab-invoice.error:hover span, .tab-invoice.error.active span {
+.tab-invoice.error.active span {
   @apply bg-red_general
 }
-.tab-invoice.active {
+.tab-invoice.error.active {
   @apply border-b-red_general text-cloudy-110
+}
+
+.tab-invoice.green.active span {
+  @apply bg-green_general
+}
+.tab-invoice.green.active {
+  @apply border-b-green_general text-cloudy-110
+}
+
+.tab-invoice.orange.active span {
+  @apply bg-warning_b_general
+}
+.tab-invoice.orange.active {
+  @apply border-b-warning_b_general text-cloudy-110
 }
 
 /* global  */

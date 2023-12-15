@@ -1385,7 +1385,6 @@ $(document).ready(function() {
     }
 
     if(type == 'reject') {
-      console.log('reject');
       // closeDoc.setAttribute("onclick", "toggleDetailDocument('" + drawerID + "', 'snackbar-id', '" + type + "', true)")
       detailStatus.classList.add('cursor-pointer');
       detailStatus.setAttribute("onclick", `toggleNotes('modal_status-id', 'z-60', 'static', 'inline', '${type}')`)
@@ -1406,12 +1405,16 @@ $(document).ready(function() {
         </svg>Rejected
       `;
 
-    } else if(type == 'verification' || type == 'need_approval') {
+    } else if(type == 'waiting_verification' || type == 'need_approval' ||  type == 'need_verification' || type == 'waiting_approval') {
       // closeDoc.setAttribute("onclick", "toggleDetailDocument('" + drawerID + "', 'snackbar-id', '" + type + "', true)")
-      if(type == 'verification') {
+      if(type == 'waiting_verification') {
         textStatus.textContent = "Waiting for Verification";
       }else if(type == 'need_approval') {
+        textStatus.textContent = "Need Approval";
+      }else if(type == 'waiting_approval') {
         textStatus.textContent = "Waiting for Approval";
+      }else if(type == 'need_verification') {
+        textStatus.textContent = "Need Verification";
       }
       iconStatus.classList.add('bg-warning-100');
       iconStatus.innerHTML += `<img src="/dist/images/icons/round-warning-filled.svg" alt="warning">`;
@@ -1428,14 +1431,14 @@ $(document).ready(function() {
           <circle cx="4" cy="4" r="3" fill="#F04438"></circle>
         </svg>Rejected
       `;
-    } else if(type == 'submit' || type == 'revision' || type == 'in_progress') {
+    } else if(type == 'submitted' || type == 'revision' || type == 'in_progress') {
       detailStatus.classList.remove('cursor-pointer');
       // detailStatus.setAttribute("onclick", "toggleModal('modal_status-id', '" + type + "')")
       if(type == 'in_progress') {
         textStatus.textContent = "In Progress";
       } else if(type == 'revision') {
         textStatus.textContent = "Waiting for Revision";
-      } else if(type == 'submit') {
+      } else if(type == 'submitted') {
         textStatus.textContent = "Submitted to Finance";
       }
       iconStatus.classList.add('bg-blue_2-20');
