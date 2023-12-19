@@ -23,14 +23,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <title>Dashboard</title>
 </head>
-<body class="font-roboto min-h-screen">
+<body class="min-h-screen font-roboto">
   
   <!-- navbar  -->
   <nav class="fixed top-0 z-50 w-full bg-white">
-    <div class="px-4 py-3 md:px-8 md:py-6 border-b border-secondary-100">
+    <div class="px-4 py-3 border-b md:px-8 md:py-6 border-secondary-100">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-start rtl:justify-end">
-          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="hidden items-center me-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="items-center hidden text-sm text-gray-500 rounded-lg me-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
               <span class="sr-only">Open sidebar</span>
               <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
@@ -41,10 +41,10 @@
           </a>
           <ul class="items-center hidden space-x-8 font-medium md:flex">
             <li>
-              <a href="/src/pages/warehouse_pic/dashboard.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
+              <a href="/src/pages/warehouse_pic/dashboard.html" class="block py-2 border-b border-black text-secondary-900 hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
             </li>
             <li>
-              <a href="/src/pages/warehouse_pic/invoice_request.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Invoice Request List</a>
+              <a href="/src/pages/warehouse_pic/invoice_request.html" class="block py-2 border-b border-transparent text-secondary-500 hover:text-secondary-900 hover:border-black">Invoice Request List</a>
             </li>
           </ul>
         </div>
@@ -55,14 +55,14 @@
             >
               <div class="flex items-center gap-4">
                 <div class="relative">
-                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
-                  <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                  <img class="flex-shrink-0 object-cover w-8 h-8 rounded-full" src="/dist/images/PROFILE.svg" alt="user photo">
+                  <img src="/dist/images/BadgeStatus 1.1.png" class="absolute bottom-0 right-0 w-3 h-3" alt="badge status">
                 </div>
-                <div class="hidden flex-col flex-1 items-start justify-start md:flex" role="none">
+                <div class="flex-col items-start justify-start flex-1 hidden md:flex" role="none">
                   <p class="block text-sm font-medium" role="none">
                     Abisha Ilham
                   </p>
-                  <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                  <p class="block text-xs font-normal truncate text-cloudy-70" role="none">
                     Warehouse PIC
                   </p>
                 </div>
@@ -71,21 +71,21 @@
                 </svg>
               </div>
             </button>
-            <div class="z-60 hidden" id="dropdown-user">
+            <div class="hidden z-60" id="dropdown-user">
               <div class="p-3 w-[180px] md:w-[209px] -mt-[35px] -ml-[11px] md:-mt-[48px] md:-ml-[12px] text-sm font-medium text-black list-none bg-white divide-y divide-cloudy-10 rounded-lg">
                 <button class="md:w-[185px] rounded w-full focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
                   onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
                 >
-                  <div class="flex w-full items-center gap-4 pb-3">
+                  <div class="flex items-center w-full gap-4 pb-3">
                     <div class="relative">
-                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
-                      <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                      <img class="flex-shrink-0 object-cover w-8 h-8 rounded-full" src="/dist/images/PROFILE.svg" alt="user photo">
+                      <img src="/dist/images/BadgeStatus 1.1.png" class="absolute bottom-0 right-0 w-3 h-3" alt="badge status">
                     </div>
-                    <div class="flex flex-1 flex-col items-start justify-start" role="none">
+                    <div class="flex flex-col items-start justify-start flex-1" role="none">
                       <p class="block text-sm" role="none">
                         Abisha Ilham
                       </p>
-                      <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                      <p class="block text-xs font-normal truncate text-cloudy-70" role="none">
                         Warehouse PIC
                       </p>
                     </div>
@@ -94,7 +94,7 @@
                     </svg>
                   </div>
                 </button>
-                <ul class="space-y-3 pt-3" role="none">
+                <ul class="pt-3 space-y-3" role="none">
                   <li>
                     <a href="#" class="flex items-center gap-4 py-1 hover:underline">
                       <img src="/dist/images/icons/round-edit.svg" alt="round edit">
@@ -126,7 +126,7 @@
         </div>
       </div>
     </div>
-    <div class="px-4 pt-2 block md:hidden">
+    <div class="block px-4 pt-2 md:hidden">
       <div class="flex justify-between w-full gap-2">
         <a href="/src/pages/warehouse_pic/dashboard.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
         <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent ">Invoice Request List</a>
@@ -137,12 +137,12 @@
   <main class="pt-[8rem] md:pt-[5.25rem]">
     <!-- Card status -->
     <section class="bg-white w-full border-b border-secondary-100 py-[19px]">
-      <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-none xl:grid-flow-col gap-6">
+      <div class="px-4 py-0 mx-auto max-w-screen-2xl md:px-7">
+        <div class="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-none xl:grid-flow-col">
           <!-- Card -->
           <!-- <div class="bg-white border-r border-secondary-100">
             <div class="flex flex-col gap-2 md:gap-3">
-              <span class="block text-xs text-secondary-500 uppercase md:text-sm">EST. Values</span>
+              <span class="block text-xs uppercase text-secondary-500 md:text-sm">EST. Values</span>
               <h1 class="text-[2rem] font-bold t-secondary-900">38.4M</h1>
             </div>
           </div> -->
@@ -151,7 +151,7 @@
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/time-filled.svg" alt="time filled">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Need Verification</span>
+                <span class="block text-xs uppercase text-secondary-500 md:text-sm">Need Verification</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
@@ -161,7 +161,7 @@
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/AccessTimeFilled.svg" alt="AccessTimeFilled">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Waiting for Revision</span>
+                <span class="block text-xs uppercase text-secondary-500 md:text-sm">Waiting for Revision</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">0</h1>
               </div>
             </div>
@@ -171,7 +171,7 @@
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/AccessTimeFilledApproval.svg" alt="AccessTimeFilled">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Waiting for Approval</span>
+                <span class="block text-xs uppercase text-secondary-500 md:text-sm">Waiting for Approval</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">0</h1>
               </div>
             </div>
@@ -181,7 +181,7 @@
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/AccessTimeFilledSubmitted.svg" alt="AccessTimeFilled">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Submitted to Finance</span>
+                <span class="block text-xs uppercase text-secondary-500 md:text-sm">Submitted to Finance</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">0</h1>
               </div>
             </div>
@@ -191,7 +191,7 @@
             <div class="flex items-start gap-2 md:gap-3">
               <img src="/dist/images/icons/round-close.svg" alt="round close">
               <div class="flex flex-col gap-2 md:gap-3"> 
-                <span class="block text-xs text-secondary-500 uppercase md:text-sm">Rejected</span>
+                <span class="block text-xs uppercase text-secondary-500 md:text-sm">Rejected</span>
                 <h1 class="text-[2rem] font-bold t-secondary-900">1</h1>
               </div>
             </div>
@@ -203,7 +203,7 @@
 
     <!-- Table section -->
     <section class="py-4">
-      <div class="max-w-screen-2xl mx-auto px-4 py-0 md:px-7">
+      <div class="px-4 py-0 mx-auto max-w-screen-2xl md:px-7">
 
         <!-- Filter table -->
 
@@ -211,8 +211,8 @@
         <div class="flex flex-col flex-wrap items-start justify-between pb-1 md:items-center md:flex-row">
           
           <!-- Filter status -->
-          <div class="flex w-full md:w-auto pb-4 md:pb-0">
-            <ul class="flex-wrap text-base font-medium tabs hidden md:flex">
+          <div class="flex w-full pb-4 md:w-auto md:pb-0">
+            <ul class="flex-wrap hidden text-base font-medium tabs md:flex">
               <li class="py-1 md:py-4">
                 <span class="inline-block tab-list active-tab" onclick="openTab(this)">All Documents</span>
               </li>
@@ -244,7 +244,7 @@
           </div>
           <!-- Filter status -->
         
-          <div class="flex justify-between items-center w-full gap-4 pb-5 md:pb-0 md:justify-center md:w-auto md:mb-0">
+          <div class="flex items-center justify-between w-full gap-4 pb-5 md:pb-0 md:justify-center md:w-auto md:mb-0">
             <!--  Date rate filter -->
             <div class="relative flex items-center order-2 md:order-1">
               <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:px-0 md:py-4 md:shadow-none" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed', false)">
@@ -262,28 +262,28 @@
                   <h3 class="text-lg font-medium text-gray_2-900">Filter by</h3>
                   
                   <!-- badges -->
-                  <div class="flex flex-wrap flex-row gap-3 pt-3 badges">
-                    <label class="warning inline-flex items-center badge badge-warning cursor-pointer font-medium">
+                  <div class="flex flex-row flex-wrap gap-3 pt-3 badges">
+                    <label class="inline-flex items-center font-medium cursor-pointer warning badge badge-warning">
                       <input type="checkbox" class="hidden" name="status" value="verification" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                       Need Verification
                     </label>
-                    <label class="blue inline-flex items-center badge badge-blue cursor-pointer font-medium">
+                    <label class="inline-flex items-center font-medium cursor-pointer blue badge badge-blue">
                       <input type="checkbox" class="hidden" name="status" value="waiting_revision" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                       Waiting for Revision
                     </label>
-                    <label class="warning inline-flex items-center badge badge-warning cursor-pointer font-medium">
+                    <label class="inline-flex items-center font-medium cursor-pointer warning badge badge-warning">
                       <input type="checkbox" class="hidden" name="status" value="waiting_approval" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                       Waiting for Approval
                     </label>
-                    <label class="blue inline-flex items-center badge badge-blue cursor-pointer font-medium">
+                    <label class="inline-flex items-center font-medium cursor-pointer blue badge badge-blue">
                       <input type="checkbox" class="hidden" name="status" value="waiting_approval" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                       Submitted to Finance
                     </label>
-                    <label class="error inline-flex items-center badge badge-error cursor-pointer font-medium">
+                    <label class="inline-flex items-center font-medium cursor-pointer error badge badge-error">
                       <input type="checkbox" class="hidden" name="status" value="rejected" checked onchange="toggleDotVisibility(this)">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
                       Rejected
@@ -294,7 +294,7 @@
                   <!-- invoice date -->
                   <div class="pt-3">
                     <h3 class="text-lg font-medium text-gray_2-900">Invoice Date</h3>
-                    <div class="flex flex-row flex-nowrap pt-3 gap-3">
+                    <div class="flex flex-row gap-3 pt-3 flex-nowrap">
                       <div class="w-full">
                         <label for="from" class="label-control-lg">From</label>
                         <div class="relative">
@@ -319,7 +319,7 @@
 
                   <!-- rate -->
                   <div class="pt-3 pb-3">
-                    <h3 class="text-lg font-medium text-gray_2-900 mb-3">Rate</h3>
+                    <h3 class="mb-3 text-lg font-medium text-gray_2-900">Rate</h3>
                     <div>
                       <select class="" id="rate_field-id" style="width: 100%;" name="rate" required>
                         <option value=""></option>
@@ -341,7 +341,7 @@
 
                 </div>
               </div>
-              <div class="hidden opacity-25 fixed inset-0 z-30 bg-black" id="filterDateRate-id-backdrop"></div>
+              <div class="fixed inset-0 z-30 hidden bg-black opacity-25" id="filterDateRate-id-backdrop"></div>
               <!-- Open date rate -->
             </div>
             <!--  Date rate filter -->
@@ -349,21 +349,21 @@
             <!--  Sortby filter -->
             <div class="relative flex items-center order-3 md:order-2">
               <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:px-0 md:py-4 md:shadow-none" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed', false)">
-                <img src="/dist/images/icons/sort-amount.svg" class="h-6 w-6" alt="search">
+                <img src="/dist/images/icons/sort-amount.svg" class="w-6 h-6" alt="search">
               </button>
 
               <!-- Open sortby -->
-              <div class="relative hidden z-60 w-64" id="filterSortby-id">
+              <div class="relative hidden w-64 z-60" id="filterSortby-id">
                 <div class="flex justify-end mb-2 -mt-[45px] md:-mt-10">
                   <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
                     <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                   </button>
                 </div>
-                <div class="w-full bg-white rounded-lg p-4">
+                <div class="w-full p-4 bg-white rounded-lg">
                   <h3 class="text-lg font-medium text-gray_2-900">Sorty by</h3>
-                  <ul class="flex flex-col space-y-1 pt-3 pb-3">
+                  <ul class="flex flex-col pt-3 pb-3 space-y-1">
                     <li>
-                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                      <div class="w-full px-4 py-3 border rounded-lg border-cloudy-0">
                         <label class="flex items-center gap-4 cursor-pointer">
                           <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
                           <span class="label-checkbox whitespace-nowrap">Newest Document</span>
@@ -371,7 +371,7 @@
                       </div>
                     </li>
                     <li>
-                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                      <div class="w-full px-4 py-3 border rounded-lg border-cloudy-0">
                         <label class="flex items-center gap-4 cursor-pointer">
                           <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
                           <span class="label-checkbox whitespace-nowrap">Status Document</span>
@@ -379,7 +379,7 @@
                       </div>
                     </li>
                     <li>
-                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                      <div class="w-full px-4 py-3 border rounded-lg border-cloudy-0">
                         <label class="flex items-center gap-4 cursor-pointer">
                           <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
                           <span class="label-checkbox whitespace-nowrap">Lowest Total Amount</span>
@@ -387,7 +387,7 @@
                       </div>
                     </li>
                     <li>
-                      <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                      <div class="w-full px-4 py-3 border rounded-lg border-cloudy-0">
                         <label class="flex items-center gap-4 cursor-pointer">
                           <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
                           <span class="label-checkbox whitespace-nowrap">Highest Total Amount</span>
@@ -407,10 +407,10 @@
             <!--  Sortby filter -->
 
             <!-- Search filter -->
-            <div class="flex flex-1 items-start md:flex-auto md:items-center md:order-2">
-              <div class="block relative w-full md:w-auto md:hidden" id="searchCon-id">
+            <div class="flex items-start flex-1 md:flex-auto md:items-center md:order-2">
+              <div class="relative block w-full md:w-auto md:hidden" id="searchCon-id">
                 <input type="search" class="form-control-search w-full md:w-[240px]" id="search_input_vendor" placeholder="Search">
-                <button class="absolute inset-y-0 left-0 md:right-0 md:left-auto flex items-center ps-2 pe-0 md:ps-0 md:pe-2 cursor-pointer" id="searchClose-id" onclick="toggleSearch()">
+                <button class="absolute inset-y-0 left-0 flex items-center cursor-pointer md:right-0 md:left-auto ps-2 pe-0 md:ps-0 md:pe-2" id="searchClose-id" onclick="toggleSearch()">
                   <img src="/dist/images/icons/search.svg" class="w-full" alt="search">
                 </button>
               </div>
@@ -437,7 +437,7 @@
                 <th>Document No.</th>
                 <th>Contract No.</th>
                 <th>Invoice No.</th>
-                <th>Issued Date</th>
+                <th>Invoice Date</th>
                 <!-- <th>Transaction Type</th> -->
                 <th>Amount</th>
               </tr>
@@ -447,13 +447,13 @@
                 <td>1.</td>
                 <td>
                   <div class="flex items-center justify-center gap-2">
-                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-gray-60 cursor-pointer">
+                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-gray-60">
                       <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
                     </a>
                   </div>
                 </td>
                 <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-warning font-medium">
+                  <label class="inline-flex items-center font-medium badge badge-warning">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                     Need Verification
                   </label>
@@ -470,13 +470,13 @@
                 <td>2.</td>
                 <td>
                   <div class="flex items-center justify-center gap-2">
-                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-blue-90">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </a>
                   </div>
                 </td>
                 <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-error font-medium">
+                  <label class="inline-flex items-center font-medium badge badge-error">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
                     Rejected
                   </label>
@@ -493,13 +493,13 @@
                 <td>3.</td>
                 <td>
                   <div class="flex items-center justify-center gap-2">
-                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-blue-90">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </a>
                   </div>
                 </td>
                 <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-blue font-medium">
+                  <label class="inline-flex items-center font-medium badge badge-blue">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                     Waiting for Revision
                   </label>
@@ -516,13 +516,13 @@
                 <td>4.</td>
                 <td>
                   <div class="flex items-center justify-center gap-2">
-                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-blue-90">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </a>
                   </div>
                 </td>
                 <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-warning font-medium">
+                  <label class="inline-flex items-center font-medium badge badge-warning">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                     Waiting for Approval
                   </label>
@@ -539,13 +539,13 @@
                 <td>5.</td>
                 <td>
                   <div class="flex items-center justify-center gap-2">
-                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                    <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-blue-90">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </a>
                   </div>
                 </td>
                 <td class="whitespace-nowrap">
-                  <label class="inline-flex items-center badge badge-blue font-medium">
+                  <label class="inline-flex items-center font-medium badge badge-blue">
                     <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                     Submitted to Finance
                   </label>
@@ -567,12 +567,12 @@
     <!-- Filter table -->
 
     <!-- Document Detail -->
-    <div id="drawer_document_detail-id" class="fixed top-0 right-0 z-60 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-full md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
-      <div class="p-3 md:p-6 pb-0">
+    <div id="drawer_document_detail-id" class="fixed top-0 right-0 w-full h-screen overflow-y-auto transition-transform translate-x-full bg-white z-60 md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
+      <div class="p-3 pb-0 md:p-6">
 
         <!-- close -->
         <div class="flex items-start justify-start mb-2 md:mb-4">
-          <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="cursor-pointer hidden md:block" id="document_detail_close-id" onclick="toggleDrawer('drawer_document_detail-id', 'reject')">
+          <img src="/dist/images/icons/close-outline.svg" alt="close outline" class="hidden cursor-pointer md:block" id="document_detail_close-id" onclick="toggleDrawer('drawer_document_detail-id', 'reject')">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none" class="cursor-pointer md:hidden" onclick="toggleDrawer('drawer_document_detail-id', 'reject')">
             <path d="M1 15L15 1M1 1L15 15" stroke="#444950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -581,8 +581,8 @@
         
         <div class="flex flex-col justify-between gap-4 md:flex-row">
           <!-- header form -->
-          <div class="flex flex-1 items-center text-center justify-between y-4 md:flex-row gap-3 md:gap-0 flex-row mb-0 md:mb-4">
-            <h3 class="flex text-xl md:text-2xl font-medium text-secondary-900">
+          <div class="flex flex-row items-center justify-between flex-1 gap-3 mb-0 text-center y-4 md:flex-row md:gap-0 md:mb-4">
+            <h3 class="flex text-xl font-medium md:text-2xl text-secondary-900">
               Invoice Detail
             </h3>
             <button type="button" class="flex items-center justify-center w-auto shadow-xs border-gray-300 md:shadow-none text-sm font-medium rounded-lg px-2 py-2 md:px-5 md:py-2.5 text-cloudy-120 bg-white border md:border-[#1A202C] hover:bg-gray-100  whitespace-nowrap" 
@@ -602,29 +602,29 @@
         </div>
 
         <!-- table form -->
-        <div class="relative overflow-x-auto rounded-lg mb-5">
+        <div class="relative mb-5 overflow-x-auto rounded-lg">
           <table class="table-responsive mb-7">
             <tr>
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Company Name 
               </th>
-              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+              <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                 PT. Maju Jaya Abadi
               </td>
             </tr>
             <tr>
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Transaction Type
               </th>
-              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+              <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                 Service
               </td>
             </tr>
             <tr>
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Invoice Number
               </th>
-              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+              <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                 <div class="flex items-center justify-between">
                   <span id="invoice_number-detail-id">VI 231011 - 01/R01</span>
                   <span class="block cursor-pointer" onclick="copyToClipboard('invoice_number-detail-id')">
@@ -634,69 +634,69 @@
               </td>
             </tr>
             <tr>
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Invoice Date
               </th>
-              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+              <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                 24/04/2023
               </td>
             </tr>
             <tr>
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Faktur Pajak Number
               </th>
-              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+              <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                 000.000-00.00000000
               </td>
             </tr>
             <tr>
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Contract No
               </th>
-              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+              <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                 SN-004
               </td>
             </tr>
             <tr id="detail_lastupdate-id">
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Last Update
               </th>
-              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+              <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                 22/02/2023 1:45PM
               </td>
             </tr>
             <tr id="detail_status-id">
-              <th scope="row" class="px-3 py-2 md:px-6 md:py-2 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg">
+              <th scope="row" class="w-4/12 px-3 py-2 text-sm font-medium border rounded-bl-lg md:px-6 md:py-2 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Status
               </th>
-              <td class="px-3 py-2 md:px-6 md:py-2 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12 whitespace-nowrap rounded-br-lg">
+              <td class="w-8/12 px-3 py-2 text-sm font-medium border rounded-br-lg md:px-6 md:py-2 text-cloudy-90 border-cloudy-140 bg-cloudy-20 whitespace-nowrap">
                 <div class="flex items-center justify-between" id="status_detail-id">
                   <div class="flex items-center">
-                    <div class="flex items-center justify-center rounded-full h-10 w-10 me-3" id="status_detail_icon-id"></div>
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full me-3" id="status_detail_icon-id"></div>
                     <div class="flex flex-col">
                       <span class="text-secondary-900" id="status_detail_name-id"></span>
-                      <span class="text-gray_2-500 font-normal" id="status_detail_name_file-id"></span>
+                      <span class="font-normal text-gray_2-500" id="status_detail_name_file-id"></span>
                     </div>
                   </div>
-                  <button class="hidden flex-shrink-0">
+                  <button class="flex-shrink-0 hidden">
                     <img src="/dist/images/icons/fi_chevron-right.svg" alt="chevron">
                   </button>
                 </div>
               </td>
             </tr>
             <tr id="detail_date-id" class="hidden">
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Clearing Date
               </th>
-              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+              <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                 Waiting from Finance
               </td>
             </tr>
             <tr id="detail_number-id" class="hidden">
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border rounded-bl-lg md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                 Clearing Number
               </th>
-              <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12 rounded-br-lg">
+              <td class="w-8/12 px-3 py-3 text-sm font-medium border rounded-br-lg md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                 <div class="flex items-center justify-between">
                   <span id="clearing_number-detail-id">Waiting from Finance</span>
                   <span class="block cursor-pointer" onclick="copyToClipboard('clearing_number-detail-id')">
@@ -708,45 +708,45 @@
           </table>
         </div>
 
-        <div class="relative overflow-x-auto rounded-lg mb-5">
+        <div class="relative mb-5 overflow-x-auto rounded-lg">
           <table class="table-responsive">
             <thead>
               <tr>
-                <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tl-lg">
+                <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border rounded-tl-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30">
                   Description
                 </th>
-                <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-1/12">
+                <th scope="row" class="w-1/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30">
                   QTY
                 </th>
-                <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30">
                   Rate
                 </th>
-                <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tr-lg">
+                <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border rounded-tr-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30">
                   Amount
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 w-8/12">
+                <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10">
                   TEST ABC
                 </td>
-                <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 whitespace-nowrap w-1/12">
+                <td class="w-1/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                   20
                 </td>
-                <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-10 w-8/12">
+                <td class="w-8/12 px-3 py-3 text-sm font-medium text-right border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10">
                   Rp1.500.000
                 </td>
-                <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-10 w-8/12 whitespace-nowrap">
+                <td class="w-8/12 px-3 py-3 text-sm font-medium text-right border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                   Rp. 30.000.000
                 </td>
               </tr>
             </tbody>
             <tfoot>
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg" colspan="3">
+              <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium text-right border rounded-bl-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30" colspan="3">
                 Total
               </th>
-              <td class="px-6 py-2 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 w-8/12 rounded-br-lg whitespace-nowrap">
+              <td class="w-8/12 px-6 py-2 text-sm font-medium border rounded-br-lg text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                 Rp. 30.000.000
               </td>
             </tfoot>
@@ -755,7 +755,7 @@
         <!-- table form -->
       </div>
 
-      <div class="p-3 md:p-6 pt-6">
+      <div class="p-3 pt-6 md:p-6">
         <div class="relative">
           <!-- heading -->
           <div class="flex items-center justify-between">
@@ -767,46 +767,46 @@
           <!-- heading -->
           
           <div class="block pt-5" id="supporting_files_list-id">
-            <div class="relative overflow-x-auto rounded-lg mb-2">
-              <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
+            <div class="relative mb-2 overflow-x-auto rounded-lg">
+              <table class="w-full text-sm text-left border-separate rtl:text-right border-spacing-0">
                 <thead>
                   <tr class="bg-cloudy-30">
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
+                    <th scope="row" class="w-1 px-3 py-3 text-sm font-medium border rounded-tl-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140">
                       No
                     </th>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-6/12">
+                    <th scope="row" class="w-6/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140">
                       Filename
                     </th>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left whitespace-nowra">
+                    <th scope="row" class="px-3 py-3 text-sm font-medium text-left border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 whitespace-nowra">
                       Type
                     </th>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-center w-1 whitespace-nowrap">
+                    <th scope="row" class="w-1 px-3 py-3 text-sm font-medium text-center border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 whitespace-nowrap">
                       Action
                     </th>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left rounded-tr-lg whitespace-nowra">
+                    <th scope="row" class="px-3 py-3 text-sm font-medium text-left border rounded-tr-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 whitespace-nowra">
                       Decision
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10">
+                    <td class="px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10">
                       1
                     </td>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
+                    <td class="px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       Invoice For Transaction ABXY 2023 Update
                     </td>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
+                    <td class="px-3 py-3 text-sm font-medium text-left border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       Invoice
                     </td>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap" id="detail_action1-id">
+                    <td class="px-3 py-3 text-sm font-medium text-right border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 whitespace-nowrap" id="detail_action1-id">
                       <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                        <div class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-blue-90"
                           onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
                         >
                             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer"
+                        <div class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-cloudy-90"
                           onclick=" toggleSnackbar('snackbar-id', 'download');"
                           
                         >
@@ -817,33 +817,33 @@
                         </div>
                       </div>
                     </td>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 whitespace-nowrap" id="detail_decision1-id">
+                    <td class="px-3 py-3 text-sm font-medium text-left border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap" id="detail_decision1-id">
                       <div class="flex items-center justify-between">
-                        <span class="text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl"></span>
-                        <div class="hidden flex-shrink-0">
+                        <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-2xl"></span>
+                        <div class="flex-shrink-0 hidden">
                           <img src="/dist/images/icons/fi_chevron-right.svg" alt="chevron">
                         </div>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 rounded-bl-lg">
+                    <td class="px-3 py-3 text-sm font-medium border rounded-bl-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10">
                       2
                     </td>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
+                    <td class="px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       BAST For Transaction ABXY 2023 Update
                     </td>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
+                    <td class="px-3 py-3 text-sm font-medium text-left border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       BAST
                     </td>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 whitespace-nowrap" id="detail_action2-id">
+                    <td class="px-3 py-3 text-sm font-medium text-right border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 whitespace-nowrap" id="detail_action2-id">
                       <div class="flex items-center justify-center gap-2">
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer"
+                        <div class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-blue-90"
                           onclick="toggleModalDialog('modal_preview_pdf-id', 'z-60')"
                         >
                             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                         </div>
-                        <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-cloudy-90 cursor-pointer"
+                        <div class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-cloudy-90"
                           onclick=" toggleSnackbar('snackbar-id', 'download', 'z-70');"
                           
                         >
@@ -854,10 +854,10 @@
                         </div>
                       </div>
                     </td>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 rounded-br-lg whitespace-nowrap" id="detail_decision2-id">
+                    <td class="px-3 py-3 text-sm font-medium text-left border rounded-br-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap" id="detail_decision2-id">
                       <div class="flex items-center justify-between">
-                        <span class="text-sm font-medium inline-flex items-center px-3 py-1 rounded-2xl"></span>
-                        <div class="hidden flex-shrink-0">
+                        <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-2xl"></span>
+                        <div class="flex-shrink-0 hidden">
                           <img src="/dist/images/icons/fi_chevron-right.svg" alt="chevron">
                         </div>
                       </div>
@@ -890,7 +890,7 @@
 
 <!-- modal status -->
 <div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-2 md:p-4 md:max-w-3xl">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
         <div class="flex items-start justify-between mb-5">
@@ -903,7 +903,7 @@
           </button>
         </div>
         <form id="form_note-id">
-          <textarea name="note" id="note_text-id" rows="6" class="block form-control mb-4" placeholder="Insert revision explanation here..." oninput="checkInput(event, 'note_btn-id')"></textarea>
+          <textarea name="note" id="note_text-id" rows="6" class="block mb-4 form-control" placeholder="Insert revision explanation here..." oninput="checkInput(event, 'note_btn-id')"></textarea>
           <input type="hidden" id="status_value-id" placeholder="...">
           <div class="flex justify-end w-full">
             <button type="button" class="block btn btn-primary" id="note_btn-id" onclick="submitNote('modal_status-id', 'form_note-id')" disabled>
@@ -919,7 +919,7 @@
 
 <!-- modal status revise file -->
 <div id="modal_status_revise-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-2 md:p-4 md:max-w-3xl">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
         <div class="flex items-start justify-between mb-5">
@@ -936,11 +936,11 @@
         <textarea rows="6" class="block p-2.5 mb-2 w-full text-sm text-black rounded border border-secondary-100 focus:ring-primary-500 focus:border-primary-500" placeholder="..." disabled>Upload the most updated files BAST for this invoice, thank you.</textarea>
         <div class="flex flex-col items-start justify-start gap-3 md:items-center md:justify-between md:flex-row">
           <div class="flex items-center">
-            <button class="flex items-center justify-center w-4 h-4 bg-cloudy-130 rounded-full" onclick="toggle('question_revise-id')">
+            <button class="flex items-center justify-center w-4 h-4 rounded-full bg-cloudy-130" onclick="toggle('question_revise-id')">
               <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
             </button>
-            <div class="hidden items-center text-xs text-gray_2-500 gap-1" id="question_revise-id">
-              <p class="ms-2 pointer-events-none">Need Help? Contact us through</p>
+            <div class="items-center hidden gap-1 text-xs text-gray_2-500" id="question_revise-id">
+              <p class="pointer-events-none ms-2">Need Help? Contact us through</p>
               <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
                 <img src="/dist/images/icons/whatsapp.png" class="w-[14px] h-[14px]" alt="whatsapp">
               </a>
@@ -964,7 +964,7 @@
 
 <!-- modal status revise upload file -->
 <div id="modal_status_revise_upload-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-2 md:p-4 md:max-w-3xl">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
         <div class="flex items-start justify-between mb-3">
@@ -988,41 +988,41 @@
         </div> 
 
         <!-- table upload revise -->
-        <div class="relative overflow-x-auto rounded-lg mb-3 hidden" id="upload_files_revise_table-id">
-          <table class="w-full text-sm text-left rtl:text-right border-separate border-spacing-0">
+        <div class="relative hidden mb-3 overflow-x-auto rounded-lg" id="upload_files_revise_table-id">
+          <table class="w-full text-sm text-left border-separate rtl:text-right border-spacing-0">
             <thead>
               <tr class="bg-cloudy-30">
-                <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-center w-1 rounded-tl-lg">
+                <th scope="row" class="w-1 px-3 py-3 text-sm font-medium text-center border rounded-tl-lg text-secondary-900 border-cloudy-140">
                   No
                 </th>
-                <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 w-3/12">
+                <th scope="row" class="w-3/12 px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140">
                   Filename
                 </th>
-                <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left whitespace-nowrap">
+                <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                   Upload Time
                 </th>
-                <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left whitespace-nowrap">
+                <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                   Action
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 text-center w-1 rounded-bl-lg">
+                <td class="w-1 px-3 py-3 text-sm font-medium text-center border rounded-bl-lg text-secondary-900 border-cloudy-140 bg-cloudy-10">
                   1
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
+                <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                   Invoice For Transaction ABXY 2023 Update
                 </td>
-                <td class="px-3 py-3 text-sm text-secondary-900 border border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
+                <td class="px-3 py-3 text-sm border text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                   24/02/2023 - 15:00:00
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 bg-cloudy-10 rounded-br-lg whitespace-nowrap">
+                <td class="px-3 py-3 text-sm font-medium text-left border rounded-br-lg text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                   <div class="flex items-center justify-start gap-2">
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-blue-90 cursor-pointer">
+                    <div class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-blue-90">
                       <img src="/dist/images/icons/RemoveRedEyeFilled.svg" alt="eye">
                     </div>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer"
+                    <div class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-red-90"
                       onclick="handleDeleteFile('upload_files_revise_input-id', 'upload_files_revise_btn-id', 'upload_files_revise_table-id', 'upload_files_revise-id')"
                     >
                       <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
@@ -1048,15 +1048,15 @@
 
 <!-- modal status revise hardcopy -->
 <div id="modal_status_hardcopy-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">z-70
-  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-2 md:p-4 md:max-w-3xl">
     <div class="relative bg-white rounded-lg shadow">
       <!-- header -->
-      <div class="flex items-center p-2 h-16 md:p-4" style="background-image: url('/dist/images/bg/BG Oren.png'); background-size: cover;">
+      <div class="flex items-center h-16 p-2 md:p-4" style="background-image: url('/dist/images/bg/BG Oren.png'); background-size: cover;">
         <button onclick="toggleModalDialog('modal_status_hardcopy-id')">
           <img src="/dist/images/icons/heroicons-outline_x.svg" class="w-5 md:w-auto" alt="outline x">
         </button>
         <div class="flex justify-center w-full">
-          <h2 class="text-md md:text-xl font-medium text-secondary-900">Hard Copy Documents Submission Form</h2>
+          <h2 class="font-medium text-md md:text-xl text-secondary-900">Hard Copy Documents Submission Form</h2>
         </div>
       </div>
       <!-- header -->
@@ -1070,7 +1070,7 @@
       </div>
 
       <div class="px-3 py-2 md:px-6 md:py-4">
-        <div class="flex items-start justify-start p-3 rounded-lg text-cloudy-110 bg-warning_bg_general border border-warning_b_general gap-3 mb-5">
+        <div class="flex items-start justify-start gap-3 p-3 mb-5 border rounded-lg text-cloudy-110 bg-warning_bg_general border-warning_b_general">
           <img src="/dist/images/icons/warning-orange.svg" alt="warning orange">
           <div class="flex flex-col">
             <span class="block text-sm font-bold">Please fill out this form after you send the hard copy documents!</span>
@@ -1113,64 +1113,64 @@
             </div>
 
             <div>
-              <h3 class="block text-sm font-medium text-black mb-2">Invoices Sent</h3>
-              <div class="relative overflow-x-auto rounded-lg shadow-one mb-4">
+              <h3 class="block mb-2 text-sm font-medium text-black">Invoices Sent</h3>
+              <div class="relative mb-4 overflow-x-auto rounded-lg shadow-one">
                 <table class="table-responsive">
                   <thead>
                     <tr class="bg-cloudy-30">
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
+                      <th scope="row" class="w-1 px-3 py-3 text-sm font-medium border rounded-tl-lg text-secondary-900 border-cloudy-140">
                         No
                       </th>
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 w-4/12">
+                      <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140">
                         Invoice Number
                       </th>
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                      <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         Invoice Date
                       </th>
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                      <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         Document Number
                       </th>
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                      <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         Amount
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
+                      <td class="px-3 py-3 text-sm font-medium border rounded-bl-lg text-secondary-900 border-cloudy-140">
                         1
                       </td>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                      <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                         009.23.33077279
                       </td>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                      <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         24/03/2023
                       </td>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                      <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         POST/20230/1
                       </td>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap rounded-br-lg">
+                      <td class="px-3 py-3 text-sm font-medium text-left border rounded-br-lg text-secondary-900 border-cloudy-140 whitespace-nowrap">
                         Rp. 720.000
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div class="flex items-start flex-col-reverse md:items-center md:flex-row gap-4 mb-5">
-                <button type="button" class="flex items-center justify-start btn-sm btn-default font-semibold"
+              <div class="flex flex-col-reverse items-start gap-4 mb-5 md:items-center md:flex-row">
+                <button type="button" class="flex items-center justify-start font-semibold btn-sm btn-default"
                   onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline');"
                 >
                   <img src="/dist/images/icons/add-doc.svg" alt="add doc" class="me-2">
                   Choose Invoice(s)
                 </button>
-                <p class="text-sm text-secondary-900 italic">Sending more than 1 Invoice’s Hard Copy? Add it here as well</p>
+                <p class="text-sm italic text-secondary-900">Sending more than 1 Invoice’s Hard Copy? Add it here as well</p>
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
                   <button>
                     <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
                   </button>
-                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
+                  <span class="text-sm underline cursor-pointer text-gray_2-500 ms-2" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
                 </div>
                 <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
                   onclick="handleSubmitHardcopy(this, 'form_expedition-id')"
@@ -1182,7 +1182,7 @@
           </form>
         </div>
 
-        <div id="courier-id" class="tab-content hidden">
+        <div id="courier-id" class="hidden tab-content">
           <form id="form_self_courier-id" onsubmit="event.preventDefault();">
             <div class="mb-1">
               <div class="grid md:grid-cols-2 md:gap-6">
@@ -1206,64 +1206,64 @@
             </div>
 
             <div>
-              <h3 class="block text-sm font-medium text-black mb-2">Invoices Sent</h3>
-              <div class="relative overflow-x-auto rounded-lg shadow-one mb-4">
+              <h3 class="block mb-2 text-sm font-medium text-black">Invoices Sent</h3>
+              <div class="relative mb-4 overflow-x-auto rounded-lg shadow-one">
                 <table class="table-responsive">
                   <thead>
                     <tr class="bg-cloudy-30">
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg">
+                      <th scope="row" class="w-1 px-3 py-3 text-sm font-medium border rounded-tl-lg text-secondary-900 border-cloudy-140">
                         No
                       </th>
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 w-4/12">
+                      <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140">
                         Invoice Number
                       </th>
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                      <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         Invoice Date
                       </th>
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                      <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         Document Number
                       </th>
-                      <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                      <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         Amount
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
+                      <td class="px-3 py-3 text-sm font-medium border rounded-bl-lg text-secondary-900 border-cloudy-140">
                         1
                       </td>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                      <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                         009.23.33077279
                       </td>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                      <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         24/03/2023
                       </td>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                      <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                         POST/20230/1
                       </td>
-                      <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap rounded-br-lg">
+                      <td class="px-3 py-3 text-sm font-medium text-left border rounded-br-lg text-secondary-900 border-cloudy-140 whitespace-nowrap">
                         Rp. 720.000
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div class="flex items-start flex-col-reverse md:items-center md:flex-row gap-4 mb-5">
-                <button type="button" class="flex items-center justify-start btn-sm btn-default font-semibold"
+              <div class="flex flex-col-reverse items-start gap-4 mb-5 md:items-center md:flex-row">
+                <button type="button" class="flex items-center justify-start font-semibold btn-sm btn-default"
                   onclick="toggleModalDialog('modal_choose_invoice-id', 'z-50', 'static', 'inline');"
                 >
                   <img src="/dist/images/icons/add-doc.svg" alt="add doc" class="me-2">
                   Choose Invoice(s)
                 </button>
-                <p class="text-sm text-secondary-900 italic">Sending more than 1 Invoice’s Hard Copy? Add it here as well</p>
+                <p class="text-sm italic text-secondary-900">Sending more than 1 Invoice’s Hard Copy? Add it here as well</p>
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
                   <button>
                     <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
                   </button>
-                  <span class="text-sm text-gray_2-500 ms-2 cursor-pointer underline" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
+                  <span class="text-sm underline cursor-pointer text-gray_2-500 ms-2" onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline');">How to Send? Read more.</span>
                 </div>
                 <button type="submit" class="flex items-center btn-lg btn-primary btn-p-lg"
                   onclick="handleSubmitHardcopy(this, 'form_self_courier-id')"
@@ -1284,22 +1284,22 @@
 
 <!-- modal q send document -->
 <div id="modal_q_send_doc-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-80 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-4 md:p-10 md:max-w-3xl">
     <div class="relative bg-white rounded-lg shadow">
       <!-- header -->
-      <div class="flex items-center p-2 h-16 md:p-4" style="background-image: url('/dist/images/bg/BG Oren.png'); background-size: cover;">
+      <div class="flex items-center h-16 p-2 md:p-4" style="background-image: url('/dist/images/bg/BG Oren.png'); background-size: cover;">
         <button onclick="toggleModalDialog('modal_q_send_doc-id', 'z-50', 'static', 'inline')">
           <img src="/dist/images/icons/heroicons-outline_x.svg" alt="outline x">
         </button>
         <div class="flex justify-center w-full">
-          <h2 class="text-md md:text-xl font-medium text-secondary-900">How to Send Hard Copy Documents</h2>
+          <h2 class="font-medium text-md md:text-xl text-secondary-900">How to Send Hard Copy Documents</h2>
         </div>
       </div>
       <!-- header -->
 
       <!-- content -->
       <div class="px-3 pb-2 md:px-5 md:pb-4">
-        <div class="bg-cloudy-10 p-2 max-h-96 custom-scrollbar overflow-auto mb-5">
+        <div class="p-2 mb-5 overflow-auto bg-cloudy-10 max-h-96 custom-scrollbar">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum numquam rerum sint itaque, obcaecati doloremque beatae provident quibusdam, neque, ullam repellat voluptatem veniam quod tempore aut reiciendis a ducimus? Voluptatem!</p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum numquam rerum sint itaque, obcaecati doloremque beatae provident quibusdam, neque, ullam repellat voluptatem veniam quod tempore aut reiciendis a ducimus? Voluptatem!</p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum numquam rerum sint itaque, obcaecati doloremque beatae provident quibusdam, neque, ullam repellat voluptatem veniam quod tempore aut reiciendis a ducimus? Voluptatem!</p>
@@ -1319,11 +1319,11 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum numquam rerum sint itaque, obcaecati doloremque beatae provident quibusdam, neque, ullam repellat voluptatem veniam quod tempore aut reiciendis a ducimus? Voluptatem!</p>
         </div>
         <div class="flex items-center justify-center mb-1">
-          <button class="flex items-center justify-center w-4 h-4 bg-cloudy-130 rounded-full">
+          <button class="flex items-center justify-center w-4 h-4 rounded-full bg-cloudy-130">
             <img src="/dist/images/icons/question-mark-filled.svg" alt="question mark">
           </button>
-          <div class="flex items-center text-sm text-gray_2-500 gap-1">
-            <p class="ms-2 pointer-events-none"><span class="font-medium">Need Help?</span> Contact us through</p>
+          <div class="flex items-center gap-1 text-sm text-gray_2-500">
+            <p class="pointer-events-none ms-2"><span class="font-medium">Need Help?</span> Contact us through</p>
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
               <img src="/dist/images/icons/whatsapp-fill.svg" class="" alt="whatsapp fill">
             </a>
@@ -1342,7 +1342,7 @@
 
 <!-- modal choose invoice -->
 <div id="modal_choose_invoice-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-80 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-4 md:p-10 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-4 md:p-10 md:max-w-3xl">
 
     <!-- header -->
     <div class="flex items-center justify-end mb-1.5">
@@ -1355,83 +1355,83 @@
     <div class="relative bg-white rounded-lg shadow">
       <!-- content -->
       <div class="px-3 py-2 md:px-5 md:py-4">
-        <div class="relative overflow-auto rounded-lg shadow-one mb-4">
+        <div class="relative mb-4 overflow-auto rounded-lg shadow-one">
           <table class="table-responsive">
             <thead>
               <tr class="bg-cloudy-30">
-                <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-center rounded-tl-lg">
+                <th scope="row" class="px-3 py-3 text-sm font-medium text-center border rounded-tl-lg text-secondary-900 border-cloudy-140">
                   Select
                 </th>
-                <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 w-4/12">
+                <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140">
                   Invoice Number
                 </th>
-                <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                   Invoice Date
                 </th>
-                <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left">
+                <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                   Document Number
                 </th>
-                <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left rounded-tr-lg">
+                <th scope="row" class="px-3 py-3 text-sm font-medium text-left border rounded-tr-lg text-secondary-900 border-cloudy-140">
                   Amount
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr class="bg-cloudy-20 hover:bg-cloudy-20">
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140">
+                <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140">
                   <label class="flex items-center justify-center">
                     <input type="checkbox" class="custom-checkbox" disabled checked/>
                   </label>
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                   009.23.33077279
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                   24/03/2023
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                   POST/20230/1
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                   Rp. 720.000
                 </td>
               </tr>
               <tr class="hover:bg-cloudy-20">
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140">
+                <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140">
                   <label class="flex items-center justify-center">
                     <input type="checkbox" class="custom-checkbox" checked/>
                   </label>
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                   009.23.33077279
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                   24/03/2023
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                   POST/20230/1
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                   Rp. 720.000
                 </td>
               </tr>
           
               <tr class="hover:bg-cloudy-20">
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg">
+                <td class="px-3 py-3 text-sm font-medium border rounded-bl-lg text-secondary-900 border-cloudy-140">
                   <label class="flex items-center justify-center">
                     <input type="checkbox" class="custom-checkbox"/>
                   </label>
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                   009.23.33077279
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                   24/03/2023
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140">
+                <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140">
                   POST/20230/1
                 </td>
-                <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap rounded-br-lg">
+                <td class="px-3 py-3 text-sm font-medium text-left border rounded-br-lg text-secondary-900 border-cloudy-140 whitespace-nowrap">
                   Rp. 720.000
                 </td>
               </tr>
@@ -1460,7 +1460,7 @@
 
 <!-- modal preview pdf-->
 <div id="modal_preview_pdf-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-2 md:p-4 md:max-w-3xl">
 
     <!-- header -->
     <div class="flex items-center justify-end px-4 py-2 bg-cloudy-20 rounded-tl-xl rounded-tr-xl">
