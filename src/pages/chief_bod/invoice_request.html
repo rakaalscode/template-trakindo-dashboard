@@ -159,18 +159,18 @@
                       <h3 class="text-lg font-medium text-gray_2-900">Filter by</h3>
                       
                       <!-- badges -->
-                      <div class="flex flex-row flex-wrap gap-3 pt-3 badges">
-                        <label class="inline-flex items-center font-medium cursor-pointer warning badge badge-warning">
+                      <div class="flex flex-wrap flex-row gap-3 pt-3 badges">
+                        <label class="warning inline-flex items-center badge badge-warning cursor-pointer font-medium">
                           <input type="checkbox" class="hidden" name="status" value="verification" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                           Need Approval
                         </label>
-                        <label class="inline-flex items-center font-medium cursor-pointer blue badge badge-blue">
+                        <label class="blue inline-flex items-center badge badge-blue cursor-pointer font-medium">
                           <input type="checkbox" class="hidden" name="status" value="waiting_revision" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                           Waiting for Revision
                         </label>
-                        <label class="inline-flex items-center font-medium cursor-pointer error badge badge-error">
+                        <label class="error inline-flex items-center badge badge-error cursor-pointer font-medium">
                           <input type="checkbox" class="hidden" name="status" value="rejected" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
                           Rejected
