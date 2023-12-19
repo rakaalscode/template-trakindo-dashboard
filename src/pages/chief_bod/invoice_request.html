@@ -325,7 +325,7 @@
                     <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">150</span>
                   </a>
                   <a href="#" class="inline-flex items-center cursor-pointer tab-invoice error" onclick="changeAtiveTab(event,'tab-rejected')">REJECTED 
-                    <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">150</span>
+                    <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">20</span>
                   </a>
                   <!-- Add more items as needed -->
                 </div>
@@ -337,7 +337,7 @@
               <!-- tab select mobile  -->
               <div class="flex w-full mt-3 mb-6 md:hidden">
                 <select id="status_invoice-id" style="width: 100%;" name="invoice_tab" required>
-                  <option value="action_needed" data-badge-color="bg-primary-500" data-count="105">Need Approval</option>
+                  <option value="action_needed" data-badge-color="bg-primary-500" data-count="105">Need Verification</option>
                   <option value="verification" data-badge-color="bg-blue_general" data-count="1.200">Waiting Verification</option>
                   <option value="rejected" data-badge-color="bg-red_general" data-count="20">Rejected</option>
                 </select>
@@ -346,7 +346,7 @@
               <!-- list  -->
               <div class="content-tab-status">
                 <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto" id="tab-need-approval">
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
                     <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
@@ -358,7 +358,7 @@
                           <span class="block mb-1 text-gray_natural-100">Status</span>
                           <label class="inline-flex items-center font-medium cursor-pointer badge badge-warning-dark whitespace-nowrap">
                             <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                            Waiting for Approval
+                            Waiting for Verification
                           </label>
                         </div>
                       </div>
@@ -374,7 +374,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
                     <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
@@ -386,7 +386,7 @@
                           <span class="block mb-1 text-gray_natural-100">Status</span>
                           <label class="inline-flex items-center font-medium cursor-pointer badge badge-warning-dark whitespace-nowrap">
                             <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                            Waiting for Approval
+                            Waiting for Verification
                           </label>
                         </div>
                       </div>
@@ -402,10 +402,9 @@
                       </div>
                     </div>
                   </div>
-                
                 </div>
                 <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-waiting-revision">
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
                     <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
@@ -433,7 +432,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
                     <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
@@ -461,10 +460,9 @@
                       </div>
                     </div>
                   </div>
-                
                 </div>
                 <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-rejected">
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
                     <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
@@ -492,7 +490,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
                     <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
@@ -520,7 +518,6 @@
                       </div>
                     </div>
                   </div>
-                
                 </div>
               </div>
 
@@ -601,7 +598,7 @@
 
             <!-- close -->
             <div class="flex justify-start gap-2 py-4 md:hidden">
-              <button onclick="toggleDetailInvoice('detail_invoice-id')">
+              <button onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
                   <path d="M15 18L9 12L15 6" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
