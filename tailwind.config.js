@@ -50,7 +50,7 @@ module.exports = {
     'hover:text-white',
     'block', 'text-sm', 'font-medium', 'cursor-pointer' , 'p-2', 'rounded', 'bg-blue-500', 'bg-green-500', 'bg-yellow-30',
     'badge', 'badge-blue2', 'badge-gray2', 'badge-orange2', 'badge-green2',
-    'badge-warning', 'badge-blue', 'badge-error', 'badge-success'
+    'badge-warning', 'badge-blue', 'badge-error', 'badge-success', 'badge-default'
     // 'px-6', 'py-4', 'text-sm', 'font-medium', 'text-secondary-900', 'md:w-96', 'bg-white',
   ],
   theme: {
