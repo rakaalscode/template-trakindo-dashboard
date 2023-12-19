@@ -24,10 +24,10 @@
 
   <!-- navbar  -->
   <nav class="fixed top-0 z-50 w-full bg-white">
-    <div class="px-4 py-3 md:px-8 md:py-6 border-b border-secondary-100">
+    <div class="px-4 py-3 border-b md:px-8 md:py-6 border-secondary-100">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-start rtl:justify-end">
-          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="hidden items-center me-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="items-center hidden text-sm text-gray-500 rounded-lg me-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
               <span class="sr-only">Open sidebar</span>
               <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
@@ -38,10 +38,10 @@
           </a>
           <ul class="items-center hidden space-x-8 font-medium md:flex">
             <li>
-              <a href="/src/pages/warehouse_pic/dashboard.html" class="block text-secondary-500 py-2 border-b border-transparent hover:text-secondary-900 hover:border-black">Dashboard</a>
+              <a href="/src/pages/warehouse_pic/dashboard.html" class="block py-2 border-b border-transparent text-secondary-500 hover:text-secondary-900 hover:border-black">Dashboard</a>
             </li>
             <li>
-              <a href="/src/pages/warehouse_pic/invoice_request.html" class="block text-secondary-900 py-2 border-b border-black hover:text-secondary-900 hover:border-black" aria-current="page">Invoice Request List</a>
+              <a href="/src/pages/warehouse_pic/invoice_request.html" class="block py-2 border-b border-black text-secondary-900 hover:text-secondary-900 hover:border-black" aria-current="page">Invoice Request List</a>
             </li>
           </ul>
         </div>
@@ -52,14 +52,14 @@
             >
               <div class="flex items-center gap-4">
                 <div class="relative">
-                  <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
-                  <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                  <img class="flex-shrink-0 object-cover w-8 h-8 rounded-full" src="/dist/images/PROFILE.svg" alt="user photo">
+                  <img src="/dist/images/BadgeStatus 1.1.png" class="absolute bottom-0 right-0 w-3 h-3" alt="badge status">
                 </div>
-                <div class="hidden flex-col flex-1 items-start justify-start md:flex" role="none">
+                <div class="flex-col items-start justify-start flex-1 hidden md:flex" role="none">
                   <p class="block text-sm font-medium" role="none">
                     Abisha Ilham
                   </p>
-                  <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                  <p class="block text-xs font-normal truncate text-cloudy-70" role="none">
                     Warehouse PIC
                   </p>
                 </div>
@@ -68,21 +68,21 @@
                 </svg>
               </div>
             </button>
-            <div class="z-60 hidden" id="dropdown-user">
+            <div class="hidden z-60" id="dropdown-user">
               <div class="p-3 w-[180px] md:w-[209px] -mt-[35px] -ml-[11px] md:-mt-[48px] md:-ml-[12px] text-sm font-medium text-black list-none bg-white divide-y divide-cloudy-10 rounded-lg">
                 <button class="md:w-[185px] rounded w-full focus:ring-0 focus:outline-none" aria-expanded="false" data-dropdown-toggle="dropdown-user"
                   onclick="openDropdown(event, 'dropdown-user', 'bottom-start', 'absolute', false)"
                 >
-                  <div class="flex w-full items-center gap-4 pb-3">
+                  <div class="flex items-center w-full gap-4 pb-3">
                     <div class="relative">
-                      <img class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="/dist/images/PROFILE.svg" alt="user photo">
-                      <img src="/dist/images/BadgeStatus 1.1.png" class="absolute h-3 w-3 bottom-0 right-0" alt="badge status">
+                      <img class="flex-shrink-0 object-cover w-8 h-8 rounded-full" src="/dist/images/PROFILE.svg" alt="user photo">
+                      <img src="/dist/images/BadgeStatus 1.1.png" class="absolute bottom-0 right-0 w-3 h-3" alt="badge status">
                     </div>
-                    <div class="flex flex-1 flex-col items-start justify-start" role="none">
+                    <div class="flex flex-col items-start justify-start flex-1" role="none">
                       <p class="block text-sm" role="none">
                         Abisha Ilham
                       </p>
-                      <p class="block text-xs font-normal text-cloudy-70 truncate" role="none">
+                      <p class="block text-xs font-normal truncate text-cloudy-70" role="none">
                         Warehouse PIC
                       </p>
                     </div>
@@ -91,7 +91,7 @@
                     </svg>
                   </div>
                 </button>
-                <ul class="space-y-3 pt-3" role="none">
+                <ul class="pt-3 space-y-3" role="none">
                   <li>
                     <a href="#" class="flex items-center gap-4 py-1 hover:underline">
                       <img src="/dist/images/icons/round-edit.svg" alt="round edit">
@@ -123,7 +123,7 @@
         </div>
       </div>
     </div>
-    <div class="px-4 pt-2 block md:hidden">
+    <div class="block px-4 pt-2 md:hidden">
       <div class="flex justify-between w-full gap-2">
         <a href="/src/pages/warehouse_pic/dashboard.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent">Dashboard</a>
         <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Invoice Request List</a>
@@ -132,16 +132,16 @@
   </nav>
 
   <main class="pt-[8rem] md:pt-[5.25rem]">
-    <div class="max-w-screen-2xl mx-auto">
+    <div class="mx-auto max-w-screen-2xl">
       <div class="grid grid-cols-1 md:grid-cols-12 md:h-[calc(100vh-5.25rem)] md:overflow-hidden">
 
         <!-- invoice list  -->  
         <div class="md:col-span-4 md:h-[calc(100vh-5.25rem)]">
           <div class="px-4 py-0 md:px-0">
               <!-- invoice header  -->
-            <div class="flex flex-col flex-wrap justify-between md:px-8 mt-3 md:mt-6 gap-3 md:flex-row md:items-center">
-              <h3 class="flex font-roboto_condensed text-2xl font-bold text-secondary-900">Invoice List</h3>
-              <div class="flex justify-between items-center w-full gap-4 md:justify-center md:w-auto">
+            <div class="flex flex-col flex-wrap justify-between gap-3 mt-3 md:px-8 md:mt-6 md:flex-row md:items-center">
+              <h3 class="flex text-2xl font-bold font-roboto_condensed text-secondary-900">Invoice List</h3>
+              <div class="flex items-center justify-between w-full gap-4 md:justify-center md:w-auto">
                 <!--  Date rate filter -->
                 <div class="relative flex items-center order-2 md:order-1">
                   <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:px-0 md:py-4 md:shadow-none" onclick="openDropdown(event, 'filterDateRate-id', 'bottom-end', 'fixed', false)">
@@ -159,28 +159,28 @@
                       <h3 class="text-lg font-medium text-gray_2-900">Filter by</h3>
                       
                       <!-- badges -->
-                      <div class="flex flex-wrap flex-row gap-3 pt-3 badges">
-                        <label class="warning inline-flex items-center badge badge-warning cursor-pointer font-medium">
+                      <div class="flex flex-row flex-wrap gap-3 pt-3 badges">
+                        <label class="inline-flex items-center font-medium cursor-pointer warning badge badge-warning">
                           <input type="checkbox" class="hidden" name="status" value="verification" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                           Need Verification
                         </label>
-                        <label class="blue inline-flex items-center badge badge-blue cursor-pointer font-medium">
+                        <label class="inline-flex items-center font-medium cursor-pointer blue badge badge-blue">
                           <input type="checkbox" class="hidden" name="status" value="waiting_revision" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                           Waiting for Revision
                         </label>
-                        <label class="warning inline-flex items-center badge badge-warning cursor-pointer font-medium">
+                        <label class="inline-flex items-center font-medium cursor-pointer warning badge badge-warning">
                           <input type="checkbox" class="hidden" name="status" value="waiting_approval" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                           Waiting for Approval
                         </label>
-                        <label class="blue inline-flex items-center badge badge-blue cursor-pointer font-medium">
+                        <label class="inline-flex items-center font-medium cursor-pointer blue badge badge-blue">
                           <input type="checkbox" class="hidden" name="status" value="waiting_approval" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                           Submitted to Finance
                         </label>
-                        <label class="error inline-flex items-center badge badge-error cursor-pointer font-medium">
+                        <label class="inline-flex items-center font-medium cursor-pointer error badge badge-error">
                           <input type="checkbox" class="hidden" name="status" value="rejected" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
                           Rejected
@@ -191,7 +191,7 @@
                       <!-- invoice date -->
                       <div class="pt-3">
                         <h3 class="text-lg font-medium text-gray_2-900">Invoice Date</h3>
-                        <div class="flex flex-row flex-nowrap pt-3 gap-3">
+                        <div class="flex flex-row gap-3 pt-3 flex-nowrap">
                           <div class="w-full">
                             <label for="from" class="label-control-lg">From</label>
                             <div class="relative">
@@ -216,7 +216,7 @@
     
                       <!-- rate -->
                       <div class="pt-3 pb-3">
-                        <h3 class="text-lg font-medium text-gray_2-900 mb-3">Rate</h3>
+                        <h3 class="mb-3 text-lg font-medium text-gray_2-900">Rate</h3>
                         <div>
                           <select class="" id="rate_field-id" style="width: 100%;" name="rate" required>
                             <option value=""></option>
@@ -238,7 +238,7 @@
     
                     </div>
                   </div>
-                  <div class="hidden opacity-25 fixed inset-0 z-30 bg-black" id="filterDateRate-id-backdrop"></div>
+                  <div class="fixed inset-0 z-30 hidden bg-black opacity-25" id="filterDateRate-id-backdrop"></div>
                   <!-- Open date rate -->
                 </div>
                 <!--  Date rate filter -->
@@ -246,21 +246,21 @@
                 <!--  Sortby filter -->
                 <div class="relative flex items-center order-3 md:order-2">
                   <button class="ring-default p-[10px] border border-gray-300 rounded-lg shadow-xs md:border-none md:rounded-none md:px-0 md:py-4 md:shadow-none" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed', false)">
-                    <img src="/dist/images/icons/sort-amount.svg" class="h-6 w-6" alt="search">
+                    <img src="/dist/images/icons/sort-amount.svg" class="w-6 h-6" alt="search">
                   </button>
     
                   <!-- Open sortby -->
-                  <div class="relative hidden z-60 w-64" id="filterSortby-id">
+                  <div class="relative hidden w-64 z-60" id="filterSortby-id">
                     <div class="flex justify-end mb-2 -mt-[45px] md:-mt-10">
                       <button class="h-[43px] w-[43px] me-[1px] md:me-0 md:h-6 md:w-6 bg-white rounded" onclick="openDropdown(event, 'filterSortby-id', 'bottom-end', 'fixed')">
                         <img src="/dist/images/icons/close.svg" class="w-full" alt="filter">
                       </button>
                     </div>
-                    <div class="w-full bg-white rounded-lg p-4">
+                    <div class="w-full p-4 bg-white rounded-lg">
                       <h3 class="text-lg font-medium text-gray_2-900">Sorty by</h3>
-                      <ul class="flex flex-col space-y-1 pt-3 pb-3">
+                      <ul class="flex flex-col pt-3 pb-3 space-y-1">
                         <li>
-                          <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                          <div class="w-full px-4 py-3 border rounded-lg border-cloudy-0">
                             <label class="flex items-center gap-4 cursor-pointer">
                               <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
                               <span class="label-checkbox whitespace-nowrap">Newest Document</span>
@@ -268,7 +268,7 @@
                           </div>
                         </li>
                         <li>
-                          <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                          <div class="w-full px-4 py-3 border rounded-lg border-cloudy-0">
                             <label class="flex items-center gap-4 cursor-pointer">
                               <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
                               <span class="label-checkbox whitespace-nowrap">Status Document</span>
@@ -276,7 +276,7 @@
                           </div>
                         </li>
                         <li>
-                          <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                          <div class="w-full px-4 py-3 border rounded-lg border-cloudy-0">
                             <label class="flex items-center gap-4 cursor-pointer">
                               <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
                               <span class="label-checkbox whitespace-nowrap">Lowest Total Amount</span>
@@ -284,7 +284,7 @@
                           </div>
                         </li>
                         <li>
-                          <div class="w-full px-4 py-3 rounded-lg border border-cloudy-0">
+                          <div class="w-full px-4 py-3 border rounded-lg border-cloudy-0">
                             <label class="flex items-center gap-4 cursor-pointer">
                               <input type="radio" name="sortby" class="w-5 h-5 border border-gray-300 rounded-full checked:bg-yellow-30 checked:border-[2.5px] checked:border-primary-300"/>
                               <span class="label-checkbox whitespace-nowrap">Highest Total Amount</span>
@@ -304,10 +304,10 @@
                 <!--  Sortby filter -->
     
                 <!-- Search filter -->
-                <div class="flex flex-1 items-start md:flex-auto md:items-center md:order-2">
-                  <div class="block relative w-full md:w-auto md:hidden" id="searchCon-id">
+                <div class="flex items-start flex-1 md:flex-auto md:items-center md:order-2">
+                  <div class="relative block w-full md:w-auto md:hidden" id="searchCon-id">
                     <input type="search" class="form-control-search w-full md:w-[188px]" id="search_input_vendor" placeholder="Search">
-                    <button class="absolute inset-y-0 left-0 md:right-0 md:left-auto flex items-center ps-2 pe-0 md:ps-0 md:pe-2 cursor-pointer" id="searchClose-id" onclick="toggleSearch()">
+                    <button class="absolute inset-y-0 left-0 flex items-center cursor-pointer md:right-0 md:left-auto ps-2 pe-0 md:ps-0 md:pe-2" id="searchClose-id" onclick="toggleSearch()">
                       <img src="/dist/images/icons/search.svg" class="w-full" alt="search">
                     </button>
                   </div>
@@ -320,405 +320,417 @@
               </div>
             </div>
 
-            <!-- tab scroll status  -->
-            <div class="relative w-full items-center hidden md:flex">
-              <button onclick="scrollList(-100)" class="absolute start-0 flex items-center justify-center bg-white w-4 h-4 rounded-full shadow-ds">
-                <img src="/dist/images/icons/u_angle-right-b.svg" alt="angle right">
-              </button>
-              <div class="flex flex-1 py-2 whitespace-nowrap overflow-x-hidden px-4 tabinvoices" id="scrollContainer">
-                <!-- Your list items go here -->
-                <div class="tab-invoice primary inline-flex items-center cursor-pointer active" onclick="openTabInvoice(this)">NEED VERIFICATION 
-                  <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">150</span>
+            <div id="tabs-id">
+              <!-- tab scroll status  -->
+              <div class="relative items-center hidden w-full md:flex">
+                <button onclick="scrollList(-100)" class="absolute flex items-center justify-center w-4 h-4 bg-white rounded-full start-0 shadow-ds">
+                  <img src="/dist/images/icons/u_angle-right-b.svg" alt="angle right">
+                </button>
+                <div class="flex flex-1 px-4 py-2 overflow-x-hidden whitespace-nowrap tabinvoices" id="scrollContainer">
+                  <!-- Your list items go here -->
+                  <a href="#" class="inline-flex items-center cursor-pointer tab-invoice primary active" onclick="changeAtiveTab(event,'tab-need-verification')">NEED VERIFICATION 
+                    <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">150</span>
+                  </a>
+                  <a href="#" class="inline-flex items-center cursor-pointer tab-invoice blue" onclick="changeAtiveTab(event,'tab-waiting-revision')">WAITING FOR REVISION 
+                    <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">150</span>
+                  </a>
+                  <a href="#" class="inline-flex items-center cursor-pointer tab-invoice green" onclick="changeAtiveTab(event,'tab-waiting-approval')">WAITING FOR APPROVAL 
+                    <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">200</span>
+                  </a>
+                  <a href="#" class="inline-flex items-center cursor-pointer tab-invoice orange" onclick="changeAtiveTab(event,'tab-submitted-finance')">SUBMITTED TO FINANCE
+                    <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">200</span>
+                  </a>
+                  <a href="#" class="inline-flex items-center cursor-pointer tab-invoice error" onclick="changeAtiveTab(event,'tab-rejected')">REJECTED 
+                    <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">20</span>
+                  </a>
+                  <!-- Add more items as needed -->
                 </div>
-                <div class="tab-invoice blue inline-flex items-center cursor-pointer" onclick="openTabInvoice(this)">WAITING FOR REVISION 
-                  <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">150</span>
-                </div>
-                <div class="tab-invoice green inline-flex items-center cursor-pointer" onclick="openTabInvoice(this)">WAITING FOR APPROVAL 
-                  <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">200</span>
-                </div>
-                <div class="tab-invoice orange inline-flex items-center cursor-pointer" onclick="openTabInvoice(this)">SUBMITTED TO FINANCE
-                  <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">200</span>
-                </div>
-                <div class="tab-invoice error inline-flex items-center cursor-pointer" onclick="openTabInvoice(this)">REJECTED 
-                  <span class="inline-flex items-center justify-center px-1 ms-0.5 text-xs text-white font-semibold bg-gray-60 border-2 border-white rounded-2xl shadow-xs">20</span>
-                </div>
-                <!-- Add more items as needed -->
+                <button onclick="scrollList(100)" class="absolute flex items-center justify-center w-4 h-4 bg-white rounded-full end-0 shadow-ds">
+                  <img src="/dist/images/icons/u_angle-right-b.svg" class="rotate-180" alt="angle left">
+                </button>
               </div>
-              <button onclick="scrollList(100)" class="absolute end-0 flex items-center justify-center bg-white w-4 h-4 rounded-full shadow-ds">
-                <img src="/dist/images/icons/u_angle-right-b.svg" class="rotate-180" alt="angle left">
-              </button>
-            </div>
 
-            <!-- tab select mobile  -->
-            <div class="flex w-full md:hidden mt-3 mb-6">
-              <select id="status_invoice-id" style="width: 100%;" name="invoice_tab" required>
-                <option value="action_needed" data-badge-color="bg-primary-500" data-count="105">Need Verification</option>
-                <option value="verification" data-badge-color="bg-blue_general" data-count="1.200">Waiting Verification</option>
-                <option value="rejected" data-badge-color="bg-red_general" data-count="20">Rejected</option>
-              </select>
-            </div>
+              <!-- tab select mobile  -->
+              <div class="flex w-full mt-3 mb-6 md:hidden">
+                <select id="status_invoice-id" style="width: 100%;" name="invoice_tab" required>
+                  <option value="action_needed" data-badge-color="bg-primary-500" data-count="105">Need Verification</option>
+                  <option value="verification" data-badge-color="bg-blue_general" data-count="1.200">Waiting Verification</option>
+                  <option value="rejected" data-badge-color="bg-red_general" data-count="20">Rejected</option>
+                </select>
+              </div>
 
-            <!-- list  -->
-            <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto">
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
+              <!-- list  -->
+              <div class="content-tab-status">
+                <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto" id="tab-need-verification">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-warning-dark whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
+                            Waiting for Verification
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-warning-dark whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
+                            Waiting for Verification
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                  </div>
+                </div>
+                <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-waiting-revision">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-blue whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-blue_2-500"></span>
+                            Waiting for Revision
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-blue whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-blue_2-500"></span>
+                            Waiting for Revision
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-waiting-approval">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-warning-dark whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
+                            Waiting for Approval
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-warning-dark whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
+                            Waiting for Approval
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-submitted-finance">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-blue whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-blue_2-500"></span>
+                            Submitted to Finance
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-blue whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-blue_2-500"></span>
+                            Submitted to Finance
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-rejected">
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-error whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-error-500"></span>
+                            Rejected
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    <div class="flex items-center justify-between text-sm font-medium">
+                      <div class="flex flex-col gap-4"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Company Name</span>
+                          <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Status</span>
+                          <label class="inline-flex items-center font-medium cursor-pointer badge badge-error whitespace-nowrap">
+                            <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-error-500"></span>
+                            Rejected
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-4 text-right"> 
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Issued Date</span>
+                          <span class="block text-base text-semi_black-100">16 Nov 2023</span>
+                        </div>
+                        <div>
+                          <span class="block mb-1 text-gray_natural-100">Total Amount</span>
+                          <span class="block text-base text-semi_black-100">Rp.60,000</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="px-3 py-3 cursor-pointer border-b border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice('detail_invoice-id')">
-                <h3 class="text-2xl font-medium text-semi_black-100 mb-6">009.23.33077279</h3>
-                <div class="flex items-center justify-between text-sm font-medium">
-                  <div class="flex flex-col gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Company Name</span>
-                      <span class="block text-base text-semi_black-100">PT. Maju Jaya Abadi</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Status</span>
-                      <label class="inline-flex items-center badge badge-warning-dark cursor-pointer font-medium whitespace-nowrap">
-                        <span class="dot-filter-badge w-2 h-2 rounded-full me-1.5 bg-warning_d-10"></span>
-                        Waiting for Verification
-                      </label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col text-right gap-4"> 
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Issued Date</span>
-                      <span class="block text-base text-semi_black-100">16 Nov 2023</span>
-                    </div>
-                    <div>
-                      <span class="block text-gray_natural-100 mb-1">Total Amount</span>
-                      <span class="block text-base text-semi_black-100">Rp.60,000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-            </div>
 
-            <!-- Pagination -->
-            <nav class="flex md:hidden items-center flex-column flex-wrap p-0 pt-3 mb-4 justify-between md:border border-cloudy-140 rounded-bl-lg rounded-br-lg" aria-label="Table navigation">
-              <span class="text-sm text-gray-700 mb-4 block w-full">Showing 1 to <span id="rows_value-id">4</span> of 10 rows 
-                <button id="rows_paginate-id" class="inline-block relative text-sm text-white bg-cloudy-80 rounded w-12 py-1.5 mx-2" 
-                  onclick="openDropdown(event, 'rows_paginate_list-id', 'top', 'absolute', true)"
-                >
-                  <div class="flex items-center justify-center gap-2">
-                    <span value-data="4" id="rows_data-id">4</span>
-                    <img src="/dist/images/icons/polygon.svg" alt="polygon">
-                  </div>
-                </button>  
-                rows per page
-              </span>
-              
-              <div class="relative hidden" id="rows_paginate_list-id">
-                <ul class="flex flex-col items-center justify-center page-rows gap-2">
+              <!-- Pagination -->
+              <nav class="flex flex-wrap items-center justify-between p-0 pt-3 mb-4 rounded-bl-lg rounded-br-lg md:hidden flex-column md:border border-cloudy-140" aria-label="Table navigation">
+                <span class="block w-full mb-4 text-sm text-gray-700">Showing 1 to <span id="rows_value-id">4</span> of 10 rows 
+                  <button id="rows_paginate-id" class="inline-block relative text-sm text-white bg-cloudy-80 rounded w-12 py-1.5 mx-2" 
+                    onclick="openDropdown(event, 'rows_paginate_list-id', 'top', 'absolute', true)"
+                  >
+                    <div class="flex items-center justify-center gap-2">
+                      <span value-data="4" id="rows_data-id">4</span>
+                      <img src="/dist/images/icons/polygon.svg" alt="polygon">
+                    </div>
+                  </button>  
+                  rows per page
+                </span>
+                
+                <div class="relative hidden" id="rows_paginate_list-id">
+                  <ul class="flex flex-col items-center justify-center gap-2 page-rows">
+                    <li>
+                      <div class="flex justify-center page-rows-item" value-data="2" onclick="selectRows(this)">2</div>
+                    </li>
+                    <li>
+                      <div class="flex justify-center page-rows-item" value-data="4" onclick="selectRows(this)">4</div>
+                    </li>
+                    <li>
+                      <div class="flex justify-center page-rows-item" value-data="6" onclick="selectRows(this)">6</div>
+                    </li>
+                    <li>
+                      <div class="flex justify-center page-rows-item" value-data="8" onclick="selectRows(this)">8</div>
+                    </li>
+                    <li>
+                      <div class="flex justify-center page-rows-item" value-data="10" onclick="selectRows(this)">10</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <ul class="pagination">
                   <li>
-                    <div class="flex justify-center page-rows-item" value-data="2" onclick="selectRows(this)">2</div>
+                    <a href="#" class="flex items-center justify-center page-item-previous">
+                      <img src="/dist/images/icons/chevron-back.svg" alt="chevron back">
+                    </a>
                   </li>
                   <li>
-                    <div class="flex justify-center page-rows-item" value-data="4" onclick="selectRows(this)">4</div>
+                    <a href="#" aria-current="page" class="flex items-center justify-center page-item page-item-active">1</a>
                   </li>
                   <li>
-                    <div class="flex justify-center page-rows-item" value-data="6" onclick="selectRows(this)">6</div>
+                    <a href="#" class="flex items-center justify-center page-item">2</a>
                   </li>
                   <li>
-                    <div class="flex justify-center page-rows-item" value-data="8" onclick="selectRows(this)">8</div>
+                    <a href="#" class="flex items-center justify-center page-item">3</a>
                   </li>
                   <li>
-                    <div class="flex justify-center page-rows-item" value-data="10" onclick="selectRows(this)">10</div>
+                    <a href="#" class="flex items-center justify-center cursor-default page-item hover:bg-transparent">...</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center page-item">9</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center page-item">10</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center page-item-next">
+                      <img src="/dist/images/icons/chevron-back.svg" class="rotate-180" alt="chevron back">
+                    </a>
                   </li>
                 </ul>
-              </div>
-
-              <ul class="pagination">
-                <li>
-                  <a href="#" class="flex items-center justify-center page-item-previous">
-                    <img src="/dist/images/icons/chevron-back.svg" alt="chevron back">
-                  </a>
-                </li>
-                <li>
-                  <a href="#" aria-current="page" class="flex items-center justify-center page-item page-item-active">1</a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center justify-center page-item">2</a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center justify-center page-item">3</a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center justify-center page-item cursor-default hover:bg-transparent">...</a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center justify-center page-item">9</a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center justify-center page-item">10</a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center justify-center page-item-next">
-                    <img src="/dist/images/icons/chevron-back.svg" class="rotate-180" alt="chevron back">
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <!-- Pagination -->
+              </nav>
+              <!-- Pagination -->
+            </div>
+          
           </div>
         </div>
         
-        <div id="detail_invoice-id" class="fixed top-0 right-0 z-50 h-full md:max-h-screen overflow-y-auto transition-transform transform-none bg-white w-full md:relative md:col-span-8 md:transform-none md:z-auto">
+        <div id="detail_invoice-id" class="fixed top-0 right-0 z-50 w-full h-full overflow-y-auto transition-transform bg-white md:max-h-screen transform-none md:relative md:col-span-8 md:transform-none md:z-auto">
           <div class="px-4 pt-0 md:pt-6 md:px-8">
             <!-- <div class="p-0 py-6 pl-0 pr-0 md:py-6 md:pl-6 md:pr-3"> -->
 
             <!-- close -->
             <div class="flex justify-start gap-2 py-4 md:hidden">
-              <button onclick="toggleDetailInvoice('detail_invoice-id')">
+              <button onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
                   <path d="M15 18L9 12L15 6" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -732,10 +744,10 @@
               <div class="relative overflow-x-auto mb-7">
                 <table class="table-responsive">
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tl-lg">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border rounded-tl-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30">
                       Document Number
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12 rounded-tr-lg">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium border rounded-tr-lg md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                       <div class="flex items-center justify-between">
                         <span id="document_number-id">DOC-004/010456</span>
                         <span class="block cursor-pointer" onclick="copyToClipboard('document_number-id')">
@@ -745,26 +757,26 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       Company Name 
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                       PT. Maju Jaya Abadi
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       Transaction Type
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                       Service
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       Invoice Number
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                       <div class="flex items-center justify-between">
                         <span id="invoice_number-id">VI 231011 - 01/R01</span>
                         <span class="block cursor-pointer" onclick="copyToClipboard('invoice_number-id')">
@@ -774,83 +786,83 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       Issued Date
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                       24/04/2023
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       Contract No
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-cloudy-90 border-cloudy-140 bg-cloudy-20">
                       SN-004
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-2 md:px-6 md:py-2 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                    <th scope="row" class="w-4/12 px-3 py-2 text-sm font-medium border md:px-6 md:py-2 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       Status
                     </th>
-                    <td class="px-3 py-2 md:px-6 md:py-2 text-sm font-medium text-cloudy-90 border border-cloudy-140 bg-cloudy-20 w-8/12 whitespace-nowrap">
+                    <td class="w-8/12 px-3 py-2 text-sm font-medium border md:px-6 md:py-2 text-cloudy-90 border-cloudy-140 bg-cloudy-20 whitespace-nowrap">
                       <div class="flex items-center justify-between" id="status_detail-id">
                         <div class="flex items-center">
-                          <div class="flex items-center justify-center rounded-full h-10 w-10 me-3" id="status_detail_icon-id">
+                          <div class="flex items-center justify-center w-10 h-10 rounded-full me-3" id="status_detail_icon-id">
                             <img src="/dist/images/icons/clockFilledWarning.svg" alt="clock warning">
                           </div>
                           <div class="flex flex-col">
-                            <span class="text-secondary-900 font-semibold" id="status_detail_name-id">Waiting for Verification</span>
-                            <span class="text-gray_2-500 font-normal" id="status_detail_name_file-id"></span>
+                            <span class="font-semibold text-secondary-900" id="status_detail_name-id">Waiting for Verification</span>
+                            <span class="font-normal text-gray_2-500" id="status_detail_name_file-id"></span>
                           </div>
                         </div>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       Description
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 whitespace-nowrap">
-                      <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 whitespace-nowrap">
+                      <input type="text" class="w-full text-sm font-medium outline-none text-secondary-900">
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       GL Account<span class="text-red-500">*</span>
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 whitespace-nowrap">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 whitespace-nowrap">
                       <div class="relative">
                         <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
                           <img src="/dist/images/icons/fi_search.svg" alt="search">
                         </div>
-                        <input type="text" class="form-control-none w-full text-secondary-900 pr-5" id="gl_search_data-id" readonly>
+                        <input type="text" class="w-full pr-5 form-control-none text-secondary-900" id="gl_search_data-id" readonly>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       Cost Center<span class="text-red-500">*</span>
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140">
                       <div class="relative">
                         <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
                           <img src="/dist/images/icons/fi_search.svg" alt="search">
                         </div>
-                        <input type="text" class="form-control-none w-full text-secondary-900 pr-5" id="cost_center_data-id" readonly>
+                        <input type="text" class="w-full pr-5 form-control-none text-secondary-900" id="cost_center_data-id" readonly>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium  text-gray_2-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg">
+                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border rounded-bl-lg md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
                       IO Number<span class="text-red-500">*</span>
                     </th>
-                    <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12 rounded-br-lg">
+                    <td class="w-8/12 px-3 py-3 text-sm font-medium bg-white border rounded-br-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140">
                       <div class="relative">
                         <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
                           <img src="/dist/images/icons/fi_search.svg" alt="search">
                         </div>
-                        <input type="text" class="form-control-none w-full text-secondary-900 pr-5" id="io_number_data-id" readonly>
+                        <input type="text" class="w-full pr-5 form-control-none text-secondary-900" id="io_number_data-id" readonly>
                       </div>
                     </td>
                   </tr>
@@ -861,41 +873,41 @@
                 <table class="table-responsive">
                   <thead>
                     <tr>
-                      <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tl-lg">
+                      <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border rounded-tl-lg text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         Description
                       </th>
-                      <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-1/12">
+                      <th scope="row" class="w-1/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         QTY
                       </th>
-                      <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12">
+                      <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         Rate
                       </th>
-                      <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-tr-lg">
+                      <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border rounded-tr-lg text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         Amount
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 w-8/12">
+                      <td class="w-8/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-10">
                         TEST ABC
                       </td>
-                      <td class="px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 w-1/12 whitespace-nowrap">
+                      <td class="w-1/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                         20
                       </td>
-                      <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-10 w-8/12">
+                      <td class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-cloudy-10">
                         Rp1.500.000
                       </td>
-                      <td class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-10 w-8/12 whitespace-nowrap">
+                      <td class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                         Rp. 30.000.000
                       </td>
                     </tr>
                   </tbody>
                   <tfoot>
-                    <th scope="row" class="px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg" colspan="3">
+                    <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium text-right border rounded-bl-lg text-secondary-900 border-cloudy-140 bg-cloudy-30" colspan="3">
                       Total
                     </th>
-                    <td class="px-6 py-2 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 w-8/12 rounded-br-lg whitespace-nowrap">
+                    <td class="w-8/12 px-6 py-2 text-sm font-medium border rounded-br-lg text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       Rp. 30.000.000
                     </td>
                   </tfoot>
@@ -907,13 +919,13 @@
 
                 <!-- heading -->
                 <div class="flex items-center justify-between px-3 py-3 md:px-6 md:py-3">
-                  <h3 class="text-lg md:text-xl font-medium text-secondary-900">Supporting Files</h3>
-                  <button class="flex md:hidden items-center justify-center w-10 h-10 rounded-lg shadow-xs bg-white border border-gray-300">
+                  <h3 class="text-lg font-medium md:text-xl text-secondary-900">Supporting Files</h3>
+                  <button class="flex items-center justify-center w-10 h-10 bg-white border border-gray-300 rounded-lg shadow-xs md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
                       <path d="M15.8332 7.5H12.4998V2.5H7.49984V7.5H4.1665L9.99984 13.3333L15.8332 7.5ZM4.1665 15V16.6667H15.8332V15H4.1665Z" fill="#10181F"/>
                     </svg>
                   </button>
-                  <button class="hidden md:inline-flex items-center justify-center text-sm md:text-base text-secondary-900 cursor-pointer hover:underline">
+                  <button class="items-center justify-center hidden text-sm cursor-pointer md:inline-flex md:text-base text-secondary-900 hover:underline">
                     <img src="/dist/images/icons/FileDownloadFilled.svg" class="me-2" alt="FileDownloadFilled">
                     Download All Files
                   </button>
@@ -922,10 +934,10 @@
 
                 <!-- list supporting files  -->
                 <div class="space-y-3">
-                  <div class="flex flex-col gap-3 px-4 py-4 bg-white border border-cloudy-140 rounded-lg md:px-8 md:py-4">
-                    <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-4">
+                  <div class="flex flex-col gap-3 px-4 py-4 bg-white border rounded-lg border-cloudy-140 md:px-8 md:py-4">
+                    <div class="flex flex-col justify-between gap-6 md:flex-row md:gap-4">
                       <div class="flex flex-col gap-6 md:gap-3">
-                        <h3 class="text-base md:text-xl font-medium text-secondary-900">BAST For Transaction ABXY 2023 Update</h3>
+                        <h3 class="text-base font-medium md:text-xl text-secondary-900">BAST For Transaction ABXY 2023 Update</h3>
                         <div class="flex flex-col gap-3 text-sm font-medium text-secondary-500">
                           <div>
                             <span class="inline-block w-[105px]">TYPE</span><span class="text-base text-secondary-900">: Invoice</span>
@@ -936,22 +948,22 @@
                         </div>
                       </div>
 
-                      <div class="flex flex-row-reverse items-end justify-between md:items-end md:flex-col gap-4">
+                      <div class="flex flex-row-reverse items-end justify-between gap-4 md:items-end md:flex-col">
                         <div class="flex items-end justify-end gap-2">
-                          <div class="flex items-center justify-center w-8 h-8 rounded shadow-one bg-blue-90 cursor-pointer" onclick="toggleModalDialog('modal_preview_pdf-id')">
+                          <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-blue-90" onclick="toggleModalDialog('modal_preview_pdf-id')">
                               <img src="/dist/images/icons/RemoveRedEyeFilled.svg" class="w-5 h-5" alt="eye">
                           </div>
-                          <div class="flex items-center justify-center w-8 h-8 rounded shadow-one bg-cloudy-90 cursor-pointer" onclick="downloadInvoice()">
+                          <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-cloudy-90" onclick="downloadInvoice()">
                             <img src="/dist/images/icons/download.svg" class="w-4 h-4" alt="download">
                           </div>
                         </div>
 
-                        <div class="flex flex-col items-start md:flex-row md:items-center gap-3">
-                          <div class="hidden items-center gap-3" id="yard_group_value-id">
+                        <div class="flex flex-col items-start gap-3 md:flex-row md:items-center">
+                          <div class="items-center hidden gap-3" id="yard_group_value-id">
                             <div class="flex flex-shrink-0 -space-x-4 rt rtl:space-x-reverse">
                               
                             </div>
-                            <span class="text-sm md:text-base font-medium text-cloudy-130"></span>
+                            <span class="text-sm font-medium md:text-base text-cloudy-130"></span>
                           </div>
                           
                           <div class="flex">
@@ -977,21 +989,21 @@
               </div>
             </div>
           </div>
-          <div class="sticky mt-auto bottom-0 px-4 py-4 md:px-8 md:py-6 bg-secondary-900">
+          <div class="sticky bottom-0 px-4 py-4 mt-auto md:px-8 md:py-6 bg-secondary-900">
             <div class="flex flex-col justify-between gap-3 md:gap-4 md:flex-row">
-              <div class="flex flex-row md:flex-col justify-between md:justify-start gap-3">
-                <button type="button" class="flex items-center text-sm md:text-base text-white font-medium underline" onclick="toggleModalDialog('modal_history-id')">
+              <div class="flex flex-row justify-between gap-3 md:flex-col md:justify-start">
+                <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="toggleModalDialog('modal_history-id')">
                   <img src="/dist/images/icons/HistoryFilled.svg" alt="history filled" class="me-2">
                   Log History
                 </button>
-                <button type="button" class="flex items-center text-sm md:text-base text-white font-medium underline" onclick="downloadInvoice()">
+                <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="downloadInvoice()">
                   <img src="/dist/images/icons/xls.png" alt="xls" class="me-2">
                   Download Invoice .xls
                 </button>
               </div>
-              <div class="flex flex-col md:items-end md:justify-end gap-2">
-                <span class="block text-sm text-grey-500 italic text-left md:text-right" id="checking_status-id"></span>
-                <button type="button" class="flex items-center justify-center  btn-lg btn-primary" onclick="saveNextInvoice()">
+              <div class="flex flex-col gap-2 md:items-end md:justify-end">
+                <span class="block text-sm italic text-left text-grey-500 md:text-right" id="checking_status-id"></span>
+                <button type="button" class="flex items-center justify-center btn-lg btn-primary" onclick="saveNextInvoice()">
                   Save and Next
                 </button>
               </div>
@@ -1004,7 +1016,7 @@
   </main>
 
 <!-- list status  -->
-<div class="hidden bg-white text-base p-3 z-60 float-left list-none text-left rounded-md shadow-lg mt-1 space-y-2" style="min-width:12rem"  id="customSelectOptions">
+<div class="hidden float-left p-3 mt-1 space-y-2 text-base text-left list-none bg-white rounded-md shadow-lg z-60" style="min-width:12rem"  id="customSelectOptions">
   <button class="flex items-center justify-between text-sm font-medium text-cloudy-70 px-4 py-[10px] w-[196px] rounded-md bg-white border border-black" data-value="" 
     onclick="selectOption(event,'customSelect')"
   >
@@ -1060,7 +1072,7 @@
 
 <!-- modal log history -->
 <div id="modal_history-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-60 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-2 md:p-4 md:max-w-3xl">
     
     <div class="relative bg-white rounded-xl shadow h-[370px] md:h-[565px]">
 
@@ -1089,86 +1101,86 @@
             <table class="table-responsive">
               <thead>
                 <tr class="bg-cloudy-30">
-                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-tl-lg whitespace-nowrap">
+                  <th scope="row" class="px-3 py-3 text-sm font-medium border rounded-tl-lg text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Full Name
                   </th>
-                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                  <th scope="row" class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Position
                   </th>
-                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left whitespace-nowrap">
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Status Approval
                   </th>
-                  <th scope="row" class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 text-left whitespace-nowrap">
+                  <th scope="row" class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Approval Date
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Farhan Farhano
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Warehouse PIC
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
-                    <label class="inline-flex items-center badge badge-green cursor-pointer font-medium">
+                  <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
+                    <label class="inline-flex items-center font-medium cursor-pointer badge badge-green">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-green-500"></span>
                       Approved
                     </label>
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     23/04/2023
                   </td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Farhan Farhano
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Warehouse PIC
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
-                    <label class="inline-flex items-center badge badge-green cursor-pointer font-medium">
+                  <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
+                    <label class="inline-flex items-center font-medium cursor-pointer badge badge-green">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-green-500"></span>
                       Approved
                     </label>
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     23/04/2023
                   </td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Farhan Farhano
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Warehouse PIC
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
-                    <label class="inline-flex items-center badge badge-green cursor-pointer font-medium">
+                  <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
+                    <label class="inline-flex items-center font-medium cursor-pointer badge badge-green">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-green-500"></span>
                       Approved
                     </label>
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     23/04/2023
                   </td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 rounded-bl-lg whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium border rounded-bl-lg text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Farhan Farhano
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     Warehouse PIC
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap">
-                    <label class="inline-flex items-center badge badge-green cursor-pointer font-medium">
+                  <td class="px-3 py-3 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap">
+                    <label class="inline-flex items-center font-medium cursor-pointer badge badge-green">
                       <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-green-500"></span>
                       Approved
                     </label>
                   </td>
-                  <td class="px-3 py-3 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 rounded-br-lg whitespace-nowrap">
+                  <td class="px-3 py-3 text-sm font-medium text-left border rounded-br-lg text-secondary-900 border-cloudy-140 whitespace-nowrap">
                     23/04/2023
                   </td>
                 </tr>
@@ -1178,17 +1190,17 @@
           </div>
         </div>
 
-        <div id="log_history-id" class="tab-content hidden">
+        <div id="log_history-id" class="hidden tab-content">
             <!-- list log -->
             <div class="relative overflow-x-auto max-h-[264px] md:max-h-[434px] custom-scrollbar min-w-full rounded-lg shadow-one px-3 py-2 md:px-5 md:py-6 border border-secondary-100">
               <!-- card  -->
               <div class="flex flex-col md:flex-row justify-between md:min-w-[420px] gap-3 text-sm text-gray_2-500 py-2 md:py-4 border-b border-cloudy-20 last:border-b-0">
-                <div class="flex gap-3 order-2 md:order-1">
-                  <img src="/dist/images/avatar-2.jpeg" class="w-12 h-12 rounded-full object-cover object-top flex-shrink-0" alt="avatar">
+                <div class="flex order-2 gap-3 md:order-1">
+                  <img src="/dist/images/avatar-2.jpeg" class="flex-shrink-0 object-cover object-top w-12 h-12 rounded-full" alt="avatar">
                   <div class="flex-1">
                     <div class="flex flex-col">
                       <span class="inline-flex items-center text-base font-medium text-gray-700">BoboiBoy<span class="text-sm font-normal text-gray_2-500 ms-2">Vendor</span></span>
-                      <span class="block mb-3 whitespace-nowrap">Add file to <span class="text-primary-500 font-medium">Submission Form</span></span>
+                      <span class="block mb-3 whitespace-nowrap">Add file to <span class="font-medium text-primary-500">Submission Form</span></span>
                       <div class="flex items-center gap-3">
                         <img src="/dist/images/icons/_File upload icon.svg" alt="icon file upload">
                         <div class="flex flex-col">
@@ -1199,24 +1211,24 @@
                     </div>
                   </div>
                 </div>
-                <span class="block order-1 md:order-2">17/04/2023</span>
+                <span class="order-1 block md:order-2">17/04/2023</span>
               </div>
               <!-- card  -->
               <div class="flex flex-col md:flex-row justify-between md:min-w-[420px] gap-3 text-sm text-gray_2-500 py-2 md:py-4 border-b border-cloudy-20 last:border-b-0">
-                <div class="flex gap-3 order-2 md:order-1">
-                  <img src="/dist/images/avatar-2.jpeg" class="w-12 h-12 rounded-full object-cover object-top flex-shrink-0" alt="avatar">
+                <div class="flex order-2 gap-3 md:order-1">
+                  <img src="/dist/images/avatar-2.jpeg" class="flex-shrink-0 object-cover object-top w-12 h-12 rounded-full" alt="avatar">
                   <div class="flex-1">
                     <div class="flex flex-col">
                       <span class="inline-flex items-center text-base font-medium text-gray-700">BoboiBoy<span class="text-sm font-normal text-gray_2-500 ms-2">Vendor</span></span>
                       <span class="block mb-3">Add file to 
-                        <span class="text-primary-500 font-medium">Send Hard Copy</span>
-                        <span class="text-gray_2-500 font-medium">via</span>
-                        <span class="text-secondary-900 font-medium">Self-Courier</span>
+                        <span class="font-medium text-primary-500">Send Hard Copy</span>
+                        <span class="font-medium text-gray_2-500">via</span>
+                        <span class="font-medium text-secondary-900">Self-Courier</span>
                       </span>
                     </div>
                   </div>
                 </div>
-                <span class="block order-1 md:order-2">17/04/2023</span>
+                <span class="order-1 block md:order-2">17/04/2023</span>
               </div>
             </div>
         </div>
@@ -1230,7 +1242,7 @@
 
 <!-- modal preview pdf-->
 <div id="modal_preview_pdf-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-2 md:p-4 md:max-w-3xl">
 
     <!-- header -->
     <div class="flex items-center justify-end px-4 py-2 bg-cloudy-20 rounded-tl-xl rounded-tr-xl">
@@ -1255,7 +1267,7 @@
 
 <!-- modal status -->
 <div id="modal_status-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-60 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-2 md:p-4 w-full md:max-w-3xl max-h-full">
+  <div class="relative w-full max-h-full p-2 md:p-4 md:max-w-3xl">
     <div class="relative bg-white rounded-lg shadow">
       <div class="p-4 text-center">
         <div class="flex items-start justify-between mb-5">
@@ -1268,7 +1280,7 @@
           </button>
         </div>
         <form id="form_note-id">
-          <textarea name="note" id="note_text-id" rows="6" class="block form-control mb-4" placeholder="Insert revision explanation here..." oninput="checkInput(event, 'note_btn-id')"></textarea>
+          <textarea name="note" id="note_text-id" rows="6" class="block mb-4 form-control" placeholder="Insert revision explanation here..." oninput="checkInput(event, 'note_btn-id')"></textarea>
           <input type="hidden" id="status_value-id" placeholder="...">
           <div class="flex justify-end w-full">
             <button type="button" class="block btn btn-primary" id="note_btn-id" onclick="submitNote('modal_status-id', 'form_note-id')" disabled>
@@ -1349,7 +1361,7 @@
 <div id="modal_yard_leader-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-60 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-2 md:p-4 w-full md:max-w-[375px]">
     <div class="relative bg-white rounded-lg shadow h-[116px]" id="card_yard_leader-id">
-      <div class="flex flex-col gap-3 p-4 h-full">
+      <div class="flex flex-col h-full gap-3 p-4">
         <h3 class="text-lg font-medium text-gray_2-900">Assign Yard Leader</h3>
         <select class="" id="yard_leader-id" style="width: 100%;" name="yard_leader" multiple required>
           <option value=""></option>
@@ -1358,7 +1370,7 @@
           <option value="2" data-image="/dist/images/avatar-3.jpg">Gondem Yuzaki*Yard Leader - Cikarang Area</option>
           <option value="2" data-image="/dist/images/avatar-3.jpg">Michael Fukubi*Yard Leader - Cikarang Area</option>
         </select>
-        <button type="button" class="hidden items-center justify-center btn-lg btn-primary mt-auto" id="btn_yard-id" onclick="assignYardLeader()">
+        <button type="button" class="items-center justify-center hidden mt-auto btn-lg btn-primary" id="btn_yard-id" onclick="assignYardLeader()">
           Assign as Yard Leader
         </button>
       </div>

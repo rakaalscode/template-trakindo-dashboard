@@ -919,6 +919,33 @@ $(document).ready(function() {
     });
   }
 
+  function changeAtiveTab(event,tabID){
+    let element = event.target;
+    while(element.nodeName !== "A"){
+      element = element.parentNode;
+    }
+    ulElement = element.parentNode.parentNode;
+    aElements = ulElement.querySelectorAll("div > a");
+    tabContents = document.getElementById("tabs-id").querySelectorAll(".content-tab-status > div");
+    for(let i = 0 ; i < aElements.length; i++){
+      aElements[i].classList.remove("active");
+      tabContents[i].classList.add("hidden");
+      tabContents[i].classList.remove("block");
+    }
+
+    let container = document.getElementById('scrollContainer');
+    let tabPosition = element.offsetLeft - 50;
+
+    container.scrollTo({
+      left: tabPosition,
+      behavior: 'smooth' // You can use 'auto' for instant scroll
+    });
+
+    element.classList.add("active");
+    document.getElementById(tabID).classList.remove("hidden");
+    document.getElementById(tabID).classList.add("block");
+  }
+
   function toggleDotVisibility(checkbox) {
     const label = checkbox.parentElement;
     const dot = checkbox.parentElement.querySelector('.dot-filter-badge');
@@ -1205,10 +1232,10 @@ $(document).ready(function() {
     // let cell5 = newRow.insertCell(4);
 
     // Add classes to the cells
-    cell1.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 w-1 rounded-tl-lg";
-    cell2.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 whitespace-nowrap";
-    cell3.className = "px-6 py-4 text-sm font-medium text-secondary-900 text-left border border-cloudy-140 whitespace-nowrap";
-    cell4.className = "px-6 py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 rounded-br-lg whitespace-nowrap";
+    cell1.className = "w-1 px-6 py-4 text-sm font-medium border rounded-tl-lg text-secondary-900 border-cloudy-140";
+    cell2.className = "px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 whitespace-nowrap";
+    cell3.className = "px-6 py-4 text-sm font-medium text-left border text-secondary-900 border-cloudy-140 whitespace-nowrap";
+    cell4.className = "px-6 py-4 text-sm font-medium text-right border rounded-br-lg text-secondary-900 border-cloudy-140 whitespace-nowrap";
     
 
     // Set the content of cells (you can set this dynamically based on user input)
@@ -1634,10 +1661,10 @@ $(document).ready(function() {
     // let cell5 = newRow.insertCell(4);
 
     // Add classes to the cells
-    cell1.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 md:w-96 bg-white";
-    cell2.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white md:w-24 whitespace-nowrap";
-    cell3.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-right md:w-48 bg-white";
-    cell4.className = "px-6 py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 text-right md:w-48 bg-white whitespace-nowrap";
+    cell1.className = "px-6 py-4 text-sm font-medium bg-white border text-secondary-900 border-cloudy-140 md:w-96";
+    cell2.className = "px-6 py-4 text-sm font-medium bg-white border text-secondary-900 border-cloudy-140 md:w-24 whitespace-nowrap";
+    cell3.className = "px-6 py-4 text-sm font-medium text-right bg-white border text-secondary-900 border-cloudy-140 md:w-48";
+    cell4.className = "px-6 py-4 text-sm font-medium text-right bg-white border text-secondary-900 border-cloudy-140 md:w-48 whitespace-nowrap";
     
 
     // Set the content of cells (you can set this dynamically based on user input)
@@ -1669,16 +1696,18 @@ $(document).ready(function() {
     }
   }
 
-  // function removeRowGoods(button) {
-  //   // Get the row containing the button
-  //   let row = button.parentNode.parentNode;
-
-  //   // Remove the row
-  //   row.parentNode.removeChild(row);
-  // }
-
-  function toggleDetailInvoice(drawerID) {
+  function toggleDetailInvoice(button, drawerID) {
     let drawerEl = document.getElementById(drawerID)
+    let tabButtons = document.querySelectorAll(".content-tab-status div div");
+    
+    tabButtons.forEach(function(tabButton) {
+      tabButton.classList.remove("bg-cloudy-10");
+    });
+
+    if (button) {
+      button.classList.add("bg-cloudy-10");
+    }
+    
     if (window.innerWidth <= 768) {
       if(drawerEl.classList.contains("translate-x-full")) {
         document.body.style.overflow = "hidden"

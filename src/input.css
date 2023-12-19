@@ -78,7 +78,7 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 
 /* nav  */
 .nav-menu {
-  @apply text-secondary-500 bg-transparent md:bg-white md:border-b md:border-white  md:hover:text-secondary-900 md:hover:border-black;
+  @apply bg-transparent text-secondary-500 md:bg-white md:border-b md:border-white md:hover:text-secondary-900 md:hover:border-black;
 }
 
 .nav-menu-active {
@@ -93,11 +93,11 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 
 /* tabs underline button  */
 /* .tab-list {
-  @apply text-secondary-300 mr-5 cursor-pointer hover:text-secondary-900 hover:underline;
+  @apply mr-5 cursor-pointer text-secondary-300 hover:text-secondary-900 hover:underline;
 } */
 
 .tab-list {
-  @apply text-sm font-medium text-center text-secondary-300 rounded-lg mr-5 cursor-pointer hover:text-secondary-900 hover:underline;
+  @apply mr-5 text-sm font-medium text-center rounded-lg cursor-pointer text-secondary-300 hover:text-secondary-900 hover:underline;
 }
 
 .tab-list-badge{
@@ -116,7 +116,7 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 
 
 .active-tab {
-  @apply text-secondary-900 mr-5 underline cursor-default;
+  @apply mr-5 underline cursor-default text-secondary-900;
 }
 
 .active-tab .tab-list-badge {
@@ -146,7 +146,7 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 }
 
 .btn-sm {
-  @apply text-sm font-semibold rounded-md px-4 py-2 whitespace-nowrap;
+  @apply px-4 py-2 text-sm font-semibold rounded-md whitespace-nowrap;
 }
 
 .btn-lg {
@@ -158,11 +158,11 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 }
 
 .btn-success {
-  @apply text-white bg-green-btn border border-green-btn hover:bg-green-700 hover:border-green-700;
+  @apply text-white border bg-green-btn border-green-btn hover:bg-green-700 hover:border-green-700;
 }
 
 .btn-primary {
-  @apply text-cloudy-120 bg-primary-500 border border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-700 hover:bg-primary-700 hover:border-primary-700 disabled:cursor-not-allowed disabled:bg-yellow-20 disabled:text-cloudy-70 disabled:border-yellow-20;
+  @apply border text-cloudy-120 bg-primary-500 border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-700 hover:bg-primary-700 hover:border-primary-700 disabled:cursor-not-allowed disabled:bg-yellow-20 disabled:text-cloudy-70 disabled:border-yellow-20;
 }
 
 .btn-default {
@@ -173,14 +173,14 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 
 /* button outline  */
 .btn-outline-success {
-  @apply text-green-btn bg-white border border-green-btn hover:bg-green-700 hover:text-white;
+  @apply bg-white border text-green-btn border-green-btn hover:bg-green-700 hover:text-white;
 }
 /* button outline */
 
 
 /* badge  */
 .badge {
-  @apply text-sm px-3 py-1 rounded-2xl;
+  @apply px-3 py-1 text-sm rounded-2xl;
 }
 
 .badge-md {
@@ -188,11 +188,11 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 }
 
 .badge-default {
-  @apply bg-gray-100 text-gray-700;
+  @apply text-gray-700 bg-gray-100;
 }
 
 .badge-gray {
-  @apply font-medium bg-gray-100 text-gray-700;
+  @apply font-medium text-gray-700 bg-gray-100;
 }
 
 .badge-warning {
@@ -250,15 +250,15 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 
 /* input  */
 .form-control {
-  @apply text-base border rounded-lg block w-full p-3 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+  @apply block w-full p-3 text-base bg-white border rounded-lg border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
 }
 
 .form-control-l-icon {
-  @apply text-base border rounded-lg block w-full p-3 pl-10 bg-white border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+  @apply block w-full p-3 pl-10 text-base bg-white border rounded-lg border-secondary-100 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
 }
 
 .form-control-none {
-  @apply text-base rounded-lg block w-full outline-none focus:outline-none;
+  @apply block w-full text-base rounded-lg outline-none focus:outline-none;
 }
 
 .form-rounded {
@@ -266,7 +266,7 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 }
 
 .form-control-search {
-  @apply text-base border border-secondary-100 md:border-primary-500 block px-2 py-2 ps-10 pe-2 md:pe-10 md:ps-2 bg-white rounded-lg focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
+  @apply block px-2 py-2 text-base bg-white border rounded-lg border-secondary-100 md:border-primary-500 ps-10 pe-2 md:pe-10 md:ps-2 focus:outline-none focus:border-primary-500 focus:ring-0 focus:ring-primary-500;
 }
 
 .form-control-search-mobile {
@@ -295,11 +295,11 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 
 /* table  */
 .table-responsive {
-  @apply min-w-full text-sm text-left rtl:text-right border-separate border-spacing-0;
+  @apply min-w-full text-sm text-left border-separate rtl:text-right border-spacing-0;
 }
 
 .thead-bold {
-  @apply text-base font-medium text-secondary-900 bg-cloudy-30 border border-cloudy-140;
+  @apply text-base font-medium border text-secondary-900 bg-cloudy-30 border-cloudy-140;
 }
 
 .thead-col {
@@ -311,7 +311,7 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 }
 
 .tbody-sm {
-  @apply bg-white text-sm text-secondary-900 border border-cloudy-140;
+  @apply text-sm bg-white border text-secondary-900 border-cloudy-140;
 }
 
 .tbody-col {
@@ -326,7 +326,7 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 
 /* pagination  */
 .pagination {
-  @apply text-sm text-gray-700 font-medium inline-flex -space-x-px rtl:space-x-reverse justify-center h-8 md:h-10 w-full md:w-auto md:justify-end;
+  @apply inline-flex justify-center w-full h-8 -space-x-px text-sm font-medium text-gray-700 rtl:space-x-reverse md:h-10 md:w-auto md:justify-end;
 }
 
 .page-item {
@@ -346,7 +346,7 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 }
 
 .page-rows {
-  @apply text-sm text-white bg-cloudy-80 rounded w-12 -my-1;
+  @apply w-12 -my-1 text-sm text-white rounded bg-cloudy-80;
 }
 
 .page-rows-item {
@@ -395,6 +395,10 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 }
 .tab-invoice.orange.active {
   @apply border-b-warning_b_general text-cloudy-110
+}
+
+.content-tab-status .active {
+  @apply block
 }
 
 /* global  */
