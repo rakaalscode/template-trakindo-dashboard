@@ -1277,6 +1277,16 @@ video {
   transform: none;
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
 .cursor-default {
   cursor: default;
 }
@@ -2266,6 +2276,11 @@ video {
 .bg-cloudy-110 {
   --tw-bg-opacity: 1;
   background-color: rgb(44 49 58 / var(--tw-bg-opacity));
+}
+
+.bg-cloudy-120 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 32 44 / var(--tw-bg-opacity));
 }
 
 .bg-cloudy-130 {
@@ -3674,6 +3689,10 @@ video {
   fill: #1A202C;
 }
 
+.fill-primary-500 {
+  fill: #FDBA12;
+}
+
 .fill-white {
   fill: #ffffff;
 }
@@ -4087,6 +4106,11 @@ video {
 .text-error-700 {
   --tw-text-opacity: 1;
   color: rgb(180 35 24 / var(--tw-text-opacity));
+}
+
+.text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(242 244 247 / var(--tw-text-opacity));
 }
 
 .text-gray-60 {
@@ -6006,6 +6030,11 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .md\:px-5 {

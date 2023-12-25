@@ -682,6 +682,7 @@ $(document).ready(function() {
     let statulEl = document.getElementById("checking_status-id");
     let selectStatusElements = document.querySelectorAll('.action_status');
     let detailEl = document.getElementById('detail_invoice-id');
+    let loading = document.getElementById('modal_loading-id');
 
     var selectedValues = [];
     // Iterate through each Select2 element
@@ -699,9 +700,12 @@ $(document).ready(function() {
     }
 
     statulEl.textContent = '';
-    alert('save success');
     detailEl.classList.remove('transform-none')
     detailEl.classList.add('translate-x-full')
+    toggleModalDialog('modal_loading-id')
+    setTimeout(function () {
+      toggleModalDialog('modal_loading-id')
+    }, 3000); // Show modal for 3 seconds
     return true;
   }
 
@@ -1810,4 +1814,102 @@ $(document).ready(function() {
   //   }
   // }
 
+// function renderList() {
+//   let render = document.getElementById('list-id');
+//   render.innerHTML = `<div class="flex flex-col gap-3 px-4 py-4 bg-white border rounded-lg border-cloudy-140 md:px-8 md:py-4">
+//   <div class="flex flex-col justify-between gap-6 md:flex-row md:gap-4">
+//     <div class="flex flex-col gap-6 md:gap-3">
+//       <h3 class="text-base font-medium md:text-xl text-secondary-900">BAST For Transaction ABXY 2023 Update Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur dolorum placeat doloremque pariatur, quasi labore expedita earum eius voluptates ut omnis. Dolor sunt vero pariatur quis ratione repellendus magni illo.</h3>
+//       <div class="flex flex-col gap-3 text-sm font-medium text-secondary-500">
+//         <div>
+//           <span class="inline-block w-[105px]">TYPE</span><span class="text-base text-secondary-900">: Invoice</span>
+//         </div>
+//         <div>
+//           <span class="inline-block w-[105px]">UPLOAD DATE</span><span class="text-base text-secondary-900">: 24/02/2023 1:34PM</span>
+//         </div>
+//       </div>
+//     </div>
 
+//     <div class="flex flex-row-reverse items-end justify-between gap-4 md:items-end md:flex-col">
+//       <div class="flex items-end justify-end gap-2">
+//         <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-blue-90" onclick="toggleModalDialog('modal_preview_pdf-id')">
+//             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" class="w-5 h-5" alt="eye">
+//         </div>
+//         <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-cloudy-90" onclick="downloadInvoice()">
+//           <img src="/dist/images/icons/download.svg" class="w-4 h-4" alt="download">
+//         </div>
+//       </div>
+
+//       <div class="flex flex-col items-start gap-3 md:flex-row md:items-center">
+//         <div class="items-center hidden gap-3" id="yard_group_value-id">
+//           <div class="flex flex-shrink-0 -space-x-4 rt rtl:space-x-reverse">
+            
+//           </div>
+//           <span class="text-sm font-medium md:text-base text-cloudy-130"></span>
+//         </div>
+        
+//         <div class="flex">
+//           <select class="action_status" style="width: 223px;" name="gl_account" required>
+//             <option value="undecided" data-color="white">Undecided</option>
+//             <option value="revision" data-color="blue_general">Revision Needed</option>
+//             <option value="rejected" data-color="red_general">Rejected</option>
+//             <option value="approved" data-color="green_general">Approved</option>
+//             <option value="assign_to_yard_leader" data-color="warning_b_general">Assign to Yard Leader</option>
+//           </select>
+//         </div>
+      
+//       </div>
+      
+//     </div>
+//   </div>
+// </div>
+// <div class="flex flex-col gap-3 px-4 py-4 bg-white border rounded-lg border-cloudy-140 md:px-8 md:py-4">
+//   <div class="flex flex-col justify-between gap-6 md:flex-row md:gap-4">
+//     <div class="flex flex-col gap-6 md:gap-3">
+//       <h3 class="text-base font-medium md:text-xl text-secondary-900">BAST For Transaction ABXY 2023 Update </h3>
+//       <div class="flex flex-col gap-3 text-sm font-medium text-secondary-500">
+//         <div>
+//           <span class="inline-block w-[105px]">TYPE</span><span class="text-base text-secondary-900">: Invoice</span>
+//         </div>
+//         <div>
+//           <span class="inline-block w-[105px]">UPLOAD DATE</span><span class="text-base text-secondary-900">: 24/02/2023 1:34PM</span>
+//         </div>
+//       </div>
+//     </div>
+
+//     <div class="flex flex-row-reverse items-end justify-between gap-4 md:items-end md:flex-col">
+//       <div class="flex items-end justify-end gap-2">
+//         <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-blue-90" onclick="toggleModalDialog('modal_preview_pdf-id')">
+//             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" class="w-5 h-5" alt="eye">
+//         </div>
+//         <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-cloudy-90" onclick="downloadInvoice()">
+//           <img src="/dist/images/icons/download.svg" class="w-4 h-4" alt="download">
+//         </div>
+//       </div>
+
+//       <div class="flex flex-col items-start gap-3 md:flex-row md:items-center">
+//         <div class="items-center hidden gap-3" id="yard_group_value-id">
+//           <div class="flex flex-shrink-0 -space-x-4 rt rtl:space-x-reverse">
+            
+//           </div>
+//           <span class="text-sm font-medium md:text-base text-cloudy-130"></span>
+//         </div>
+        
+//         <div class="flex">
+//           <select class="action_status" style="width: 223px;" name="gl_account" required>
+//             <option value="undecided" data-color="white">Undecided</option>
+//             <option value="revision" data-color="blue_general">Revision Needed</option>
+//             <option value="rejected" data-color="red_general">Rejected</option>
+//             <option value="approved" data-color="green_general">Approved</option>
+//             <option value="assign_to_yard_leader" data-color="warning_b_general">Assign to Yard Leader</option>
+//           </select>
+//         </div>
+      
+//       </div>
+      
+//     </div>
+//   </div>
+// </div>`
+// }
+
+// renderList();
