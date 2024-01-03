@@ -95,6 +95,17 @@ $(document).ready(function() {
     }
   });
 
+
+  // SELECT RULES 
+  $('.rules-select').select2({
+    theme: 'custom-theme', 
+    minimumResultsForSearch: Infinity, // disable search
+    placeholder: 'Status Select',
+    selectionCssClass: 'select2-custom-selection-rules',
+    dropdownCssClass: 'select2-custom-dropdown-rules',
+    templateResult: formatOption4, // Function for formatting the display of options,
+  });
+
   $('#expedition_select-id').select2({
     theme: 'custom-theme', 
     minimumResultsForSearch: Infinity, // disable search
@@ -965,6 +976,41 @@ $(document).ready(function() {
       label.classList.remove('badge-' + bgColorClass);
       label.classList.add('badge-default');
       label.classList.remove('font-medium');
+    }
+  }
+
+  function toggleCheckbox(checkbox) {
+    const label = checkbox.parentElement;
+    const rulesEl = document.getElementById('rules-id');
+
+    let checkedValues = [];
+    let checkboxes = document.querySelectorAll('.roles-send:checked');
+
+    checkboxes.forEach(function (checkbox) {
+      checkedValues.push(checkbox.value);
+    });
+
+    checkedValues.includes('vendor') && checkedValues.length == 1 ? rulesEl.disabled = false : rulesEl.disabled = true
+
+    if (checkbox.checked) {
+      label.classList.add('border-primary-700');
+      label.classList.remove('border-secondary-100');
+    } else {
+      label.classList.add('border-secondary-100');
+      label.classList.remove('border-primary-700');
+    }
+  }
+
+  function toggleRepeatCheckbox(checkbox) {
+    const countDayEl = document.getElementById('count_day-id');
+    const countDayTypeEl = document.getElementById('count_type_day-id');
+
+    if (checkbox.checked) {
+      countDayEl.disabled = false;
+      countDayTypeEl.disabled = false;
+    } else {
+      countDayEl.disabled = true;
+      countDayTypeEl.disabled = true;
     }
   }
 

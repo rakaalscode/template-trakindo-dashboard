@@ -54,7 +54,7 @@ module.exports = {
     'badge-warning', 'badge-blue', 'badge-error', 'badge-success', 'badge-default',
     'flex', 'items-center', 'justify-between', 'font-medium', 'border', 'border-cloudy-120', 'px-4', 'py-2.5', 'md:px-4', 'md:py-4', 'w-full', 'rounded-md', 'text-cloudy-120', 'bg-cloudy-120',
     'border-blue_general', 'bg-blue_general', 'border-red_general', 'bg-red_general', 'border-green_general', 'bg-green_general', 'border-warning_b_general', 'bg-warning_b_general', 
-    // 'px-6', 'py-4', 'text-sm', 'font-medium', 'text-secondary-900', 'md:w-96', 'bg-white',
+    'border-primary-700'
   ],
   theme: {
     extend: {
