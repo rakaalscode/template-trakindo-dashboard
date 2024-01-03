@@ -711,6 +711,10 @@ video {
   order: 3;
 }
 
+.order-4 {
+  order: 4;
+}
+
 .float-left {
   float: left;
 }
@@ -818,6 +822,10 @@ video {
   margin-inline-end: 0.75rem;
 }
 
+.me-\[133px\] {
+  margin-inline-end: 133px;
+}
+
 .me-\[1px\] {
   margin-inline-end: 1px;
 }
@@ -868,6 +876,18 @@ video {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .block {
@@ -5644,6 +5664,14 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 
   .md\:order-2 {
     order: 2;
+  }
+
+  .md\:order-3 {
+    order: 3;
+  }
+
+  .md\:order-4 {
+    order: 4;
   }
 
   .md\:col-span-4 {

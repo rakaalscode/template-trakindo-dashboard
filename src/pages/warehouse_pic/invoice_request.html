@@ -160,27 +160,27 @@
                       
                       <!-- badges -->
                       <div class="flex flex-row flex-wrap gap-3 pt-3 badges">
-                        <label class="inline-flex items-center font-medium cursor-pointer warning badge badge-warning">
+                        <label class="warning inline-flex items-center font-medium cursor-pointer badge badge-warning">
                           <input type="checkbox" class="hidden" name="status" value="verification" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                           Need Verification
                         </label>
-                        <label class="inline-flex items-center font-medium cursor-pointer blue badge badge-blue">
+                        <label class="blue inline-flex items-center font-medium cursor-pointer badge badge-blue">
                           <input type="checkbox" class="hidden" name="status" value="waiting_revision" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                           Waiting for Revision
                         </label>
-                        <label class="inline-flex items-center font-medium cursor-pointer warning badge badge-warning">
+                        <label class="warning inline-flex items-center font-medium cursor-pointer badge badge-warning">
                           <input type="checkbox" class="hidden" name="status" value="waiting_approval" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
                           Waiting for Approval
                         </label>
-                        <label class="inline-flex items-center font-medium cursor-pointer blue badge badge-blue">
+                        <label class="badge inline-flex items-center font-medium cursor-pointer blue badge-blue">
                           <input type="checkbox" class="hidden" name="status" value="waiting_approval" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
                           Submitted to Finance
                         </label>
-                        <label class="inline-flex items-center font-medium cursor-pointer error badge badge-error">
+                        <label class="badge inline-flex items-center font-medium cursor-pointer error badge-error">
                           <input type="checkbox" class="hidden" name="status" value="rejected" checked onchange="toggleDotVisibility(this)">
                           <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
                           Rejected
@@ -917,7 +917,7 @@
               </div>
 
               <!-- supporting files -->
-              <div class="relative mb-10">
+              <div class="relative mb-4">
 
                 <!-- heading -->
                 <div class="flex items-center justify-between px-3 py-3 md:px-6 md:py-3">
@@ -986,28 +986,27 @@
                 </div>
                 <!-- list supporting files  -->
 
+                <div class="flex items-start justify-between mt-8">
+                  <span class="block text-sm italic text-left text-secondary-900 md:text-right" id="checking_status-id"></span>
+                  <button type="button" class="flex items-center justify-center btn-lg btn-primary" onclick="saveNextInvoice()">
+                    Save and Next
+                  </button>
+                </div>
+
               <!-- </div> -->
               </div>
             </div>
           </div>
           <div class="sticky bottom-0 px-4 py-4 mt-auto md:px-8 md:py-6 bg-secondary-900">
-            <div class="flex flex-col justify-between gap-3 md:gap-4 md:flex-row">
-              <div class="flex flex-row justify-between gap-3 md:flex-col md:justify-start">
-                <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="toggleModalDialog('modal_history-id')">
-                  <img src="/dist/images/icons/HistoryFilled.svg" alt="history filled" class="me-2">
-                  Log History
-                </button>
-                <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="downloadInvoice()">
-                  <img src="/dist/images/icons/xls.png" alt="xls" class="me-2">
-                  Download Invoice .xls
-                </button>
-              </div>
-              <div class="flex flex-col gap-2 md:items-end md:justify-end">
-                <span class="block text-sm italic text-left text-grey-500 md:text-right" id="checking_status-id"></span>
-                <button type="button" class="flex items-center justify-center btn-lg btn-primary" onclick="saveNextInvoice()">
-                  Save and Next
-                </button>
-              </div>
+            <div class="flex flex-row justify-between gap-3">
+              <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="toggleModalDialog('modal_history-id')">
+                <img src="/dist/images/icons/HistoryFilled.svg" alt="history filled" class="me-2">
+                Log History
+              </button>
+              <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="downloadInvoice()">
+                <img src="/dist/images/icons/xls.png" alt="xls" class="me-2">
+                Download Invoice .xls
+              </button>
             </div>
           </div>
           

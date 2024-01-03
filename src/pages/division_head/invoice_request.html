@@ -764,7 +764,7 @@
               </div>
 
               <!-- supporting files -->
-              <div class="relative mb-10">
+              <div class="relative mb-4">
 
                 <!-- heading -->
                 <div class="flex items-center justify-between px-3 py-3 md:px-6 md:py-3">
@@ -785,8 +785,8 @@
                 <div class="space-y-3">
                   <div class="flex flex-col gap-3 px-4 py-4 bg-white border rounded-lg border-cloudy-140 md:px-8 md:py-4">
                     <div class="flex flex-col justify-between gap-6 md:flex-row md:gap-4">
-                      <div class="flex flex-col gap-6 md:gap-3">
-                        <h3 class="text-base font-medium md:text-xl text-secondary-900">BAST For Transaction ABXY 2023 Update</h3>
+                      <div class="flex flex-col flex-wrap gap-6 md:gap-3">
+                        <h3 class="flex-wrap text-base font-medium md:text-xl text-secondary-900">BAST For Transaction ABXY 2023 Update.</h3>
                         <div class="flex flex-col gap-3 text-sm font-medium text-secondary-500">
                           <div>
                             <span class="inline-block w-[105px]">TYPE</span><span class="text-base text-secondary-900">: Invoice</span>
@@ -821,6 +821,7 @@
                               <option value="revision" data-color="blue_general">Revision Needed</option>
                               <option value="rejected" data-color="red_general">Rejected</option>
                               <option value="approved" data-color="green_general">Approved</option>
+                              <option value="assign_to_yard_leader" data-color="warning_b_general">Assign to Yard Leader</option>
                             </select>
                           </div>
                         
@@ -829,32 +830,30 @@
                       </div>
                     </div>
                   </div>
-                  
                 </div>
                 <!-- list supporting files  -->
+
+                <div class="flex items-start justify-between mt-8">
+                  <span class="block text-sm italic text-left text-secondary-900 md:text-right" id="checking_status-id"></span>
+                  <button type="button" class="flex items-center justify-center btn-lg btn-primary" onclick="saveNextInvoice()">
+                    Save and Next
+                  </button>
+                </div>
 
               <!-- </div> -->
               </div>
             </div>
           </div>
-          <div class="sticky bottom-0 px-4 py-4 md:px-8 md:py-6 bg-secondary-900">
-            <div class="flex flex-col justify-between gap-3 md:gap-4 md:flex-row">
-              <div class="flex flex-row justify-between gap-3 md:flex-col md:justify-start">
-                <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="toggleModalDialog('modal_history-id')">
-                  <img src="/dist/images/icons/HistoryFilled.svg" alt="history filled" class="me-2">
-                  Log History
-                </button>
-                <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="downloadInvoice()">
-                  <img src="/dist/images/icons/xls.png" alt="xls" class="me-2">
-                  Download Invoice .xls
-                </button>
-              </div>
-              <div class="flex flex-col gap-2 md:items-end md:justify-end">
-                <span class="block text-sm italic text-left text-grey-500 md:text-right" id="checking_status-id"></span>
-                <button type="button" class="flex items-center justify-center btn-lg btn-primary" onclick="saveNextInvoice()">
-                  Save and Next
-                </button>
-              </div>
+          <div class="sticky bottom-0 px-4 py-4 mt-auto md:px-8 md:py-6 bg-secondary-900">
+            <div class="flex flex-row justify-between gap-3">
+              <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="toggleModalDialog('modal_history-id')">
+                <img src="/dist/images/icons/HistoryFilled.svg" alt="history filled" class="me-2">
+                Log History
+              </button>
+              <button type="button" class="flex items-center text-sm font-medium text-white underline md:text-base" onclick="downloadInvoice()">
+                <img src="/dist/images/icons/xls.png" alt="xls" class="me-2">
+                Download Invoice .xls
+              </button>
             </div>
           </div>
           
