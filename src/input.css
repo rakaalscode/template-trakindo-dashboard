@@ -169,6 +169,10 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   @apply text-cloudy-120 bg-white border border-[#1A202C] hover:bg-gray-100;
 }
 
+.btn-rounded {
+  @apply rounded
+}
+
 /* button  */
 
 /* button outline  */
@@ -286,6 +290,10 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 /* checkbox  */
 .custom-checkbox {
   @apply w-5 h-5 text-squash-3 border border-gray-300 rounded-md focus:ring-white disabled:text-secondary-100
+}
+
+.custom-checkbox-green {
+  @apply w-5 h-5 text-green_2-20 border border-green-700 rounded-md focus:ring-white
 }
 
 .label-checkbox {

@@ -364,8 +364,24 @@
               <!-- list  -->
               <div class="content-tab-status">
                 <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto" id="tab-need-verification">
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="md:px-8">
+                    <div class="flex justify-between items-center mt-2 mb-4">
+                      <h3 class="text-lg font-semibold text-secondary-900">List of Document</h3>
+                      <div class="flex items-center space-x-3">
+                        <div class="flex items-center w-[20px]">
+                          <input type="checkbox" class="custom-checkbox checkbox-list-all me-3" name="role" value="vendor" onclick="checkAllList(this, 'c-need-verification')">
+                        </div>
+                        <p class="text-sm font-medium text-secondary-900">Select All Files</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox list-checkbox c-need-verification me-3" name="role" value="vendor" checked>
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -391,9 +407,22 @@
                         </div>
                       </div>
                     </div>
+                    <div class="pt-6 approve-container">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
+                    </div>
                   </div>
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox me-3 list-checkbox c-need-verification" name="role" value="vendor" onclick="toggleRepeatCheckbox(this)">
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -418,12 +447,36 @@
                           <span class="block text-base text-semi_black-100">Rp.60,000</span>
                         </div>
                       </div>
+                    </div>
+                    <div class="pt-6 approve-container hidden">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
                     </div>
                   </div>
                 </div>
                 <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-waiting-revision">
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="md:px-8">
+                    <div class="flex justify-between items-center mt-2 mb-4">
+                      <h3 class="text-lg font-semibold text-secondary-900">List of Document</h3>
+                      <div class="flex items-center space-x-3">
+                        <div class="flex items-center w-[20px]">
+                          <input type="checkbox" class="custom-checkbox checkbox-list-all me-3" name="role" value="vendor" onclick="checkAllList(this, 'c-waiting-revision')">
+                        </div>
+                        <p class="text-sm font-medium text-secondary-900">Select All Files</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox list-checkbox c-waiting-revision me-3" name="role" value="vendor" checked>
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -449,9 +502,22 @@
                         </div>
                       </div>
                     </div>
+                    <div class="pt-6 approve-container">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
+                    </div>
                   </div>
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox list-checkbox c-waiting-revision me-3" name="role" value="vendor">
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -476,12 +542,36 @@
                           <span class="block text-base text-semi_black-100">Rp.60,000</span>
                         </div>
                       </div>
+                    </div>
+                    <div class="pt-6 approve-container hidden">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
                     </div>
                   </div>
                 </div>
                 <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-waiting-approval">
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="md:px-8">
+                    <div class="flex justify-between items-center mt-2 mb-4">
+                      <h3 class="text-lg font-semibold text-secondary-900">List of Document</h3>
+                      <div class="flex items-center space-x-3">
+                        <div class="flex items-center w-[20px]">
+                          <input type="checkbox" class="custom-checkbox checkbox-list-all me-3" name="role" value="vendor" onclick="checkAllList(this, 'c-waiting-approval')">
+                        </div>
+                        <p class="text-sm font-medium text-secondary-900">Select All Files</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox list-checkbox c-waiting-approval me-3" name="role" value="vendor" checked>
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -507,9 +597,22 @@
                         </div>
                       </div>
                     </div>
+                    <div class="pt-6 approve-container">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
+                    </div>
                   </div>
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox list-checkbox c-waiting-approval me-3" name="role" value="vendor">
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -534,12 +637,36 @@
                           <span class="block text-base text-semi_black-100">Rp.60,000</span>
                         </div>
                       </div>
+                    </div>
+                    <div class="pt-6 approve-container hidden">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
                     </div>
                   </div>
                 </div>
                 <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-submitted-finance">
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="md:px-8">
+                    <div class="flex justify-between items-center mt-2 mb-4">
+                      <h3 class="text-lg font-semibold text-secondary-900">List of Document</h3>
+                      <div class="flex items-center space-x-3">
+                        <div class="flex items-center w-[20px]">
+                          <input type="checkbox" class="custom-checkbox checkbox-list-all me-3" name="role" value="vendor" onclick="checkAllList(this, 'c-submitted-finance')">
+                        </div>
+                        <p class="text-sm font-medium text-secondary-900">Select All Files</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox list-checkbox c-submitted-finance me-3" name="role" value="vendor" checked>
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -565,9 +692,22 @@
                         </div>
                       </div>
                     </div>
+                    <div class="pt-6 approve-container">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
+                    </div>
                   </div>
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox list-checkbox c-submitted-finance me-3" name="role" value="vendor">
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -592,12 +732,36 @@
                           <span class="block text-base text-semi_black-100">Rp.60,000</span>
                         </div>
                       </div>
+                    </div>
+                    <div class="pt-6 approve-container hidden">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
                     </div>
                   </div>
                 </div>
                 <div class="relative md:max-h-[calc(100vh-15rem)] overflow-y-auto hidden" id="tab-rejected">
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="md:px-8">
+                    <div class="flex justify-between items-center mt-2 mb-4">
+                      <h3 class="text-lg font-semibold text-secondary-900">List of Document</h3>
+                      <div class="flex items-center space-x-3">
+                        <div class="flex items-center w-[20px]">
+                          <input type="checkbox" class="custom-checkbox checkbox-list-all me-3" name="role" value="vendor" onclick="checkAllList(this, 'c-rejected')">
+                        </div>
+                        <p class="text-sm font-medium text-secondary-900">Select All Files</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 bg-cloudy-10 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox list-checkbox c-rejected me-3" name="role" value="vendor" checked>
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -623,9 +787,22 @@
                         </div>
                       </div>
                     </div>
+                    <div class="pt-6 approve-container hidden">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
+                    </div>
                   </div>
-                  <div class="px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
-                    <h3 class="mb-6 text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                  <div class="list-item px-3 py-3 border-b cursor-pointer border-secondary-100 md:px-8 md:py-6 hover:bg-cloudy-10" onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+                    <div class="flex items-center mb-6 space-x-3">
+                      <div class="flex items-center w-[20px]">
+                        <input type="checkbox" class="custom-checkbox list-checkbox c-rejected me-3" name="role" value="vendor">
+                      </div>
+                      <h3 class="text-2xl font-medium text-semi_black-100">009.23.33077279</h3>
+                    </div>
                     <div class="flex items-center justify-between text-sm font-medium">
                       <div class="flex flex-col gap-4"> 
                         <div>
@@ -650,6 +827,14 @@
                           <span class="block text-base text-semi_black-100">Rp.60,000</span>
                         </div>
                       </div>
+                    </div>
+                    <div class="pt-6 approve-container">
+                      <label class="inline-flex w-full items-center justify-center text-sm font-medium cursor-pointer border rounded-lg p-3 select-none bg-green-90 border-green-s-100 text-white z-20"
+                        onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+                      >
+                        <img src="/dist/images/icons/checkbox-green.png" class="w-[20px] h-[20px] mr-3" alt="checkbox-green">
+                        Approve All
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -732,7 +917,7 @@
 
             <!-- close -->
             <div class="flex justify-start gap-2 py-4 md:hidden">
-              <button onclick="toggleDetailInvoice(this, 'detail_invoice-id')">
+              <button onclick="toggleDetailInvoice(this, 'detail_invoice-id', false)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
                   <path d="M15 18L9 12L15 6" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -843,28 +1028,15 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
-                      Cost Center<span class="text-red-500">*</span>
-                    </th>
-                    <td class="w-8/12 px-3 py-3 text-sm font-medium bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140">
-                      <div class="relative">
-                        <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
-                          <img src="/dist/images/icons/fi_search.svg" alt="search">
-                        </div>
-                        <input type="text" class="w-full pr-5 form-control-none text-secondary-900" id="cost_center_data-id" readonly>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
                     <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border rounded-bl-lg md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
-                      IO Number<span class="text-red-500">*</span>
+                      Cost Center<span class="text-red-500">*</span>
                     </th>
                     <td class="w-8/12 px-3 py-3 text-sm font-medium bg-white border rounded-br-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140">
                       <div class="relative">
                         <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
                           <img src="/dist/images/icons/fi_search.svg" alt="search">
                         </div>
-                        <input type="text" class="w-full pr-5 form-control-none text-secondary-900" id="io_number_data-id" readonly>
+                        <input type="text" class="w-full pr-5 form-control-none text-secondary-900" id="cost_center_data-id" readonly>
                       </div>
                     </td>
                   </tr>
@@ -877,6 +1049,9 @@
                     <tr>
                       <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border rounded-tl-lg text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         Description
+                      </th>
+                      <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30">
+                        IO Number<span class="text-red-500">*</span>
                       </th>
                       <th scope="row" class="w-1/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         QTY
@@ -894,6 +1069,14 @@
                       <td class="w-8/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-10">
                         TEST ABC
                       </td>
+                      <td class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-cloudy-10">
+                        <div class="relative">
+                          <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
+                            <img src="/dist/images/icons/fi_search.svg" alt="search">
+                          </div>
+                          <input type="text" class="w-full pr-5 form-control-none bg-transparent text-secondary-900 io_number_data-id" readonly>
+                        </div>
+                      </td>
                       <td class="w-1/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                         20
                       </td>
@@ -906,7 +1089,7 @@
                     </tr>
                   </tbody>
                   <tfoot>
-                    <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium text-right border rounded-bl-lg text-secondary-900 border-cloudy-140 bg-cloudy-30" colspan="3">
+                    <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium text-right border rounded-bl-lg text-secondary-900 border-cloudy-140 bg-cloudy-30" colspan="4">
                       Total
                     </th>
                     <td class="w-8/12 px-6 py-2 text-sm font-medium border rounded-br-lg text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
@@ -1342,7 +1525,7 @@
     <div class="relative bg-white rounded-lg shadow h-[444px]" id="card_io_number-id">
       <div class="flex flex-col gap-3 p-4">
         <h3 class="text-lg font-medium text-gray_2-900">IO Number Search</h3>
-        <select class="" id="io_number-id" style="width: 100%;" name="io_number" required>
+        <select class="io_number-id" style="width: 100%;" name="io_number" required>
           <option value=""></option>
           <option value="6040939394">6040939394 - PT. Maju Jaya Abadi</option>
           <option value="6040939395">6040939395 - PT. Maju Jaya Abadi</option>
@@ -1409,6 +1592,31 @@
   </div>
 </div>
 <!-- modal loading -->
+
+<!-- modal confirmation -->
+<div id="modal_alert_confirm-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-4 w-full md:max-w-[343px] max-h-full">
+    <div class="relative bg-white rounded-lg shadow">
+      <div class="p-4 text-center">
+        <h3 class="text-lg font-semibold text-black">
+          Attention!
+        </h3>
+        <p class="text-sm text-gray_2-500 mb-5">You are going to approve all files</p>
+        <button type="button" class="flex items-center justify-center w-full btn btn-primary btn-rounded mb-3"
+          onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+        >
+          Confirm
+        </button>
+        <button type="button" class="flex items-center justify-center w-full btn btn-default btn-rounded"
+          onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal confirmation -->
 
 
 </body>

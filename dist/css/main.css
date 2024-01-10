@@ -730,6 +730,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .-ml-\[11px\] {
   margin-left: -11px;
 }
@@ -874,6 +879,10 @@ video {
   margin-top: auto;
 }
 
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -904,6 +913,10 @@ video {
 
 .contents {
   display: contents;
+}
+
+.list-item {
+  display: list-item;
 }
 
 .hidden {
@@ -1024,6 +1037,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[20px\] {
+  height: 20px;
 }
 
 .max-h-96 {
@@ -1423,6 +1440,12 @@ video {
   margin-left: calc(-1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -1562,6 +1585,10 @@ video {
   border-bottom-width: 2px;
 }
 
+.border-l {
+  border-left-width: 1px;
+}
+
 .border-r {
   border-right-width: 1px;
 }
@@ -1627,6 +1654,11 @@ video {
 .border-gray-60 {
   --tw-border-opacity: 1;
   border-color: rgb(176 184 199 / var(--tw-border-opacity));
+}
+
+.border-green-s-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(37 116 40 / var(--tw-border-opacity));
 }
 
 .border-green_general {
@@ -4692,6 +4724,10 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   background-color: rgb(242 244 247 / var(--tw-bg-opacity));
 }
 
+.btn-rounded {
+  border-radius: 0.25rem;
+}
+
 /* button  */
 
 /* button outline  */
@@ -5024,6 +5060,22 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 .custom-checkbox:disabled {
   --tw-text-opacity: 1;
   color: rgb(222 221 222 / var(--tw-text-opacity));
+}
+
+.custom-checkbox-green {
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 140 79 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(229 246 229 / var(--tw-text-opacity));
+}
+
+.custom-checkbox-green:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
 }
 
 .label-checkbox {
@@ -5907,6 +5959,10 @@ input[type="checkbox"]:disabled:checked ~ .dot {
 
   .md\:max-w-3xl {
     max-width: 48rem;
+  }
+
+  .md\:max-w-\[343px\] {
+    max-width: 343px;
   }
 
   .md\:max-w-\[375px\] {

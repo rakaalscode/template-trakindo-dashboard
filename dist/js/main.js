@@ -282,7 +282,7 @@ $(document).ready(function() {
    // IO Number SELECT2 
 
   // io number search
-  $('#io_number-id').select2({
+  $('.io_number-id').select2({
     theme: 'custom-theme-2', 
     placeholder: 'Search',
     closeOnSelect: true,
@@ -291,23 +291,23 @@ $(document).ready(function() {
   });
 
   // open modal cost 
-  $('#io_number_data-id').on('click', function() {
+  $('.io_number_data-id').on('click', function() {
     // Trigger the select2 dropdown to open
     toggleModalDialog('modal_io_number-id');
-    $('#io_number-id').select2('open');
+    $('.io_number-id').select2('open');
   });
 
   // open cost
-  $('#io_number-id').on('select2:open', function() {
+  $('.io_number-id').on('select2:open', function() {
     console.log('open select');
     $('#card_io_number-id').height("444px");
   });
 
   // close cost
-  $('#io_number-id').on('select2:close', function() {
+  $('.io_number-id').on('select2:close', function() {
     console.log('close');
     
-    $('#io_number_data-id').val($(this).find(':selected').text());
+    $('.io_number_data-id').val($(this).find(':selected').text());
     toggleModalDialog('modal_io_number-id');
     $('#card_io_number-id').height('auto');
   });
@@ -1746,16 +1746,39 @@ $(document).ready(function() {
     }
   }
 
-  function toggleDetailInvoice(button, drawerID) {
+  function toggleDetailInvoice(button, drawerID, isList = true) {
     let drawerEl = document.getElementById(drawerID)
     let tabButtons = document.querySelectorAll(".content-tab-status div div");
-    
+    let approveContainer = button.querySelector('.approve-container');
+    let approveContainers = document.querySelectorAll('.approve-container');
+    let checkbox = button.querySelector('.list-checkbox');
+    let checkboxes = document.querySelectorAll('.list-checkbox');
+    let checkboxesAll = document.querySelectorAll('.checkbox-list-all');
+
+    if(isList) {
+      approveContainers.forEach(function(approve) {
+        approve.classList.add("hidden");
+      });
+  
+      checkboxes.forEach(function (checkbox) {
+        checkbox.checked = false;
+      });
+
+      checkboxesAll.forEach(function (checkbox) {
+        checkbox.checked = false;
+      });
+    }
+
     tabButtons.forEach(function(tabButton) {
       tabButton.classList.remove("bg-cloudy-10");
     });
 
     if (button) {
       button.classList.add("bg-cloudy-10");
+      if(isList) {
+        checkbox.checked = !checkbox.checked
+        approveContainer.classList.remove("hidden")
+      }
     }
     
     if (window.innerWidth <= 768) {
@@ -1767,6 +1790,32 @@ $(document).ready(function() {
 
       drawerEl.classList.toggle("transform-none");
       drawerEl.classList.toggle("translate-x-full");
+    }
+  }
+
+  function checkAllList(checkbox, checkAllList) {
+    const parentListID = checkbox.parentElement.parentElement.parentElement.parentElement.parentElement.getAttribute("id")
+    let checkboxes = document.querySelectorAll('.'+checkAllList);
+    let tabButtons = document.querySelectorAll(`.content-tab-status #${parentListID} .list-item`);
+    let approveContainers = document.querySelectorAll('.approve-container');
+
+    if(checkbox.checked) {
+      checkboxes.forEach(function(checkbox) {
+        checkbox.checked = true;
+      });
+      approveContainers.forEach(function(approve) {
+        approve.classList.add("hidden");
+      });
+      tabButtons.forEach(function(tabButton) {
+        tabButton.classList.add("bg-cloudy-10");
+      });
+    } else {
+      checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+      });
+      tabButtons.forEach(function(tabButton) {
+        tabButton.classList.remove("bg-cloudy-10");
+      });
     }
   }
 
@@ -1860,102 +1909,48 @@ $(document).ready(function() {
   //   }
   // }
 
-// function renderList() {
-//   let render = document.getElementById('list-id');
-//   render.innerHTML = `<div class="flex flex-col gap-3 px-4 py-4 bg-white border rounded-lg border-cloudy-140 md:px-8 md:py-4">
-//   <div class="flex flex-col justify-between gap-6 md:flex-row md:gap-4">
-//     <div class="flex flex-col gap-6 md:gap-3">
-//       <h3 class="text-base font-medium md:text-xl text-secondary-900">BAST For Transaction ABXY 2023 Update Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur dolorum placeat doloremque pariatur, quasi labore expedita earum eius voluptates ut omnis. Dolor sunt vero pariatur quis ratione repellendus magni illo.</h3>
-//       <div class="flex flex-col gap-3 text-sm font-medium text-secondary-500">
-//         <div>
-//           <span class="inline-block w-[105px]">TYPE</span><span class="text-base text-secondary-900">: Invoice</span>
-//         </div>
-//         <div>
-//           <span class="inline-block w-[105px]">UPLOAD DATE</span><span class="text-base text-secondary-900">: 24/02/2023 1:34PM</span>
-//         </div>
-//       </div>
-//     </div>
+  function formatNpwp(value) {
+    if (typeof value === 'string') {
+      return value.replace(/(\d{2})(\d{3})(\d{3})(\d{1})(\d{3})(\d{3})/, '$1.$2.$3.$4-$5.$6');
+    }
+  }
 
-//     <div class="flex flex-row-reverse items-end justify-between gap-4 md:items-end md:flex-col">
-//       <div class="flex items-end justify-end gap-2">
-//         <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-blue-90" onclick="toggleModalDialog('modal_preview_pdf-id')">
-//             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" class="w-5 h-5" alt="eye">
-//         </div>
-//         <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-cloudy-90" onclick="downloadInvoice()">
-//           <img src="/dist/images/icons/download.svg" class="w-4 h-4" alt="download">
-//         </div>
-//       </div>
+  function formatTaxId(input) {
+    // Remove non-digit characters from the input
+    const cleanedInput = input.replace(/\D/g, '');
 
-//       <div class="flex flex-col items-start gap-3 md:flex-row md:items-center">
-//         <div class="items-center hidden gap-3" id="yard_group_value-id">
-//           <div class="flex flex-shrink-0 -space-x-4 rt rtl:space-x-reverse">
-            
-//           </div>
-//           <span class="text-sm font-medium md:text-base text-cloudy-130"></span>
-//         </div>
-        
-//         <div class="flex">
-//           <select class="action_status" style="width: 223px;" name="gl_account" required>
-//             <option value="undecided" data-color="white">Undecided</option>
-//             <option value="revision" data-color="blue_general">Revision Needed</option>
-//             <option value="rejected" data-color="red_general">Rejected</option>
-//             <option value="approved" data-color="green_general">Approved</option>
-//             <option value="assign_to_yard_leader" data-color="warning_b_general">Assign to Yard Leader</option>
-//           </select>
-//         </div>
-      
-//       </div>
-      
-//     </div>
-//   </div>
-// </div>
-// <div class="flex flex-col gap-3 px-4 py-4 bg-white border rounded-lg border-cloudy-140 md:px-8 md:py-4">
-//   <div class="flex flex-col justify-between gap-6 md:flex-row md:gap-4">
-//     <div class="flex flex-col gap-6 md:gap-3">
-//       <h3 class="text-base font-medium md:text-xl text-secondary-900">BAST For Transaction ABXY 2023 Update </h3>
-//       <div class="flex flex-col gap-3 text-sm font-medium text-secondary-500">
-//         <div>
-//           <span class="inline-block w-[105px]">TYPE</span><span class="text-base text-secondary-900">: Invoice</span>
-//         </div>
-//         <div>
-//           <span class="inline-block w-[105px]">UPLOAD DATE</span><span class="text-base text-secondary-900">: 24/02/2023 1:34PM</span>
-//         </div>
-//       </div>
-//     </div>
+    // Define the format using groups in the regular expression
+    const regex = /^(\d{3})(\d{3})(\d{2})-(\d{2})\.(\d{8})$/;
 
-//     <div class="flex flex-row-reverse items-end justify-between gap-4 md:items-end md:flex-col">
-//       <div class="flex items-end justify-end gap-2">
-//         <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-blue-90" onclick="toggleModalDialog('modal_preview_pdf-id')">
-//             <img src="/dist/images/icons/RemoveRedEyeFilled.svg" class="w-5 h-5" alt="eye">
-//         </div>
-//         <div class="flex items-center justify-center w-8 h-8 rounded cursor-pointer shadow-one bg-cloudy-90" onclick="downloadInvoice()">
-//           <img src="/dist/images/icons/download.svg" class="w-4 h-4" alt="download">
-//         </div>
-//       </div>
+    // Apply the format using replace and captured groups
+    const formattedInput = cleanedInput.replace(regex, '$1.$2-$3.$4.$5');
 
-//       <div class="flex flex-col items-start gap-3 md:flex-row md:items-center">
-//         <div class="items-center hidden gap-3" id="yard_group_value-id">
-//           <div class="flex flex-shrink-0 -space-x-4 rt rtl:space-x-reverse">
-            
-//           </div>
-//           <span class="text-sm font-medium md:text-base text-cloudy-130"></span>
-//         </div>
-        
-//         <div class="flex">
-//           <select class="action_status" style="width: 223px;" name="gl_account" required>
-//             <option value="undecided" data-color="white">Undecided</option>
-//             <option value="revision" data-color="blue_general">Revision Needed</option>
-//             <option value="rejected" data-color="red_general">Rejected</option>
-//             <option value="approved" data-color="green_general">Approved</option>
-//             <option value="assign_to_yard_leader" data-color="warning_b_general">Assign to Yard Leader</option>
-//           </select>
-//         </div>
-      
-//       </div>
-      
-//     </div>
-//   </div>
-// </div>`
-// }
+    return formattedInput;
+  }
 
-// renderList();
+  const NPWP = document.getElementById("npwp");
+
+  if(NPWP) {
+    NPWP.oninput = (e) => {
+      e.target.value = autoFormatNPWP(e.target.value);
+    }
+  }
+
+  function autoFormatNPWP(NPWPString) {
+    try {
+      var cleaned = ("" + NPWPString).replace(/\D/g, "");
+      var match = cleaned.match(/(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,8})?/);
+      return [
+        match[1],
+        match[2] ? "." : "",
+        match[2],
+        match[3] ? "-" : "",
+        match[3],
+        match[4] ? "." : "",
+        match[4],
+      ].join("");
+    } catch(err) {
+      return "";
+    }
+  }
+  

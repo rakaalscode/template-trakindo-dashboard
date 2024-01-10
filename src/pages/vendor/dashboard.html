@@ -470,7 +470,7 @@
                     <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-green-90 cursor-pointer">
                       <img src="/dist/images/icons/mdi_edit_white.svg" alt="edit">
                     </div>
-                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer">
+                    <div class="flex items-center justify-center w-6 h-6 rounded shadow-one bg-red-90 cursor-pointer" onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')">
                       <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
                     </div>
                   </div>
@@ -730,7 +730,7 @@
               Faktur Pajak Number
             </th>
             <td class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-white w-8/12">
-              <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none">
+              <input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none" id="npwp" maxlength="20" placeholder="___.___-__.________">
             </td>
           </tr>
           <tr>
@@ -1205,12 +1205,22 @@
               </tr>
             </tbody>
             <tfoot>
-              <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-right border border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg" colspan="3">
-                Total
-              </th>
-              <td class="px-6 py-2 text-sm font-medium text-secondary-900 border border-cloudy-140 bg-cloudy-10 w-8/12 rounded-br-lg whitespace-nowrap">
-                Rp. 30.000.000
-              </td>
+              <tr>
+                <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-right border-t border-l border-r border-cloudy-140 bg-cloudy-30 w-4/12" colspan="3">
+                  Total
+                </th>
+                <td class="px-6 py-2 text-sm font-medium text-secondary-900 border-t border-r border-cloudy-140 bg-cloudy-10 w-8/12 whitespace-nowrap">
+                  Rp. 30.000.000
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="px-3 py-3 md:px-6 md:py-4 text-sm font-medium text-secondary-900 text-right border-b border-l border-r border-cloudy-140 bg-cloudy-30 w-4/12 rounded-bl-lg" colspan="3">
+                  Total inc. Tax (11%)
+                </th>
+                <td class="px-6 py-2 text-sm font-medium text-secondary-900 border-b border-l border-r border-cloudy-140 bg-cloudy-10 w-8/12 rounded-br-lg whitespace-nowrap">
+                  Rp. 3.300.000
+                </td>
+              </tr>
             </tfoot>
           </table>
         </div>
@@ -2109,6 +2119,31 @@
   </div>
 </div>
 <!-- modal log history -->
+
+<!-- modal confirmation -->
+<div id="modal_alert_confirm-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-4 w-full md:max-w-[343px] max-h-full">
+    <div class="relative bg-white rounded-lg shadow">
+      <div class="p-4 text-center">
+        <h3 class="text-lg font-semibold text-black">
+          Attention!
+        </h3>
+        <p class="text-sm text-gray_2-500 mb-5">You are going delete your draft document.</p>
+        <button type="button" class="flex items-center justify-center w-full btn btn-primary btn-rounded mb-3"
+          onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+        >
+          Confirm
+        </button>
+        <button type="button" class="flex items-center justify-center w-full btn btn-default btn-rounded"
+          onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal confirmation -->
 
 </body>
 <!-- Start script -->
