@@ -68,6 +68,7 @@ module.exports = {
         'ds': '0px 12px 16px 0px rgba(129, 134, 142, 0.12);',
         'light_raised': '0px 16px 20px 4px rgba(129, 134, 142, 0.16);',
         '8': '0px 8px 16px 0px rgba(129, 134, 142, 0.08);',
+        'top': '1px -3px 22px -2px rgba(105,105,105,0.75);',
       },
       zIndex: {
         '60': 60,

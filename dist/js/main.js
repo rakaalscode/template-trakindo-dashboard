@@ -233,13 +233,11 @@ $(document).ready(function() {
 
   // open gl account
   $('#gl_account-id').on('select2:open', function() {
-    console.log('open select');
     $('#card_gl_account-id').height("444px");
   });
 
   // close gl account
   $('#gl_account-id').on('select2:close', function() {
-    console.log('close');
     
     $('#gl_search_data-id').val($(this).find(':selected').text());
     toggleModalDialog('modal_gl_account-id');
@@ -266,13 +264,11 @@ $(document).ready(function() {
 
   // open cost
   $('#cost_center-id').on('select2:open', function() {
-    console.log('open select');
     $('#card_cost_center-id').height("444px");
   });
 
   // close cost
   $('#cost_center-id').on('select2:close', function() {
-    console.log('close');
     
     $('#cost_center_data-id').val($(this).find(':selected').text());
     toggleModalDialog('modal_cost_center-id');
@@ -299,13 +295,11 @@ $(document).ready(function() {
 
   // open cost
   $('.io_number-id').on('select2:open', function() {
-    console.log('open select');
     $('#card_io_number-id').height("444px");
   });
 
   // close cost
   $('.io_number-id').on('select2:close', function() {
-    console.log('close');
     
     $('.io_number_data-id').val($(this).find(':selected').text());
     toggleModalDialog('modal_io_number-id');
@@ -1810,75 +1804,175 @@ $(document).ready(function() {
     }
   }
 
-  function toggleDetailInvoice(button, drawerID, isList = true) {
-    let drawerEl = document.getElementById(drawerID)
-    let tabButtons = document.querySelectorAll(".content-tab-status div div");
-    let approveContainer = button.querySelector('.approve-container');
-    let approveContainers = document.querySelectorAll('.approve-container');
-    let checkbox = button.querySelector('.list-checkbox');
-    let checkboxes = document.querySelectorAll('.list-checkbox');
-    let checkboxesAll = document.querySelectorAll('.checkbox-list-all');
 
-    if(isList) {
-      approveContainers.forEach(function(approve) {
-        approve.classList.add("hidden");
-      });
-  
-      checkboxes.forEach(function (checkbox) {
+  function filterOptionsItem(btn, value) {
+    const parentListID = btn.parentElement.parentElement.parentElement.parentElement;
+    let filterOptions = parentListID.getAttribute("filter");
+
+    // btnEl = parentListID.querySelector(`.${value}`)
+    optionSelectEl = parentListID.querySelector(`.option-filter-select`)
+    optionApproveEl = parentListID.querySelector(`.option-filter-approve`)
+    
+    let approveContainer = parentListID.querySelector('.approve-container');
+    let checkboxAllEl =  parentListID.querySelector(`.checkbox-list-all`);
+    let checkboxContainers = parentListID.querySelectorAll(`.check-item`);
+    let checkboxes = parentListID.querySelectorAll(`.check-item input[type=checkbox]`);
+    let listItems = parentListID.querySelectorAll(`.list-item`);
+
+    if(value == 'btn-approve') {
+      optionSelectEl.classList.add("hidden");
+      optionSelectEl.classList.remove("flex");
+      optionApproveEl.classList.add("flex");
+      optionApproveEl.classList.remove("hidden");
+      parentListID.setAttribute("filter", "approve");
+      approveContainer.classList.add("block")
+      approveContainer.classList.remove("hidden")
+    } else if(value == 'btn-cancel') {
+      optionSelectEl.classList.add("flex");
+      optionSelectEl.classList.remove("hidden");
+      optionApproveEl.classList.add("hidden");
+      optionApproveEl.classList.remove("flex");
+      parentListID.setAttribute("filter", "selected");
+      approveContainer.classList.remove("block")
+      approveContainer.classList.add("hidden")
+
+      checkboxes.forEach(function(checkbox) {
         checkbox.checked = false;
       });
-
-      checkboxesAll.forEach(function (checkbox) {
-        checkbox.checked = false;
-      });
+      checkboxAllEl.checked = false;
+      
     }
 
-    tabButtons.forEach(function(tabButton) {
-      tabButton.classList.remove("bg-cloudy-10");
+    checkboxContainers.forEach(function(checkbox) {
+      checkbox.classList.toggle('hidden');
+      checkbox.classList.toggle('flex');
     });
 
-    if (button) {
-      button.classList.add("bg-cloudy-10");
-      if(isList) {
-        checkbox.checked = !checkbox.checked
-        approveContainer.classList.remove("hidden")
+    listItems.forEach(function(item) {
+      item.classList.remove("bg-cloudy-10");
+      item.classList.remove("border");
+      item.classList.remove("border-primary-500");
+      item.classList.add("border-b");
+      item.classList.add("border-secondary-100");
+    });
+    // const selectFilter = parentListID.querySelector('.option-filter-select');
+    // const approveFilter = parentListID.querySelector('.option-filter-approve');
+
+    // const btnSelect = parentListID.querySelector('.btn-select');
+    // const btnCancel = parentListID.querySelector('.btn-cancel');
+    // const btnApprove = parentListID.querySelector('.btn-approve');
+  }
+  
+  function toggleDetailInvoice(button, drawerID, isList = true) {
+    const parentListID = button.parentElement;
+    let filterOptions = parentListID.getAttribute("filter");
+    let drawerEl = document.getElementById(drawerID)
+    let tabButtons = document.querySelectorAll(".content-tab-status .list-item");
+    let checkbox = button.querySelector('.list-checkbox');
+    let btnApproveAll = parentListID.querySelector('.btn-approve-all');
+    let btnApproveAllImg = parentListID.querySelector('img');
+    
+    if(isList) {
+
+      if(filterOptions == 'selected') {
+        tabButtons.forEach(function(tabButton) {
+          tabButton.classList.remove("bg-cloudy-10");
+          tabButton.classList.remove("border");
+          tabButton.classList.remove("border-primary-500");
+          tabButton.classList.add("border-b");
+          tabButton.classList.add("border-secondary-100");
+        });
+      }
+
+      if (button) {
+        button.classList.add("bg-cloudy-10");
+        button.classList.add("border");
+        button.classList.add("border-primary-500");
+        button.classList.remove("border-b");
+        button.classList.remove("border-secondary-100");
+        if(isList) {
+          if(filterOptions == 'approve') {
+            if(checkbox.checked) {
+              button.classList.remove("bg-cloudy-10");
+              button.classList.remove("border");
+              button.classList.remove("border-primary-500");
+              button.classList.add("border-b");
+              button.classList.add("border-secondary-100");
+            } else {
+              button.classList.add("bg-cloudy-10");
+              button.classList.remove("border");
+              button.classList.remove("border-primary-500");
+              button.classList.add("border-b");
+              button.classList.add("border-secondary-100");
+            }
+            checkbox.checked = !checkbox.checked
+
+            let checkedValues = [];
+            let checkboxes = parentListID.querySelectorAll('.list-checkbox:checked');
+            checkboxes.forEach(function (checkbox) {
+              checkedValues.push(checkbox.value);
+            });
+
+            if(checkedValues.length > 0) {
+              btnApproveAll.disabled = false
+              btnApproveAllImg.setAttribute('src', '/dist/images/icons/checkbox-primary.png');
+            } else {
+              btnApproveAll.disabled = true
+              btnApproveAllImg.setAttribute('src', '/dist/images/icons/checkbox-white.png');
+            }
+          }
+        }
+      }
+    }
+
+    if(filterOptions == 'selected' || filterOptions == null) {
+      if (window.innerWidth <= 768) {
+        if(drawerEl.classList.contains("translate-x-full")) {
+          document.body.style.overflow = "hidden"
+        } else {
+          document.body.style.overflow = "auto"
+        }
+        
+        drawerEl.classList.toggle("transform-none");
+        drawerEl.classList.toggle("translate-x-full");
       }
     }
     
-    if (window.innerWidth <= 768) {
-      if(drawerEl.classList.contains("translate-x-full")) {
-        document.body.style.overflow = "hidden"
-      } else {
-        document.body.style.overflow = "auto"
-      }
-
-      drawerEl.classList.toggle("transform-none");
-      drawerEl.classList.toggle("translate-x-full");
-    }
   }
 
   function checkAllList(checkbox, checkAllList) {
-    const parentListID = checkbox.parentElement.parentElement.parentElement.parentElement.parentElement.getAttribute("id")
+    const parentListID = checkbox.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getAttribute("id")
+    const parentList = checkbox.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
     let checkboxes = document.querySelectorAll('.'+checkAllList);
     let tabButtons = document.querySelectorAll(`.content-tab-status #${parentListID} .list-item`);
-    let approveContainers = document.querySelectorAll('.approve-container');
+    let btnApproveAll = parentList.querySelector('.btn-approve-all');
+    let btnApproveAllImg = parentList.querySelector('img');
 
     if(checkbox.checked) {
       checkboxes.forEach(function(checkbox) {
         checkbox.checked = true;
       });
-      approveContainers.forEach(function(approve) {
-        approve.classList.add("hidden");
-      });
+      btnApproveAll.disabled = false
+      btnApproveAllImg.setAttribute('src', '/dist/images/icons/checkbox-primary.png');
       tabButtons.forEach(function(tabButton) {
         tabButton.classList.add("bg-cloudy-10");
+        tabButton.classList.remove("border");
+        tabButton.classList.remove("border-primary-500");
+        tabButton.classList.add("border-b");
+        tabButton.classList.add("border-secondary-100");
       });
     } else {
       checkboxes.forEach(function(checkbox) {
         checkbox.checked = false;
       });
+      btnApproveAll.disabled = true
+      btnApproveAllImg.setAttribute('src', '/dist/images/icons/checkbox-white.png');
       tabButtons.forEach(function(tabButton) {
         tabButton.classList.remove("bg-cloudy-10");
+        tabButton.classList.remove("border");
+        tabButton.classList.remove("border-primary-500");
+        tabButton.classList.add("border-b");
+        tabButton.classList.add("border-secondary-100");
       });
     }
   }
