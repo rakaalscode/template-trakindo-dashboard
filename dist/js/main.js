@@ -1193,6 +1193,70 @@ $(document).ready(function() {
     }
   }
 
+  function handleDragOver(event) {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = 'copy';
+  }
+
+  function handleFileDrop(event, inputID, buttonID, tableID, dropzoneID, type = 'single') {
+    event.preventDefault();
+
+    let fileInput = document.getElementById(inputID);
+    let buttonUpload = document.getElementById(buttonID);
+    let dropZone = document.getElementById(dropzoneID);
+    let fileTable = document.getElementById(tableID);
+
+    if (event.dataTransfer.items) {
+        // Use DataTransferItemList interface to access the file(s)
+        for (let i = 0; i < event.dataTransfer.items.length; i++) {
+            if (event.dataTransfer.items[i].kind === 'file') {
+                let file = event.dataTransfer.items[i].getAsFile();
+                // Process each file as needed
+                // You can add logic here to handle the dropped files
+            }
+        }
+    } else {
+        // Use DataTransfer interface to access the file(s)
+        for (let i = 0; i < event.dataTransfer.files.length; i++) {
+            let file = event.dataTransfer.files[i];
+            // Process each file as needed
+            // You can add logic here to handle the dropped files
+        }
+    }
+
+    // Rest of your existing code for handling file selection
+    // ...
+
+    // Update UI based on type
+    if (type === 'single') {
+        dropZone.classList.remove("hidden", "flex");
+        dropZone.classList.add("hidden");
+
+        fileTable.classList.remove("hidden", "block");
+        fileTable.classList.add("block");
+    }
+
+    if (type === 'multiple') {
+        let tbody = fileTable.querySelector("tbody");
+
+        // add logic here 
+        // addRowsTable(tbody)
+
+        if (tbody.rows.length > 0) {
+            fileTable.classList.remove("hidden", "block");
+            fileTable.classList.add("block");
+        } else {
+            fileTable.classList.remove("hidden", "block");
+            fileTable.classList.add("hidden");
+        }
+    }
+
+    if (buttonUpload) {
+        buttonUpload.disabled = false;
+        buttonUpload.setAttribute("onclick", `handleSubmitFile()`);
+    }
+}
+
   function handleFileSelect(inputID, buttonID, tableID, dropzoneID, type = 'single') {
     let fileInput = document.getElementById(inputID);
     let buttonUpload = document.getElementById(buttonID);
