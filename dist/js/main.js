@@ -225,7 +225,7 @@ $(document).ready(function() {
   });
 
   // open modal gl account 
-  $('#gl_search_data-id').on('click', function() {
+  $('.gl_search_data-id').on('click', function() {
     // Trigger the select2 dropdown to open
     toggleModalDialog('modal_gl_account-id')
     $('#gl_account-id').select2('open');
@@ -239,7 +239,7 @@ $(document).ready(function() {
   // close gl account
   $('#gl_account-id').on('select2:close', function() {
     
-    $('#gl_search_data-id').val($(this).find(':selected').text());
+    $('.gl_search_data-id').val($(this).find(':selected').text());
     toggleModalDialog('modal_gl_account-id');
     $('#card_gl_account-id').height('auto');
   });
@@ -256,7 +256,7 @@ $(document).ready(function() {
   });
 
   // open modal cost 
-  $('#cost_center_data-id').on('click', function() {
+  $('.cost_center_data-id').on('click', function() {
     // Trigger the select2 dropdown to open
     toggleModalDialog('modal_cost_center-id');
     $('#cost_center-id').select2('open');
@@ -270,7 +270,7 @@ $(document).ready(function() {
   // close cost
   $('#cost_center-id').on('select2:close', function() {
     
-    $('#cost_center_data-id').val($(this).find(':selected').text());
+    $('.cost_center_data-id').val($(this).find(':selected').text());
     toggleModalDialog('modal_cost_center-id');
     $('#card_cost_center-id').height('auto');
   });
@@ -1747,16 +1747,6 @@ $(document).ready(function() {
   function addRowGoods() {
     // Get the tbody element
     let tbody = document.querySelector("#goods_services-id tbody");
-    let removeBtnEl = document.getElementById("remove_goods_row-id");
-
-    // Check if there is at least one row in the tbody
-    if (tbody.rows.length > 0) {
-      removeBtnEl.classList.remove("hidden")
-      removeBtnEl.classList.add("inline-flex")
-    } else {
-      removeBtnEl.classList.remove("inline-flex")
-      removeBtnEl.classList.add("hidden")
-    }
 
     // Insert a new row at the end of the tbody
     let newRow = tbody.insertRow(tbody.rows.length);
@@ -1766,6 +1756,7 @@ $(document).ready(function() {
     let cell2 = newRow.insertCell(1);
     let cell3 = newRow.insertCell(2);
     let cell4 = newRow.insertCell(3);
+    let cell5 = newRow.insertCell(4);
     // let cell5 = newRow.insertCell(4);
 
     // Add classes to the cells
@@ -1773,35 +1764,49 @@ $(document).ready(function() {
     cell2.className = "px-6 py-4 text-sm font-medium bg-white border text-secondary-900 border-cloudy-140 md:w-24 whitespace-nowrap";
     cell3.className = "px-6 py-4 text-sm font-medium text-right bg-white border text-secondary-900 border-cloudy-140 md:w-48";
     cell4.className = "px-6 py-4 text-sm font-medium text-right bg-white border text-secondary-900 border-cloudy-140 md:w-48 whitespace-nowrap";
-    
+    cell5.className = "px-3 py-3 text-sm text-center font-medium border text-secondary-900 border-cloudy-140 bg-white whitespace-nowrap";
 
     // Set the content of cells (you can set this dynamically based on user input)
     cell1.innerHTML = '<input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap">';
     cell2.innerHTML = '<input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap">';
     cell3.innerHTML = '<input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap text-right">';
     cell4.innerHTML = '<input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap text-right">';
+    cell5.innerHTML = `
+      <div class="flex items-center justify-center gap-2">
+        <div class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-red-90"
+          onclick="removeRowGoods(this)"
+        >
+          <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
+        </div>
+      </div>
+    `;
 
     // Add a Remove button to the last cell
     // cell5.innerHTML = '<button onclick="removeRowGoods(this)">Remove</button>';
   }
 
-  function removeLastRow() {
-    // Get the tbody element
-    let tbody = document.querySelector("#goods_services-id tbody");
-    let removeBtnEl = document.getElementById("remove_goods_row-id");
+  // function removeLastRow() {
+  //   // Get the tbody element
+  //   let tbody = document.querySelector("#goods_services-id tbody");
+  //   let removeBtnEl = document.getElementById("remove_goods_row-id");
 
-    // Check if there is at least one row in the tbody
-    if (tbody.rows.length > 1) {
-      removeBtnEl.classList.remove("hidden")
-      removeBtnEl.classList.add("inline-flex")
-      // Remove the last row
-      tbody.deleteRow(tbody.rows.length - 1);
-    }
+  //   // Check if there is at least one row in the tbody
+  //   if (tbody.rows.length > 1) {
+  //     removeBtnEl.classList.remove("hidden")
+  //     removeBtnEl.classList.add("inline-flex")
+  //     // Remove the last row
+  //     tbody.deleteRow(tbody.rows.length - 1);
+  //   }
 
-    if(tbody.rows.length == 1) {
-      removeBtnEl.classList.add("hidden")
-      removeBtnEl.classList.remove("inline-flex")
-    }
+  //   if(tbody.rows.length == 1) {
+  //     removeBtnEl.classList.add("hidden")
+  //     removeBtnEl.classList.remove("inline-flex")
+  //   }
+  // }
+
+  function removeRowGoods(btn) {
+    let delEl = btn.parentNode.parentNode.parentNode;
+    delEl.remove();
   }
 
 

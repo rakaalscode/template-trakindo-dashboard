@@ -607,7 +607,7 @@
     <!-- Filter table -->
 
     <!-- Document Form -->
-    <div id="drawer_document-id" class="fixed top-0 right-0 w-full h-screen overflow-y-auto transition-transform translate-x-full bg-white z-60 md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
+    <div id="drawer_document-id" class="fixed top-0 right-0 w-full h-screen overflow-y-auto transition-transform transform-none bg-white z-60 md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
       <div class="p-3 pb-5 md:p-6">
 
       <!-- close -->
@@ -768,8 +768,11 @@
               <th scope="row" class="px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30">
                 Rate
               </th>
-              <th scope="row" class="px-3 py-3 text-sm font-medium border rounded-tr-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30 whitespace-nowrap">
+              <th scope="row" class="px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30 whitespace-nowrap">
                 Amount
+              </th>
+              <th scope="row" class="px-3 py-3 text-sm text-center font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30 whitespace-nowrap">
+                Action
               </th>
             </tr>
           </thead>
@@ -787,15 +790,17 @@
               <td class="px-3 py-3 text-sm font-medium text-right bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 md:w-48 whitespace-nowrap">
                 <input type="text" class="w-full text-sm font-medium text-right outline-none text-secondary-900 whitespace-nowrap ">
               </td>
+              <td class="px-3 py-3 text-sm font-medium text-center bg-cloudy-30 border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 md:w-48 whitespace-nowrap"></td>
             </tr>
           </tbody>
           <tfoot>
             <th scope="row" class="px-3 py-3 text-sm font-medium text-right border rounded-bl-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30" colspan="3">
               Total
             </th>
-            <td class="px-6 py-2 text-sm font-medium bg-white border rounded-br-lg text-secondary-900 border-cloudy-140 whitespace-nowrap">
+            <td class="px-6 py-2 text-sm font-medium bg-white border text-secondary-900 border-cloudy-140 whitespace-nowrap">
               Rp0
             </td>
+            <td class="px-3 py-2 text-sm font-medium border rounded-br-lg text-secondary-900 border-cloudy-140 bg-cloudy-30 whitespace-nowrap"></td>
           </tfoot>
         </table>
       </div>

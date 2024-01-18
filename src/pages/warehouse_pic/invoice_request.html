@@ -1021,32 +1021,6 @@
                       <input type="text" class="w-full text-sm font-medium outline-none text-secondary-900">
                     </td>
                   </tr>
-                  <tr>
-                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
-                      GL Account<span class="text-red-500">*</span>
-                    </th>
-                    <td class="w-8/12 px-3 py-3 text-sm font-medium bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 whitespace-nowrap">
-                      <div class="relative">
-                        <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
-                          <img src="/dist/images/icons/fi_search.svg" alt="search">
-                        </div>
-                        <input type="text" class="w-full pr-5 form-control-none text-secondary-900" id="gl_search_data-id" readonly>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="w-4/12 px-3 py-3 text-sm font-medium border rounded-bl-lg md:px-6 md:py-4 text-gray_2-900 border-cloudy-140 bg-cloudy-30">
-                      Cost Center<span class="text-red-500">*</span>
-                    </th>
-                    <td class="w-8/12 px-3 py-3 text-sm font-medium bg-white border rounded-br-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140">
-                      <div class="relative">
-                        <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
-                          <img src="/dist/images/icons/fi_search.svg" alt="search">
-                        </div>
-                        <input type="text" class="w-full pr-5 form-control-none text-secondary-900" id="cost_center_data-id" readonly>
-                      </div>
-                    </td>
-                  </tr>
                 </table>
               </div>
 
@@ -1057,32 +1031,30 @@
                       <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border rounded-tl-lg text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         Description
                       </th>
-                      <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30">
-                        IO Number<span class="text-red-500">*</span>
-                      </th>
                       <th scope="row" class="w-1/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         QTY
                       </th>
                       <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         Rate
                       </th>
-                      <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border rounded-tr-lg text-secondary-900 border-cloudy-140 bg-cloudy-30">
+                      <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30">
                         Amount
+                      </th>
+                      <th scope="row" class="w-8/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30 whitespace-nowrap">
+                        IO Number<span class="text-red-500">*</span>
+                      </th>
+                      <th scope="row" class="w-8/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30 whitespace-nowrap">
+                        GL Account<span class="text-red-500">*</span>
+                      </th>
+                      <th scope="row" class="w-8/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-30 rounded-tr-lg whitespace-nowrap">
+                        Cost Center<span class="text-red-500">*</span>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td class="w-8/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-10">
-                        TEST ABC
-                      </td>
-                      <td class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-cloudy-10">
-                        <div class="relative">
-                          <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
-                            <img src="/dist/images/icons/fi_search.svg" alt="search">
-                          </div>
-                          <input type="text" class="w-full pr-5 form-control-none bg-transparent text-secondary-900 io_number_data-id" readonly>
-                        </div>
+                        <p class="w-[300px]">TEST ABC</p>
                       </td>
                       <td class="w-1/12 px-6 py-4 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                         20
@@ -1093,15 +1065,45 @@
                       <td class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                         Rp. 30.000.000
                       </td>
+                      <td class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-white">
+                        <div class="relative">
+                          <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
+                            <img src="/dist/images/icons/fi_search.svg" alt="search">
+                          </div>
+                          <input type="text" class="w-full pr-5 form-control-none form-control-wcustom bg-transparent text-secondary-900 io_number_data-id" readonly>
+                        </div>
+                      </td>
+                      <td class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-white">
+                        <div class="relative">
+                          <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
+                            <img src="/dist/images/icons/fi_search.svg" alt="search">
+                          </div>
+                          <input type="text" class="w-full pr-5 form-control-none form-control-wcustom bg-transparent text-secondary-900 gl_search_data-id" readonly>
+                        </div>
+                      </td>
+                      <td class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-white">
+                        <div class="relative">
+                          <div class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none">
+                            <img src="/dist/images/icons/fi_search.svg" alt="search">
+                          </div>
+                          <input type="text" class="w-full pr-5 form-control-none form-control-wcustom bg-transparent text-secondary-900 cost_center_data-id" readonly>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                   <tfoot>
-                    <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium text-right border rounded-bl-lg text-secondary-900 border-cloudy-140 bg-cloudy-30" colspan="4">
+                    <th scope="row" class="w-4/12 px-6 py-4 text-sm font-medium text-right border rounded-bl-lg text-secondary-900 border-cloudy-140 bg-cloudy-30" colspan="3">
                       Total
                     </th>
-                    <td class="w-8/12 px-6 py-2 text-sm font-medium border rounded-br-lg text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
+                    <td class="w-8/12 px-6 py-2 text-sm font-medium border text-secondary-900 border-cloudy-140 bg-cloudy-10 whitespace-nowrap">
                       Rp. 30.000.000
                     </td>
+                    <th scope="row" class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-cloudy-30">
+                    </th>
+                    <th scope="row" class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-cloudy-30">
+                    </th>
+                    <th scope="row" class="w-8/12 px-6 py-4 text-sm font-medium text-right border text-secondary-900 border-cloudy-140 bg-cloudy-30 rounded-br-lg">
+                    </th>
                   </tfoot>
                 </table>
               </div>

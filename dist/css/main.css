@@ -1243,6 +1243,14 @@ video {
   width: 100%;
 }
 
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[90px\] {
+  width: 90px;
+}
+
 .min-w-\[10px\] {
   min-width: 10px;
 }
@@ -1476,12 +1484,6 @@ video {
   margin-left: calc(-1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-x-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -1696,11 +1698,6 @@ video {
   border-color: rgb(176 184 199 / var(--tw-border-opacity));
 }
 
-.border-green-s-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(37 116 40 / var(--tw-border-opacity));
-}
-
 .border-green_general {
   --tw-border-opacity: 1;
   border-color: rgb(76 175 80 / var(--tw-border-opacity));
@@ -1709,11 +1706,6 @@ video {
 .border-primary-1 {
   --tw-border-opacity: 1;
   border-color: rgb(255 240 217 / var(--tw-border-opacity));
-}
-
-.border-primary-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(249 208 112 / var(--tw-border-opacity));
 }
 
 .border-primary-500 {
@@ -5045,6 +5037,14 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   outline-offset: 2px;
 }
 
+.form-control-wcustom {
+  width: 200px;
+}
+
+.form-control-wcustom-3 {
+  width: 300px;
+}
+
 .form-rounded {
   border-radius: 0.25rem;
 }
@@ -5725,59 +5725,14 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   cursor: not-allowed;
 }
 
-.disabled\:border-yellow-20:disabled {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 236 189 / var(--tw-border-opacity));
-}
-
-.disabled\:border-secondary-900:disabled {
-  --tw-border-opacity: 1;
-  border-color: rgb(16 24 31 / var(--tw-border-opacity));
-}
-
-.disabled\:border-secondary-700:disabled {
-  --tw-border-opacity: 1;
-  border-color: rgb(68 73 80 / var(--tw-border-opacity));
-}
-
-.disabled\:border-cloudy-130:disabled {
-  --tw-border-opacity: 1;
-  border-color: rgb(26 29 34 / var(--tw-border-opacity));
-}
-
-.disabled\:border-cloudy-70:disabled {
-  --tw-border-opacity: 1;
-  border-color: rgb(149 157 172 / var(--tw-border-opacity));
-}
-
 .disabled\:border-gray-60:disabled {
   --tw-border-opacity: 1;
   border-color: rgb(176 184 199 / var(--tw-border-opacity));
 }
 
-.disabled\:bg-yellow-20:disabled {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 236 189 / var(--tw-bg-opacity));
-}
-
-.disabled\:bg-secondary-900:disabled {
-  --tw-bg-opacity: 1;
-  background-color: rgb(16 24 31 / var(--tw-bg-opacity));
-}
-
-.disabled\:bg-secondary-700:disabled {
-  --tw-bg-opacity: 1;
-  background-color: rgb(68 73 80 / var(--tw-bg-opacity));
-}
-
-.disabled\:bg-cloudy-130:disabled {
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 29 34 / var(--tw-bg-opacity));
-}
-
-.disabled\:bg-cloudy-70:disabled {
-  --tw-bg-opacity: 1;
-  background-color: rgb(149 157 172 / var(--tw-bg-opacity));
+.disabled\:border-yellow-20:disabled {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 236 189 / var(--tw-border-opacity));
 }
 
 .disabled\:bg-gray-60:disabled {
@@ -5785,22 +5740,14 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   background-color: rgb(176 184 199 / var(--tw-bg-opacity));
 }
 
+.disabled\:bg-yellow-20:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 236 189 / var(--tw-bg-opacity));
+}
+
 .disabled\:text-cloudy-70:disabled {
   --tw-text-opacity: 1;
   color: rgb(149 157 172 / var(--tw-text-opacity));
-}
-
-.disabled\:text-secondary-900:disabled {
-  --tw-text-opacity: 1;
-  color: rgb(16 24 31 / var(--tw-text-opacity));
-}
-
-.disabled\:text-secondary-900\/20:disabled {
-  color: rgb(16 24 31 / 0.2);
-}
-
-.disabled\:text-secondary-900\/40:disabled {
-  color: rgb(16 24 31 / 0.4);
 }
 
 .group:hover .group-hover\:block {
@@ -6346,6 +6293,11 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .md\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .md\:pb-0 {

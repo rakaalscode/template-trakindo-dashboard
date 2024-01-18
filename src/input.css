@@ -265,6 +265,15 @@ input[type="checkbox"]:disabled:checked ~ .dot {
   @apply block w-full text-base rounded-lg outline-none focus:outline-none;
 }
 
+.form-control-wcustom {
+  @apply w-[200px];
+}
+
+.form-control-wcustom-3 {
+  @apply w-[300px];
+}
+
+
 .form-rounded {
   @apply rounded;
 }
