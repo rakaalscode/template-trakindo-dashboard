@@ -1278,6 +1278,32 @@
 </div>
 <!-- snackbar -->
 
+<!-- modal confirmation -->
+<div id="modal_alert_confirm-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-4 w-full md:max-w-[343px] max-h-full">
+    <div class="relative bg-white rounded-lg shadow">
+      <div class="p-4 text-center">
+        <h3 class="text-lg font-semibold text-black">
+          Attention!
+        </h3>
+        <p class="text-sm text-gray_2-500 mb-5">You are going to approve all files</p>
+        <button type="button" class="flex items-center justify-center w-full btn btn-primary btn-rounded mb-3"
+          onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+        >
+          Confirm
+        </button>
+        <button type="button" class="flex items-center justify-center w-full btn btn-default btn-rounded"
+          onclick="toggleModalDialog('modal_alert_confirm-id', 'z-60')"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal confirmation -->
+
+
 </body>
 <!-- Start script -->
 <script
