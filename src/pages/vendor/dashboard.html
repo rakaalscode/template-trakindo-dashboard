@@ -607,7 +607,7 @@
     <!-- Filter table -->
 
     <!-- Document Form -->
-    <div id="drawer_document-id" class="fixed top-0 right-0 w-full h-screen overflow-y-auto transition-transform translate-x-full bg-white z-60 md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
+    <div id="drawer_document-id" class="fixed top-0 right-0 w-full h-screen overflow-y-auto transition-transform transform-none bg-white z-60 md:w-4/5 lg:w-3/5" tabindex="-1" aria-labelledby="drawer-right-label">
       <div class="p-3 pb-5 md:p-6">
 
       <!-- close -->
@@ -759,7 +759,7 @@
         <table class="table-responsive" id="goods_services-id">
           <thead>
             <tr>
-              <th scope="row" class="px-3 py-3 text-sm font-medium border rounded-tl-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30">
+              <th scope="row" class="px-3 py-3 text-sm font-medium border rounded-tl-lg md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30 w-[484px]">
                 Description
               </th>
               <th scope="row" class="px-3 py-3 text-sm font-medium border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 bg-cloudy-30">
@@ -778,7 +778,7 @@
           </thead>
           <tbody>
             <tr>
-              <td class="px-3 py-3 text-sm font-medium bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 md:w-96">
+              <td class="px-3 py-3 text-sm font-medium bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 w-[484px]">
                 <input type="text" class="w-full text-sm font-medium outline-none text-secondary-900 whitespace-nowrap ">
               </td>
               <td class="px-3 py-3 text-sm font-medium bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 md:w-24 whitespace-nowrap">
@@ -790,7 +790,15 @@
               <td class="px-3 py-3 text-sm font-medium text-right bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 md:w-48 whitespace-nowrap">
                 <input type="text" class="w-full text-sm font-medium text-right outline-none text-secondary-900 whitespace-nowrap ">
               </td>
-              <td class="px-3 py-3 text-sm font-medium text-center bg-cloudy-30 border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 md:w-48 whitespace-nowrap"></td>
+              <td class="px-3 py-3 text-sm font-medium text-center bg-white border md:px-6 md:py-4 text-secondary-900 border-cloudy-140 md:w-20 whitespace-nowrap">
+                <div class="flex items-center justify-center gap-2">
+                  <div class="flex items-center justify-center w-6 h-6 rounded cursor-pointer shadow-one bg-red-90"
+                    onclick="removeRowGoods(this)"
+                  >
+                    <img src="/dist/images/icons/material-symbols_delete.svg" alt="delete">
+                  </div>
+                </div>
+              </td>
             </tr>
           </tbody>
           <tfoot>

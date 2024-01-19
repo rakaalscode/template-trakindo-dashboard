@@ -1760,11 +1760,11 @@ $(document).ready(function() {
     // let cell5 = newRow.insertCell(4);
 
     // Add classes to the cells
-    cell1.className = "px-6 py-4 text-sm font-medium bg-white border text-secondary-900 border-cloudy-140 md:w-96";
+    cell1.className = "px-6 py-4 text-sm font-medium bg-white border text-secondary-900 border-cloudy-140 w-[484px]";
     cell2.className = "px-6 py-4 text-sm font-medium bg-white border text-secondary-900 border-cloudy-140 md:w-24 whitespace-nowrap";
     cell3.className = "px-6 py-4 text-sm font-medium text-right bg-white border text-secondary-900 border-cloudy-140 md:w-48";
     cell4.className = "px-6 py-4 text-sm font-medium text-right bg-white border text-secondary-900 border-cloudy-140 md:w-48 whitespace-nowrap";
-    cell5.className = "px-3 py-3 text-sm text-center font-medium border text-secondary-900 border-cloudy-140 bg-white whitespace-nowrap";
+    cell5.className = "px-3 py-3 text-sm text-center font-medium border text-secondary-900 border-cloudy-140 bg-white whitespace-nowrap md:w-20";
 
     // Set the content of cells (you can set this dynamically based on user input)
     cell1.innerHTML = '<input type="text" class="text-sm font-medium text-secondary-900 w-full outline-none whitespace-nowrap">';
