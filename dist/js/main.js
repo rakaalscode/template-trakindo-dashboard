@@ -1876,7 +1876,7 @@ $(document).ready(function() {
     let checkbox = button.querySelector('.list-checkbox');
     let btnApproveAll = parentListID.querySelector('.btn-approve-all');
     let btnApproveAllImg = parentListID.querySelector('img');
-    
+    let checkboxAllEl =  parentListID.querySelector(`.checkbox-list-all`);
     if(isList) {
 
       if(filterOptions == 'selected') {
@@ -1913,10 +1913,18 @@ $(document).ready(function() {
             checkbox.checked = !checkbox.checked
 
             let checkedValues = [];
-            let checkboxes = parentListID.querySelectorAll('.list-checkbox:checked');
-            checkboxes.forEach(function (checkbox) {
+            let checkboxesChecked = parentListID.querySelectorAll('.list-checkbox:checked');
+            let checkboxes = parentListID.querySelectorAll('.list-checkbox');
+
+            checkboxesChecked.forEach(function (checkbox) {
               checkedValues.push(checkbox.value);
             });
+
+            if(checkedValues.length === checkboxes.length) {
+              checkboxAllEl.checked = true;
+            } else {
+              checkboxAllEl.checked = false;
+            }
 
             if(checkedValues.length > 0) {
               btnApproveAll.disabled = false

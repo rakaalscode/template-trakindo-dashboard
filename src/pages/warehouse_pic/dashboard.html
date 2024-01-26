@@ -44,7 +44,15 @@
               <a href="/src/pages/warehouse_pic/dashboard.html" class="block py-2 border-b border-black text-secondary-900 hover:text-secondary-900 hover:border-black" aria-current="page">Dashboard</a>
             </li>
             <li>
-              <a href="/src/pages/warehouse_pic/invoice_request.html" class="block py-2 border-b border-transparent text-secondary-500 hover:text-secondary-900 hover:border-black">Invoice Request List</a>
+              <!-- <a href="/src/pages/warehouse_pic/invoice_request.html" class="block py-2 border-b border-transparent text-secondary-500 hover:text-secondary-900 hover:border-black">Invoice Request List</a> -->
+              <div class="flex items-center space-x-2">
+                <a href="/src/pages/warehouse_pic/invoice_request.html" class="block py-2 border-b border-transparent text-secondary-500 hover:text-secondary-900 hover:border-black" aria-current="page">Invoice Request List</a>
+                <span class="block cursor-pointer" onclick="toggleModalDialog('modal_instruction-id', 'z-60')">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                    <path d="M10.0234 10L10.0234 13.75M10.0234 7.22046V7.1875M2.52344 10C2.52344 5.85786 5.8813 2.5 10.0234 2.5C14.1656 2.5 17.5234 5.85787 17.5234 10C17.5234 14.1421 14.1656 17.5 10.0234 17.5C5.8813 17.5 2.52344 14.1421 2.52344 10Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
             </li>
           </ul>
         </div>
@@ -129,7 +137,15 @@
     <div class="block px-4 pt-2 md:hidden">
       <div class="flex justify-between w-full gap-2">
         <a href="/src/pages/warehouse_pic/dashboard.html" class="flex items-center w-full font-medium text-secondary-900 py-2.5 border-b border-black" aria-current="page">Dashboard</a>
-        <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent ">Invoice Request List</a>
+        <!-- <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent ">Invoice Request List</a> -->
+        <div class="flex items-center space-x-2 w-full">
+          <a href="/src/pages/warehouse_pic/invoice_request.html" class="flex items-center w-full font-medium text-secondary-500 py-2.5 border-transparent " aria-current="page">Invoice Request List</a>
+          <span class="block cursor-pointer" onclick="toggleModalDialog('modal_instruction-id', 'z-60')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+              <path d="M10.0234 10L10.0234 13.75M10.0234 7.22046V7.1875M2.52344 10C2.52344 5.85786 5.8813 2.5 10.0234 2.5C14.1656 2.5 17.5234 5.85787 17.5234 10C17.5234 14.1421 14.1656 17.5 10.0234 17.5C5.8813 17.5 2.52344 14.1421 2.52344 10Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </nav>
@@ -1482,6 +1498,165 @@
   </div>
 </div>
 <!-- modal preview pdf-->
+
+<!-- modal instruction -->
+<div id="modal_instruction-id" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed z-70 justify-center items-center w-auto inset-0 md:w-full h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-h-full p-2 md:p-4 md:max-w-3xl">
+
+    <!-- header -->
+    <div class="flex items-center justify-end px-4 py-2 bg-cloudy-20 rounded-tl-xl rounded-tr-xl">
+      <button onclick="toggleModalDialog('modal_instruction-id', 'z-60')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
+          <path d="M5 15L15 5M5 5L15 15" stroke="#7D8085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <!-- header -->
+
+    <div class="relative bg-white rounded-bl-lg rounded-br-lg shadow min-h-[650px]">
+      <!-- content -->
+      <div class="border-b border-cloudy-30">
+        <div class="text-cloudy-120 text-xl font-semibold text-center px-5 py-2">
+          <h1>Instruction</h1>
+        </div>
+      </div>
+      <div>
+        <!-- table -->
+        <div class="relative overflow-x-auto mb-7">
+          <table class="table-responsive">
+            <tr>
+              <th class="text-cloudy-120 text-base font-semibold px-4 py-3 w-[320px] border-r border-cloudy-30">List of Status</th>
+              <th class="text-cloudy-120 text-base font-semibold px-4 py-3">Description</th>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-gray cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-gray_2-500"></span>
+                  Draft
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in draft</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-blue cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
+                  Submitted
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Submitted</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-warning cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
+                  Waiting for Verification
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Waiting for Verification</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-warning cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
+                  Waiting for Approval
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Waiting for Approval</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-warning cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
+                  Need Verification
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Need Verification</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-warning cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500"></span>
+                  Need Approval
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Need Approval</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-warning cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500 flex-shrink-0"></span>
+                  Action Needed - Revision Required
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Action Needed - Revision Required</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-warning cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-warning-500 flex-shrink-0"></span>
+                  Action Needed - Waiting for Hard Copy
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Action Needed - Waiting For Hard Copy</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-blue cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-blue_2-500"></span>
+                  Submitted To Finance
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Submitted To Finance</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-green cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-green-500"></span>
+                  Completed
+                </label>
+              </td>
+              <td class="px-4 whitespace-nowrap">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Completed</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 border-r border-cloudy-30 pb-3 whitespace-nowrap">
+                <label class="inline-flex items-center badge badge-error cursor-pointer font-medium my-1.5">
+                  <span class="dot-filter-badge w-1.5 h-1.5 rounded-full me-1.5 bg-error-500"></span>
+                  Rejected
+                </label>
+              </td>
+              <td class="px-4 pb-3">
+                <div class="text-gray_2-500 text-sm px-2 py-2.5 bg-cloudy-10 rounded">Your document are in Rejected</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+</div>
+<!-- modal instruction -->
 
 </body>
 <!-- Start script -->
